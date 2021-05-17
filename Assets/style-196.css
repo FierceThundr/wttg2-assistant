@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'Hobo';
+    src: url(hobo-std.otf);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+ol, ul {
+	list-style: none;
+}
+
+body {
+    color: #FFFFCC;
+    background: #333333;
+    font-family: 'Hobo';
+    font-size: 18px;
+    line-height: 24px;
+    padding: 40px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a, a:focus, a:visited, a:hover {
+    color: magenta;
+    display: block;
+    padding: 10px 0;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    display: inline;
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+    padding: 0;
+}
+
+h1 {
+    color: red;
+    font-size: 24px;
+    font-weight: normal;
+    padding-bottom: 15px;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+#container {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 50%;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.pl {
+    padding-left: 40px;
+}
+
+.pr {
+    padding-right: 40px;
+}
+
+.mt {
+    margin-top: 40px;
+}
+
+.mb {
+    margin-bottom: 40px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-xlarge {
+    font-size: 48px;
+}
+
+.text-large {
+    font-size: 32px;
+}
+
+.text-medium {
+    font-size: 24px;
+}
+
+.text-normal {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}

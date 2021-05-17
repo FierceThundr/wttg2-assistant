@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    vertical-align: middle;
+}
+
+body {
+    color: #a1836e;
+    background: black;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+    color: #BEA592;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+h1 {
+    font-size: 48px;
+    padding-bottom: 15px;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+section {
+    display: inline-block;
+    background-color: #280203;
+    padding: 10px 20px;
+    margin: 20px 0;
+}
+
+#nav {
+    background: #982727;
+    padding: 5px;
+}
+
+#nav ul {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+#nav li {
+    display: inline;
+    font-weight: 600;
+}
+
+#container {
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 1200px;
+    width: 60%;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.pl {
+    padding-left: 20px;
+}
+
+.pr {
+    padding-right: 20px;
+}
+
+.mt {
+    margin-top: 40px;
+}
+
+.mb {
+    margin-bottom: 40px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-xlarge {
+    font-size: 48px;
+}
+
+.text-large {
+    font-size: 32px;
+}
+
+.text-medium {
+    font-size: 24px;
+}
+
+.text-normal {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}

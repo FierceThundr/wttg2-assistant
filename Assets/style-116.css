@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    color: white;
+    background-color: black;
+    font-size: 18px;
+    line-height: 40px;
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+    color: grey;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+h1 {
+    font-size: 32px;
+    padding-bottom: 15px;
+}
+
+div {
+    padding-bottom: 25px;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+#container {
+    background-color: black;
+    padding: 20px 10px;
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 80%;
+}
+
+.arialblack {
+    font-family: 'Arial Black';
+}
+
+.compact,
+.compact-md,
+.compact-sm {
+    margin: 0 auto;
+    max-width: 1130px;
+}
+
+.compact-md {
+    max-width: 720px;
+}
+
+.compact-sm {
+    max-width: 600px;
+}
+
+.w80 {
+    width: 80%;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.pl {
+    padding-left: 10px;
+}
+
+.pr {
+    padding-right: 10px;
+}
+
+.mt {
+    margin-top: 40px;
+}
+
+.mb {
+    margin-bottom: 80px;
+}
+
+.mblarge {
+    margin-bottom: 200px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-xlarge {
+    font-size: 48px;
+}
+
+.text-large {
+    font-size: 32px;
+}
+
+.text-medium {
+    font-size: 24px;
+}
+
+.text-normal {
+    font-size: 16px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-yellow {
+    color: yellow;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-green {
+    color: #085102;
+}
+
+.text-grey {
+    color: grey;
+}
+
+.text-silver {
+    color: silver;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.img-responsive {
+    width: 100%;
+    max-width: 100%;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}

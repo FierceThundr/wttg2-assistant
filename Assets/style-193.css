@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+body {
+    color: red;
+    background: black;
+    font-size: 16px;
+    line-height: 1;
+}
+
+img {
+    max-width: 16.6%;
+    margin: 0 8%;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+    color: white;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+hr {
+    background-color: white;
+    margin: 0 0 10px 0;
+    height: 1px;
+    width: 100%;
+}
+
+.mt {
+    margin-top: 40px;
+}
+
+.mb {
+    margin-bottom: 40px;
+}
+
+.text-xlarge {
+    font-size: 98px;
+}
+
+.text-normal {
+    font-size: 18px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: white;
+}

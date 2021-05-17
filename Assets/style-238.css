@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a, a:hover, a:focus {
+    color: #39f;
+    text-decoration: none;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+body {
+    color: #E0DED8;
+    background: #E4E6E7;
+    font-family: Arial;
+    font-size: large;
+    line-height: 1.2;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.relative {
+    display: inline-block;
+    position: relative;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.pl {
+    padding-left: 10px;
+}
+
+.pr {
+    padding-right: 10px;
+}
+
+.mt {
+    margin-top: 20px;
+}
+
+.mtb {
+    margin-top: 40px;
+}
+
+.mb {
+    margin-bottom: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-large {
+    font-size: 48px;
+}
+
+.text-medium {
+    font-size: 32px;
+}
+
+.text-normal {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-linethrought {
+    text-decoration: line-through;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-red {
+    color: red;
+}
+
+.clearfix {
+    clear: both;
+    display: inline-block;
+}
+
+.img-responsive {
+    width: 100%;
+    max-width: 100%;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.date {
+    color: rgb(51, 51, 51);
+    font-size: x-small;
+    margin-bottom: 3px;
+}
+
+h4 {
+    color: rgb(128, 128, 128);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#container {
+    background: black url(https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Ftopper4.png) no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    padding: 120px 20px 20px 80px;
+    width: 90%;
+    max-width: 1400px;
+}
+
+#left {
+    color: black;
+    background: white;
+    border: 6px solid grey;
+    float: left;
+    font-size: small;
+    padding: 10px;
+    width: 20%;
+}
+
+#left li {
+    font-weight: bold;
+    margin: 2px 0;
+}
+
+#right {
+    display: inline-block;
+    padding: 16% 50px 2% 50px;
+    width: 79%;
+}

@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'OCR A Std';
+    src: url(ocr-a-std.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+body {
+    color: #00FF00;
+    background: black;
+    font-family: 'Arial';
+    font-size: 16px;
+    line-height: 1;
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+    color: #CCFF33;
+    font-size: 32px;
+    margin: 0 10px;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'OCR A Std', 'Times New Roman';
+    font-size: 48px;
+    font-weight: normal;
+    padding-bottom: 25px;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+#container {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 60%;
+}
+
+#container div {
+    display: inline-block;
+}
+
+.compact {
+    max-width: 780px;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.pl {
+    padding-left: 40px;
+}
+
+.pr {
+    padding-right: 40px;
+}
+
+.mt {
+    margin-top: 40px;
+}
+
+.mb {
+    margin-bottom: 40px;
+}
+
+.mr {
+    margin-right: 20px;
+}
+
+.ml {
+    margin-left: 10px;
+}
+
+.mr {
+    margin-right: 10px;
+}
+
+.text-dark {
+    color: #7d7d7d;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-xlarge {
+    font-size: 48px;
+}
+
+.text-large {
+    font-size: 32px;
+}
+
+.text-medium {
+    font-size: 24px;
+}
+
+.text-normal {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}

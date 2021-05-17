@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+body {
+    background-color: #3FB9FF;
+    text-align: center;
+}
+
+img {
+    height: auto;
+}
+
+img.left {
+    max-width: 24%;
+}
+
+img.middle {
+    max-width: 50%;
+}
+
+img.right {
+    max-width: 24%;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.bottomleft {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+}
+
+.bottomright {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
