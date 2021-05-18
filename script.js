@@ -212,7 +212,7 @@ var sitedata = {
         <a href="https://www.speedrun.com/wttg2/resources" target="_blank" rel="noreferrer">Original Click Point Locations ~Shadowk222</a><br>
 		<a href="https://www.speedrun.com/wttg2/resources" target="_blank" rel="noreferrer">Improved Click Point Locations ~Nasko222</a><br>
         <a target="_blank" rel="noreferrer">Wttg2 Tenant Data ~Lutonite</a><br>
-        <a target="_blank" rel="noreferrer">Additional Help ~Nasko222</a>
+        <a target="_blank" rel="noreferrer">Information Assistance ~Nasko222</a>
       </p>
       <p>
         <a href="https://fontawesome.com/v4.7.0/" target="_blank" rel="noreferrer">Symbols</a><br>
