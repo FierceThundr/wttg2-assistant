@@ -683,7 +683,7 @@ function sitepreview(i) {//Update and display key clickpoints popup
     document.body.classList.remove("noscroll");
     return;
   }
-  document.getElementById("preview").src = 'https://fiercethundr.github.io/wttg2-clickpoint-guides/Clickpoint Guides/' + i + '.html'
+  document.getElementById("preview").src = 'https://fiercethundr.github.io/wttg2-assistant/Clickpoint Guides/' + i + '.html'
   document.getElementById("preview_div").style.display = "block"
   document.body.classList.add("noscroll");
 }
