@@ -1,0 +1,23 @@
+{
+  "short_name":"Helper",
+  "name": "Welcome To The Game II Helper",
+  "description": "A helper tool for the game Welcome To The Game II",
+  "icons": [
+    {
+      "src": "https://cdn.glitch.com/b42717d2-4c13-4d1c-b1a0-ce1f5b0e1587%2Ficon-192.png?v=1595753387340",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://cdn.glitch.com/b42717d2-4c13-4d1c-b1a0-ce1f5b0e1587%2Ficon-512.png?v=1595753353525",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "key":"2 - mzwhg2den5tg",
+  "start_url": "/",
+  "background_color": "#111111",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#111111"
+}
