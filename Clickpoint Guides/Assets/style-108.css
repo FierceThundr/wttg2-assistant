@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    vertical-align: middle;
+}
+
+body {
+    color: black;
+    background: white;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 1;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+    color: #551a8b;
+    text-decoration: underline;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    text-decoration: inherit !important;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+section {
+    color: white;
+    background: #3366FF;
+    padding: 40px;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+#container {
+    margin: 0 auto;
+    max-width: 820px;
+    width: 50%;
+}
+
+#container #header a {
+    margin-top: 20px;
+    margin-right: 6%;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.posleft {
+    position: absolute;
+    left: 0;
+}
+
+.posright {
+    position: absolute;
+    right: 0;
+}
+
+.posbottom {
+    position: absolute;
+    bottom: 10px;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.pl {
+    padding-left: 40px;
+}
+
+.pr {
+    padding-right: 40px;
+}
+
+.mt {
+    margin-top: 40px;
+}
+
+.mb {
+    margin-bottom: 40px;
+}
+
+.text-whiteish {
+    color: #cecece;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-xlarge {
+    font-size: 48px;
+}
+
+.text-large {
+    font-size: 32px;
+}
+
+.text-medium {
+    font-size: 24px;
+}
+
+.text-normal {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}

@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    height: 100vh;
+}
+
+body {
+    color: white;
+    background: black;
+    font-size: 24px;
+    line-height: 1;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+    color: white;
+}
+
+em {
+    color: grey;
+}
+
+p {
+    margin-top: 15%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.clickspot {
+    display: block;
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    z-index: 1;
+}
+.clickspot.top {
+    top: 0;
+}
+.clickspot.bottom {
+    bottom: 0;
+}
+.clickspot.left {
+    left: 0;
+}
+.clickspot.right {
+    right: 0;
+}

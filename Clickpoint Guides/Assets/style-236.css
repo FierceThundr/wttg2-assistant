@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+body {
+    color: white;
+    background-color: #33CCCC;
+    background: url(https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbackground1.jpg) repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    font-size: 18px;
+    line-height: 1;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 15px;
+    max-width: 800px;
+}
+
+#logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 500px !important;
+}
+
+#container {
+    margin: 0 auto;
+    width: 800px;
+}
+
+#content {
+    background-color: teal;
+    text-align: center;
+    padding: 30px 40px;
+    margin: 0 auto;
+}
+
+#content div {
+    margin: 0 auto;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.relative {
+    display: inline-block;
+    position: relative;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.pl {
+    padding-left: 10px;
+}
+
+.pr {
+    padding-right: 10px;
+}
+
+.mt {
+    margin-top: 20px;
+}
+
+.mb {
+    margin-bottom: 50px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-large {
+    font-size: 48px;
+}
+
+.text-medium {
+    font-size: 32px;
+}
+
+.text-normal {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.clearfix {
+    clear: both;
+    display: inline-block;
+}
+
+.img-responsive {
+    width: 100%;
+    max-width: 100%;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+#wiki3 {
+    color: #FFEB3B;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* puzzle spots */
+.puzzle-spot {
+    position: absolute;
+    border-radius: 100%;
+    height: 32px;
+    width: 32px;
+}
+.puzzle-spot.clicked {
+    border: 6px solid black;
+    background: white;
+}
+/* row #1 */
+.puzzle-spot.spot1a {
+    top: 37px;
+    right: 105px;
+}
+.puzzle-spot.spot1b {
+    top: 19px;
+    right: 56px;
+}
+.puzzle-spot.spot1c {
+    top: 3px;
+    right: 8px;
+}
+/* row #2 */
+.puzzle-spot.spot2a {
+    top: 126px;
+    left: 32px;
+    height: 38px;
+    width: 38px;
+}
+.puzzle-spot.spot2b {
+    top: 126px;
+    left: 126px;
+    height: 38px;
+    width: 38px;
+}
+.puzzle-spot.spot2c {
+    top: 126px;
+    right: 32px;
+    height: 38px;
+    width: 38px;
+}
+/* row #3 */
+.puzzle-spot.spot3a {
+    top: 32px;
+    left: 60px;
+    height: 56px;
+    width: 56px;
+}
+.puzzle-spot.spot3b {
+    top: 215px;
+    left: 8px;
+    height: 56px;
+    width: 56px;
+}
+.puzzle-spot.spot3c {
+    top: 411px;
+    left: 60px;
+    height: 56px;
+    width: 56px;
+}
+/* row #4 */
+.puzzle-spot.spot4a {
+    top: 231px;
+    left: 31px;
+    height: 54px;
+    width: 54px;
+}
+.puzzle-spot.spot4b {
+    top: 138px;
+    left: 140px;
+    height: 54px;
+    width: 54px;
+}
+.puzzle-spot.spot4c {
+    top: 35px;
+    left: 258px;
+    height: 54px;
+    width: 54px;
+}
+/* row #5 */
+.puzzle-spot.spot5a {
+    top: 143px;
+    left: 63px;
+}
+.puzzle-spot.spot5b {
+    top: 67px;
+    left: 128px;
+}
+.puzzle-spot.spot5c {
+    top: 143px;
+    left: 193px;
+}
+/* row #6 */
+.puzzle-spot.spot6a {
+    top: 199px;
+    right: 217px;
+}
+.puzzle-spot.spot6b {
+    top: 146px;
+    right: 127px;
+}
+.puzzle-spot.spot6c {
+    top: 98px;
+    right: 37px;
+}

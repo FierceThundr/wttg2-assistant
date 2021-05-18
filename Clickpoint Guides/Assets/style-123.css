@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: disc;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    vertical-align: middle;
+}
+
+body {
+    color: white;
+    background: black url("https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbackground.jpg");
+    font-size: 18px;
+    line-height: 1;
+}
+
+body.bg-black {
+    background: black;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+    display: inline-block;
+    color: white;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+h1 {
+    font-size: 48px;
+    padding-bottom: 15px;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+#header {
+    background: black;
+    padding: 20px 0;
+}
+
+#nav {
+    padding: 20px;
+    text-align: center;
+}
+
+#nav a {
+    margin: 0 10px;
+}
+
+#container {
+    margin: 0 auto;
+    min-height: 80vh;
+    max-width: 1600px;
+    width: 90%;
+}
+
+#footer {
+    color: grey;
+    background: black;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.baby em {
+    position: relative;
+    z-index: 2;
+}
+
+.babyimg {
+    position: relative;
+    max-width: 720px;
+}
+
+.clickspot {
+    display: block;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    z-index: 1;
+}
+
+.clickspot.leftear {
+    bottom: 32%;
+    left: 10%;
+}
+
+.clickspot.rightear {
+    bottom: 32%;
+    right: 10%;
+}
+
+.clickspot.eye {
+    top: 45%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.clickspot.left {
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.clickspot.right {
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+.pgpkey {
+    font-size: 16px;
+    margin: 40px 0;
+    max-width: 620px;
+}
+
+.mauto {
+    margin: 0 auto;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.pl {
+    padding-left: 40px;
+}
+
+.pr {
+    padding-right: 40px;
+}
+
+.mt {
+    margin-top: 40px;
+}
+
+.mb {
+    margin-bottom: 40px;
+}
+
+.ml {
+    margin-left: 40px;
+}
+
+.mr {
+    margin-right: 40px;
+}
+
+.text-darkred {
+    color: #800000;
+}
+
+.text-pink {
+    color: #D00493;
+}
+
+.text-grey {
+    color: grey;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-xlarge {
+    font-size: 48px;
+}
+
+.text-large {
+    font-size: 32px;
+}
+
+.text-medium {
+    font-size: 24px;
+}
+
+.text-normal {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}

@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    background-color: #69002C;
+    font-size: 18px;
+    line-height: 1;
+}
+
+#container {
+    display: block;
+    margin: 8% auto 0 auto;
+    margin-top: 8vw;
+    position: relative;
+    height: auto;
+    width: 600px;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+em {
+    color: #c70345;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clickspot {
+    display: block;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    z-index: 1;
+}
+.clickspot.textleft {
+    top: 16%;
+    left: 5%;
+    height: 70px;
+    width: 250px;
+}
+.clickspot.textright {
+    top: 16%;
+    right: 5%;
+    height: 70px;
+    width: 250px;
+}
+.clickspot.eyeleft {
+    top: 33%;
+    left: 30%;
+    height: 80px;
+}
+.clickspot.eyeright {
+    top: 33%;
+    right: 27%;
+    height: 80px;
+}
+.clickspot.nose {
+    top: 53%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 50px;
+    width: 120px;
+}
+.clickspot.mouth {
+    top: 67%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 60px;
+    width: 120px;
+}
+.clickspot.symbolleft {
+    top: 70%;
+    left: 5%;
+}
+.clickspot.symbolright1 {
+    top: 53%;
+    right: 15%;
+    height: 80px;
+    width: 80px;
+}
+.clickspot.symbolright2 {
+    top: 70%;
+    right: 20%;
+    height: 100px;
+    width: 100px;
+}

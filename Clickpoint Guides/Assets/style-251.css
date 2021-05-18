@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+body {
+    color: white;
+    background-color: black;
+    background: url(https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbackground5.jpg) repeat;
+    background-attachment: fixed;
+    font-size: 18px;
+    line-height: 40px;
+    padding: 10px;
+}
+
+img {
+    max-width: 100%;
+}
+
+div {
+    padding-bottom: 25px;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.pl {
+    padding-left: 10px;
+}
+
+.pr {
+    padding-right: 10px;
+}
+
+.mt {
+    margin-top: 40px;
+}
+
+.mb {
+    margin-bottom: 80px;
+}
+
+.ml {
+    margin-left: 100px;
+}
+
+.mml {
+    margin-left: -25%;
+}
+
+.text-arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-xxlarge {
+    font-size: 66px;
+}
+
+.text-xlarge {
+    font-size: 48px;
+}
+
+.text-large {
+    font-size: 32px;
+}
+
+.text-medium {
+    font-size: 24px;
+}
+
+.text-normal {
+    font-size: 16px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-yellow {
+    color: yellow;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.img-responsive {
+    width: 100%;
+    max-width: 100%;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}

@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    background: black;
+    font-size: 18px;
+    line-height: 1;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+    color: white;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+p {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    width: 512px;
+}
+
+.mt {
+    margin-top: 40px;
+}
+
+.mb {
+    margin-bottom: 40px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clickspot {
+    display: block;
+    position: absolute;
+    top: 44%;
+    height: 30px;
+    width: 30px;
+    z-index: 1;
+}
+.clickspot.spot1 {
+    left: 15%;
+}
+.clickspot.spot2 {
+    left: 29%;
+}
+.clickspot.spot3 {
+    left: 44%;
+}
+.clickspot.spot4 {
+    left: 66%;
+}
+.clickspot.spot5 {
+    left: 79%;
+}

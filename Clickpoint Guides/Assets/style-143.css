@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'SimSun';
+    src: url(SIMSUN.ttf);
+}
+@font-face {
+    font-family: 'Nirmala UI';
+    src: url(Nirmala.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a, a:hover, a:focus {
+    color: white;
+    text-decoration: none;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+body {
+    color: rgb(226, 214, 205);
+    background: #0C0C0D;
+    font-family: "Nirmala UI";
+    font-size: large;
+    line-height: 1.2;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.relative {
+    display: inline-block;
+    position: relative;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.pbs {
+    padding-bottom: 30px;
+}
+
+.pl {
+    padding-left: 10px;
+}
+
+.pr {
+    padding-right: 10px;
+}
+
+.mt {
+    margin-top: 20px;
+}
+
+.mtb {
+    margin-top: 40px;
+}
+
+.mb {
+    margin-bottom: 20px;
+}
+
+.ml {
+    margin-left: 10px;
+}
+
+.mr {
+    margin-right: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-large {
+    font-size: 48px;
+}
+
+.text-medium {
+    font-size: 32px;
+}
+
+.text-normal {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-linethrought {
+    text-decoration: line-through;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-red {
+    color: red;
+}
+
+.clearfix {
+    clear: both;
+    display: inline-block;
+}
+
+.img-responsive {
+    width: 100%;
+    max-width: 100%;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-family: 'SimSun';
+    font-size: xx-large;
+    margin-bottom: 10px;
+}
+
+#container {
+    background: black url(https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2FbackgroundLine.jpg) repeat;
+    background-size: contain;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1400px;
+}
+
+#content {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.entry {
+    background: #602C24;
+    text-align: justify;
+    padding: 30px 20px 20px 20px;
+    margin: 20px 0 30px 0;
+}

@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+body {
+    color: #C0C0C0;
+    background: black;
+    font-size: 24px;
+    line-height: 42px;
+    padding: 0 10px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+    color: white;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 32px;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-xlarge {
+    font-size: 48px;
+}
+
+.text-large {
+    font-size: 32px;
+}
+
+.text-medium {
+    font-size: 24px;
+}
+
+.text-normal {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-white {
+    color: white;
+}
