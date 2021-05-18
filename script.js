@@ -674,7 +674,7 @@ function keysupdate() {//Update key count display
   document.getElementById("keycount").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>';
 }
 
-document.getElementById("preview").contentDocument.addEventListener('click', function(e) {sitepreview(-1)})
+function iframeload() {document.getElementById("preview").contentDocument.addEventListener('click', function(e) {sitepreview(-1)})}
 
 function sitepreview(i) {//Update and display key clickpoints popup
   click()
