@@ -15,7 +15,7 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="https://unpkg.com/simplebar@5.2.1/dist/simplebar.css"/>
     <link rel="stylesheet" href="/style.css">
-    <link rel="apple-touch-icon" href="https://cdn.glitch.com/b42717d2-4c13-4d1c-b1a0-ce1f5b0e1587%2Ficon-192.png?v=1595753387340">
+    <link rel="apple-touch-icon" href="Assets/icon-192.png">
     <link rel="icon" href="https://cdn.glitch.com/b42717d2-4c13-4d1c-b1a0-ce1f5b0e1587%2Ffavicon.ico?v=1594033241927" type="image/x-icon">
     <script src="https://unpkg.com/simplebar@5.2.1/dist/simplebar.min.js"></script>
     <script src="https://use.fontawesome.com/b51eec3906.js"></script>
