@@ -201,8 +201,9 @@ var sitedata = {
     {"name":`<i class="fa fa-info-circle fa-lg"></i> About`,"content":`
     <h1>About</h1>
       <p>Created by: FierceThundr_</p>
-      <p>Sounds used are property of reflect studios<br>Welcome to The Game II is property of reflect studios</p>
-      <p><i>Started July 5th 2020</i><br><i>Updated Jan 10th 2021</i></p>
+      <p>Sounds and images used are property of reflect studios<br>Welcome to The Game II is property of reflect studios</p>
+      <p><i>Started July 5th 2020</i><br><i>Updated May 18th 2021</i></p>
+	  <p><a href="https://github.com/FierceThundr/wttg2-assistant" target="_blank" rel="noreferrer">Github Page</a></p>
     <h3>Information Sources</h3>
       <p>
         <a href="https://cdn.discordapp.com/attachments/572088008723922954/572089747649069056/Welcome_to_the_Game_II_WiFi_Table.xlsx" target="_blank" rel="noreferrer">Wifi data ~Nasko222</a><br>
@@ -597,7 +598,7 @@ var sitedata = {
       </p>`},
     {"name":`<i class="fa fa-question-circle fa-lg"></i> Feedback`,"content":`
     <h1>Feedback</h1>
-    <p>If you wish to provide feedback or report a bug, please message me on discord at FierceThundr_#3063 or leave a comment on the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2211437048" target="_blank" rel="noreferrer">steam guide</a> for this helper!</p>`}
+    <p>If you wish to provide feedback or report a bug, please message leave a comment on the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2211437048" target="_blank" rel="noreferrer">steam guide</a> for the helper or open an issue on the <a href="https://github.com/FierceThundr/wttg2-assistant/issues" target="_blank" rel="noreferrer">github page</a>!</p>`}
   ]
 }
 
