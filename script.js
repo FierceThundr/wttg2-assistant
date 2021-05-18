@@ -209,7 +209,8 @@ var sitedata = {
         <a href="https://welcometothegame.fandom.com" target="_blank" rel="noreferrer">Click Points & Info Verification</a><br>
         <a href="https://welcometothegame.fandom.com/wiki/Sound_Files_(WTTG2)" target="_blank" rel="noreferrer">Sound Files</a><br>
         <a href="https://www.speedrun.com/wttg2/guide/h2pkg" target="_blank" rel="noreferrer">Website and Key information ~Insym</a><br>
-        <a href="https://www.speedrun.com/wttg2/resources" target="_blank" rel="noreferrer">Visual Click Point Locations ~Shadowk222</a><br>
+        <a href="https://www.speedrun.com/wttg2/resources" target="_blank" rel="noreferrer">Original Click Point Locations ~Shadowk222</a><br>
+		<a href="https://www.speedrun.com/wttg2/resources" target="_blank" rel="noreferrer">Improved Click Point Locations ~Nasko222</a><br>
         <a target="_blank" rel="noreferrer">Wttg2 Tenant Data ~Lutonite</a><br>
         <a target="_blank" rel="noreferrer">Additional Help ~Nasko222</a>
       </p>
