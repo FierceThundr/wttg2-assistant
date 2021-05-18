@@ -577,7 +577,6 @@ var sitedata = {
         <p>When placing remote VPNs, both walls of each hallway have identical color zones.</p>
       <h2>Fun Facts</h2>
         <p>There is actually a page on Bug Friendly in which nudity is shown because it was improperly programmed.</p>
-        <p>The developer of the game is not actually named Adam, they are named Dale.</p>
         <p>YOU THERE? uses minimal text despite it's appearance.</p>
         <p>The center photo on ISEVIL is a picture of an untreated snake bite.</p>
         <p>On the yellow sub-page of Don't waste it, the boy located on the left of the photo moves a few seconds after the page is loaded.</p>
@@ -687,7 +686,7 @@ function sitepreview(i) {//Update and display key clickpoints popup
     document.body.classList.remove("noscroll");
     return;
   }
-  document.getElementById("preview").src = 'https://fiercethundr.github.io/wttg2-clickpoint-guides/Clickpoint%20Guides/' + i + '.html'
+  document.getElementById("preview").src = 'https://fiercethundr.github.io/wttg2-clickpoint-guides/Clickpoint Guides/' + i + '.html'
   document.getElementById("preview_div").style.display = "block"
   document.body.classList.add("noscroll");
 }
