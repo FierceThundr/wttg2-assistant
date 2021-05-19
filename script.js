@@ -676,18 +676,19 @@ function keysupdate() {//Update key count display
 }
 
 function guideload() {
-	console.log("Load fire")
-	document.getElementById("preview").contentDocument.addEventListener('click', function(e) {sitepreview(-1)})
+  console.log("Load fire")
+  document.getElementById("preview").contentDocument.addEventListener('click', function(e) {sitepreview(-1)})
 }
 
 function sitepreview(i) {//Update and display key clickpoints popup
+  console.
   click()
   if (i == -1) {
     document.getElementById("preview_div").style.display = "none";
     document.body.classList.remove("noscroll");
     return;
   }
-  document.getElementById("preview").data = 'Clickpoint Guides/' + i + '.html'
+  document.getElementById("preview").src = 'Clickpoint Guides/' + i + '.html'
   document.getElementById("preview_div").style.display = "block"
   document.body.classList.add("noscroll");
 }
