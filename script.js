@@ -681,7 +681,7 @@ function guideload() {
 }
 
 function sitepreview(i) {//Update and display key clickpoints popup
-  console.
+  console.log("Preview fire")
   click()
   if (i == -1) {
     document.getElementById("preview_div").style.display = "none";
