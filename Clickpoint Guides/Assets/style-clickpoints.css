@@ -6,6 +6,16 @@ a.CFTAG {
   outline: 10px solid rgba(0,255,30,0.75)
 }
 
+a.CPTAG > img {
+  outline: 0px
+  filter: grayscale(100%) invert(84%) sepia(83%) saturate(2235%) hue-rotate(0deg) brightness(106%) contrast(103%);
+}
+
+a.CFTAG > img {
+  outline: 0px
+  filter: grayscale(100%) invert(61%) sepia(28%) saturate(6436%) hue-rotate(90deg) brightness(126%) contrast(125%);
+}
+
 * {
   pointer-events: none !important;
 }
