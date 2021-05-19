@@ -172,12 +172,12 @@ var sitedata = {
     {"doll":1,"sex":0,"age":43,"name":"Tommy Ryan","note":"Has 2 kids, boy, girl."},
     {"doll":0,"sex":0,"age":18,"name":"Walker Johnston","note":"Constant problems with police"}
   ], tips = [
-    "Remember to check the source code",
+    "Remember to check in the source code",
     "You shouldnt check the peep hole",
     "Hacks are the best way to gain DosCoin",
     "Zonewall will not give you DosCoin for backdoors",
-    "Listen for lockpicking",
-    "Lockpicking is the only important sound cue",
+    "Listen for the door",
+    "The game includes a lot of dead websites that will never be open",
     "More secure networks are faster and safer",
     "Dont forget to log off when you leave the PC",
     "Remember to switch your wifis",
@@ -196,7 +196,10 @@ var sitedata = {
     "Dont look behind you",
     "Move your router to change your wifi list",
     "Dont underestimate the Doll Maker",
-    "Dont worry about the noises behind you, they mean nothing"
+    "Dont worry about the noises behind you, they mean nothing... probably",
+	"Be quiet when hiding or he will find you",
+	"Dont waste the flashlight, you dont want to be stuck in the dark",
+	"Error 418 I am a teapot"
   ], guidedata = [
     {"name":`<i class="fa fa-info-circle fa-lg"></i> About`,"content":`
     <h1>About</h1>
