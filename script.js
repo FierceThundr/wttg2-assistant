@@ -687,7 +687,7 @@ function sitepreview(i) {//Update and display key clickpoints popup
     document.body.classList.remove("noscroll");
     return;
   }
-  document.getElementById("preview").src = 'Clickpoint Guides/' + i + '.html'
+  document.getElementById("preview").data = 'Clickpoint Guides/' + i + '.html'
   document.getElementById("preview_div").style.display = "block"
   document.body.classList.add("noscroll");
 }
