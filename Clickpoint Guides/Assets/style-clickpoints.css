@@ -1,29 +1,25 @@
-a.CPTAG,
-a.CPTAG:focus,
-a.CPTAG:visited,
-a.CPTAG:hover {
-    color: inherit !important;
-    font-size: inherit !important;
-    font-weight: inherit !important;
-    text-decoration: inherit !important;
-	outline: 10px solid rgba(255,255,0,0.75)
+a.CPTAG {
+  outline: 10px solid rgba(255,255,0,0.75)
 }
 
-a.CFTAG,
-a.CFTAG:focus,
-a.CFTAG:visited,
-a.CFTAG:hover {
-    color: inherit !important;
-    font-size: inherit !important;
-    font-weight: inherit !important;
-    text-decoration: inherit !important;
-	outline: 10px solid rgba(0,255,30,0.75)
+a.CFTAG {
+  outline: 10px solid rgba(0,255,30,0.75)
+}
+
+a.CPTAG > img {
+  outline: 0px
+  filter: invert(96%) sepia(24%) saturate(5094%) hue-rotate(357deg) brightness(105%) contrast(103%);
+}
+
+a.CFTAG > img {
+  outline: 0px
+  filter: invert(61%) sepia(28%) saturate(6436%) hue-rotate(90deg) brightness(126%) contrast(125%);
 }
 
 * {
-pointer-events: none !important;
+  pointer-events: none !important;
 }
 
 img.nudity {
-filter: blur(18px) !important;
+  filter: blur(18px) !important;
 }

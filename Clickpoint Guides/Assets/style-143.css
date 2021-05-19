@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'SimSun';
-    src: url(Assets/SIMSUN.ttf);
+    src: url(/SIMSUN.ttf);
 }
 @font-face {
     font-family: 'Nirmala UI';
-    src: url(Assets/Nirmala.ttf);
+    src: url(/Nirmala.ttf);
 }
 
 * {
