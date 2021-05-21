@@ -4,12 +4,12 @@
   "description": "A helper tool for the game Welcome To The Game II",
   "icons": [
     {
-      "src": "/wttg2-assistant/Assets/icon-192.png",
+      "src": "Assets/icon-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/wttg2-assistant/Assets/icon-512.png",
+      "src": "Assets/icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

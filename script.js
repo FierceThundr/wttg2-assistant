@@ -382,9 +382,9 @@ var sitedata = {
       <details>
         <summary><b>Hitman Sound Cues</b></summary>
         <h4>Lockpicking</h4>
-          <audio controls><source src="/wttg2-assistant/Assets/Doorknob.wav" type="audio/ogg">Your browser does not support the audio element.</audio>
+          <audio controls><source src="Assets/Doorknob.wav" type="audio/ogg">Your browser does not support the audio element.</audio>
         <h4>Hitman Leaving</h4>
-          <audio controls><source src="/wttg2-assistant/Assets/Softdoorshut.ogg" type="audio/ogg">Your browser does not support the audio element.</audio>
+          <audio controls><source src="Assets/Softdoorshut.ogg" type="audio/ogg">Your browser does not support the audio element.</audio>
         <br><br>
       </details>
       <details>
@@ -468,11 +468,11 @@ var sitedata = {
       </details>
       <details>
         <summary><h3>StackPUSHER</h3></summary>
-        <p>StackPUSHER consists of a randomly sized grid with a randomly generated layout. To successfully defend against this hack you must drop all stack nodes <img class="help_photo" src="/wttg2-assistant/Assets/stack3.png"> into the center where the popper node <img class="help_photo" src="/wttg2-assistant/Assets/stack1.png"> is located. You can only interact with stack nodes which are adjacent to the pusher node <img class="help_photo" src="/wttg2-assistant/Assets/stack2.png">. You can move the pusher node to any location on the board by clicking on it and clicking a destination. At higher levels, you will also need to avoid clicking on skull nodes that will start being generated. Clicking on them will result in an immediate failure of the hack.</p>
+        <p>StackPUSHER consists of a randomly sized grid with a randomly generated layout. To successfully defend against this hack you must drop all stack nodes <img class="help_photo" src="Assets/stack3.png"> into the center where the popper node <img class="help_photo" src="Assets/stack1.png"> is located. You can only interact with stack nodes which are adjacent to the pusher node <img class="help_photo" src="Assets/stack2.png">. You can move the pusher node to any location on the board by clicking on it and clicking a destination. At higher levels, you will also need to avoid clicking on skull nodes that will start being generated. Clicking on them will result in an immediate failure of the hack.</p>
       </details>
       <details>
         <summary><h3>NodeH3X3R</h3></summary>
-        <p>NodeH3X3R is often regarded as the hardest hack by the greater majority of players. It consists of a randomly sized grid of nodes. Which can each either be Alpha or Beta. <img class="help_photo" src="/wttg2-assistant/Assets/node3.png"><img class="help_photo" src="/wttg2-assistant/Assets/node2.png"> Your goal is to connect the starting node to all corrupted nodes (indicated by a bright green outline) <img class="help_photo" src="/wttg2-assistant/Assets/node1.png"> via a continuous line from the indicated starting node. However, when making this path you must be cautious to make every connection to the alternative node type. Connecting a node to another of the same type will not result in a failure until the hack attempts to verify your route through the nodes. Make sure to check your work and remember that you cant pass through the same node twice.</p>
+        <p>NodeH3X3R is often regarded as the hardest hack by the greater majority of players. It consists of a randomly sized grid of nodes. Which can each either be Alpha or Beta. <img class="help_photo" src="Assets/node3.png"><img class="help_photo" src="Assets/node2.png"> Your goal is to connect the starting node to all corrupted nodes (indicated by a bright green outline) <img class="help_photo" src="Assets/node1.png"> via a continuous line from the indicated starting node. However, when making this path you must be cautious to make every connection to the alternative node type. Connecting a node to another of the same type will not result in a failure until the hack attempts to verify your route through the nodes. Make sure to check your work and remember that you cant pass through the same node twice.</p>
       </details>
       <details>
         <summary><h3>MemD3FR4G3R</h3></summary>
@@ -626,7 +626,7 @@ var data = {
     "active":0,
     "reference":0,
     "visible":1,
-    "sound":new Audio('/wttg2-assistant/Assets/Doorknob.wav')}
+    "sound":new Audio('Assets/Doorknob.wav')}
 }
 
 window.temp = 100
@@ -727,7 +727,7 @@ function timerupdate() {//Update wifi timer every second
   var string = "###########################"
   var a = "[" + data.wifi.timer[2] + string.slice(data.wifi.timer[2].length) + String(Math.floor(data.wifi.timer[0]/60)).padStart(2,'0') + ":" + String(Math.floor(data.wifi.timer[0]%60)).padStart(2,'0') + string + "]";
   var b = Math.ceil((data.wifi.timer[0]/data.wifi.timer[1]*100)/(100/a.length))
-  if (data.wifi.timer[0] == 60) {var audio = new Audio('/wttg2-assistant/Assets/MotionSensorAlert.oga');audio.play();};
+  if (data.wifi.timer[0] == 60) {var audio = new Audio('Assets/MotionSensorAlert.oga');audio.play();};
   document.getElementById("wifitimer").innerHTML = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b)
   data.wifi.timer[0] -= 1
 }
@@ -911,7 +911,7 @@ function setup() {//Prepare website lists and appearance
 }
 
 function click() {//Play click sound
-  var audio = new Audio('/wttg2-assistant/Assets/MouseClick.oga');audio.play();
+  var audio = new Audio('Assets/MouseClick.oga');audio.play();
 }
 
 function sitecycle() {//Temporary dev function (Cycle through clickpoint guides)
