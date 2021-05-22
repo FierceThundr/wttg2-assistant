@@ -679,12 +679,10 @@ function keysupdate() {//Update key count display
 }
 
 function guideload() {
-  console.log("Load fire")
   document.getElementById("preview").contentDocument.addEventListener('click', function(e) {sitepreview(-1)})
 }
 
 function sitepreview(i) {//Update and display key clickpoints popup
-  console.log("Preview fire")
   click()
   if (i == -1) {
     document.getElementById("preview_div").style.display = "none";
