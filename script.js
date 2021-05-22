@@ -679,7 +679,10 @@ function keysupdate() {//Update key count display
 }
 
 function guideload() {
-  document.getElementById("preview").contentDocument.addEventListener('click', function(e) {sitepreview(-1)})
+  document.getElementById("preview").contentDocument.addEventListener('click', function(e) {sitepreview(-1)}).catch(function (e) {
+	sitepreview(-1)
+	console.log("Clickpoint Guide Failure: " + e)
+  })
 }
 
 function sitepreview(i) {//Update and display key clickpoints popup
