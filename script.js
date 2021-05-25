@@ -1,6 +1,5 @@
 
-/* 
-    The Welcome To The Game II Assistant is built to help players of WTTG2
+/*  The Welcome To The Game II Assistant is built to help players of WTTG2
     Copyright (C) 2021 Fierce Thunder
 
     This program is free software: you can redistribute it and/or modify
@@ -14,8 +13,7 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 //==========================================================================Static Data
 {
