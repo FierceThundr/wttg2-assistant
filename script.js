@@ -249,10 +249,10 @@ var sitedata = {
       </p>`},
     {"name":`<i class="fa fa-circle fa-lg"></i> Tutorial`,"content":`
     <h1>Tutorial</h1>
-      <p>Thank you for using my welcome to the game helper, I will try to make this section as straight to the point so anyone reading can get on their way.</p>
+      <p>Thank you for using my welcome to the game assistant, I will try to make this section as straight to the point so anyone reading can get on their way.</p>
     <details>
       <summary><h3>The Wiki Block</h3></summary>
-      <p>The wiki block is the primary note taking tool and can be immensely helpful if you know how to use it. To begin, copy the website list from a wiki page by using Ctrl+A and Ctrl+C, then paste the contents into the textarea at the top of the block. It will then scan and determine the websites on your wiki. Once your wiki sites are processed you will see their names, sub-pages, availability, and multiple markers. The markers can be used to indicate that you've searched a site so that you never forget where you need to search in the end-game for remaining keys. The buttons provided are for manual searches, key cue aided searches, and whether a key or link has been found respectively. The final feature that may need explaining is the mouse button, clicking on it will show you a copy of the site you've clicked on with multiple indicators that show the game's predetermined key click points.</p> 
+      <p>The wiki block is the primary note taking tool and can be immensely helpful if you know how to use it. To begin, copy the website list from a wiki page in the game by using Ctrl+A and Ctrl+C, then paste the contents into the textarea at the top of the block. It will then scan and determine the websites on your wiki. Once your wiki sites are processed you will see their names, sub-pages, availability, and multiple markers. The markers can be used to indicate that you've searched a site so that you never forget where you need to search in the end-game for remaining keys. The buttons provided are for <i class="fa fa-search fa-lg"></i> manual searches, <i class="fa fa-search-plus fa-lg"> key cue aided searches, and whether a <i class="fa fa-key fa-lg"></i> key or <i class="fa fa-link fa-lg"></i> link has been found respectively. The final feature that may need explaining is the <i class="fa fa-mouse-pointer fa-lg"></i> mouse button, clicking on it will show you a copy of the site you've clicked on with multiple indicators that show the game's predetermined key click points.</p> 
     </details>
     <details>
       <summary><h3>The Notes Block</h3></summary>
@@ -295,7 +295,7 @@ var sitedata = {
             <li>Motion Alert is a simple tool that pairs with an item purchasable from the Shadow Market. It will create an auditory alert when a motion sensor is tripped.</li>
             <li>VPNs can be used to suppress hacks and can be toggled at will to control whether hacks can occur. Additionally, buying more levels makes it more effective.</li>
             <li>Key Cue is a straightforward, but important tool for searching. It is an add-on to A.N.N that will put a key symbol on the bottom right corner of the browser if it detects a key on the current page (or sub-page).</li>
-            <li>VWipes can be used to scan for viruses and remove them. Viruses can be obtained when hacks are failed and can do various problematic things.</li>
+            <li>VWipes can be used to scan for viruses and remove them. Viruses can be obtained when hacks are failed and can be very problematic.</li>
           </ul>
         </details>
           
@@ -368,7 +368,7 @@ var sitedata = {
         `},
     {"name":`<i class="fa fa-circle fa-lg"></i> The Police`,"content":`
     <h1>The Police</h1>
-      <p>The police are the easiest threat in the game to avoid. To avoid them you must switch wifi networks before you exceed their respective tracking timers. Though if you forget to switch, the game only has a certain chance to trigger the swat team to break down your door based on the network you stayed on. <i>(If they are triggered, they will wait until you approach your door and cause a game over.)</i> Despite this, you should avoid gambling on that chance.</p> <p>The task of avoiding the cops can be made easier by purchasing skybreak from the ZeroDay Market and cracking higher security networks. Not only will they give you more time to breath, they often perform better.</p>
+      <p>The police are the easiest threat in the game to avoid. To avoid them you must switch wifi networks before you exceed their respective tracking timers. Though if you forget to switch, the game only has a certain chance to trigger the swat team to break down your door based on the network you stayed on. <i>(If they are triggered, they will wait until you approach your front door or the stairwell door of floor eight before causing a game over.)</i> Despite this, you should avoid gambling on that chance.</p> <p>The task of avoiding the cops can be made easier by purchasing skybreak from the ZeroDay Market and cracking higher security networks. Not only will they give you more time to breath, they often perform better.</p>
       <p><i>(In 1337 mode the tracking rates are shortened which allow the police to find you faster and with a garunteed chance of success)</i></p>
       <details>
         <summary><b>Notes</b></summary>
@@ -388,6 +388,7 @@ var sitedata = {
         <li>Purchase and place motion sensors in addition to buying sound alert. This will give you a more effective method to know when the hitman is coming to your door in addition to giving you more time to hide. <i>(The motion sensors should be placed on the wall on both ends of the hallway, as the hitman can approach from both sides of the hallway)</i></li>
       </ol>
       <p>When you know the Hitman is currently preparing to barge in you must turn of your computer and hide in either the shower in the bathroom or the closet near your balcony. In both cases you must be quiet as to not alert the hitman. <i>(This is only relevant if you have the mic enabled in your settings)</i> Also note that if you do not turn off the computer the hitman can erase notes saved into the games internal notepad in addition to stealing portions of your DosCoin balance. During the time he is in your apartment, stay in your hiding place until you hear him leave. <i>(Sound can be found below)</i> You can affect the time he is in your apartment by turning off more lights in the seconds before you hide and prior.</p>
+	  <p>In addition to encountering the Hitman as he pays a visit to your apartment it is possible for them to kill you when returning to your apartment if they spawn when you are not at the apartment. Unfortunately, if this rare event occurs it is impossible to mitigate and you will die the next time you open a hallway door.</p>
       <details>
         <summary><b>Hitman Activation</b></summary>
         <p>The Hitman activates based off of a system of difficulty points in the game, this system has a couple of factors that feed into it. For every key you find, you gain one difficulty point. If you are after 1 AM you get another. Lastly, you can gain a difficulty point for every 3 forced hacks. <i>(Force hacking can be found in the exploits section)</i> Whenever you get 3 difficulty points in total, the Hitman will activate and the window of your apartment will open. However, in 1337 mode you automatically start with 8 difficulty points.</p>
@@ -458,7 +459,7 @@ var sitedata = {
         </ul>
       </details>`},
     {"name":`<i class="fa fa-circle fa-lg"></i> The Doll Maker`,"content":`
-    <h1>The Dollmaker</h1>
+	<h1>The Dollmaker</h1>
       <p>The Dollmaker is an optional threat that is activated upon entering the site by the same name. After a certain amount of time, the Dollmaker will ██████ ██ ████ ████ and force you to ████ ████ ███ ████-████. Then the power will ██ ███ ███ █ ████████ ████ ██ █████████.</p>
       <p>After you have been given the marker on your doorknob you have a limited amount of time to place it on a suitable door. If you fail to do so, he will return disappointed and kill you wherever he happens to find you. There are two routes you can take in the Dollmakers task. You can attempt to randomly select a correct door or you can buy the Lolpy Disk item off the Shadow Market to have certainty of your selection. Once you have the Lolpy Disk, you can go to the lobby computer and hack it with the disk. Once it is finished, you will have access to a database of all tenants in the building. Simply select a suitable female target and place the marker on their door. Keep in mind that the Dollmaker will always request five targets during your encounter with him, remember to listen for him returning the marker.</p>
       <details>
@@ -475,13 +476,11 @@ var sitedata = {
         </ul>
       </details>`},
     {"name":`<i class="fa fa-circle fa-lg"></i> Hacking (Basics)`,"content":`
-    <h1>Hacking Pt.1</h1>
-      <p>Occasionally throughout the game you can get hacked and face up against various minigames, to ward them off you must first know how they work.</p>
-      <p><i>[If you know how to perform the hacking minigames, please skip to Hacking (Advanced)]</i></p>
-      <p>When you are given a hack you will first encounter Zonewall.</p>
+    <h1>Hacking</h1>
+      <p>Occasionally throughout the game you can get hacked and face up against various minigames. While at first they are an annoying hinderance, they can be used to help you complete the game after you learn how to beat them.</p>
       <details>
         <summary><h3>ZoneWall</h3></summary>
-        <p>ZoneWall consists of multiple lines with randomly selected target areas on each. In addition, you will see a moving bar on the topmost line. The goal is to left click when the bar is hovering over the red section, whether you succeed or not you will then be moved to the next bar down in the sequence. If you successfully time and complete a certain amount of bars, the hack will be instantly blocked. If you fail too many however, you will be randomly given one of the following hacks...</p>
+        <p>Zonewall is always the first hack you will encounter upon being presented with a hack. ZoneWall consists of multiple lines with randomly selected target areas on each. In addition, you will see a moving bar on the topmost line. The goal is to left click when the bar is hovering over the red section, whether you succeed or not you will then be moved to the next bar down in the sequence. If you successfully time and complete a certain amount of bars, the hack will be instantly blocked. If you fail too many however, you will be randomly given one of the following hacks...</p>
       </details>
       <details>
         <summary><h3>StackPUSHER</h3></summary>
@@ -494,14 +493,14 @@ var sitedata = {
       <details>
         <summary><h3>MemD3FR4G3R</h3></summary>
         <p>MemD3FR4G3R is by far the easiest hack, at least at lower levels. You will be shown a sequence of letters and numbers in a box that you will be required to remember and reproduce with the buttons that will be provided by the hack. In addition, you may replay the pattern by clicking on the block in the center if you need a second chance to see a pattern. Keep in mind that you may be required to complete multiple levels of MemD3fr4g3r to pass the hack. Also, in 1337 mode or in the late game of a normal run, you may want to have a piece of paper at the ready as the sequence generated can be excessively long if given the right conditions.</p>
-      </details>`},
-    {"name":`<i class="fa fa-circle fa-lg"></i> Hacking (Advanced)`,"content":`
-    <h1>Hacking Pt.2</h1>
-      <p>Occasionally throughout the game you can get hacked and face up against various minigames. If you are smart, you can turn them into easy DosCoin.</p>
-      <p><i>[If you do not know how to beat the hacking minigames, check Hacking (Basics)]</i></p>
-      <p>When you are hacked you will first be presented with a ZoneWall hack, you may either fail this to get another hack or succeed to instantly block the hack. While instantly blocking hacks sounds better, if you buy backdoors you can get DosCoin by failing ZoneWall and beating the secondary hack. The difficulty of hacks gradually increases based on the games duration, but you can effect the difficulty by the amount of levels succeeded during ZoneWall. Keep in mind, failing hacks can result in losing your in-game notes and a randomly selected amount of DosCoin. In addition, failing can cause you to get a virus which can do various things that can hinder you. <i>(Random shutdowns, Increased hack rate, Randomly losing DosCoin)</i></p>
-      <p>If you do not want to get hacked, you can buy the various VPN levels present on the ZeroDay Market to supress the chance of a hack occuring for the remainder of the game. The supresssion depends on how many VPN levels you purchase from the ZeroDay market. VPNs can be turned off by accessing their section on the taskbar.</p>
+      </details>
+      <p>When presented with ZoneWall, you may either fail this to get a secondary hack or succeed to instantly block the hack. While instantly blocking hacks sounds better, if you buy backdoors you can get DosCoin by failing ZoneWall and beating the secondary hack. The difficulty of hacks gradually increases based on the games duration, but you can effect the difficulty by the amount of levels succeeded during ZoneWall. Keep in mind, failing hacks can result in losing your in-game notes and a randomly selected amount of DosCoin. In addition, failing can cause you to get a virus which can hinder you from beating the game by causing random shutdowns and stealing DosCoin.</p>
       <p><i>(In 1337 mode all hacks will be given at max level despite zonewall performace or duration of the run)</i></p>
+      <p>If you want to avoid getting hacked, you can buy VPN levels on the ZeroDay Market to supress the chance of a hack occuring for the remainder of the game. The supression depends on how many VPN levels you purchase from the ZeroDay market with each lowering the chance a hack will go through by 20%. VPNs can also be disabled by accessing their section on the right side of the taskbar.</p>
+      <details>
+        <summary><b>Hack difficulty</b></summary>
+        <p>If you want specific values about the difficulty of hacks a player named Lutonite has created a <a href="Assets/wttg2hacks.txt" target="_blank" rel="noreferrer">file</a> containing that information.</p>
+      </details>
       <details>
         <summary><b>Notes</b></summary>
         <ul>
@@ -509,83 +508,8 @@ var sitedata = {
           <li>Your success on zonewall affects the difficulty of secondary hacks</li>
           <li>VPNs can allow you to optionally suppress hacks</li>
         </ul>
-      </details>`},
-    {"name":`<i class="fa fa-circle fa-lg"></i> Cracking`,"content":`
-    <h1>Cracking</h1>
-      <p>An important skill for evading police and extending your available breathing room is cracking. Cracking can be performed after purchasing SkyBreak from the ZeroDay Market. To hack a wifi network, you must first open the application and proceed to type the name of the package you would like to run. ("wep","wpa","wpa2") By default, a basic installation will only include the ability to access the WEP library.</p> <p><b>[You do not need to be connected to a wifi network to use SkyBreak]</b></p>
-      <details>
-        <summary><h3>WEP</h3></summary>
-        <p>Wep networks are the weakest security network you can crack in the game. They will give you slightly improved times over most free networks available. To hack a WEP network you must first type 'scan' to see the currently available wifi networks. Then after choosing the network you wish to crack, type the command 'probe &lt;The BSSID of the network you want to hack&gt; 1 1000'. Skybreak will then find the open port on your chosen wifi. You can then crack the wifi by typing the command 'crack &lt;The BSSID of the network&gt; &lt;The channel of the network&gt; &lt;The wifi networks open port&gt;' which will provide you with the networks password upon completion.</p>
       </details>
-      <details>
-        <summary><h3>WPA & WPA2</h3></summary>
-        <p>Hacking a wpa or wpa2 network starts similarly to wep networks. First type in 'scan' to see your available networks, then proceed to type 'inject &lt;The BSSID of the network you want to hack&gt; &lt;The channel of the network&gt; &lt;The amount of packets to inject&gt;'. This will proceed to inject the specified number of packets into the target network. Keep in mind that sending too many packets in a certain amount of time will result in a network being knocked offline for a period of time. To avoid this, try to extend the amount of injections over an extended period of time. (The exact injection rates are included in the wifi block) To complete the cracking of a wpa or wpa2 network, type 'crack &lt;The BSSID of the network you want to hack&gt; &lt;The channel of the network&gt;' which will procide you with the networks password upon completion.</p>
-      </details>
-      <p>[Skybreak allows you to access a history of commands by pressing the up and down arrow keys.]</p>`},
-    {"name":`<i class="fa fa-circle fa-lg"></i> Exploits`,"content":`
-    <h1>Exploits</h1>
-      <details>
-        <summary><h3>WPA2 Quick Crack</h3></summary>
-        <p>Hacking a WPA or WPA2 takes quite a lot of time due to the requirement to inject these networks before attempting a crack. This can cause a lot of grief both by the innate time cost and the consequences for failure. However, an exploit has been discovered that can easily skip this part of the process by a couple simple steps.</p>
-        <ol>
-          <li>Open skybreak and find the BSSID of the WPA or WPA2 network you wish to crack.</li>
-          <li>Type and copy the following command 'probe &lt;Target network BSSID&gt; 1 1'.</li>
-          <li>Probe and begin to crack a WEP network.</li>
-          <li>Before the crack completes paste the command from the previous steps</li>
-        </ol>
-        <p>If you completed the steps correctly SkyBreak will display an error related to the port range as the crack is occuring. It will then complete and display the password for the target network</p>
-      </details>
-      <details>
-        <summary><h3>Window Key Cue</h3></summary>
-        <p>The window to left of Clint's desk opens based on the games difficulty point system. Due to how this system works, it can be exploited as a single use key cue. To put it simply... If you enter a site and the window opens immediately afterwards, you can say with certainty that the website you enters contains a key somewhere. <i>(Unlike the proper key cue, this trick does not give you a precise page)</i> Additionally, this trick can also be used to rule out websites if you understand the system behind how it works. <i>(If you do not know how the system works refer to the dropdown below)</i> If you search through wiki 1 and successfully discover the locations of both keys before 1AM, you can go through the sites on wiki2 and eliminate any site for which the window does not open. At the same time, when it finally opens you know the site you just entered has a key located on it somewhere.</p>
-        <details>
-          <summary><h4>Advanced Explanation</h4></summary>
-          <p>The window opens based off of a system of difficulty points in the game, this system has a couple of factors that feed into it. For every key you find, you gain one difficulty point. If you are after 1 AM you get another. Lastly, you can gain a difficulty point for every 3 forced hacks. Whenever you get 3 difficulty points in total, the window of your apartment will open. However, in 1337 mode you automatically start with 8 difficulty points which prevents the use of this strategy in that mode.</p>
-        </details>
-        <br>
-      </details>
-      <details>
-        <summary><h3>Force Hacking</h3></summary>
-        <p>Force hacking is a strategy you can use to trigger additional hacks by going to a dead site and repeatedly refreshing. To perform a force hack you simply need to find a dead website and refresh it repeatedly. Unfortunately in the newest patch this trick has been significantly nerfed. In older patches you can attempt force hacks every second, while in the newest patch the cooldown has been raised to 30 seconds.</p>
-      </details>
-      <details>
-        <summary><h3>God Spot</h3></summary>
-        <p>The god spot is the name given to a strange VPN location known for its strange attributes. It is a red location that gives 277 DosCoin every 2770 seconds. (1 DosCoin every 10 seconds) It is not currently known why this location exists, but it can be a powerful tool to earn a lot of DosCoin if you can find it. The following is a strategy that can be used to find it...</p>
-        <ol>
-          <li>Take a VPN and place it into a red location.</li>
-          <li>After a couple seconds, switch to a new red location.</li>
-          <li>After you have placed the VPN in a handful of red locations, return to the PC and check your DosCoin balance.</li>
-          <li>If your DosCoin balance has significantly changed, you can go back to the last places you searched and trial and error the god spot. Otherwise, you can test other red locations to find it.</li>
-        </ol>
-      </details>
-      <details>
-        <summary><h3>Package Quick Grab</h3></summary>
-        <p>Package Quick Grab is a trick that can be done if you enter the alley and the drone is arriving. If this is the case it is possible to grab the package directly from the drone. This can be done by standing right below where the drone dips down near the entrance to the alley and clicking the button to grab the package.</p>
-        <p><i>(This exploit will also trigger a bug which prevents the delivery of any packages matching the types you snatch from the drone.)</i></p>
-      </details>
-      <details>
-        <summary><h3>Noir Quick Hide</h3></summary>
-        <p>The Noir Quick Hide is a strategy you can use to skip turning your back on the Noir. In the event that a Noir is in your apartment your first instinct may be to turn around. However, you can also open the balcony door to make the Noir disappear as well. <i>(This will not work if the Noir is located on your balcony)</i></p>
-      </details>
-      <details>
-        <summary><h3>Door Clipping</h3></summary>
-        <p>Door Clips are tricks you can perform to cause yourself to go out of bounds and often to useful areas.<i>(Please note that these tricks will not work in the current version of the game and may be unpredictable in all versions)</i></p>
-        <details>
-          <summary><h4>Apartment Closet</h4></summary>
-          <p>To clip out of bounds using the apartments closet, enter the closet and exit. Immediately after exiting the closet turn around and run into the closet doors. If performed correctly you should fall out of bounds and potentially land in the lobby area.</p>
-        </details>
-        <details>
-          <summary><h4>Alley Closet</h4></summary>
-          <p>The alley closet can be used to clip by exploiting the doors hitbox. To do so, open the door from the inside and run to the boxes in the right of the closet. If you sucessfully get behind the door you will fall out of bounds and may land in the partment.</p>
-        </details>
-        <br>
-      </details>
-
-      <details>
-        <summary><h3>Quick Navigation</h3></summary>
-        <p>This guide has not yet been written</p>
-      </details>
-      `},
+	`},
     {"name":`<i class="fa fa-circle fa-lg"></i> Miscellaneous`,"content":`
     <h1>Miscellaneous</h1>
       <h2>Miscellaneous Info</h2>
