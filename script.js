@@ -475,7 +475,7 @@ var sitedata = {
           <li>While the time the Dollmaker quest provides is generous, it should be completed as soon as you can manage</li>
         </ul>
       </details>`},
-    {"name":`<i class="fa fa-circle fa-lg"></i> Hacking (Basics)`,"content":`
+    {"name":`<i class="fa fa-circle fa-lg"></i> Hacking`,"content":`
     <h1>Hacking</h1>
       <p>Occasionally throughout the game you can get hacked and face up against various minigames. While at first they are an annoying hinderance, they can be used to help you complete the game after you learn how to beat them.</p>
       <details>
@@ -494,6 +494,7 @@ var sitedata = {
         <summary><h3>MemD3FR4G3R</h3></summary>
         <p>MemD3FR4G3R is by far the easiest hack, at least at lower levels. You will be shown a sequence of letters and numbers in a box that you will be required to remember and reproduce with the buttons that will be provided by the hack. In addition, you may replay the pattern by clicking on the block in the center if you need a second chance to see a pattern. Keep in mind that you may be required to complete multiple levels of MemD3fr4g3r to pass the hack. Also, in 1337 mode or in the late game of a normal run, you may want to have a piece of paper at the ready as the sequence generated can be excessively long if given the right conditions.</p>
       </details>
+	  <br>
       <p>When presented with ZoneWall, you may either fail this to get a secondary hack or succeed to instantly block the hack. While instantly blocking hacks sounds better, if you buy backdoors you can get DosCoin by failing ZoneWall and beating the secondary hack. The difficulty of hacks gradually increases based on the games duration, but you can effect the difficulty by the amount of levels succeeded during ZoneWall. Keep in mind, failing hacks can result in losing your in-game notes and a randomly selected amount of DosCoin. In addition, failing can cause you to get a virus which can hinder you from beating the game by causing random shutdowns and stealing DosCoin.</p>
       <p><i>(In 1337 mode all hacks will be given at max level despite zonewall performace or duration of the run)</i></p>
       <p>If you want to avoid getting hacked, you can buy VPN levels on the ZeroDay Market to supress the chance of a hack occuring for the remainder of the game. The supression depends on how many VPN levels you purchase from the ZeroDay market with each lowering the chance a hack will go through by 20%. VPNs can also be disabled by accessing their section on the right side of the taskbar.</p>
