@@ -385,7 +385,7 @@ var sitedata = {
       <p><i>(In 1337 mode the tracking rates are shortened which allow the police to find you faster and with a garunteed chance of success)</i></p>
 	  <p>The Police Scanner is an optional device that can be purchased to know when the police are close to tracing. When turned on, the police scanner will occasionally intercept and output random police communications. Certain phrases indicate that they are close to tracing you. <i>(Sound cues can be found below)</i></p>
       <details>
-        <summary><b>The Police Scanner Sound Cues</b></summary>
+        <summary><b>Police Scanner Cues</b></summary>
         <h4>Morse Code</h4>
           <audio controls><source src="Assets/police_scanner_real1.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
         <h4>1 11 1 10</h4>
@@ -607,7 +607,8 @@ var sitedata = {
       </details>
       <details>
         <summary><h3>Quick Navigation</h3></summary>
-        <p>This guide has not yet been written</p>
+        <p>Quick Back Navigation is a simple exploit that exists for an unknown reason. When you press backspace on the A.N.N. browser it will take you to a visual copy of the website that you were in last. Pressing backspace subsequent times will take you to the next site in your browsing history and so on. While the copies you will see look identical to the webpages you visited, they will not have clickpoints and you can not open their source code.</p>
+		<p>Additionally, this exploit can cause a bug on websites featuring recurring audio. If used on those pages the audio for the page will continue to play after you leave the website. To fix the bug, you must close A.N.N. while you are loading into the website whose audio is glitched. Doing so should fix the bug.</p>
       </details>`},
 	{"name":`<i class="fa fa-circle fa-lg"></i> Miscellaneous`,"content":`
     <h1>Miscellaneous</h1>
