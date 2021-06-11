@@ -408,9 +408,9 @@ var sitedata = {
       <details>
         <summary><b>Hitman Sound Cues</b></summary>
         <h4>Lockpicking</h4>
-          <audio controls><source src="Assets/Doorknob.wav" type="audio/ogg">Your browser does not support the audio element.</audio>
+          <audio controls><source src="Assets/hitman_doorknob.wav" type="audio/ogg">Your browser does not support the audio element.</audio>
         <h4>Hitman Leaving</h4>
-          <audio controls><source src="Assets/Softdoorshut.ogg" type="audio/ogg">Your browser does not support the audio element.</audio>
+          <audio controls><source src="Assets/hitman_softdoorshut.ogg" type="audio/ogg">Your browser does not support the audio element.</audio>
         <br><br>
       </details>
       <details>
