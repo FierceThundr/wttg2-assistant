@@ -608,7 +608,7 @@ var sitedata = {
       <details>
         <summary><h3>Quick Navigation</h3></summary>
         <p>Quick Back Navigation is a simple exploit that exists for an unknown reason. When you press backspace on the A.N.N. browser it will take you to a visual copy of the website that you were in last. Pressing backspace subsequent times will take you to the next site in your browsing history and so on. While the copies you will see look identical to the webpages you visited, they will not have clickpoints and you can not open their source code.</p>
-		<p>Additionally, this exploit can cause a bug on websites featuring recurring audio. If used on those pages the audio for the page will continue to play after you leave the website. To fix the bug, you must close A.N.N. while you are loading into the website whose audio is glitched. Doing so should fix the bug.</p>
+		<p>Additionally, this exploit can cause a bug on websites featuring recurring audio. If used on those pages their audio will continue to play after you leave the website. To fix the bug, you must close A.N.N. while you are loading into the website whose audio is glitched. Doing so should fix the bug.</p>
       </details>`},
 	{"name":`<i class="fa fa-circle fa-lg"></i> Miscellaneous`,"content":`
     <h1>Miscellaneous</h1>
