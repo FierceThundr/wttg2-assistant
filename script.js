@@ -408,9 +408,9 @@ var sitedata = {
       <details>
         <summary><b>Hitman Sound Cues</b></summary>
         <h4>Lockpicking</h4>
-          <audio controls><source src="Assets/hitman_doorknob.wav" type="audio/ogg">Your browser does not support the audio element.</audio>
+          <audio controls><source src="Assets/hitman_doorknob.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
         <h4>Hitman Leaving</h4>
-          <audio controls><source src="Assets/hitman_softdoorshut.ogg" type="audio/ogg">Your browser does not support the audio element.</audio>
+          <audio controls><source src="Assets/hitman_softdoorshut.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
         <br><br>
       </details>
       <details>
@@ -576,7 +576,7 @@ var data = {
     "active":0,
     "reference":0,
     "visible":1,
-    "sound":new Audio('Assets/Doorknob.wav')}
+    "sound":new Audio('Assets/hitman_doorknob.mp3')}
 }
 
 window.temp = 100
@@ -680,7 +680,7 @@ function timerupdate() {//Update wifi timer every second
   var string = "###########################"
   var a = "[" + data.wifi.timer[2] + string.slice(data.wifi.timer[2].length) + String(Math.floor(data.wifi.timer[0]/60)).padStart(2,'0') + ":" + String(Math.floor(data.wifi.timer[0]%60)).padStart(2,'0') + string + "]";
   var b = Math.ceil((data.wifi.timer[0]/data.wifi.timer[1]*100)/(100/a.length))
-  if (data.wifi.timer[0] == 60) {var audio = new Audio('Assets/MotionSensorAlert.oga');audio.play();};
+  if (data.wifi.timer[0] == 60) {var audio = new Audio('Assets/general_motionsensoralert.mp3');audio.play();};
   document.getElementById("wifitimer").innerHTML = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b)
   data.wifi.timer[0] -= 1
 }
@@ -864,7 +864,7 @@ function setup() {//Prepare website lists and appearance
 }
 
 function click() {//Play click sound
-  var audio = new Audio('Assets/MouseClick.oga');audio.play();
+  var audio = new Audio('Assets/general_mouseclick.mp3');audio.play();
 }
 
 function sitecycle() {//Temporary dev function (Cycle through clickpoint guides)
