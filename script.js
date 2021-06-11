@@ -346,6 +346,7 @@ var sitedata = {
 	    <li>Keys and wiki links can exist on the same page, and can also both exist in the source code of a website at the same time.</li>
 		<li>Forgive me will never contain a key, but can contain a wiki link.</li>
 		<li>Rule of Three can never contain a key.</li>
+		<l1>Keys and key clickpoints will never appear inside PGP blocks, but they can be in the opening or closing text.</li>
 	  </ul>`},
 	{"name":`<i class="fa fa-circle fa-lg"></i> Events`,"content":`
     <h1>Events</h1>
@@ -547,7 +548,7 @@ var sitedata = {
         <p>Hacking a wpa or wpa2 network starts similarly to wep networks. First type in 'scan' to see your available networks, then proceed to type 'inject &lt;The BSSID of the network you want to hack&gt; &lt;The channel of the network&gt; &lt;The amount of packets to inject&gt;'. This will proceed to inject the specified number of packets into the target network. Keep in mind that sending too many packets in a certain amount of time will result in a network being knocked offline for a period of time. To avoid this, try to extend the amount of injections over an extended period of time. (The exact injection rates are included in the wifi block) To complete the cracking of a wpa or wpa2 network, type 'crack &lt;The BSSID of the network you want to hack&gt; &lt;The channel of the network&gt;' which will procide you with the networks password upon completion.</p>
       </details>
       <p>[Skybreak allows you to access a history of commands by pressing the up and down arrow keys.]</p>`},
-    {"name":`<i class="fa fa-circle fa-lg"></i> Exploits`,"content":`
+    {"name":`<i class="fa fa-circle fa-lg"></i> Exploits & Bugs`,"content":`
     <h1>Exploits</h1>
       <details>
         <summary><h3>WPA2 Quick Crack</h3></summary>
@@ -609,16 +610,17 @@ var sitedata = {
         <summary><h3>Quick Navigation</h3></summary>
         <p>Quick Back Navigation is a simple exploit that exists for an unknown reason. When you press backspace on the A.N.N. browser it will take you to a visual copy of the website that you were in last. Pressing backspace subsequent times will take you to the next site in your browsing history and so on. While the copies you will see look identical to the webpages you visited, they will not have clickpoints and you can not open their source code.</p>
 		<p>Additionally, this exploit can cause a bug on websites featuring recurring audio. If used on those pages their audio will continue to play after you leave the website. To fix the bug, you must close A.N.N. while you are loading into the website whose audio is glitched. Doing so should fix the bug.</p>
-      </details>`},
+      </details>
+	  <details>
+        <summary><h3>The Copy Bug</h3></summary>
+        <p>A nototiously annoying bug is the Copy Bug. It is triggered by using alt+tab while the game is not paused. When this bug is active all attempts to copy website content such as keys will fail. To fix the bug you must click inside the A.N.N. browser while holding alt</p>
+      </details>
+	  `},
 	{"name":`<i class="fa fa-circle fa-lg"></i> Miscellaneous`,"content":`
     <h1>Miscellaneous</h1>
       <h2>Miscellaneous Info</h2>
-        <p>The Wiki 1 link and a key can be on the same page, however there can never be a key on Rule of Three.</p>
         <p>Contrary to many popular myths, there are only one naturally occuring ambient sound cue that has meaning. This sound cue is the Hitman lockpicking your door.</p>
-        <p>Keys or key clickpoints can never appear inside PGP blocks, but they can be in the opening or closing text.</p>
-        <p>Forgive me will never contain keys.</p>
         <p>It is not possible to hide from the police. Once they are at your door they will stay there until you approach them.</p>
-        <p>In the result that your flashlight runs out of power, you can never use the flashlight again. It is reccomended you restart if this happens.</p>
         <p>When placing remote VPNs, both walls of each hallway have identical color zones.</p>
       <h2>Fun Facts</h2>
         <p>There is actually a page on Bug Friendly in which nudity is shown because it was improperly programmed.</p>
