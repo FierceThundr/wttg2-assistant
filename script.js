@@ -271,101 +271,109 @@ var sitedata = {
       <p>The information block is the background of this tool and provides various features. These include project credits and resources, guides for threats and important skills, customization settings, and an area in which you can find ways provide feedback on this project.</p>
     </details>
     <p><b>With that, you have everything you need to know to use this tool, get on out there and beat this game!</b></p>`},
-    {"name":`<i class="fa fa-circle fa-lg"></i> The Basics`,"content":`
-    <h1>The Basics</h1> 
-      <p>Welcome to the Game II has what seems to be a very simple task at first, just search the Deep Web for 8 hidden hashes and generate 250 DosCoin in the process. But there is a reason the achievement for beating the game is named "The 1%". But I don't want to get ahead of myself, Let's start from the bottom.</p>
+    {"name":`<i class="fa fa-circle fa-lg"></i> The Game`,"content":`
+    <h1>The Game</h1>
+	  <p>Welcome to the Game II is a deep web horror game where you are tasked with finding a female reporter kidnapped for looking into a group on the deep web suspected of horrific activity. To save her you must search the games websites to find 8 keys and gather 250 DosCoin to find her location. During this task you will face up against many killers, threats, and challenges. Perhaps you will be able to power through and join the 2%.</p>`},
+	{"name":`<i class="fa fa-circle fa-lg"></i> The Computer`,"content":`
+    <h1>The Computer</h1>
+      <p>For the majority of the game, you will be stationed at your computer completing various tasks to aid in the generation of DosCoin, searching for keys, and exploring the deep web. To aid in this task, you have many programs and features on your within the computer.</p>
       
       <details>
-        <summary><h3>The Computer</h3></summary>
-        <p>For the majority of the game, you will be stationed at your computer completing various tasks related to DosCoin generation and hash searching. To aid in this task, you have many files and programs on your desktop.</p>
+        <summary><h4>A.N.N.</h4></summary>
+        <p>A.N.N (Anonymous Node Network) is your Deep Web browser which you will be utilizing to find keys and navigate the web. It is mostly self explainatory to operate... You have the arrows navigate forward or back a page, the home button to jump to wiki #1, the refresh button which refreshes the current site, and there is one more button on the right of the URL bar that opens the source code of the current website as well. In addition to wiki #1, two more can be found via searching pages. If you wish to know how to search the Deep Web, that is covered in a separate section.</p>
+      </details>
+          
+      <details>
+        <summary><h4>ZeroDay Market</h4></summary>
+        <p>The ZeroDay Market can be used throughout the game to buy critical software and tools to aid in defending yourself or searching the Deep Web. These include applications that allow you to crack into other wifi networks, Backdoor Hacks that let you earn money from counter-hacking, and a Key Cue widget which helps you search for keys on the deep web.</p>
+        <p><i>(Specific item information can be found under the Markets guide)</i></p>
+      </details>
+          
+      <details>
+        <summary><h4>Shadow Market</h4></summary>
+        <p>The Shadow Market can be used throughtout the game to buy important hardware items that will be useful throughout the game. Among the items sold are Motion Sensors which can be placed in the hallway, Remote VPNs that can be used to generate DosCoin, and better Wifi Dongles to help you search the Deep Web.</p>
+        <p><i>(Specific item information can be found under the Markets guide)</i></p>
+      </details>
+          
+      <details>
+        <summary><h4>Notes</h4></summary>
+        <p>This section is quite self-explanatory. It is the in-game note taking program that can be used to store keys, passwords, or wiki addresses.</p>
+      </details>
+          
+      <details>
+        <summary><h4>Noir Tunnel</h4></summary>
+        <p>The Noir Tunnel is your ultimate goal at the end of the game. To beat the game, you must enter the compiled master key into the tunnel and pay 250 DosCoin. At which point ███ ████ ████ ████ ███ ███ ████ ██ █████ ████ ███ █████ ██████.</p>
+      </details>
         
-        <details>
-          <summary><h4>A.N.N</h4></summary>
-          <p>A.N.N (Anonymous Node Network) is your Deep Web browser which you will be utilizing to find keys and navigate the web. It is mostly self explainatory to operate... You have the arrows to go forward or back a page, the home button to jump to wiki #1, the refresh button, and there is one more button on the right of the URL bar that opens the source code of the current website as well. In addition to wiki #1, two more can be found via searching pages. If you wish to know how to search the Deep Web, it will be covered in a separate section below.</p>
-        </details>
-          
-        <details>
-          <summary><h4>ZeroDay Market</h4></summary>
-          <p>The ZeroDay Market can be used throughout the game to buy critical software and tools to aid in defending yourself or searching the Deep Web. The following list includes all available items...</p>
-          <ul>
-            <li>Skybreak is a wifi cracking tool. The basic installation only allows for WEP cracking, but can be upgraded</li>
-            <li>Skybreak WPA lib is a library that can be added to Skybreak to allow the cracking of WPA networks</li>
-            <li>Skybreak WPA2 lib is a library that can be added to Skybreak to allow the cracking of WPA2 networks</li>
-            <li>Backdoor Hacks are cheap consumables that reward DosCoin for successfully defending against hacks (Excluding ZoneWall)</li>
-            <li>Motion Alert is a simple tool that pairs with an item purchasable from the Shadow Market. It will create an auditory alert when a motion sensor is tripped.</li>
-            <li>VPNs can be used to suppress hacks and can be toggled at will to control whether hacks can occur. Additionally, buying more levels makes it more effective.</li>
-            <li>Key Cue is a straightforward, but important tool for searching. It is an add-on to A.N.N that will put a key symbol on the bottom right corner of the browser if it detects a key on the current page (or sub-page).</li>
-            <li>VWipes can be used to scan for viruses and remove them. Viruses can be obtained when hacks are failed and can be very problematic.</li>
-          </ul>
-        </details>
-          
-        <details>
-          <summary><h4>Shadow Market</h4></summary>
-          <p>The Shadow Market can be used throughtout the game to buy important hardware items that will be useful throughout the game. The items sold are as follows...</p>
-          <ul>
-            <li>Wifi Dongle Level 2 is a more capable wifi dongle that allows faster browsing and access to additional wifi networks.</li>
-            <li>Wifi Dongle Level 3 is the most capable wifi dongle in the game that allows faster browsing and access to all wifi networks.</li>
-            <li>Motion Sensors are tools that can be used to detect movement outside of your apartment. These items are only effective on the hitman.</li>
-            <li>Remote VPNs are DosCoin generators that can be placed around the building.</li>
-            <li>Police Scanner is a device that allows you to listen in on police communications. If you know what to listen for it can help predict when the police may attempt to raid you.</li>
-            <li>LOLPY Disc is a tool that can be used to hack the lobby computer to access the tenant database. It is used soley for the Doll Maker side quest.</li>
-            <li>Blue Whisper is a device that allows you to remotely hear sounds produced by your PC. Examples being the Motion Alert warning and website sounds.</li>
-          </ul>
-        </details>
-          
-        <details>
-          <summary><h4>Notes</h4></summary>
-          <p>This section is quite self-explanatory. It is the in-game note taking program that can be used to store keys, passwords, or wiki addresses.</p>
-        </details>
-          
-        <details>
-          <summary><h4>Noir Tunnel</h4></summary>
-          <p>The Noir Tunnel is your ultimate goal at the end of the game. To beat the game, you must enter the compiled master key into the tunnel and pay 250 DosCoin. At which point ███ ████ ████ ████ ███ ███ ████ ██ █████ ████ ███ █████ ██████.</p>
-        </details>
-        
-        <details>
-          <summary><h4>Skybreak</h4></summary>
-          <p>Skybreak is a wifi cracking tool that can be purchased from the ZeroDay Market to hack into additional wifi networks. Additionally, libraries can be purchased to allow cracking of better networks. If you want to know how to crack networks, visit the cracking guide.</p>
-        </details>
-          
-        <details>
-          <summary><h4>The Status Bar</h4></summary>
-          <p>The Status Bar at the top of the computer screen includes many menus and buttons you will use to be able to utilize throughout the game. Going from left to right you have...</p>
-          <ul>
-            <li>The DosCoin icon shows you your current balance of DosCoin. Additionally, clicking on it will allow you to view information about placed remote VPNs and their performance. It lists each VPNs yield and time between yields.</li>
-            <li>The Backdoor Hack label lists how many backdoor hacks you currently have installed.</li>
-            <li>In the center you can see the in-game time displayed. It runs two times faster than real life time.</li>
-            <li>The VPN Icon allows you to view and manage purchased any VPNs.</li>
-            <li>The Motion Alert icon can be used to view and monitor any placed motion sensors. In addition, the icon will blink if a motion sensor is triggered and Sound Alert is pruchased.</li>
-            <li>The Wifi Icon will be quite familiar to those who use PCs. It allows you to view nearby networks and log into them.</li>
-            <li>The Sound Icon allows you to mute your PCs volume. An important note, doing this will mute ALL SOUND produced by your PC at the same time.</li>
-            <li>The Power Icon can be clicked to shutdown your PC.</li>
-          </ul>
-        </details>
-        <br>
-      </details>
-      <details>   
-        <summary><h3>The Apartment</h3></summary>
-        <p>When inside the computer you can right click to exit the computer where you will be able to look around and see your desk. Here you can reboot your pc by interacting with your PC on the right of your desk. By right clicking again you will be able to get up and travel around your room. While there is not much to see, there are some important things to note. First, your bedside table has a flashlight which you will need later in the game. Second, the four corners of your room each have different sets of lights with their own switch. While their purpose will not be discussed here, you should keep note of them. Third, if you look on the left of your desk you will see your basic wifi dongle. It can be picked up and moved between 4 spots in your room, these spots include the window, the desk, the bedside table, and the table on your balcony. Moving your dongle to a new location will change the list of networks available on your PC, this can be used to refresh your list with new networks. Finally, the closet next to the balcony and the bathroom shower can be used as hiding places. Be mindful if you have not turned off your mic in your game settings as the game will listen to it and will deem you not truly hidden if you are making noise. These hiding places are relevant for a threat called the hitman that is discussed in another guide.</p>
-      </details>
       <details>
-        <summary><h3>The Building</h3></summary>
-        <p>Once you exit your apartment you will be in a hallway located on the 8th floor. Upon entering the stairwell, you will be able to freely travel up and down to other floors. The various other floors are relevant to the Doll Maker side quest and the placement of Remote VPNs. The most important location you can access via the stairwell is the lobby which can be found on the bottom floor. There you can access the lobby computer and exit the front doors to visit the alley. All Shadow Market purchases will be shipped by drone to the end of the alley. Additionally, there is a small closet located on the right side of the alleyway, it can be used in the event a threat called the Breather becomes active.</p>
+        <summary><h4>Skybreak</h4></summary>
+        <p>Skybreak is a wifi cracking tool that can be purchased from the ZeroDay Market to hack into additional wifi networks. Additionally, libraries can be purchased to allow cracking of better networks. If you want to know how to crack networks, visit the Cracking guide.</p>
       </details>
+          
       <details>
-        <summary><h3>Basic Skills</h3></summary>
-        <br>
-        <details>
-          <summary><h4>Searching for Keys</h4></summary>
-          <p>Searching for hashes and additional Wikis is a very important skill you will need to learn to beat this game. Keys always have a number followed by a dash and a random string of 12 alphanumeric characters. 1 - aWNrIGJyb3du It is quite easy to these once you know where to look. Firstly, keys can be hidden in plain sight, this of course is the easiest and most straightforward method of which they can be hidden on a page. Secondly, keys and the link to Deep Wiki 2 can be hidden in a pages source code. This method can be more unpredictable, but can be quite easy if you know what to look for. <i>(Additionally, the link to wiki 2 can only be found on the first page of every website)</i> All keys or links hidden in this way will be hidden inside of an HTML comment which looks like the following. &lt;!-- 1 - aWNrIGJyb3du --&gt; Finally, keys may be hidden in a site behind a click point. This method is the hardest as it requires you to find and click on a certain word or picture in a site to reveal keys. To do this, you may either memorize the locations or use a guide. Once you find a functional clickpoint a sound will be played and either the key will appear on the page or as a file on your desktop.</p>
-        </details>
-        <br>
-      </details>
-      <details>
-        <summary><h3>Events</h3></summary>
-        <p>Finally, there are two events that you may encounter during the time you play. The first is hacks, these are small minigames you will be given at random. They have dedicated sections in this guide. The second is blackouts, during these events your PC will shut down and your lights will go off. To fix the lights you must navigate to the staiwell and enter the red door on the left to flip the breaker back on.</p>
-      </details>
-        `},
+        <summary><h4>The Status Bar</h4></summary>
+        <p>The Status Bar at the top of the computer screen includes many menus and buttons that can be useful throughout the game. The following is what the icons do from left to right.</p>
+        <ul>
+          <li>The DosCoin icon shows you your current balance of DosCoin. Additionally, clicking on it will allow you to view information about placed remote VPNs and their performance. It lists each VPNs yield and seconds between yields.</li>
+          <li>The Backdoor Hack label lists how many backdoor hacks you currently have installed.</li>
+          <li>In the center you can see the in-game time displayed. It runs two times faster than real life time.</li>
+          <li>The VPN Icon allows you to view and manage purchased any VPNs.</li>
+          <li>The Motion Alert icon can be used to view and monitor any placed motion sensors. In addition, the icon will blink if a motion sensor is triggered and Sound Alert is pruchased.</li>
+          <li>The Wifi Icon will be quite familiar to those who use PCs. It allows you to view nearby networks and log into them.</li>
+          <li>The Sound Icon allows you to mute your PCs volume. An important note, doing this will mute all sounds produced by your PC.</li>
+          <li>The Power Icon can be clicked to shutdown your PC.</li>
+        </ul>
+      </details>`},
+	{"name":`<i class="fa fa-circle fa-lg"></i> The Building`,"content":`
+	<h1>The Building</h1>
+      <p>While quite a good amount of your time will be spent sitting at your computer, there are many important things you should know about your apartment and the building as a whole.</p>
+      
+      <p>When inside the computer you can right click to exit the computer at which point you will be able to look around and see your desk. Here you can boot your pc by interacting with your PC on the right of your desk if it is powered down. By right clicking again you will be able to get up and travel around your room. While there is not much to see, there are some important things to note.</p>
+      <ol>
+        <li>Your bedside table has a flashlight which will be useful later in the game. </li>
+        <li>Your room has various lights each with their own switch. While their purpose will not be discussed in this guide, you should keep note of them. </li>
+        <li>If you look on the left of your desk you will see your wifi dongle. It can be picked up and moved between 4 spots in your room, these spots include the window, the desk, the bedside table, and the table on your balcony. Moving your dongle to a new location will change the list of networks available on your PC. </li>
+        <li>The closet next to the balcony and the shower located in the bathroom can be used as hiding places. Be mindful if you have not turned off your mic in your game settings as the game will listen to it and will deem you not truly hidden if you are caught making noise. These hiding places are relevant for a threat called the Hitman that is discussed in its own guide.</li>
+      </ol>
+
+      <p>Once you exit your apartment you will be in a hallway located on the 8th floor. Upon entering the stairwell, you will be able to freely travel up and down to other floors. The various other floors are relevant to a certain threat and the placement of Remote VPNs. The most important location you can access via the stairwell is the lobby which can be found on the bottom floor. Once there, you access the lobby computer and exit the front doors to visit the alley. All Shadow Market purchases will be shipped by drone to the end of the alley. Additionally, there is a small closet located on the right side of the alleyway, it can be used to counter a threat local to the alley if they become active.</p>`},
+	{"name":`<i class="fa fa-circle fa-lg"></i> Searching`,"content":`
+	<h1>Searching</h1>
+      <p>An important skill for the game includes finding keys hidden within websites on the Deep Web and you will need to learn it to beat the game. Keys can be found in a variety of ways and are always a number followed by a dash and a random string of 12 alphanumeric characters. 1 - aWNrIGJyb3du It is quite easy to find these after you know where to look. Firstly, keys can be hidden in plain sight, this of course is the easiest and most straightforward method of which they can be hidden on a page. Secondly, keys and the link to Deep Wiki 2 can be hidden in a pages source code. This method can be more unpredictable, but can be quite easy if you know what to look for. All keys or links hidden in this way will be hidden inside of an HTML comment which looks like the following. &lt;!-- 1 - aWNrIGJyb3du --&gt; Finally, keys may be hidden in a site behind a click point. This method is the hardest as it requires you to find and click on a certain word or picture in a site to reveal keys. To do this, you may either memorize the locations or use a guide. Once you find a functional clickpoint a sound will be played and either the key will appear on the page or as a file on your desktop.</p>
+      <p>In addition to finding keys, you will also need to find two hidden wiki pages to complete the game. Fortunately finding wikis is a much easier task to complete. The link to wiki two can be found on a website within the first wiki. It will always be hidden within the source code of the first page of the website it is hidden on. Unlike the link to wiki two, the link to wiki three is always found on the website Rule of Three which is always located on the second wiki. To get the key, the site requires you to complete a trial and error memory puzzle. This puzzle is best completed earlier in a run since the pattern will randomize every time the page is reloaded.</p>`},
+	{"name":`<i class="fa fa-circle fa-lg"></i> Events`,"content":`
+    <h1>Events</h1>
+      <p>During your playthrough you will encounter two randomevents in addition to the killers attempting to kill you.</p>
+      <p>The first event is the blackout. This event is quite easy to beat as you must walk to the end of the hallway and turn the circuit breaker back on in the maintenance closet. This event requires that the player have the flashlight available to be able to navigate the pitch black hallway. It is important to keep in mind that the flashlight has a limited battery life and cant be recharged in the event that it dies. While the event isnt deadly by itself, Noir usually spawns during the event since the darkness allows them to be more active. It is useful to be cautious due to this fact.</p>
+      <p>The second event is hacks. These events are randomly occuring minigames which you must beat in order to avoid losing notes or DosCoin. In addition, hacks can be used as an easy method of DosCoin in conjunction with a Backdoor Hack. If you want more details about how hacks function, please refer to the hacking guide.</p>`},
+	{"name":`<i class="fa fa-circle fa-lg"></i> The Markets`,"content":`
+    <h1>The Markets</h1>
+      <p>During your playthrough there are many useful items can be purchased to help with evading threats, speeding up your internet, or generating DosCoin. The following is a list of the items available for purchase.</p>
+      
+      <h3>ZeroDay Market</h3>
+      <p>The ZeroDay Market sells useful software and tools for use on your computer.</p>
+      <ul>
+        <li><b>Skybreak</b> The basic installation of Skybreak which allows for the cracking of WEP security networks. Can be upgraded with Skybreak libraries.</li>
+        <li><b>Skybreak WPA lib</b> An upgrade to the basic installation of Skybreak which allows for the cracking of WPA security networks.</li>
+        <li><b>Skybreak WPA2 lib</b> An upgrade to the basic installation of Skybreak which allows for the cracking of WPA2 security networks.</li>
+        <li><b>Backdoor Hack</b> Cheap consumables that reward DosCoin for successfully defending against hack events. (Excluding ZoneWall)</li>
+        <li><b>Motion Alert</b> An addon to Motion Sensors. It will create an auditory alert when a placed Motion Sensor is tripped.</li>
+        <li><b>VPN Level #</b> A variety of VPNs that can be purchased to suppress hacks. They can also be disabled at will to control whether hacks can occur. Becomes more effective for each level purchased.</li>
+        <li><b>Key Cue</b> An addon to the A.N.N. browser which detects if a key is on the currently loaded page. It will put a key symbol on the bottom right corner of the browser if it detects a key.</li>
+        <li><b>VWipes</b> VWipes can be purchased to scan for viruses and remove them. VWipes are one use and another must be purchased every time you wish to scan your computer. Viruses can be obtained when hacks are failed and can tamper with your DosCoin and shutdown your computer.</li>
+      </ul>
+      
+      <h3>Shadow Market</h3>
+      <p>The Shadow Market sells useful hardware and tools to aid in various tasks. All purchases here will be delivered to the buildings alley for pickup.</p>
+      <ul>
+        <li><b>Wifi Dongle Level 2</b> A more capable wifi dongle that allows for faster web browsing and access to additional wifi networks.</li>
+        <li><b>Wifi Dongle Level 3</b> The most capable wifi dongle in the game that allows for faster browsing and access to all available wifi networks.</li>
+        <li><b>Motion Sensors</b> Motion Sensors can be used to detect movement outside of your apartment. However, they are only effective on the Hitman.</li>
+        <li><b>Remote VPNs</b> DosCoin generators that can be placed around the building. They should be placed in locations in which they appear green for best performance.</li>
+        <li><b>Police Scanner</b> A device that allows you to listen in on police communications. It can allow you to tell when the police are planning on arriving at your apartment.</li>
+        <li><b>LOLPY Disc</b> A tool that can be used to hack the lobby computer to access the tenant database. It is used to complete the Doll Maker quest.</li>
+        <li><b>Blue Whisper</b> A device that allows you to remotely hear sounds produced by your PC.</li>
+      </ul>`},
     {"name":`<i class="fa fa-circle fa-lg"></i> The Police`,"content":`
     <h1>The Police</h1>
       <p>The police are the easiest threat in the game to avoid. To avoid them you must switch wifi networks before you exceed their respective tracking timers. Though if you forget to switch, the game only has a certain chance to trigger the swat team to break down your door based on the network you stayed on. <i>(If they are triggered, they will wait until you approach your front door or the stairwell door of floor eight before causing a game over.)</i> Despite this, you should avoid gambling on that chance.</p> <p>The task of avoiding the cops can be made easier by purchasing skybreak from the ZeroDay Market and cracking higher security networks. Not only will they give you more time to breath, they often perform better.</p>
