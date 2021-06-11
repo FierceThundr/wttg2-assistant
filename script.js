@@ -349,7 +349,6 @@ var sitedata = {
 	{"name":`<i class="fa fa-circle fa-lg"></i> The Markets`,"content":`
     <h1>The Markets</h1>
       <p>During your playthrough there are many useful items can be purchased to help with evading threats, speeding up your internet, or generating DosCoin. The following is a list of the items available for purchase.</p>
-      
       <h3>ZeroDay Market</h3>
       <p>The ZeroDay Market sells useful software and tools for use on your computer.</p>
       <ul>
@@ -362,7 +361,6 @@ var sitedata = {
         <li><b>Key Cue</b> An addon to the A.N.N. browser which detects if a key is on the currently loaded page. It will put a key symbol on the bottom right corner of the browser if it detects a key.</li>
         <li><b>VWipes</b> VWipes can be purchased to scan for viruses and remove them. VWipes are one use and another must be purchased every time you wish to scan your computer. Viruses can be obtained when hacks are failed and can tamper with your DosCoin and shutdown your computer.</li>
       </ul>
-      
       <h3>Shadow Market</h3>
       <p>The Shadow Market sells useful hardware and tools to aid in various tasks. All purchases here will be delivered to the buildings alley for pickup.</p>
       <ul>
@@ -376,8 +374,19 @@ var sitedata = {
       </ul>`},
     {"name":`<i class="fa fa-circle fa-lg"></i> The Police`,"content":`
     <h1>The Police</h1>
-      <p>The police are the easiest threat in the game to avoid. To avoid them you must switch wifi networks before you exceed their respective tracking timers. Though if you forget to switch, the game only has a certain chance to trigger the swat team to break down your door based on the network you stayed on. <i>(If they are triggered, they will wait until you approach your front door or the stairwell door of floor eight before causing a game over.)</i> Despite this, you should avoid gambling on that chance.</p> <p>The task of avoiding the cops can be made easier by purchasing skybreak from the ZeroDay Market and cracking higher security networks. Not only will they give you more time to breath, they often perform better.</p>
+      <p>The police are the easiest threat in the game to avoid. To avoid them you must switch wifi networks before you exceed their respective tracking timers. Though if you forget to switch, the game only has a certain chance to trigger the swat team to break down your door based on the network you stayed on. <i>(If they are triggered, they will wait until you approach your front door or the stairwell door of floor eight before causing a game over.)</i> Despite this, you should avoid gambling on that chance. Luckily, the task of avoiding the cops can be made easier by purchasing skybreak from the ZeroDay Market and cracking higher security networks. Not only will they give you more time to breath, they often perform better.</p>
       <p><i>(In 1337 mode the tracking rates are shortened which allow the police to find you faster and with a garunteed chance of success)</i></p>
+	  <p>The Police Scanner is an optional device that can be purchased to know when the police are close to tracing. When turned on, the police scanner will occasionally intercept and output random police communications. Certain phrases indicate that they are close to tracing you. <i>(Sound cues can be found below)</i></p>
+      <details>
+        <summary><b>The Police Scanner Sound Cues</b></summary>
+        <h4>Morse Code</h4>
+          <audio controls><source src="Assets/police_scanner_real1.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+        <h4>1 11 1 10</h4>
+          <audio controls><source src="Assets/police_scanner_real2.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+		<h4>We need your expertise on that</h4>
+          <audio controls><source src="Assets/police_scanner_real3.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+        <br><br>
+      </details>
       <details>
         <summary><b>Notes</b></summary>
         <ul>
@@ -392,7 +401,7 @@ var sitedata = {
       <p>The Hitman is a very difficult enemy to beat due to various reasons, but let's start from the bottom.</p>
       <ol>
         <li>Remember to always lock your door. The Hitman is the only threat this mechanic is relevant to, but you should practice doing this regularly.</li>
-        <li>Make sure that you can hear the lockpicking sound cue. <i>(Which can be found below)</i> Normally this is the only way to identify that the hitman is at your door and preparing to break in.</li>
+        <li>Make sure that you can hear the lockpicking sound cue. Normally this is the only way to identify that the hitman is at your door and preparing to break in. <i>(Sound cue can be found below)</i></li>
         <li>Purchase and place motion sensors in addition to buying sound alert. This will give you a more effective method to know when the hitman is coming to your door in addition to giving you more time to hide. <i>(The motion sensors should be placed on the wall on both ends of the hallway, as the hitman can approach from both sides of the hallway)</i></li>
       </ol>
       <p>When you know the Hitman is currently preparing to barge in you must turn of your computer and hide in either the shower in the bathroom or the closet near your balcony. In both cases you must be quiet as to not alert the hitman. <i>(This is only relevant if you have the mic enabled in your settings)</i> Also note that if you do not turn off the computer the hitman can erase notes saved into the games internal notepad in addition to stealing portions of your DosCoin balance. During the time he is in your apartment, stay in your hiding place until you hear him leave. <i>(Sound can be found below)</i> You can affect the time he is in your apartment by turning off more lights in the seconds before you hide and prior.</p>
@@ -519,7 +528,81 @@ var sitedata = {
         </ul>
       </details>
 	`},
-    {"name":`<i class="fa fa-circle fa-lg"></i> Miscellaneous`,"content":`
+    {"name":`<i class="fa fa-circle fa-lg"></i> Cracking`,"content":`
+    <h1>Cracking</h1>
+      <p>An important skill for evading police and extending your available breathing room is cracking. Cracking can be performed after purchasing SkyBreak from the ZeroDay Market. To hack a wifi network, you must first open the application and proceed to type the name of the package you would like to run. ("wep","wpa","wpa2") By default, a basic installation will only include the ability to access the WEP library.</p> <p><b>[You do not need to be connected to a wifi network to use SkyBreak]</b></p>
+      <details>
+        <summary><h3>WEP</h3></summary>
+        <p>Wep networks are the weakest security network you can crack in the game. They will give you slightly improved times over most free networks available. To hack a WEP network you must first type 'scan' to see the currently available wifi networks. Then after choosing the network you wish to crack, type the command 'probe &lt;The BSSID of the network you want to hack&gt; 1 1000'. Skybreak will then find the open port on your chosen wifi. You can then crack the wifi by typing the command 'crack &lt;The BSSID of the network&gt; &lt;The channel of the network&gt; &lt;The wifi networks open port&gt;' which will provide you with the networks password upon completion.</p>
+      </details>
+      <details>
+        <summary><h3>WPA & WPA2</h3></summary>
+        <p>Hacking a wpa or wpa2 network starts similarly to wep networks. First type in 'scan' to see your available networks, then proceed to type 'inject &lt;The BSSID of the network you want to hack&gt; &lt;The channel of the network&gt; &lt;The amount of packets to inject&gt;'. This will proceed to inject the specified number of packets into the target network. Keep in mind that sending too many packets in a certain amount of time will result in a network being knocked offline for a period of time. To avoid this, try to extend the amount of injections over an extended period of time. (The exact injection rates are included in the wifi block) To complete the cracking of a wpa or wpa2 network, type 'crack &lt;The BSSID of the network you want to hack&gt; &lt;The channel of the network&gt;' which will procide you with the networks password upon completion.</p>
+      </details>
+      <p>[Skybreak allows you to access a history of commands by pressing the up and down arrow keys.]</p>`},
+    {"name":`<i class="fa fa-circle fa-lg"></i> Exploits`,"content":`
+    <h1>Exploits</h1>
+      <details>
+        <summary><h3>WPA2 Quick Crack</h3></summary>
+        <p>Hacking a WPA or WPA2 takes quite a lot of time due to the requirement to inject these networks before attempting a crack. This can cause a lot of grief both by the innate time cost and the consequences for failure. However, an exploit has been discovered that can easily skip this part of the process by a couple simple steps.</p>
+        <ol>
+          <li>Open skybreak and find the BSSID of the WPA or WPA2 network you wish to crack.</li>
+          <li>Type and copy the following command 'probe &lt;Target network BSSID&gt; 1 1'.</li>
+          <li>Probe and begin to crack a WEP network.</li>
+          <li>Before the crack completes paste the command from the previous steps</li>
+        </ol>
+        <p>If you completed the steps correctly SkyBreak will display an error related to the port range as the crack is occuring. It will then complete and display the password for the target network</p>
+      </details>
+      <details>
+        <summary><h3>Window Key Cue</h3></summary>
+        <p>The window to left of Clint's desk opens based on the games difficulty point system. Due to how this system works, it can be exploited as a single use key cue. To put it simply... If you enter a site and the window opens immediately afterwards, you can say with certainty that the website you enters contains a key somewhere. <i>(Unlike the proper key cue, this trick does not give you a precise page)</i> Additionally, this trick can also be used to rule out websites if you understand the system behind how it works. <i>(If you do not know how the system works refer to the dropdown below)</i> If you search through wiki 1 and successfully discover the locations of both keys before 1AM, you can go through the sites on wiki2 and eliminate any site for which the window does not open. At the same time, when it finally opens you know the site you just entered has a key located on it somewhere.</p>
+        <details>
+          <summary><h4>Advanced Explanation</h4></summary>
+          <p>The window opens based off of a system of difficulty points in the game, this system has a couple of factors that feed into it. For every key you find, you gain one difficulty point. If you are after 1 AM you get another. Lastly, you can gain a difficulty point for every 3 forced hacks. Whenever you get 3 difficulty points in total, the window of your apartment will open. However, in 1337 mode you automatically start with 8 difficulty points which prevents the use of this strategy in that mode.</p>
+        </details>
+        <br>
+      </details>
+      <details>
+        <summary><h3>Force Hacking</h3></summary>
+        <p>Force hacking is a strategy you can use to trigger additional hacks by going to a dead site and repeatedly refreshing. To perform a force hack you simply need to find a dead website and refresh it repeatedly. Unfortunately in the newest patch this trick has been significantly nerfed. In older patches you can attempt force hacks every second, while in the newest patch the cooldown has been raised to 30 seconds.</p>
+      </details>
+      <details>
+        <summary><h3>God Spot</h3></summary>
+        <p>The god spot is the name given to a strange VPN location known for its strange attributes. It is a red location that gives 277 DosCoin every 2770 seconds. (1 DosCoin every 10 seconds) It is not currently known why this location exists, but it can be a powerful tool to earn a lot of DosCoin if you can find it. The following is a strategy that can be used to find it...</p>
+        <ol>
+          <li>Take a VPN and place it into a red location.</li>
+          <li>After a couple seconds, switch to a new red location.</li>
+          <li>After you have placed the VPN in a handful of red locations, return to the PC and check your DosCoin balance.</li>
+          <li>If your DosCoin balance has significantly changed, you can go back to the last places you searched and trial and error the god spot. Otherwise, you can test other red locations to find it.</li>
+        </ol>
+      </details>
+      <details>
+        <summary><h3>Package Quick Grab</h3></summary>
+        <p>Package Quick Grab is a trick that can be done if you enter the alley and the drone is arriving. If this is the case it is possible to grab the package directly from the drone. This can be done by standing right below where the drone dips down near the entrance to the alley and clicking the button to grab the package.</p>
+        <p><i>(This exploit will also trigger a bug which prevents the delivery of any packages matching the types you snatch from the drone.)</i></p>
+      </details>
+      <details>
+        <summary><h3>Noir Quick Hide</h3></summary>
+        <p>The Noir Quick Hide is a strategy you can use to skip turning your back on the Noir. In the event that a Noir is in your apartment your first instinct may be to turn around. However, you can also open the balcony door to make the Noir disappear as well. <i>(This will not work if the Noir is located on your balcony)</i></p>
+      </details>
+      <details>
+        <summary><h3>Door Clipping</h3></summary>
+        <p>Door Clips are tricks you can perform to cause yourself to go out of bounds and often to useful areas.<i>(Please note that these tricks will not work in the current version of the game and may be unpredictable in all versions)</i></p>
+        <details>
+          <summary><h4>Apartment Closet</h4></summary>
+          <p>To clip out of bounds using the apartments closet, enter the closet and exit. Immediately after exiting the closet turn around and run into the closet doors. If performed correctly you should fall out of bounds and potentially land in the lobby area.</p>
+        </details>
+        <details>
+          <summary><h4>Alley Closet</h4></summary>
+          <p>The alley closet can be used to clip by exploiting the doors hitbox. To do so, open the door from the inside and run to the boxes in the right of the closet. If you sucessfully get behind the door you will fall out of bounds and may land in the partment.</p>
+        </details>
+        <br>
+      </details>
+      <details>
+        <summary><h3>Quick Navigation</h3></summary>
+        <p>This guide has not yet been written</p>
+      </details>`},
+	{"name":`<i class="fa fa-circle fa-lg"></i> Miscellaneous`,"content":`
     <h1>Miscellaneous</h1>
       <h2>Miscellaneous Info</h2>
         <p>The Wiki 1 link and a key can be on the same page, however there can never be a key on Rule of Three.</p>
