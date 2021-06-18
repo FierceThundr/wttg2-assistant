@@ -21,7 +21,7 @@ var sitedata = {
     "Bug Friendly":       {id:100,sub:["Store","FAQ","Noid","Join"]},
     "Cleaning Services":  {id:105,sub:["Burial","Freezing"]},
     "Cry Bitch":          {id:108,sub:["Login"]},
-    "Don't Waste it":     {id:110,sub:["No","Yes"]},
+    "Dont Waste it":      {id:110,sub:["No","Yes"]},
     "Drone Spy":          {id:113,sub:["Videos","SpyForMe"]},
     "EnCrave":            {id:116,sub:["GateOpen"]},
     "Evidence Locker":    {id:118,sub:["Leaked","Confiscated","Contribute","Purchase"]},
