@@ -470,8 +470,18 @@ var sitedata = {
     {"name":`<i class="fa fa-circle fa-lg"></i> The Breather`,"content":`
     <h1>The Breather</h1>
       <p>The Breather is by far the most annoying threat you can encounter in the game. While he is only active in the alley, it is very difficult to ward him off. The difficulty is also aided by the relative rarity of encountering them in the first place.</p>
-      <p>Normally, it is unlikely for the Breather to spawn on a visit to the alley. However, as you get more keys throughout the game, the chance for him to spawn will go up. To know if he is active on a visit to the alley, listen for any abnormal sounds when passing the dumpster. If you hear a sound (or you are not sure) you should go into the nearby door and prepare to brace the door. You can look through the window in an attempt to see him, but you should not let him see you. If he begins to push the door, immediately hold the doorknob. (Keep in mind that this minigame is very strict and will result in death upon failure) After he gives up, you should stop holding to prepare for his next attempt. Repeat this process until he leaves.</p>
-      <details>
+      <p>Normally, it is unlikely for the Breather to spawn on a visit to the alley. However, as you get more keys throughout the game, the chance for him to spawn will go up. To know if he is active on a visit to the alley, listen for any potential sound cues when passing the dumpster. <i>(Sound cues can be found below)</i> If you hear a sound (or you are not sure) you should go into the nearby door and prepare to brace the door. You can look through the window in an attempt to see him, but you should not let him see you. If he begins to push the door, immediately hold the doorknob. (Keep in mind that this minigame is very strict and will result in death upon failure) After he gives up, you should stop holding to prepare for his next attempt. Repeat this process until he leaves.</p>
+ 	  <details>
+        <summary><b>Breather Cues</b></summary>
+        <h4>Laugh</h4>
+          <audio controls><source src="Assets/breather_cue1.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+        <h4>Phone Ring</h4>
+          <audio controls><source src="Assets/breather_cue2.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+		<h4>Footsteps</h4>
+          <audio controls><source src="Assets/breather_cue3.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+        <br><br>
+      </details>
+	  <details>
         <summary><b>Breather spawnrate</b></summary>
         <p>For those interested in the specifics of the Breathers spawnrate, the breather has percentage chance to be spawned which depends on how many keys you've discovered. <i>(This does not require actually finding them)</i> When you have zero or one keys, the Breather will spawn 20% of the times you visit the alley. Upon discovering any keys after your first, he will gain 5% to his chance of spawning up to a maximum of 55%. <i>(When playing in 1337 mode, the Breather will always have a fixed 55% chance of spawning.)</i></p>
       </details>
