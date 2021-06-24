@@ -31,25 +31,6 @@ img {
     max-width: 100%;
 }
 
-a,
-a:focus,
-a:hover,
-a:visited {
-    color: #ffeb3b;
-    font-size: 24px;
-    text-decoration: underline;
-}
-
-a.CPTAG, a.CFTAG,
-a.CPTAG:focus, a.CFTAG:focus,
-a.CPTAG:visited, a.CFTAG:visited,
-a.CPTAG:hover, a.CFTAG:hover {
-    color: inherit !important;
-    font-size: inherit !important;
-    font-weight: inherit !important;
-    text-decoration: inherit !important;
-}
-
 h1 {
     color: #e6dac9;
     font-size: 24px;
