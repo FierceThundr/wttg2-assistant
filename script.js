@@ -692,13 +692,15 @@ function Full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v);};retu
 //=============================Wiki Functions
 //=============================
 function wikiinput(content) {//Update wiki data from input field
-  var table = document.getElementById("wiki" + data.wiki.current + "list");
   document.getElementById("wikidata").value = "";
   if (content.length == 1) {return;}
-  for (var y = table.rows.length - 1; y > 0; y--) {table.deleteRow(-1);}
   var sites = content.match(/(?=^)[\w ]+[!?]?(?= -)/gm)
-  
-  if (sites !== null) {sites.forEach(function (name) {var i = sitedata[name];if (i == undefined) {buttons(name,i,0,0,0,1)} else {var o = i.id;buttons(name,i,0,0,o,2);if (i.sub !== undefined) {i.sub.forEach(function (name,m,n) {o++;buttons(name,i,m,n,o,3)})}}})}
+  if (sites !== null) {
+    var table = document.getElementById("wiki" + data.wiki.current + "list");
+    for (var y = table.rows.length - 1; y > 0; y--) {table.deleteRow(-1);}
+	sites.forEach(function (name) {var i = sitedata[name];if (i == undefined) {buttons(name,i,0,0,0,1)} else {var o = i.id;buttons(name,i,0,0,o,2);if (i.sub !== undefined) {i.sub.forEach(function (name,m,n) {o++;buttons(name,i,m,n,o,3)})}}})
+  }
+
   function buttons(name,i,m,n,o,v) {
     var a = document.getElementById("wiki" + data.wiki.current + "list").insertRow(-1);
     var b = a.insertCell(0);
