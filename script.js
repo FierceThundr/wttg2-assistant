@@ -485,7 +485,7 @@ var sitedata = {
       </details>
 	  <details>
         <summary><b>Breather spawnrate</b></summary>
-        <p>For those interested in the specifics of the Breathers spawnrate, the breather has percentage chance to be spawned which depends on how many keys you've discovered. <i>(This does not require actually finding them)</i> When you have zero or one keys, the Breather will spawn 20% of the times you visit the alley. Upon discovering any keys after your first, he will gain 5% to his chance of spawning up to a maximum of 55%. <i>(When playing in 1337 mode, the Breather will always have a fixed 55% chance of spawning.)</i></p>
+        <p>For those interested in the specifics of the Breathers spawnrate, the breather has percentage chance to be spawned which depends on how many keys you've discovered. <i>(This does not require actually finding them)</i> When you have zero or one keys, the Breather will spawn 20% of the times you visit the alley. Upon discovering any keys after your first, he will gain 5% to his chance of spawning up. However, when you acquire your eighth key, the chance will jump to 65%. <i>(When playing in 1337 mode, the Breather will always have a fixed 65% chance of spawning.)</i></p>
       </details>
       <details>
         <summary><b>Notes</b></summary>
