@@ -385,7 +385,7 @@ var sitedata = {
     <h1>The Police</h1>
       <p>The police are the easiest threat in the game to avoid. To avoid them you must switch wifi networks before you exceed their respective tracking timers. Though if you forget to switch, the game only has a certain chance to trigger the swat team to break down your door based on the network you stayed on. <i>(If they are triggered, they will wait until you approach your front door or the stairwell door of floor eight before causing a game over.)</i> Despite this, you should avoid gambling on that chance.</p>
 	  <p>the task of avoiding the cops can be made easier by purchasing skybreak from the ZeroDay Market and cracking higher security networks. Not only will they give you more time to breath, they often perform better.</p>
-      <p><i>(In 1337 mode the tracking rates are shortened which allow the police to find you faster and with a garunteed chance of success)</i></p>
+      <p><i>(In 1337 mode the tracking rates are shortened which allow the police to find you faster and with a guaranteed chance of success)</i></p>
 	  <p>The Police Scanner is an optional device that can be purchased to know when the police are close to tracing. When turned on, the police scanner will occasionally intercept and output random police communications. Certain phrases indicate that they are close to tracing you. <i>(Sound cues can be found below)</i></p>
       <details>
         <summary><b>Police Scanner Cues</b></summary>
@@ -418,7 +418,7 @@ var sitedata = {
 	  <p>In addition to encountering the Hitman as he pays a visit to your apartment it is possible for them to kill you when returning to your apartment if they spawn when you are not at the apartment. Unfortunately, if this rare event occurs it is impossible to mitigate and you will die the next time you open a hallway door.</p>
       <details>
         <summary><b>Hitman Activation</b></summary>
-        <p>The Hitman activates based off of a system of difficulty points in the game, this system has a couple of factors that feed into it. For every key you find, you gain one difficulty point. If you are after 1 AM you get another. Lastly, you can gain a difficulty point for every 3 forced hacks. <i>(Force hacking can be found in the exploits section)</i> Whenever you get 3 difficulty points in total, the Hitman will activate and the window of your apartment will open. However, in 1337 mode you automatically start with 8 difficulty points.</p>
+        <p>The Hitman activates based off of a system of difficulty points in the game, this system has two factors that feed into it. For every key you find, you gain one difficulty point and you gain a difficulty point for every 3 forced hacks. <i>(Force hacking can be found in the exploits section)</i> Whenever you get 3 difficulty points in total, the Hitman will activate and the window of your apartment will open. However, in 1337 mode you automatically start with 8 difficulty points.</p>
       </details>
       <details>
         <summary><b>Hitman Simulater</b></summary>
@@ -456,7 +456,7 @@ var sitedata = {
         <p>Noir will check if these criteria are met every 120 seconds, and if they are met you will be killed the next time you stand from your desk.</p>
         <details>
           <summary><h4>Difficulty Points</h4></summary>
-          <p>The game has a system of difficulty points that affect how aggressive enemies are. For every key you find, you gain one difficulty point. If you are after 1 AM you get another. Lastly, you can gain a difficulty point for every 3 forced hacks you perform. However, in 1337 mode you automatically start with 8 difficulty points which forces killers to start at maximum aggression.</p>
+          <p>The game has a system of difficulty points that affect how aggressive enemies are. For every key you find, you gain one difficulty point. Additionally, you gain a difficulty point for every 3 forced hacks you perform. However, in 1337 mode you automatically start with 8 difficulty points which forces killers to start at maximum aggression.</p>
         </details>
         <br>
       </details>
@@ -578,7 +578,7 @@ var sitedata = {
         <p>The window to left of Clint's desk opens based on the games difficulty point system. Due to how this system works, it can be exploited as a single use key cue. To put it simply... If you enter a site and the window opens immediately afterwards, you can say with certainty that the website you enters contains a key somewhere. <i>(Unlike the proper key cue, this trick does not give you a precise page)</i> Additionally, this trick can also be used to rule out websites if you understand the system behind how it works. <i>(If you do not know how the system works refer to the dropdown below)</i> If you search through wiki 1 and successfully discover the locations of both keys before 1AM, you can go through the sites on wiki2 and eliminate any site for which the window does not open. At the same time, when it finally opens you know the site you just entered has a key located on it somewhere.</p>
         <details>
           <summary><h4>Advanced Explanation</h4></summary>
-          <p>The window opens based off of a system of difficulty points in the game, this system has a couple of factors that feed into it. For every key you find, you gain one difficulty point. If you are after 1 AM you get another. Lastly, you can gain a difficulty point for every 3 forced hacks. Whenever you get 3 difficulty points in total, the window of your apartment will open. However, in 1337 mode you automatically start with 8 difficulty points which prevents the use of this strategy in that mode.</p>
+          <p>The window opens based off of a system of difficulty points in the game, this system has a couple of factors that feed into it. For every key you find, you gain one difficulty point. Additionally, you gain a difficulty point for every 3 forced hacks. Whenever you get 3 difficulty points in total, the window of your apartment will open. However, in 1337 mode you automatically start with 8 difficulty points which prevents the use of this strategy in that mode.</p>
         </details>
         <br>
       </details>
