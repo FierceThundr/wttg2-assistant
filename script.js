@@ -226,13 +226,13 @@ var sitedata = {
       <p><a href="https://github.com/FierceThundr/wttg2-assistant" target="_blank" rel="noreferrer">Github Page</a></p>
     <h3>Information Sources</h3>
       <p>
-        <a target="_blank" rel="noreferrer">Major Information Assistance ~Nasko222</a>
+        <a target="_blank" rel="noreferrer">Major Information Assistance ~Nasko222</a><br>
         <a href="https://cdn.discordapp.com/attachments/572088008723922954/572089747649069056/Welcome_to_the_Game_II_WiFi_Table.xlsx" target="_blank" rel="noreferrer">Wifi data ~Nasko222</a><br>
         <a target="_blank" rel="noreferrer">Improved Click Point Locations ~Nasko222</a><br>
         <a href="https://welcometothegame.fandom.com/wiki/Sound_Files_(WTTG2)" target="_blank" rel="noreferrer">Sound Files</a><br>
         <a href="https://www.speedrun.com/wttg2/guide/h2pkg" target="_blank" rel="noreferrer">Website and Key information ~Insym</a><br>
         <a href="https://www.speedrun.com/wttg2/resources" target="_blank" rel="noreferrer">Original Click Point Locations ~Shadowk222</a><br>
-        <a target="_blank" rel="noreferrer">Wttg2 Tenant Data ~Lutonite</a><br>
+        <a target="_blank" rel="noreferrer">Wttg2 Tenant Data ~Lutonite</a>
       </p>
       <p>
         <a href="https://fontawesome.com/v4.7.0/" target="_blank" rel="noreferrer">Symbols</a><br>
