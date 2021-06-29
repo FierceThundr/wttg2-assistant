@@ -118,14 +118,14 @@ var sitedata = {
     {"position":1,"range":3,"level":3,"track":{"time":[870,600],"chance":["35","100"]},"channel":"12","inject":{"count":"54","wait":"10","crash":"29","total":"432 - 790"},"name":"DrAdelDink"},
     {"position":2,"range":1,"level":3,"track":{"time":[840,570],"chance":["26","100"]},"channel":"5","inject":{"count":"19","wait":"8","crash":"47","total":"100 - 300"},"name":"TellMyWifiLoveHer"},
     {"position":2,"range":1,"level":3,"track":{"time":[1020,720],"chance":["30","100"]},"channel":"3","inject":{"count":"63","wait":"7","crash":"57","total":"500 - 708"},"name":"PHATCLOUD5"},
+    {"position":2,"range":3,"level":3,"track":{"time":[1500,1050],"chance":["5","100"]},"channel":"5","inject":{"count":"49","wait":"15","crash":"80","total":"950 - 999"},"name":"DOSNET"},
     {"position":2,"range":3,"level":3,"track":{"time":[750,540],"chance":["28","100"]},"channel":"10","inject":{"count":"74","wait":"10","crash":"34","total":"477 - 945"},"name":"RideThisCrazyWave"},
     {"position":3,"range":1,"level":3,"track":{"time":[570,390],"chance":["45","100"]},"channel":"10","inject":{"count":"19","wait":"4","crash":"41","total":"154 - 249"},"name":"WINSLOWS"},
     {"position":3,"range":1,"level":3,"track":{"time":[720,510],"chance":["41","100"]},"channel":"6","inject":{"count":"33","wait":"11","crash":"36","total":"250 - 477"},"name":"JonesLaw"},
     {"position":3,"range":3,"level":3,"track":{"time":[780,540],"chance":["32","100"]},"channel":"4","inject":{"count":"34","wait":"8","crash":"37","total":"273 - 506"},"name":"Big Dave Network"},
-    {"position":4,"range":3,"level":3,"track":{"time":[1500,1050],"chance":["5","100"]},"channel":"5","inject":{"count":"49","wait":"15","crash":"80","total":"950 - 999"},"name":"DOSNET"},
   
-    {"position":3,"range":3,"level":2,"track":{"time":[810,570],"chance":["65","100"]},"channel":"5","inject":{"count":"29","wait":"12","crash":"46","total":"55 - 180"},"name":"DonaldsWifi","secret":1},
-    {"position":2,"range":3,"level":3,"track":{"time":[720,510],"chance":["21","100"]},"channel":"4","inject":{"count":"27","wait":"8","crash":"76","total":"400 - 556"},"name":"Hidden Network","secret":1}
+    {"position":3,"range":1,"level":2,"track":{"time":[810,570],"chance":["65","100"]},"channel":"5","inject":{"count":"29","wait":"12","crash":"46","total":"55 - 180"},"name":"DonaldsWifi","secret":1},
+    {"position":2,"range":1,"level":3,"track":{"time":[720,510],"chance":["21","100"]},"channel":"4","inject":{"count":"27","wait":"8","crash":"76","total":"400 - 556"},"name":"Hidden Network","secret":1}
   ], tenantdata = [
     {"doll":0,"sex":0,"age":32,"name":"Addyson Pearson","note":"Has very LOUD dog. Barks a lot."},
     {"doll":0,"sex":0,"age":56,"name":"Alden Chambers","note":"Always wears gloves"},
@@ -222,17 +222,17 @@ var sitedata = {
     <h1>About</h1>
       <p>Created by: FierceThundr_</p>
       <p>Sounds and images used are property of reflect studios<br>Welcome to The Game II is property of reflect studios</p>
-      <p><i>Started July 5th 2020</i><br><i>Updated May 18th 2021</i></p>
-	  <p><a href="https://github.com/FierceThundr/wttg2-assistant" target="_blank" rel="noreferrer">Github Page</a></p>
+      <p><i>Started July 5th 2020</i><br><i>Updated June 29th 2021</i></p>
+      <p><a href="https://github.com/FierceThundr/wttg2-assistant" target="_blank" rel="noreferrer">Github Page</a></p>
     <h3>Information Sources</h3>
       <p>
+        <a target="_blank" rel="noreferrer">Major Information Assistance ~Nasko222</a>
         <a href="https://cdn.discordapp.com/attachments/572088008723922954/572089747649069056/Welcome_to_the_Game_II_WiFi_Table.xlsx" target="_blank" rel="noreferrer">Wifi data ~Nasko222</a><br>
+        <a target="_blank" rel="noreferrer">Improved Click Point Locations ~Nasko222</a><br>
         <a href="https://welcometothegame.fandom.com/wiki/Sound_Files_(WTTG2)" target="_blank" rel="noreferrer">Sound Files</a><br>
         <a href="https://www.speedrun.com/wttg2/guide/h2pkg" target="_blank" rel="noreferrer">Website and Key information ~Insym</a><br>
-		<a href="https://www.speedrun.com/wttg2/resources" target="_blank" rel="noreferrer">Original Click Point Locations ~Shadowk222</a><br>
-		<a target="_blank" rel="noreferrer">Improved Click Point Locations ~Nasko222</a><br>
+        <a href="https://www.speedrun.com/wttg2/resources" target="_blank" rel="noreferrer">Original Click Point Locations ~Shadowk222</a><br>
         <a target="_blank" rel="noreferrer">Wttg2 Tenant Data ~Lutonite</a><br>
-        <a target="_blank" rel="noreferrer">Information Assistance ~Nasko222</a>
       </p>
       <p>
         <a href="https://fontawesome.com/v4.7.0/" target="_blank" rel="noreferrer">Symbols</a><br>
@@ -820,7 +820,7 @@ function wifiupdate(i) {//Change wifi page
 <h2>${v.name}</h2>
 <table>
   <tbody>
-    <tr><td>Position</td><td>${["Desk","Window","Bedside","Balcony","Bedside/Balcony"][v.position]}</td></tr>
+    <tr><td>Position</td><td>${["Desk","Window","Bedside","Balcony"][v.position]}</td></tr>
     <tr><td>Dongle level</td><td>Level ${v.range} required</td></tr>
     <tr><td>Security</td><td>${["Unsecured","WEP","WPA","WPA2"][v.level]}</td></tr>
     <tr><td>Track Rate (Normal)</td><td>${String(Math.abs(Math.floor(v.track.time[0]/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(v.track.time[0]%60))).padStart(2,'0')}</td></tr>
