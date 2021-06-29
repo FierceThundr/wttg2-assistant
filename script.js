@@ -118,14 +118,14 @@ var sitedata = {
     {"position":1,"range":3,"level":3,"track":{"time":[870,600],"chance":["35","100"]},"channel":"12","inject":{"count":"54","wait":"10","crash":"29","total":"432 - 790"},"name":"DrAdelDink"},
     {"position":2,"range":1,"level":3,"track":{"time":[840,570],"chance":["26","100"]},"channel":"5","inject":{"count":"19","wait":"8","crash":"47","total":"100 - 300"},"name":"TellMyWifiLoveHer"},
     {"position":2,"range":1,"level":3,"track":{"time":[1020,720],"chance":["30","100"]},"channel":"3","inject":{"count":"63","wait":"7","crash":"57","total":"500 - 708"},"name":"PHATCLOUD5"},
-    {"position":2,"range":3,"level":3,"track":{"time":[1500,1050],"chance":["5","100"]},"channel":"5","inject":{"count":"49","wait":"15","crash":"80","total":"950 - 999"},"name":"DOSNET"},
     {"position":2,"range":3,"level":3,"track":{"time":[750,540],"chance":["28","100"]},"channel":"10","inject":{"count":"74","wait":"10","crash":"34","total":"477 - 945"},"name":"RideThisCrazyWave"},
     {"position":3,"range":1,"level":3,"track":{"time":[570,390],"chance":["45","100"]},"channel":"10","inject":{"count":"19","wait":"4","crash":"41","total":"154 - 249"},"name":"WINSLOWS"},
     {"position":3,"range":1,"level":3,"track":{"time":[720,510],"chance":["41","100"]},"channel":"6","inject":{"count":"33","wait":"11","crash":"36","total":"250 - 477"},"name":"JonesLaw"},
     {"position":3,"range":3,"level":3,"track":{"time":[780,540],"chance":["32","100"]},"channel":"4","inject":{"count":"34","wait":"8","crash":"37","total":"273 - 506"},"name":"Big Dave Network"},
+    {"position":4,"range":3,"level":3,"track":{"time":[1500,1050],"chance":["5","100"]},"channel":"5","inject":{"count":"49","wait":"15","crash":"80","total":"950 - 999"},"name":"DOSNET"},
   
-    {"position":3,"range":1,"level":2,"track":{"time":[810,570],"chance":["65","100"]},"channel":"5","inject":{"count":"29","wait":"12","crash":"46","total":"55 - 180"},"name":"DonaldsWifi","secret":1},
-    {"position":2,"range":1,"level":3,"track":{"time":[720,510],"chance":["21","100"]},"channel":"4","inject":{"count":"27","wait":"8","crash":"76","total":"400 - 556"},"name":"Hidden Network","secret":1}
+    {"position":3,"range":3,"level":2,"track":{"time":[810,570],"chance":["65","100"]},"channel":"5","inject":{"count":"29","wait":"12","crash":"46","total":"55 - 180"},"name":"DonaldsWifi","secret":1},
+    {"position":2,"range":3,"level":3,"track":{"time":[720,510],"chance":["21","100"]},"channel":"4","inject":{"count":"27","wait":"8","crash":"76","total":"400 - 556"},"name":"Hidden Network","secret":1}
   ], tenantdata = [
     {"doll":0,"sex":0,"age":32,"name":"Addyson Pearson","note":"Has very LOUD dog. Barks a lot."},
     {"doll":0,"sex":0,"age":56,"name":"Alden Chambers","note":"Always wears gloves"},
@@ -820,7 +820,7 @@ function wifiupdate(i) {//Change wifi page
 <h2>${v.name}</h2>
 <table>
   <tbody>
-    <tr><td>Position</td><td>${["Desk","Window","Bedside","Balcony"][v.position]}</td></tr>
+    <tr><td>Position</td><td>${["Desk","Window","Bedside","Balcony","Bedside/Balcony"][v.position]}</td></tr>
     <tr><td>Dongle level</td><td>Level ${v.range} required</td></tr>
     <tr><td>Security</td><td>${["Unsecured","WEP","WPA","WPA2"][v.level]}</td></tr>
     <tr><td>Track Rate (Normal)</td><td>${String(Math.abs(Math.floor(v.track.time[0]/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(v.track.time[0]%60))).padStart(2,'0')}</td></tr>
