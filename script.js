@@ -332,8 +332,8 @@ var sitedata = {
       
       <p>When inside the computer you can right click to exit the computer at which point you will be able to look around and see your desk. Here you can boot your pc by interacting with your PC on the right of your desk if it is powered down. By right clicking again you will be able to get up and travel around your room. While there is not much to see, there are some important things to note.</p>
       <ol>
-        <li>Your bedside table has a flashlight which will be useful later in the game. </li>
-        <li>Your room has various lights each with their own switch. While their purpose will not be discussed in this guide, you should keep note of them. </li>
+        <li>Your bedside table has a flashlight which will be useful later in the game.</li>
+        <li>Your room has various lights each with their own switch. While their purpose will not be discussed in this section, you should keep note of them. </li>
         <li>If you look on the left of your desk you will see your wifi dongle. It can be picked up and moved between 4 spots in your room, these spots include the window, the desk, the bedside table, and the table on your balcony. Moving your dongle to a new location will change the list of networks available on your PC. </li>
         <li>The closet next to the balcony and the shower located in the bathroom can be used as hiding places. Be mindful if you have not turned off your mic in your game settings as the game will listen to it and will deem you not truly hidden if you are caught making noise. These hiding places are relevant for a threat called the Hitman that is discussed in its own guide.</li>
       </ol>
@@ -472,7 +472,7 @@ var sitedata = {
     {"name":`<i class="fa fa-circle fa-lg"></i> The Breather`,"content":`
     <h1>The Breather</h1>
       <p>The Breather is by far the most annoying threat you can encounter in the game. While he is only active in the alley, it is very difficult to ward him off. The difficulty is also aided by the relative rarity of encountering them in the first place.</p>
-      <p>Normally, it is unlikely for the Breather to spawn on a visit to the alley. However, as you get more keys throughout the game, the chance for him to spawn will go up. To know if he is active on a visit to the alley, listen for any potential sound cues when passing the dumpster. <i>(Sound cues can be found below)</i> If you hear a sound (or you are not sure) you should go into the nearby door and prepare to brace the door. You can look through the window in an attempt to see him, but you should not let him see you. If he begins to push the door, immediately hold the doorknob. (Keep in mind that this minigame is very strict and will result in death upon failure) After he gives up, you should stop holding to prepare for his next attempt. Repeat this process until he leaves.</p>
+      <p>Normally, it is unlikely for the Breather to spawn on a visit to the alley. However, as you get more keys throughout the game, the chance for him to spawn will go up. To know if he is active on a visit to the alley, listen for any potential sound cues when passing the dumpster. <i>(Sound cues can be found below)</i> If you hear a sound (or you are not sure) you should go into the nearby closet un the alley and prepare to brace the door by clicking on the handle. You can look through the window in an attempt to see him, but you should not let him see you. If he begins to push the door, immediately hold the doorknob. (Keep in mind that this minigame is very strict and will result in death upon failure) After he gives up, you should stop holding to prepare for his next attempt. Repeat this process until he leaves.</p>
  	  <details>
         <summary><b>Breather Cues</b></summary>
         <h4>Laugh</h4>
