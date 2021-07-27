@@ -386,7 +386,7 @@ var sitedata = {
       <p>The police are the easiest threat in the game to avoid. To avoid them you must switch wifi networks before you exceed their respective tracking timers. Though if you forget to switch, the game only has a certain chance to trigger the swat team to break down your door based on the network you stayed on. <i>(If they are triggered, they will wait until you approach your front door or the stairwell door of floor eight before causing a game over.)</i> Despite this, you should avoid gambling on that chance.</p>
 	  <p>the task of avoiding the cops can be made easier by purchasing skybreak from the ZeroDay Market and cracking higher security networks. Not only will they give you more time to breath, they often perform better.</p>
       <p><i>(In 1337 mode the tracking rates are shortened which allow the police to find you faster and with a guaranteed chance of success)</i></p>
-	  <p>The Police Scanner is an optional device that can be purchased to know when the police are close to tracing. When turned on, the police scanner will occasionally intercept and output random police communications. Certain phrases indicate that they are close to tracing you. <i>(Sound cues can be found below)</i></p>
+	  <p>The Police Scanner is an optional device that can be purchased to know when the police are close to tracing. When turned on, the police scanner will occasionally intercept and output random police communications. Certain phrases indicate that they are close to tracing you. Aside from this device, the police do not have any sound cues. <i>(Sound cues can be found below)</i></p>
       <details>
         <summary><b>Police Scanner Cues</b></summary>
         <h4>Morse Code</h4>
