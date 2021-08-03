@@ -226,7 +226,7 @@ var sitedata = {
       <p><a href="https://github.com/FierceThundr/wttg2-assistant" target="_blank" rel="noreferrer">Github Page</a></p>
     <h3>Information Sources</h3>
       <p>
-        <a target="_blank" rel="noreferrer">Major Information Assistance ~Nasko222</a><br>
+        <a href="https://discord.gg/wa9Fy7gTtf" target="_blank" rel="noreferrer">Major Information Assistance ~Nasko222</a><br>
         <a href="https://cdn.discordapp.com/attachments/572088008723922954/572089747649069056/Welcome_to_the_Game_II_WiFi_Table.xlsx" target="_blank" rel="noreferrer">Wifi data ~Nasko222</a><br>
         <a target="_blank" rel="noreferrer">Improved Click Point Locations ~Nasko222</a><br>
         <a href="https://welcometothegame.fandom.com/wiki/Sound_Files_(WTTG2)" target="_blank" rel="noreferrer">Sound Files</a><br>
@@ -332,7 +332,7 @@ var sitedata = {
       
       <p>When inside the computer you can right click to exit the computer at which point you will be able to look around and see your desk. Here you can boot your pc by interacting with your PC on the right of your desk if it is powered down. By right clicking again you will be able to get up and travel around your room. While there is not much to see, there are some important things to note.</p>
       <ol>
-        <li>Your bedside table has a flashlight which will be useful later in the game.</li>
+        <li>Your bedside table has a flashlight which will be useful later in the game. It is important to keep in mind that the flashlight has a limited battery life and cant be recharged in the event that it dies.</li>
         <li>Your room has various lights each with their own switch. While their purpose will not be discussed in this section, you should keep note of them. </li>
         <li>If you look on the left of your desk you will see your wifi dongle. It can be picked up and moved between 4 spots in your room, these spots include the window, the desk, the bedside table, and the table on your balcony. Moving your dongle to a new location will change the list of networks available on your PC. </li>
         <li>The closet next to the balcony and the shower located in the bathroom can be used as hiding places. Be mindful if you have not turned off your mic in your game settings as the game will listen to it and will deem you not truly hidden if you are caught making noise. These hiding places are relevant for a threat called the Hitman that is discussed in its own guide.</li>
@@ -342,7 +342,7 @@ var sitedata = {
 	{"name":`<i class="fa fa-circle fa-lg"></i> Searching`,"content":`
 	<h1>Searching</h1>
       <p>An important skill for the game includes finding keys hidden within websites on the Deep Web and you will need to learn it to beat the game. Keys can be found in a variety of ways and are always a number followed by a dash and a random string of 12 alphanumeric characters. 1 - aWNrIGJyb3du It is quite easy to find these after you know where to look. Firstly, keys can be hidden in plain sight, this of course is the easiest and most straightforward method of which they can be hidden on a page. Secondly, keys and the link to Deep Wiki 2 can be hidden in a pages source code. This method can be more unpredictable, but can be quite easy if you know what to look for. All keys or links hidden in this way will be hidden inside of an HTML comment which looks like the following. &lt;!-- 1 - aWNrIGJyb3du --&gt; Finally, keys may be hidden in a site behind a click point. This method is the hardest as it requires you to find and click on a certain word or picture in a site to reveal keys. To do this, you may either memorize the locations or use a guide. Once you find a functional clickpoint a sound will be played and either the key will appear on the page or as a file on your desktop.</p>
-      <p>In addition to finding keys, you will also need to find two hidden wiki pages to complete the game. Fortunately finding wikis is a much easier task to complete. The link to wiki two can be found on a website within the first wiki. It will always be hidden within the source code of the first page of the website it is hidden on. Unlike the link to wiki two, the link to wiki three is always found on the website Rule of Three which is always located on the second wiki. To get the key, the site requires you to complete a trial and error memory puzzle. This puzzle is best completed earlier in a run since the pattern will randomize every time the page is reloaded.</p>
+      <p>In addition to finding keys, you will also need to find two hidden wiki pages to complete the game. Fortunately finding wikis is a much easier task to complete. The link to wiki two can be found on a website within the first wiki. It will always be hidden within the source code of the first page of the website it is hidden on. Unlike the link to wiki two, the link to wiki three is always found on the website Rule of Three which is always located on the second wiki. To get the link, the site requires you to complete a trial and error memory puzzle. This puzzle is best completed earlier in a run since the pattern will randomize every time the page is reloaded.</p>
 	  <p>There are also a couple quirks with how keys and links are hidden that you can find below.</p>
 	  <ul>
 	    <li>Keys and wiki links can exist on the same page, and can also both exist in the source code of a website at the same time.</li>
@@ -823,8 +823,8 @@ function wifiupdate(i) {//Change wifi page
     <tr><td>Position</td><td>${["Desk","Window","Bedside","Balcony","Bedside/Balcony"][v.position]}</td></tr>
     <tr><td>Dongle level</td><td>Level ${v.range} required</td></tr>
     <tr><td>Security</td><td>${["Unsecured","WEP","WPA","WPA2"][v.level]}</td></tr>
-    <tr><td>Track Rate (Normal)</td><td>${String(Math.abs(Math.floor(v.track.time[0]/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(v.track.time[0]%60))).padStart(2,'0')}</td></tr>
-    <tr><td>Track Rate (1337)</td><td>${String(Math.abs(Math.floor(v.track.time[1]/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(v.track.time[1]%60))).padStart(2,'0')}</td></tr>
+    <tr><td>Track Rate (Normal)</td><td>${String(Math.abs(Math.floor(v.track.time[0]/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(v.track.time[0]%60))).padStart(2,'0') + "(" + String(Math.abs(Math.floor((v.track.time[0]*2)/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor((v.track.time[0]*2)%60))).padStart(2,'0') + " In Game)"}</td></tr>
+    <tr><td>Track Rate (1337)</td><td>${String(Math.abs(Math.floor(v.track.time[1]/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(v.track.time[1]%60))).padStart(2,'0') + "(" + String(Math.abs(Math.floor((v.track.time[1]*2)/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor((v.track.time[1]*2)%60))).padStart(2,'0') + " In Game)"}</td></tr>
     <tr><td>Track Chance (Normal)</td><td>${v.track.chance[0]}%</td></tr>
     <tr><td>Track Chance (1337)</td><td>${v.track.chance[1]}%</td></tr>
     <tr><td>Channel</td><td>${v.channel}</td></tr>
