@@ -823,8 +823,8 @@ function wifiupdate(i) {//Change wifi page
     <tr><td>Position</td><td>${["Desk","Window","Bedside","Balcony","Bedside/Balcony"][v.position]}</td></tr>
     <tr><td>Dongle level</td><td>Level ${v.range} required</td></tr>
     <tr><td>Security</td><td>${["Unsecured","WEP","WPA","WPA2"][v.level]}</td></tr>
-    <tr><td>Track Rate (Normal)</td><td>${String(Math.abs(Math.floor(v.track.time[0]/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(v.track.time[0]%60))).padStart(2,'0') + "(" + String(Math.abs(Math.floor((v.track.time[0]*2)/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor((v.track.time[0]*2)%60))).padStart(2,'0') + " In Game)"}</td></tr>
-    <tr><td>Track Rate (1337)</td><td>${String(Math.abs(Math.floor(v.track.time[1]/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(v.track.time[1]%60))).padStart(2,'0') + "(" + String(Math.abs(Math.floor((v.track.time[1]*2)/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor((v.track.time[1]*2)%60))).padStart(2,'0') + " In Game)"}</td></tr>
+    <tr><td>Track Rate (Normal)</td><td>${String(Math.abs(Math.floor(v.track.time[0]/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(v.track.time[0]%60))).padStart(2,'0') + "<sub> (" + String(Math.abs(Math.floor((v.track.time[0]*2)/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor((v.track.time[0]*2)%60))).padStart(2,'0') + " In Game)</sub>"}</td></tr>
+    <tr><td>Track Rate (1337)</td><td>${String(Math.abs(Math.floor(v.track.time[1]/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(v.track.time[1]%60))).padStart(2,'0') + "<sub> (" + String(Math.abs(Math.floor((v.track.time[1]*2)/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor((v.track.time[1]*2)%60))).padStart(2,'0') + " In Game)</sub>"}</td></tr>
     <tr><td>Track Chance (Normal)</td><td>${v.track.chance[0]}%</td></tr>
     <tr><td>Track Chance (1337)</td><td>${v.track.chance[1]}%</td></tr>
     <tr><td>Channel</td><td>${v.channel}</td></tr>
