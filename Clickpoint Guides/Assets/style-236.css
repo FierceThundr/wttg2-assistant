@@ -31,7 +31,7 @@ a.CPTAG:hover, a.CFTAG:hover {
 body {
     color: white;
     background-color: #33CCCC;
-    background: url(https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbackground1.jpg) repeat;
+    background: url(../Images/background1.jpg) repeat;
     background-attachment: fixed;
     background-size: contain;
     font-size: 18px;

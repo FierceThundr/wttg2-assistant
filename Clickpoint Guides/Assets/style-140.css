@@ -52,7 +52,7 @@ textarea, textarea:focus, textarea:hover { outline: none; }
 }
 
 #back a{
-	background-image: url('https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fback.png');
+	background-image: url(../Images/back.png);
 }
 
 #forward{
@@ -60,7 +60,7 @@ textarea, textarea:focus, textarea:hover { outline: none; }
 }
 
 #forward a{
-	background-image: url('https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fforward.png');
+	background-image: url(../Images/forward.png);
 }
 
 #returnMessage p{

@@ -186,7 +186,7 @@ h1 {
 }
 
 #container {
-    background: black url(https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2FbackgroundLine.jpg) repeat;
+    background: black url(../Images/backgroundLine.jpg) repeat;
     background-size: contain;
     margin: 0 auto;
     width: 90%;

@@ -642,6 +642,7 @@ var sitedata = {
         <p>The name for the Hitman is a reference to a moderater in Adam's twitch channel. In addition, the brand name for the police scanner is a direct reference to their username.</p>
         <p>There is a bug in the game where if you lean into certain walls or run up against an elevator, you may trigger an easter egg where you are teleported inside an elevator. This is believed to be a form of noclip or glitch protection.</p>
         <p>The landing page photo on I Love Cats was sourced from a popular furry site named furaffinity and modified before being used inside the game. The user who posted the orginal photo was named MethLab.</p>
+				<p>Hidden Pleasures actually has an unused page because of a typo in the game's code.</p>
       `},
     {"name":`<i class="fa fa-dot-circle-o fa-lg"></i> Hitman Simulator`,"content":`
     <h1>Hitman Simulator</h1>
@@ -714,6 +715,11 @@ function wikiinput(content) {//Update wiki data from input field
   }
 }
 
+function wikidemo() {//Force update of wiki data
+  click()
+  wikiinput("BathRoom Cams - \n\rBrutal Underground - \n\rCheap Surgery - \n\rChosen Awake - \n\rCorpses For Sell - \n\rCry Bitch - \n\rDeep Journal - \n\rDEEPDOTWEB - \n\rDream Place - \n\rEvil Collection - \n\rEye - \n\rForgive Me - \n\rHot Burners - \n\rIAMHERE - \n\rKeep Sake - \n\rLittle Friends - \n\rScream Bitch - \n\rSecure Drop - \n\rSKYWEB - \n\rSt Louis Arch - \n\rThe 8th Sin - \n\rThe Doll Maker - \n\rThe Light Within - \n\Vacation - \n\rYOU THERE? - ")
+}
+
 function wikiupdate(m) {//Change wiki page
   click()
   document.getElementById("wiki" + data.wiki.current).style.display = "none";
@@ -754,11 +760,6 @@ function sitepreview(i) {//Update and display key clickpoints popup
   document.getElementById("preview").src = 'Clickpoint Guides/' + i + '.html'
   document.getElementById("preview_div").style.display = "block"
   document.body.classList.add("noscroll");
-}
-
-function wikidemo() {//Force update of wiki data
-  click()
-  wikiinput("BathRoom Cams - \n\rBrutal Underground - \n\rCheap Surgery - \n\rChosen Awake - \n\rCorpses For Sell - \n\rCry Bitch - \n\rDeep Journal - \n\rDEEPDOTWEB - \n\rDream Place - \n\rEvil Collection - \n\rEye - \n\rForgive Me - \n\rHot Burners - \n\rIAMHERE - \n\rKeep Sake - \n\rLittle Friends - \n\rScream Bitch - \n\rSecure Drop - \n\rSKYWEB - \n\rSt Louis Arch - \n\rThe 8th Sin - \n\rThe Doll Maker - \n\rThe Light Within - \n\Vacation - \n\rYOU THERE? - ")
 }
 
 //=============================

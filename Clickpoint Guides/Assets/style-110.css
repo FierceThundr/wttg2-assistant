@@ -126,7 +126,7 @@ img.center-on-screen {
 }
 
 .img-no {
-    background: url(https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fcreepyface.jpg);
+    background: url(../Images/creepyface.jpg);
     background-size: 100%;
     position: relative;
     margin: 0 auto;

@@ -30,7 +30,7 @@ a.CPTAG:hover, a.CFTAG:hover {
 
 body {
     color: rgb(236, 233, 230);
-    background: url(https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbg3.jpg);
+    background: url(../Images/bg3.jpg);
     background-attachment: fixed;
     font-family: "Open Sans";
     font-size: 16px;
@@ -149,7 +149,7 @@ p {
 }
 
 #top {
-    background: url(https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbgtile.png);
+    background: url(../Images/bgtile.png);
 }
 
 #left {
@@ -160,7 +160,7 @@ p {
 }
 
 #right {
-    background: url(https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbgtile.png);
+    background: url(../Images/bgtile.png);
     vertical-align: top;
     padding: 20px;
     width: 60%;

@@ -21,7 +21,7 @@ table {
 body {
     color: #666;
     background-color: white;
-    background-image: url('https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbg.jpg');
+    background-image: url(../Images/bg.jpg);
     background-repeat: repeat-y;
     font-family: 'Arial';
     font-size: 18px;

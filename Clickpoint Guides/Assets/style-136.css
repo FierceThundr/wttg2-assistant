@@ -50,7 +50,7 @@ td img {
 }
 
 #header {
-    background: url(https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2FbannerTop.jpg) center right no-repeat;
+    background: url(../Images/bannerTop.jpg) center right no-repeat;
     background-size: contain;
     background-color: rgb(234, 193, 157);
 }

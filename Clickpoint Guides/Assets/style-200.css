@@ -173,12 +173,12 @@ p {
 }
 
 .bg-babyshrimp {
-    background: url("https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbabycard.jpg");
+    background: url(../Images/babycard.jpg);
     margin: 0 auto;
 }
 
 .bg-fake-main {
-    background: url("https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbgmain.jpg");
+    background: url(../Images/bgmain.jpg);
 }
 
 .bg-fake-main a {
@@ -209,16 +209,16 @@ p {
 
 .bg-bar {
     color: #FFFFCC;
-    background: url("https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbg1.jpg");
+    background: url(../Images/bg1.jpg);
 }
 
 .bg-main {
-    background: url("https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbgmain.jpg");
+    background: url(../Images/bgmain.jpg);
 }
 
 .bg-evil {
     color: #0066CC;
-    background: url("https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Fbg2.jpg");
+    background: url(../Images/bg2.jpg);
 }
 
 .bg-slide {

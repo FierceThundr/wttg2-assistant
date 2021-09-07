@@ -172,7 +172,7 @@ h4 {
 }
 
 #container {
-    background: black url(https://cdn.glitch.com/b7ad9ef7-7461-4b80-8af2-60feeb7d5bcb%2Ftopper4.png) no-repeat;
+    background: black url(../Images/topper4.png) no-repeat;
     background-size: contain;
     margin: 0 auto;
     padding: 120px 20px 20px 80px;
