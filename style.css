@@ -1,19 +1,19 @@
 
 /*  The Welcome To The Game II Assistant is built to help players of WTTG2
-    Copyright (C) 2021 Fierce Thunder
+		Copyright (C) 2021 Fierce Thunder
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+		This program is free software: you can redistribute it and/or modify
+		it under the terms of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of the License, or
+		(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+		This program is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+		GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
+		You should have received a copy of the GNU General Public License
+		along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 body {
 background-color:#000;
@@ -54,7 +54,7 @@ summary h1,
 summary h2,
 summary h3,
 summary h4 {
-  display:inline;
+display:inline;
 }
 
 .maindiv {
@@ -227,7 +227,7 @@ width:100%;
 }
 
 .guidedata {
-  padding-bottom:100px;
+padding-bottom:100px;
 }
 
 .simulator {

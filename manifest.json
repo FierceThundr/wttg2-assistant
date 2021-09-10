@@ -1,21 +1,21 @@
 {
-  "short_name":"Helper",
-  "name": "Welcome To The Game II Helper",
-  "description": "A helper tool for the game Welcome To The Game II",
-  "icons": [
-    {
-      "src": "Assets/icon-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "Assets/icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "key":"2 - mzwhg2den5tg",
-  "background_color": "#111111",
-  "display": "standalone",
-  "theme_color": "#111111"
+	"short_name":"Helper",
+	"name": "Welcome To The Game II Helper",
+	"description": "A helper tool for the game Welcome To The Game II",
+	"icons": [
+		{
+			"src": "Assets/icon-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "Assets/icon-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"key":"2 - mzwhg2den5tg",
+	"background_color": "#111111",
+	"display": "standalone",
+	"theme_color": "#111111"
 }
