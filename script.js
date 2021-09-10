@@ -839,7 +839,6 @@ function timerpausebutton(x) {
 }
 
 function wifiupdate(i) {//Change wifi page
-  console.log(data.wifi.passwords[i])
   click()
   var v = wifidata[i]
   document.getElementById("wifidata").innerHTML = `
