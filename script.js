@@ -211,12 +211,12 @@ var sitedata = {
     "Avoid the alley later in the game",
     "HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH",
     "Dont look behind you",
-    "Move your router to change your wifi list",
-    "Dont underestimate the Doll Maker",
-    "Dont worry about the noises behind you, they mean nothing... probably",
-	"Be quiet when hiding or he will find you",
-	"Dont waste the flashlight, you dont want to be stuck in the dark",
-	"Error 418 I am a teapot"
+		"Move your router to change your wifi list",
+		"Dont underestimate the Doll Maker",
+		"Dont worry about the noises behind you, they mean nothing... probably",
+		"Be quiet when hiding or he will find you",
+		"Dont waste the flashlight, you dont want to be stuck in the dark",
+		"Error 418 I am a teapot"
   ], guidedata = [
     {"name":`<i class="fa fa-info-circle fa-lg"></i> About`,"content":`
     <h1>About</h1>
@@ -650,10 +650,12 @@ var sitedata = {
       <button onclick="simulatorlaunch()">Launch Simulator</button>`},
     {"name":`<i class="fa fa-cog fa-lg"></i> Settings`,"content":`
     <h1>Settings</h1>
-      <p>
-        <div><span>Primary Color</span><b>:</b><span><input oninput="setcolor(0,this.value)" type="range" min="0" max="360" value="120" id="primary"></span></div>
-        <div><span>Secondary Color</span><b>:</b><span><input oninput="setcolor(1,this.value)" type="range" min="0" max="360" value="0" id="secondary"></span></div>
-      </p>`},
+			<table>
+				<tbody>
+					<tr><td>Primary Color</td><td><input oninput="setcolor(0,this.value)" type="range" min="0" max="360" value="120" id="primary"></td></tr>
+					<tr><td>Secondary Color</td><td><input oninput="setcolor(1,this.value)" type="range" min="0" max="360" value="0" id="secondary"></td></tr>
+				</tbody>
+			</table>`},
     {"name":`<i class="fa fa-question-circle fa-lg"></i> Feedback`,"content":`
     <h1>Feedback</h1>
     <p>If you wish to provide feedback or report a bug, please message leave a comment on the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2211437048" target="_blank" rel="noreferrer">steam guide</a> for the helper or open an issue on the <a href="https://github.com/FierceThundr/wttg2-assistant/issues" target="_blank" rel="noreferrer">github page</a>!</p>`}
@@ -662,6 +664,9 @@ var sitedata = {
 
 //==========================================================================Variable Data
 var data = {
+	"general":{
+		"click":new Audio('Assets/general_mouseclick.mp3'),
+		"beep":new Audio('Assets/general_motionsensoralert.mp3')},
   "note":{
     "keys":["","????????????","????????????","????????????","????????????","????????????","????????????","????????????","????????????"],
     "content":""},
@@ -670,9 +675,10 @@ var data = {
     "keys":[null,0,0,0],
     "total":[null,2,3,3]},
   "wifi":{
+		"button":"No Timer Active",
     "active":0,
     "reference":0,
-    "timer":[-1,0,""],
+    "timer":[-1,0,"",""],
     "passwords":Full_array(100,"")},
   "tenant":{
     "rooms":Full_array(100,""),
@@ -682,7 +688,8 @@ var data = {
     "active":0,
     "reference":0,
     "visible":1,
-    "sound":new Audio('Assets/hitman_doorknob.mp3')}
+    "sound1":new Audio('Assets/hitman_doorknob.mp3'),
+		"sound2":new Audio('Assets/hitman_prayforyou.mp3')}
 }
 
 window.temp = 100
@@ -743,7 +750,7 @@ function keysupdate() {//Update key count display
 
 function guideload() {
   try {
-	document.getElementById("preview").contentDocument.addEventListener('click', function(e) {sitepreview(-1)})
+	document.getElementById("preview").contentWindow.addEventListener('click', function(e) {sitepreview(-1)})
   } catch (e) {
 	sitepreview(-1)
 	console.log("Clickpoint Guide Failure: " + e)
@@ -781,21 +788,27 @@ function passwordinput(i,p) {//Update wifi label if password is provided (Save m
 }
  
 function timerupdate() {//Update wifi timer every second
-  if (data.wifi.timer[0] == -1) {
+	data.wifi.timer[0] -= 1
+	if (data.wifi.timer[0] == 60) {data.general.beep.play()}
+	timerdisplay()
+  if (data.wifi.timer[0] == 0) {
     clearTimeout(data.wifi.reference)
     data.wifi.reference = -1
-    return}
+		timerpausebutton("No Timer Active")
+	}
+}
+
+function timerdisplay() {
   var string = "###########################"
-  var a = "[" + data.wifi.timer[2] + string.slice(data.wifi.timer[2].length) + String(Math.floor(data.wifi.timer[0]/60)).padStart(2,'0') + ":" + String(Math.floor(data.wifi.timer[0]%60)).padStart(2,'0') + string + "]";
+  var a = "[" + data.wifi.timer[2] + string.slice(data.wifi.timer[2].length) + String(Math.floor(data.wifi.timer[0]/60)).padStart(2,'0') + ":" + String(Math.floor(data.wifi.timer[0]%60)).padStart(2,'0') + string.slice(data.wifi.timer[3].length) + data.wifi.timer[3] + "]";
   var b = Math.ceil((data.wifi.timer[0]/data.wifi.timer[1]*100)/(100/a.length))
-  if (data.wifi.timer[0] == 60) {var audio = new Audio('Assets/general_motionsensoralert.mp3');audio.play();};
   document.getElementById("wifitimer").innerHTML = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b)
-  data.wifi.timer[0] -= 1
 }
 
 function timerset(i,n) {//Update wifi timer
   click();
-  data.wifi.timer = [i,i,n]
+  data.wifi.timer = [i,i,n,""]
+	timerpausebutton("Pause Timer")
   if (data.wifi.reference !== -1) {
     clearTimeout(data.wifi.reference)
     data.wifi.reference = -1
@@ -805,12 +818,24 @@ function timerset(i,n) {//Update wifi timer
 }
 
 function timerpause() {
-  if (data.wifi.reference == -1) {
-    data.wifi.reference = setInterval(timerupdate,1000);
-  } else {
-    clearTimeout(data.wifi.reference)
-    data.wifi.reference = -1
-  }
+  if (data.wifi.timer[0] != 0) {
+		if (data.wifi.reference == -1) {
+			data.wifi.reference = setInterval(timerupdate,1000);
+			data.wifi.timer[3] = ""
+			timerpausebutton("Pause Timer")
+		} else {
+			clearTimeout(data.wifi.reference)
+			data.wifi.reference = -1
+			data.wifi.timer[3] = "PAUSED"
+			timerpausebutton("Resume Timer")
+		}
+		timerdisplay()
+	}
+}
+
+function timerpausebutton(x) {
+	document.getElementById("timerpausebutton").innerHTML = x
+	data.wifi.button = x
 }
 
 function wifiupdate(i) {//Change wifi page
@@ -840,8 +865,12 @@ function wifiupdate(i) {//Change wifi page
 </table>
 
 <textarea oninput="passwordinput(${i},this.value)" class="blockinput" placeholder="${(v.level == 0) ? `Unsecured Network...`:`Password...`}" style="bottom:90px;"${(v.level == 0) ? `disabled`:``}>${data.wifi.passwords[i]}</textarea><br>
-<button onclick='timerset(${v.track.time[0]},"${v.name}")' class="blockbutton" style="bottom:60px;">Start Wifi Timer</button>
-<button onclick='timerset(${v.track.time[1]},"${v.name}")' class="blockbutton" style="bottom:30px;">Start 1337 Timer</button>`
+
+<span class="blockbutton" style="bottom: 60px;">
+	<button onclick='timerset(${v.track.time[0]},"${v.name}")' style="width:49.25%;">Start Wifi Timer</button>
+	<button onclick='timerset(${v.track.time[1]},"${v.name}")' style="width:49.25%;">Start 1337 Timer</button>
+</span>
+<button onclick='timerpause()' class="blockbutton" style="bottom:30px;" id="timerpausebutton">${data.wifi.button}</button>`
 }
 
 //=============================
@@ -910,7 +939,7 @@ function simulatortoggle() {
 }
 
 function simulatorplaysound() {
-  data.simulator.sound.play();
+  data.simulator.sound1.play();
   data.simulator.soundplayed = 1
   data.simulator.reference = setTimeout(simulatorevaluate,10000)
 }
@@ -918,23 +947,32 @@ function simulatorplaysound() {
 function simulatorevaluate() {
   if (data.simulator.soundplayed == 1) {
     data.simulator.soundplayed = 0
-    document.getElementById("sim_title").innerHTML = `<span class="secondary"><i class="fa fa-times"></i> You have died</span>`
-    setTimeout(function () {document.getElementById("sim_title").innerHTML = "Hitman Trainer"},180000)
+		data.simulator.sound2.play()
+    simulatordisplay(`<span class="secondary"><i class="fa fa-times"></i> You have died</span>`)
+    setTimeout(function () {simulatordisplay("Hitman Trainer")},180000)
   }
   data.simulator.reference = setTimeout(simulatorplaysound,(Math.floor(Math.random() * 11) * 30000) + 600000)
 }
 
 function simulatorverify() {
-  if (data.simulator.soundplayed == 1) {var a = `<i class="fa fa-check"></i> Correct`;data.simulator.soundplayed = 0;
-  } else {var a = `<span class="secondary"><i class="fa fa-times"></i> Incorrect</span>`;};
-  document.getElementById("sim_title").innerHTML = a
-  setTimeout(function () {document.getElementById("sim_title").innerHTML = "Hitman Trainer"},10000)
+  if (data.simulator.soundplayed == 1) {
+		var a = `<i class="fa fa-check"></i> Correct`
+		data.simulator.soundplayed = 0
+  } else {
+		var a = `<span class="secondary"><i class="fa fa-times"></i> Incorrect</span>`
+	}
+  simulatordisplay(a)
+  setTimeout(function () {simulatordisplay("Hitman Trainer")},10000)
 }
 
 function simulatorhide() {
   click()
   document.getElementById("sim_div").style.visibility = (data.simulator.visible) ? "hidden":"visible"
   data.simulator.visible = (data.simulator.visible) ? 0:1;
+}
+
+function simulatordisplay(x) {
+	document.getElementById("sim_title").innerHTML = x
 }
 
 //=============================
@@ -972,7 +1010,7 @@ function setup() {//Prepare website lists and appearance
 }
 
 function click() {//Play click sound
-  var audio = new Audio('Assets/general_mouseclick.mp3');audio.play();
+  data.general.click.play();
 }
 
 function sitecycle() {//Temporary dev function (Cycle through clickpoint guides)

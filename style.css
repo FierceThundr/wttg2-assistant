@@ -22,6 +22,7 @@ font-family:helvetica, arial, sans-serif;
 overflow-x:hidden;
 padding:2em;
 text-align:center;
+/* background by SVGBackgrounds.com */
 }
 
 :focus {
@@ -160,13 +161,7 @@ position:absolute;
 text-align:left;
 }
 
-.blockdata span {
-display:inline-block;
-text-align:left;
-width:150px;
-}
-
-.blockdata span:first-of-type,.wikidiv td:nth-child(3) {
+.wikidiv td:nth-child(3) {
 text-align:right;
 }
 
