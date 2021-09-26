@@ -6,6 +6,10 @@
   outline: 10px solid rgba(0,255,30,0.75)
 }
 
+.CFTAG.CPTAG {
+	outline: 10px solid rgba(50,168,164,0.75)
+}
+
 .CPTAG_area {
   background: rgba(255,255,0,0.25)
 }
