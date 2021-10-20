@@ -29,6 +29,11 @@ text-align:center;
 outline:none;
 }
 
+.select-all {
+-webkit-user-select: all;
+user-select: all;
+}
+
 .noscroll {
 overflow:hidden;
 }
@@ -71,7 +76,7 @@ vertical-align:middle;
 width:530px;
 }
 
-.preview_div{
+.preview-div{
 background-color:rgba(255,255,255,1);
 height:100%;
 left:0;
