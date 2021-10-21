@@ -29,6 +29,21 @@ text-align:center;
 outline:none;
 }
 
+/*
+*:hover {
+visibility:hidden;
+}
+
+div:hover,
+body:hover,
+html:hover {
+visibility:visible;
+}
+
+DO NOT UNCOMMENT, THIS CODE IS A MEME
+
+*/
+
 .select-all {
 -webkit-user-select: all;
 user-select: all;
