@@ -341,7 +341,7 @@ var sitedata = {
 			<p>Once you exit your apartment you will be in a hallway located on the 8th floor. Upon entering the stairwell, you will be able to freely travel up and down to other floors. The various other floors are relevant to a certain threat and the placement of Remote VPNs. The most important location you can access via the stairwell is the lobby which can be found on the bottom floor. Once there, you access the lobby computer and exit the front doors to visit the alley. All Shadow Market purchases will be shipped by drone to the end of the alley. Additionally, there is a small closet located on the right side of the alleyway, it can be used to counter a threat local to the alley if they become active.</p>`},
 		{"name":`<i class="fa fa-circle fa-lg"></i> Searching`,"content":`
 		<h1>Searching</h1>
-			<p>An important skill for the game includes finding keys hidden within websites on the Deep Web and you will need to learn it to beat the game. Keys can be found in a variety of ways and are always a number followed by a dash and a random string of 12 alphanumeric characters. 1 - aWNrIGJyb3du It is quite easy to find these after you know where to look. Firstly, keys can be hidden in plain sight, this of course is the easiest and most straightforward method of which they can be hidden on a page. Secondly, keys and the link to Deep Wiki 2 can be hidden in a pages source code. This method can be more unpredictable, but can be quite easy if you know what to look for. All keys or links hidden in this way will be hidden inside of an HTML comment which looks like the following. &lt;!-- 1 - aWNrIGJyb3du --&gt; Finally, keys may be hidden in a site behind a click point. This method is the hardest as it requires you to find and click on a certain word or picture in a site to reveal keys. To do this, you may either memorize the locations or use a guide. Once you find a functional clickpoint a sound will be played and either the key will appear on the page or as a file on your desktop.</p>
+			<p>An important skill for the game includes finding keys hidden within websites on the Deep Web and you will need to learn it to beat the game. Keys can be found in a variety of ways and are always a number followed by a dash and a random string of 12 alphanumeric characters. 1 - a9b98dbc5745 It is quite easy to find these after you know where to look. Firstly, keys can be hidden in plain sight, this of course is the easiest and most straightforward method of which they can be hidden on a page. Secondly, keys and the link to Deep Wiki 2 can be hidden in a pages source code. This method can be more unpredictable, but can be quite easy if you know what to look for. All keys or links hidden in this way will be hidden inside of an HTML comment which looks like the following. &lt;!-- 7 - f26aaaac89a4 --&gt; Finally, keys may be hidden in a site behind a click point. This method is the hardest as it requires you to find and click on a certain word or picture in a site to reveal keys. To do this, you may either memorize the locations or use a guide. Once you find a functional clickpoint a sound will be played and either the key will appear on the page or as a file on your desktop.</p>
 			<p>In addition to finding keys, you will also need to find two hidden wiki pages to complete the game. Fortunately finding wikis is a much easier task to complete. The link to wiki two can be found on a website within the first wiki. It will always be hidden within the source code of the first page of the website it is hidden on. Unlike the link to wiki two, the link to wiki three is always found on the website Rule of Three which is always located on the second wiki. To get the link, the site requires you to complete a trial and error memory puzzle. The puzzle consists of six sets of three dots each which must be solved in order. This puzzle is best completed earlier in a run since the correct pattern will randomize every time the page is reloaded.</p>
 			<p>There are also a couple quirks with how keys and links are hidden that you can find below.</p>
 			<ul>
@@ -635,6 +635,7 @@ var sitedata = {
 				<p>There is actually a page on Bug Friendly in which nudity is shown because it was improperly programmed.</p>
 				<p>YOU THERE? uses minimal text despite it's appearance.</p>
 				<p>The center photo on ISEVIL is a picture of an untreated snake bite.</p>
+				<!-- I don't remember what this is for so I left it out HAQC2IBVMJTGGOBQGNTDKODFGIQOFIEA -->
 				<p>On the yellow sub-page of Don't waste it, the boy located on the left of the photo moves a few seconds after the page is loaded.</p>
 				<p>The name for the Hitman is a reference to a moderater in Adam's twitch channel. In addition, the brand name for the police scanner is a direct reference to their username.</p>
 				<p>There is a bug in the game where if you lean into certain walls or run up against an elevator, you may trigger an easter egg where you are teleported inside an elevator. This is believed to be a form of noclip or glitch protection.</p>
@@ -973,14 +974,17 @@ function simulatordisplay(x) {//Modifies the simulator header
 //=============================
 //=============================Other
 //=============================
-function tunnelsecret() {//I wonder what this is for ;)
-	return "3 - mv2gq5lomrza"
-}
-
 function tipupdate() {//Updates the displayed tip
 	document.getElementById("tips").innerHTML = '[Tip] ' + tips[Math.floor(Math.random() * tips.length)]
 }
 setInterval(tipupdate,10000);
+
+/*
+function serversidesecret() {
+	//Became obsolete after scrapping of backdoor concept
+	return "1E\7lA2#bp@UV)M2Do&+"
+}
+*/
 
 function setup() {//Prepares website lists and appearance
 	wifidata.forEach(function (data,index) {
