@@ -424,7 +424,7 @@ var sitedata = {
 			</details>`},
 		{"name":`<i class="fa fa-circle fa-lg"></i> The Hitman`,"content":`
 		<h1>The Hitman</h1>
-			<p>The Hitman (Also known as Lucas Kumiega) is an enemy that becomes active deeper into the game, they will become active after you have gone into three pages that have keys or after you accrue a certain amount of difficulty points by other methods. You can check whether or not they are active by checking if the window to the left of your desk is open. <i>(Please note that this is simplified for brevity, go to the bottom of this quide for a full explaination)</i></p>
+			<p>The Hitman (Also known as Lucas Kumiega) is an enemy that becomes active deeper into the game, they will become active after you have gone into three unique pages that have keys or after you accrue a total of three difficulty points by finding keys and forcing hacks. You can check whether or not they are active by checking if the window to the left of your desk is open. <i>(Please note that this is simplified for brevity, go to the bottom of this quide for a full explaination)</i></p>
 			<p><i>(In 1337 mode the Hitman will be active immediately)</i></p>
 			<p>The Hitman is a very difficult enemy to beat due to various reasons, but let's start from the bottom.</p>
 			<ol>
@@ -591,10 +591,10 @@ var sitedata = {
 			</details>
 			<details>
 				<summary><h3>Window Key Cue</h3></summary>
-				<p>The window to left of Clint's desk opens based on the games difficulty point system. Due to how this system works, it can be exploited as a single use key cue. To put it simply... If you enter a site and the window opens immediately afterwards, you can say with certainty that the website you enters contains a key somewhere. <i>(Unlike the proper key cue, this trick does not give you a precise page)</i> Additionally, this trick can also be used to rule out websites if you understand the system behind how it works. <i>(If you do not know how the system works refer to the dropdown below)</i> If you search through wiki 1 and successfully discover the locations of both keys before 1AM, you can go through the sites on wiki2 and eliminate any site for which the window does not open. At the same time, when it finally opens you know the site you just entered has a key located on it somewhere.</p>
+				<p>The window to left of Clint's desk opens based on the games difficulty point system. Due to how this system works, it can be exploited as a single use key cue. To put it simply... If you enter a site and the window opens immediately afterwards, you can say with certainty that the website you enters contains a key somewhere. <i>(Unlike the proper key cue, this trick does not give you a precise page)</i> Additionally, this trick can also be used to rule out websites if you understand the system behind how it works. <i>(If you do not know how the system works refer to the dropdown below)</i> If you search through wiki 1 and successfully discover the locations of both keys, you can go through the sites on wiki2 and eliminate any site for which the window does not open. At the same time, when it finally opens you know the site you just entered has a key located on it somewhere.</p>
 				<details>
 					<summary><h4>Advanced Explanation</h4></summary>
-					<p>The window opens based off of a system of difficulty points in the game, this system has a couple of factors that feed into it. For every key you find, you gain one difficulty point. Additionally, you gain a difficulty point for every 3 forced hacks. Whenever you get 3 difficulty points in total, the window of your apartment will open. However, in 1337 mode you automatically start with 8 difficulty points which prevents the use of this strategy in that mode.</p>
+					<p>The window opens based off of a system of difficulty points in the game, this system has two factors that feed into it. For every key you find, you gain one difficulty point. Additionally, you gain a difficulty point for every 3 forced hacks. Whenever you get 3 difficulty points in total, the window of your apartment will open. However, in 1337 mode you automatically start with 8 difficulty points which prevents the use of this strategy in that mode.</p>
 				</details>
 				<br>
 			</details>
