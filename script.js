@@ -600,7 +600,7 @@ var sitedata = {
 			</details>
 			<details>
 				<summary><h3>Force Hacking</h3></summary>
-				<p>Force hacking is a strategy you can use to trigger additional hacks by going to a dead site and repeatedly refreshing. To perform a force hack you simply need to find a dead website and refresh it repeatedly. Unfortunately in the newest patch this trick has been significantly nerfed. In older patches you can attempt force hacks every second, while in the newest patch the cooldown has been raised to 30 seconds.</p>
+				<p>Force hacking is a strategy you can use to trigger additional hacks by navigating to a dead site and repeatedly refreshing. To perform a force hack you simply need to find a dead website and refresh it repeatedly. This trick works due to the fact the game has a chance to triggere a hack when a dead page is loaded. Unfortunately in the newest patch this trick has been significantly nerfed. In older patches you can attempt force hacks every second, while in the newest patch the cooldown has been raised to 30 seconds.</p>
 			</details>
 			<details>
 				<summary><h3>God Spot</h3></summary>
