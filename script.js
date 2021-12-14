@@ -79,53 +79,53 @@ var sitedata = {
 		"Little Friends":     {id:254,times:":45 - :59",sub:["Error"]},
 		"Brutal Underground": {id:256,times:":30 - :59",sub:["Sign Up"]}
 	}, wifidata = [
-		{"position":0,"range":1,"level":0,"track":{"time":[960,660],"chance":["88","100"]},"channel":"1","name":"TP-LINK_8907_5G"},
-		{"position":1,"range":1,"level":0,"track":{"time":[420,300],"chance":["82","100"]},"channel":"10","name":"TC8717T10"},
-		{"position":1,"range":1,"level":0,"track":{"time":[480,330],"chance":["89","100"]},"channel":"1","name":"DDW35363"},
-		{"position":1,"range":2,"level":0,"track":{"time":[510,360],"chance":["75","100"]},"channel":"3","name":"FreeWifi7899"},
-		{"position":2,"range":1,"level":0,"track":{"time":[630,420],"chance":["70","100"]},"channel":"8","name":"doody"},
-		{"position":3,"range":1,"level":0,"track":{"time":[300,210],"chance":["95","100"]},"channel":"7","name":"FreeWifiNoVirus"},
+		{"position":0,"range":1,"level":0,"track":{"time":977,"chance":"88"},"channel":"1","name":"TP-LINK_8907_5G"},
+		{"position":1,"range":1,"level":0,"track":{"time":443,"chance":"82"},"channel":"10","name":"TC8717T10"},
+		{"position":1,"range":1,"level":0,"track":{"time":482,"chance":"89"},"channel":"1","name":"DDW35363"},
+		{"position":1,"range":2,"level":0,"track":{"time":522,"chance":"75"},"channel":"3","name":"FreeWifi7899"},
+		{"position":2,"range":1,"level":0,"track":{"time":630,"chance":"70"},"channel":"8","name":"doody"},
+		{"position":3,"range":1,"level":0,"track":{"time":310,"chance":"95"},"channel":"7","name":"FreeWifiNoVirus"},
 
-		{"position":0,"range":1,"level":1,"track":{"time":[360,240],"chance":["83","100"]},"channel":"8","probe":{"port":"260 - 300"},"name":"SSWIFI"},
-		{"position":0,"range":1,"level":1,"track":{"time":[300,210],"chance":["65","100"]},"channel":"8","probe":{"port":"600 - 750"},"name":"D59709"},
-		{"position":1,"range":1,"level":1,"track":{"time":[540,360],"chance":["65","100"]},"channel":"12","probe":{"port":"500 - 675"},"name":"PWF1382445"},
-		{"position":1,"range":3,"level":1,"track":{"time":[450,330],"chance":["70","100"]},"channel":"5","probe":{"port":"350 - 550"},"name":"Chanyia"},
-		{"position":2,"range":1,"level":1,"track":{"time":[540,390],"chance":["85","100"]},"channel":"3","probe":{"port":"900 - 975"},"name":"Flter"},
-		{"position":2,"range":1,"level":1,"track":{"time":[720,480],"chance":["60","100"]},"channel":"3","probe":{"port":"485 - 715"},"name":"SuddenLink990"},
-		{"position":3,"range":1,"level":1,"track":{"time":[660,450],"chance":["85","100"]},"channel":"7","probe":{"port":"455 - 520"},"name":"WIFIAF1A5D"},
-		{"position":3,"range":3,"level":1,"track":{"time":[660,450],"chance":["69","100"]},"channel":"6","probe":{"port":"145 - 210"},"name":"tedata"},
-		{"position":3,"range":3,"level":1,"track":{"time":[690,480],"chance":["74","100"]},"channel":"6","probe":{"port":"375 - 830"},"name":"mycci7471"},
+		{"position":0,"range":1,"level":1,"track":{"time":376,"chance":"83"},"channel":"8","probe":{"port":"260 - 300"},"name":"SSWIFI"},
+		{"position":0,"range":1,"level":1,"track":{"time":312,"chance":"65"},"channel":"8","probe":{"port":"600 - 750"},"name":"D59709"},
+		{"position":1,"range":1,"level":1,"track":{"time":543,"chance":"65"},"channel":"12","probe":{"port":"500 - 675"},"name":"PWF1382445"},
+		{"position":1,"range":3,"level":1,"track":{"time":477,"chance":"70"},"channel":"5","probe":{"port":"350 - 550"},"name":"Chanyia"},
+		{"position":2,"range":1,"level":1,"track":{"time":565,"chance":"85"},"channel":"3","probe":{"port":"900 - 975"},"name":"Flter"},
+		{"position":2,"range":1,"level":1,"track":{"time":720,"chance":"60"},"channel":"3","probe":{"port":"485 - 715"},"name":"SuddenLink990"},
+		{"position":3,"range":1,"level":1,"track":{"time":675,"chance":"85"},"channel":"7","probe":{"port":"455 - 520"},"name":"WIFIAF1A5D"},
+		{"position":3,"range":3,"level":1,"track":{"time":674,"chance":"69"},"channel":"6","probe":{"port":"145 - 210"},"name":"tedata"},
+		{"position":3,"range":3,"level":1,"track":{"time":705,"chance":"74"},"channel":"6","probe":{"port":"375 - 830"},"name":"mycci7471"},
 
-		{"position":0,"range":1,"level":2,"track":{"time":[390,270],"chance":["48","100"]},"channel":"4","inject":{"count":"99","wait":"7","crash":"61","total":"450 - 670"},"name":"DA3CHICKZ"},
-		{"position":0,"range":1,"level":2,"track":{"time":[480,330],"chance":["49","100"]},"channel":"6","inject":{"count":"96","wait":"11","crash":"39","total":"620 - 745"},"name":"UAPPY-FI"},
-		{"position":0,"range":1,"level":2,"track":{"time":[540,360],"chance":["63","100"]},"channel":"7","inject":{"count":"42","wait":"8","crash":"41","total":"100 - 360"},"name":"Khaled"},
-		{"position":1,"range":1,"level":2,"track":{"time":[810,570],"chance":["40","100"]},"channel":"4","inject":{"count":"100","wait":"3","crash":"58","total":"510 - 675"},"name":"NetflxnChillByMyself"},
-		{"position":1,"range":1,"level":2,"track":{"time":[720,480],"chance":["44","100"]},"channel":"11","inject":{"count":"170","wait":"5","crash":"62","total":"650 - 950"},"name":"DevShareTWO"},
-		{"position":1,"range":2,"level":2,"track":{"time":[540,360],"chance":["63","100"]},"channel":"12","inject":{"count":"146","wait":"7","crash":"58","total":"855 - 980"},"name":"WIRELESSNET2"},
-		{"position":2,"range":1,"level":2,"track":{"time":[630,450],"chance":["65","100"]},"channel":"1","inject":{"count":"61","wait":"9","crash":"43","total":"220 - 475"},"name":"FBI Survellance Van"},
-		{"position":2,"range":1,"level":2,"track":{"time":[780,540],"chance":["50","100"]},"channel":"7","inject":{"count":"78","wait":"9","crash":"47","total":"230 - 530"},"name":"Ataua"},
-		{"position":2,"range":3,"level":2,"track":{"time":[600,420],"chance":["56","100"]},"channel":"12","inject":{"count":"63","wait":"7","crash":"41","total":"275 - 320"},"name":"swsecure"},
-		{"position":3,"range":1,"level":2,"track":{"time":[450,300],"chance":["46","100"]},"channel":"5","inject":{"count":"79","wait":"5","crash":"72","total":"540 - 800"},"name":"ali"},
-		{"position":3,"range":1,"level":2,"track":{"time":[630,420],"chance":["54","100"]},"channel":"9","inject":{"count":"78","wait":"6","crash":"78","total":"87 - 660"},"name":"SENDemo"},
+		{"position":0,"range":1,"level":2,"track":{"time":401,"chance":"48"},"channel":"4","inject":{"count":"99","wait":"7","crash":"61","total":"450 - 670"},"name":"DA3CHICKZ"},
+		{"position":0,"range":1,"level":2,"track":{"time":484,"chance":"49"},"channel":"6","inject":{"count":"96","wait":"11","crash":"39","total":"620 - 745"},"name":"UAPPY-FI"},
+		{"position":0,"range":1,"level":2,"track":{"time":541,"chance":"63"},"channel":"7","inject":{"count":"42","wait":"8","crash":"41","total":"100 - 360"},"name":"Khaled"},
+		{"position":1,"range":1,"level":2,"track":{"time":820,"chance":"40"},"channel":"4","inject":{"count":"100","wait":"3","crash":"58","total":"510 - 675"},"name":"NetflxnChillByMyself"},
+		{"position":1,"range":1,"level":2,"track":{"time":726,"chance":"44"},"channel":"11","inject":{"count":"170","wait":"5","crash":"62","total":"650 - 950"},"name":"DevShareTWO"},
+		{"position":1,"range":2,"level":2,"track":{"time":550,"chance":"63"},"channel":"12","inject":{"count":"146","wait":"7","crash":"58","total":"855 - 980"},"name":"WIRELESSNET2"},
+		{"position":2,"range":1,"level":2,"track":{"time":645,"chance":"65"},"channel":"1","inject":{"count":"61","wait":"9","crash":"43","total":"220 - 475"},"name":"FBI Survellance Van"},
+		{"position":2,"range":1,"level":2,"track":{"time":786,"chance":"50"},"channel":"7","inject":{"count":"78","wait":"9","crash":"47","total":"230 - 530"},"name":"Ataua"},
+		{"position":2,"range":3,"level":2,"track":{"time":626,"chance":"56"},"channel":"12","inject":{"count":"63","wait":"7","crash":"41","total":"275 - 320"},"name":"swsecure"},
+		{"position":3,"range":1,"level":2,"track":{"time":464,"chance":"46"},"channel":"5","inject":{"count":"79","wait":"5","crash":"72","total":"540 - 800"},"name":"ali"},
+		{"position":3,"range":1,"level":2,"track":{"time":634,"chance":"54"},"channel":"9","inject":{"count":"78","wait":"6","crash":"78","total":"87 - 660"},"name":"SENDemo"},
 
-		{"position":0,"range":1,"level":3,"track":{"time":[1020,720],"chance":["29","100"]},"channel":"2","inject":{"count":"83","wait":"3","crash":"66","total":"660 - 840"},"name":"Ethical_Hacker"},
-		{"position":0,"range":1,"level":3,"track":{"time":[840,600],"chance":["29","100"]},"channel":"7","inject":{"count":"67","wait":"6","crash":"37","total":"797 - 971"},"name":"YDidIOrderThisWater"},
-		{"position":0,"range":1,"level":3,"track":{"time":[1170,810],"chance":["26","100"]},"channel":"1","inject":{"count":"64","wait":"12","crash":"29","total":"600 - 808"},"name":"SnuffBox"},
-		{"position":0,"range":1,"level":3,"track":{"time":[690,480],"chance":["43","100"]},"channel":"1","inject":{"count":"29","wait":"10","crash":"32","total":"300 - 450"},"name":"MaxiumBlack"},
-		{"position":0,"range":1,"level":3,"track":{"time":[960,660],"chance":["36","100"]},"channel":"4","inject":{"count":"78","wait":"3","crash":"53","total":"890 - 990"},"name":"Bring Beer to 504"},
-		{"position":1,"range":1,"level":3,"track":{"time":[720,510],"chance":["35","100"]},"channel":"7","inject":{"count":"4","wait":"4","crash":"51","total":"50 - 98"},"name":"KPN Fon"},
-		{"position":1,"range":2,"level":3,"track":{"time":[750,510],"chance":["43","100"]},"channel":"7","inject":{"count":"85","wait":"7","crash":"30","total":"820 - 950"},"name":"SilenceOfTheLANS"},
-		{"position":1,"range":3,"level":3,"track":{"time":[870,600],"chance":["35","100"]},"channel":"12","inject":{"count":"54","wait":"10","crash":"29","total":"432 - 790"},"name":"DrAdelDink"},
-		{"position":2,"range":1,"level":3,"track":{"time":[840,570],"chance":["26","100"]},"channel":"5","inject":{"count":"19","wait":"8","crash":"47","total":"100 - 300"},"name":"TellMyWifiLoveHer"},
-		{"position":2,"range":1,"level":3,"track":{"time":[1020,720],"chance":["30","100"]},"channel":"3","inject":{"count":"63","wait":"7","crash":"57","total":"500 - 708"},"name":"PHATCLOUD5"},
-		{"position":2,"range":3,"level":3,"track":{"time":[750,540],"chance":["28","100"]},"channel":"10","inject":{"count":"74","wait":"10","crash":"34","total":"477 - 945"},"name":"RideThisCrazyWave"},
-		{"position":3,"range":1,"level":3,"track":{"time":[570,390],"chance":["45","100"]},"channel":"10","inject":{"count":"19","wait":"4","crash":"41","total":"154 - 249"},"name":"WINSLOWS"},
-		{"position":3,"range":1,"level":3,"track":{"time":[720,510],"chance":["41","100"]},"channel":"6","inject":{"count":"33","wait":"11","crash":"36","total":"250 - 477"},"name":"JonesLaw"},
-		{"position":3,"range":3,"level":3,"track":{"time":[780,540],"chance":["32","100"]},"channel":"4","inject":{"count":"34","wait":"8","crash":"37","total":"273 - 506"},"name":"Big Dave Network"},
-		{"position":4,"range":3,"level":3,"track":{"time":[1500,1050],"chance":["5","100"]},"channel":"5","inject":{"count":"49","wait":"15","crash":"80","total":"950 - 999"},"name":"DOSNET"},
+		{"position":0,"range":1,"level":3,"track":{"time":1038,"chance":"29"},"channel":"2","inject":{"count":"83","wait":"3","crash":"66","total":"660 - 840"},"name":"Ethical_Hacker"},
+		{"position":0,"range":1,"level":3,"track":{"time":861,"chance":"29"},"channel":"7","inject":{"count":"67","wait":"6","crash":"37","total":"797 - 971"},"name":"YDidIOrderThisWater"},
+		{"position":0,"range":1,"level":3,"track":{"time":1185,"chance":"26"},"channel":"1","inject":{"count":"64","wait":"12","crash":"29","total":"600 - 808"},"name":"SnuffBox"},
+		{"position":0,"range":1,"level":3,"track":{"time":710,"chance":"43"},"channel":"1","inject":{"count":"29","wait":"10","crash":"32","total":"300 - 450"},"name":"MaxiumBlack"},
+		{"position":0,"range":1,"level":3,"track":{"time":969,"chance":"36"},"channel":"4","inject":{"count":"78","wait":"3","crash":"53","total":"890 - 990"},"name":"Bring Beer to 504"},
+		{"position":1,"range":1,"level":3,"track":{"time":749,"chance":"35"},"channel":"7","inject":{"count":"4","wait":"4","crash":"51","total":"50 - 98"},"name":"KPN Fon"},
+		{"position":1,"range":2,"level":3,"track":{"time":765,"chance":"43"},"channel":"7","inject":{"count":"85","wait":"7","crash":"30","total":"820 - 950"},"name":"SilenceOfTheLANS"},
+		{"position":1,"range":3,"level":3,"track":{"time":870,"chance":"35"},"channel":"12","inject":{"count":"54","wait":"10","crash":"29","total":"432 - 790"},"name":"DrAdelDink"},
+		{"position":2,"range":1,"level":3,"track":{"time":848,"chance":"26"},"channel":"5","inject":{"count":"19","wait":"8","crash":"47","total":"100 - 300"},"name":"TellMyWifiLoveHer"},
+		{"position":2,"range":1,"level":3,"track":{"time":1029,"chance":"30"},"channel":"3","inject":{"count":"63","wait":"7","crash":"57","total":"500 - 708"},"name":"PHATCLOUD5"},
+		{"position":2,"range":3,"level":3,"track":{"time":774,"chance":"28"},"channel":"10","inject":{"count":"74","wait":"10","crash":"34","total":"477 - 945"},"name":"RideThisCrazyWave"},
+		{"position":3,"range":1,"level":3,"track":{"time":592,"chance":"45"},"channel":"10","inject":{"count":"19","wait":"4","crash":"41","total":"154 - 249"},"name":"WINSLOWS"},
+		{"position":3,"range":1,"level":3,"track":{"time":745,"chance":"41"},"channel":"6","inject":{"count":"33","wait":"11","crash":"36","total":"250 - 477"},"name":"JonesLaw"},
+		{"position":3,"range":3,"level":3,"track":{"time":791,"chance":"32"},"channel":"4","inject":{"count":"34","wait":"8","crash":"37","total":"273 - 506"},"name":"Big Dave Network"},
+		{"position":4,"range":3,"level":3,"track":{"time":1500,"chance":"5"},"channel":"5","inject":{"count":"49","wait":"15","crash":"80","total":"950 - 999"},"name":"DOSNET"},
 
-		{"position":3,"range":3,"level":2,"track":{"time":[810,570],"chance":["65","100"]},"channel":"5","inject":{"count":"29","wait":"12","crash":"46","total":"55 - 180"},"name":"DonaldsWifi","secret":1},
-		{"position":2,"range":3,"level":3,"track":{"time":[720,510],"chance":["21","100"]},"channel":"4","inject":{"count":"27","wait":"8","crash":"76","total":"400 - 556"},"name":"Hidden Network","secret":1}
+		{"position":3,"range":3,"level":2,"track":{"time":824,"chance":"65"},"channel":"5","inject":{"count":"29","wait":"12","crash":"46","total":"55 - 180"},"name":"DonaldsWifi","secret":1},
+		{"position":2,"range":3,"level":3,"track":{"time":743,"chance":"21"},"channel":"4","inject":{"count":"27","wait":"8","crash":"76","total":"400 - 556"},"name":"Hidden Network","secret":1}
 	], tenantdata = [
 		{"doll":0,"sex":0,"age":32,"name":"Addyson Pearson","note":"Has very LOUD dog. Barks a lot."},
 		{"doll":0,"sex":0,"age":56,"name":"Alden Chambers","note":"Always wears gloves"},
@@ -351,7 +351,9 @@ var sitedata = {
 			<p>When inside the computer you can right click to exit the computer at which point you will be able to look around and see your desk. Here you can boot your pc by interacting with your PC on the right of your desk if it is powered down. By right clicking again you will be able to get up and travel around your room. While there is not much to see, there are some important things to note.</p>
 			<ol>
 				<li>Your bedside table has a flashlight which will be useful later in the game. It is important to keep in mind that the flashlight has a limited battery life and cant be recharged in the event that it dies.</li>
+				<li>The bedside table also has your wifi dongle which can be moved to various locations throughout the apartment. This feature can be used to evade the police.</li>
 				<li>Your apartment has various lights each with their own switch. While their purpose will not be discussed in this section, you should keep note of them.</li>
+				<l1>You can access the bathroom, the balcony, and the hallway by the doors located around the apartment.</li>
 				<li>If you look on the left of your desk you will see your wifi dongle. It can be picked up and moved between 4 spots in your room, these spots include the window, the desk, the bedside table, and the table on your balcony. Moving your dongle to a new location will change the list of networks available on your PC.</li>
 				<li>The closet next to the balcony and the shower located in the bathroom can be used as hiding places. Be mindful if you have not turned off your mic in your game settings as the game will listen to it and will deem you not truly hidden if you are caught making noise. These hiding places are relevant for a threat called the Hitman that is discussed in its own guide.</li>
 			</ol>
@@ -863,10 +865,9 @@ function wifiupdate(i) {//Changes the current wifi page
 		<tr><td>Position</td><td>${["Desk","Window","Bedside","Balcony","Bedside/Balcony"][v.position]}</td></tr>
 		<tr><td>Dongle level</td><td>Level ${v.range} required</td></tr>
 		<tr><td>Security</td><td>${["Unsecured","WEP","WPA","WPA2"][v.level]}</td></tr>
-		<tr><td>Track Rate (Normal)</td><td>${String(Math.abs(Math.floor(v.track.time[0]/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(v.track.time[0]%60))).padStart(2,'0') + "<sub> (" + String(Math.abs(Math.floor((v.track.time[0]*2)/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor((v.track.time[0]*2)%60))).padStart(2,'0') + " In Game)</sub>"}</td></tr>
-		<tr><td>Track Rate (1337)</td><td>${String(Math.abs(Math.floor(v.track.time[1]/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(v.track.time[1]%60))).padStart(2,'0') + "<sub> (" + String(Math.abs(Math.floor((v.track.time[1]*2)/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor((v.track.time[1]*2)%60))).padStart(2,'0') + " In Game)</sub>"}</td></tr>
-		<tr><td>Track Chance (Normal)</td><td>${v.track.chance[0]}%</td></tr>
-		<tr><td>Track Chance (1337)</td><td>${v.track.chance[1]}%</td></tr>
+		<tr><td>Track Rate (Normal)</td><td>${timeformat(v.track.time) + "<sub> (" + timeformat(v.track.time*2) + " In Game)</sub>"}</td></tr>
+		<tr><td>Track Rate (1337)</td><td>${timeformat(Math.floor(v.track.time*0.7)) + "<sub> (" + timeformat(Math.floor(v.track.time*0.7)*2) + " In Game)</sub>"}</td></tr>
+		<tr><td>Track Chance</td><td>${v.track.chance}%</td></tr>
 		<tr><td>Channel</td><td>${v.channel}</td></tr>
 
 		${(v.level == 1) ? `<tr><td>Port Range</td><td>${v.probe.port}</td></tr>`:``}
@@ -885,6 +886,10 @@ function wifiupdate(i) {//Changes the current wifi page
 	<button onclick='timerset(${v.track.time[1]},"${v.name}")' style="width:49.25%;">Start 1337 Timer</button>
 </span>
 <button onclick='timerpause()' class="blockbutton" style="bottom:30px;" id="timerpausebutton">${data.wifi.button}</button>`
+}
+
+function timeformat(i) {
+	return String(Math.abs(Math.floor(i/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(i%60))).padStart(2,'0')
 }
 
 //=============================
