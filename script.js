@@ -868,7 +868,7 @@ function wifiupdate(i) {//Changes the current wifi page
 		<tr><td>Track Rate (Normal)</td><td>${timeformat(v.track.time) + "<sub> (" + timeformat(v.track.time*2) + " In Game)</sub>"}</td></tr>
 		<tr><td>Track Rate (1337)</td><td>${timeformat(Math.floor(v.track.time*0.7)) + "<sub> (" + timeformat(Math.floor(v.track.time*0.7)*2) + " In Game)</sub>"}</td></tr>
 		<tr><td>Track Chance</td><td>${v.track.chance}%</td></tr>
-		<tr><td>Loading Speed</td><td>${(v.connection.ping*0.2*[0.95,0.9,0.85,0.8,0.75][["B","BP","G","N","AC"].indexOf(v.connection.type)]).toFixed(2)} Seconds</td></tr>
+		<tr><td>Loading Speed</td><td>~${(v.connection.ping*0.2*[0.95,0.9,0.85,0.8,0.75][["B","BP","G","N","AC"].indexOf(v.connection.type)]).toFixed(2)} Seconds</td></tr>
 		<tr><td>Channel</td><td>${v.channel}</td></tr>
 
 		${(v.level == 1) ? `<tr><td>Port Range</td><td>${v.probe.port}</td></tr>`:``}
