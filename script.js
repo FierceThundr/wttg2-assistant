@@ -722,10 +722,27 @@ function wikiinput(content) {//Updates wiki data from import field
 	document.getElementById("wikidata").value = "";
 	if (content.length == 1) {return;}
 	var sites = content.match(/(?=^)[\w ]+[!?]?(?= -)/gm)
-	if (sites !== null) {
+	if (sites == null) {
+		return;
+	} else {
 		var table = document.getElementById("wiki" + data.wiki.current + "list");
 		for (var y = table.rows.length - 1; y > 0; y--) {table.deleteRow(-1);}
-	sites.forEach(function (name) {var i = sitedata[name];if (i == undefined) {buttons(name,i,0,0,0,1)} else {var o = i.id;buttons(name,i,0,0,o,2);if (i.sub !== undefined) {i.sub.forEach(function (name,m,n) {o++;buttons(name,i,m,n,o,3)})}}})
+		sites.forEach(function (name) {
+			var i = sitedata[name];
+			if (i == undefined) {
+				buttons(name,i,0,0,0,1)
+			} else {
+				var o = i.id;buttons(name,i,0,0,o,2);
+				if (i.sub !== undefined) {
+					i.sub.forEach(function (name,m,n) {
+						o++;
+						buttons(name,i,m,n,o,3)
+					})
+				}
+			}
+		})
+		data.wiki.keys[data.wiki.current] = 0;
+		keysupdate();
 	}
 
 	function buttons(name,i,m,n,o,v) {
@@ -733,7 +750,7 @@ function wikiinput(content) {//Updates wiki data from import field
 		var b = a.insertCell(0);
 		var c = a.insertCell(1);
 		var d = a.insertCell(2);
-		b.innerHTML = (v !== 3) ? (name):((n.length - 1 == m) ? '⠀└─ ' + name:'⠀├─ ' + name);
+		b.innerHTML = (v == 3) ? ((n.length - 1 == m) ? '⠀└─ ':'⠀├─ '):"" + name;
 		c.innerHTML = (v == 3) ? ('<i class="child">⠀Subpage</i>'):(v == 2) ? ((i.times == undefined) ? 'Always Available':i.times):('<i class="secondary">Dead Site</i>');
 		d.innerHTML = `<button class="${(v == 1) ? "disabled":""}" ${(v !== 1) ? 'onclick="sitepreview(' + o + ')"':""}><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-search fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-search-plus fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this,1)"':""}><i class="fa fa-key fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-link fa-lg"></i></button>`
 	}
