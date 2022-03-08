@@ -729,9 +729,12 @@ function popwifi() {
 		data.popup.wifi.reference = window.open("popup.html","Wifi Mimic","height=500,width=500,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
 		data.popup.wifi.reference.document.onunload = function() {
 			var win = window.opener
-			if (!win.closed) {popwificlose()}
+			if (!win.closed) {win.popwificlose()}
 		}
-		timerdisplay()
+		data.popup.wifi.reference.document.onload = function() {
+			var win = window.opener
+			if (!win.closed) {win.timerdisplay()}
+		}
 	}
 }
 
@@ -745,9 +748,12 @@ function popnotes() {
 		data.popup.notes.reference = window.open("popup.html","Notes Mimic","height=500,width=500,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
 		data.popup.notes.reference.document.onunload = function() {
 			var win = window.opener
-			if (!win.closed) {popnotesclose()}
+			if (!win.closed) {win.popnotesclose()}
 		}
-		noteinput()
+		data.popup.notes.reference.document.onload = function() {
+			var win = window.opener
+			if (!win.closed) {win.noteinput()}
+		}
 	}
 }
 
