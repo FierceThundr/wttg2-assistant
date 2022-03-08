@@ -671,6 +671,8 @@ var sitedata = {
 				<tbody>
 					<tr><td>Primary Color</td><td><input oninput="setcolor(0,this.value)" type="range" min="0" max="360" value="120" id="primary"></td></tr>
 					<tr><td>Secondary Color</td><td><input oninput="setcolor(1,this.value)" type="range" min="0" max="360" value="0" id="secondary"></td></tr>
+					<tr><td><button onclick="popwifi()">Open Timer Mimic</button></td></tr>
+					<tr><td><button onclick="popnotes()">Open Notes Mimic</button></td></tr>
 				</tbody>
 			</table>`},
 		{"name":`<i class="fa fa-question-circle fa-lg"></i> Feedback`,"content":`
@@ -706,7 +708,10 @@ var data = {
 		"reference":0,
 		"visible":1,
 		"sound1":new Audio('Assets/hitman_doorknob.mp3'),
-		"sound2":new Audio('Assets/hitman_prayforyou.mp3')}
+		"sound2":new Audio('Assets/hitman_prayforyou.mp3')},
+	"popup":{
+		"wifi":{"active":0,"reference":0},
+		"notes":{"active":0,"reference":0}}
 }
 
 window.temp = 100
@@ -714,6 +719,34 @@ window.temp = 100
 //==========================================================================Functions
 
 function Full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v);};return a;}
+
+//=============================
+//=============================Popup Functions
+//=============================
+
+function popwifi() {
+	if (data.popup.wifi.active != 1) {
+		data.popup.wifi.reference = window.open("popup.html","Wifi Mimic","height=300,width=450,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
+		data.popup.wifi.open()
+		timerdisplay()
+	}
+}
+
+function popwificlose() {
+	
+}
+
+function popnotes() {
+	if (data.popup.notes.active != 1) {
+		data.popup.notes.reference = window.open("","Notes Mimic","height=300,width=450,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
+	}
+}
+
+function popnotesclose() {
+	
+}
+
+
 
 //=============================
 //=============================Wiki Functions
@@ -836,7 +869,9 @@ function timerdisplay() {//Updates the timer display
 	var string = "###########################"
 	var a = "[" + data.wifi.timer[2] + string.slice(data.wifi.timer[2].length) + String(Math.floor(data.wifi.timer[0]/60)).padStart(2,'0') + ":" + String(Math.floor(data.wifi.timer[0]%60)).padStart(2,'0') + string.slice(data.wifi.timer[3].length) + data.wifi.timer[3] + "]";
 	var b = Math.ceil((data.wifi.timer[0]/data.wifi.timer[1]*100)/(100/a.length))
-	document.getElementById("wifitimer").innerHTML = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b)
+	var c = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b)
+	document.getElementById("wifitimer").innerHTML = c
+	data.popup.wifi.reference.getElementById("wifitimer") = c
 }
 
 function timerset(i,n) {//Updates wifi timer
