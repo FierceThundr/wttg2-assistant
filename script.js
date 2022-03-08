@@ -870,7 +870,7 @@ function timerdisplay() {//Updates the timer display
 	var b = Math.ceil((data.wifi.timer[0]/data.wifi.timer[1]*100)/(100/a.length))
 	var c = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b)
 	document.getElementById("wifitimer").innerHTML = c
-	data.popup.wifi.reference.document.getElementById("wifitimer") = c
+	data.popup.wifi.reference.document.getElementById("wifitimer").innerHTML = c
 }
 
 function timerset(i,n) {//Updates wifi timer
