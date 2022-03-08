@@ -1,5 +1,6 @@
 
-/*  The Welcome To The Game II Assistant is built to help players of WTTG2
+/*  
+		The Welcome To The Game II Assistant is built to help players of WTTG2
 		Copyright (C) 2021 Fierce Thunder
 
 		This program is free software: you can redistribute it and/or modify
@@ -671,8 +672,8 @@ var sitedata = {
 				<tbody>
 					<tr><td>Primary Color</td><td><input oninput="setcolor(0,this.value)" type="range" min="0" max="360" value="120" id="primary"></td></tr>
 					<tr><td>Secondary Color</td><td><input oninput="setcolor(1,this.value)" type="range" min="0" max="360" value="0" id="secondary"></td></tr>
-					<tr><td><button onclick="popwifi()">Open Timer Mimic</button></td></tr>
-					<tr><td><button onclick="popnotes()">Open Notes Mimic</button></td></tr>
+					<tr><td colspan=2>The buttons below create popups users can open for the purpose of streaming the wifi timer or the content of the notepad. These features are unfinished and may not work as expected.</td></tr>
+					<tr><td><button onclick="popwifi()" style="width:100%">Open Timer Mimic</button></td><td><button onclick="popnotes()" style="width:100%">Open Notes Mimic</button></td></tr>
 				</tbody>
 			</table>`},
 		{"name":`<i class="fa fa-question-circle fa-lg"></i> Feedback`,"content":`
