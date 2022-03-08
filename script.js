@@ -697,7 +697,7 @@ var data = {
 		"button":"No Timer Active",
 		"active":0,
 		"reference":0,
-		"timer":[-1,0,"",""],
+		"timer":[0,0,"",""],
 		"passwords":Full_array(100,"")},
 	"tenant":{
 		"rooms":Full_array(100,""),
@@ -723,29 +723,35 @@ function Full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v);};retu
 //=============================
 //=============================Popup Functions
 //=============================
-
 function popwifi() {
 	if (data.popup.wifi.active != 1) {
-		data.popup.wifi.reference = window.open("popup.html","Wifi Mimic","height=300,width=450,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
+		data.popup.wifi.reference = window.open("popup.html","Wifi Mimic","height=500,width=500,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
+		data.popup.wifi.reference.document.onunload = function() {
+			var win = window.opener
+			if (!win.closed) {popwificlose()}
+		}
 		timerdisplay()
 	}
 }
 
 function popwificlose() {
-	
+	data.popup.wifi.active = 0
 }
 
 function popnotes() {
 	if (data.popup.notes.active != 1) {
-		data.popup.notes.reference = window.open("","Notes Mimic","height=300,width=450,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
+		data.popup.notes.reference = window.open("popup.html","Notes Mimic","height=500,width=500,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
+		data.popup.notes.reference.document.onunload = function() {
+			var win = window.opener
+			if (!win.closed) {popnotesclose()}
+		}
+		noteinput()
 	}
 }
 
 function popnotesclose() {
-	
+	data.popup.notes.active = 0
 }
-
-
 
 //=============================
 //=============================Wiki Functions
@@ -838,11 +844,15 @@ function sitepreview(i) {//Updates and displays the key clickpoints popup
 //=============================
 //=============================Note Functions
 //=============================
-function noteinput(content) {//Attempts to find and save keys within the note block's data
+function noteinput() {//Attempts to find and save keys within the note block's data
+	var content = document.getElementById("notes").value
 	var lkeys = content.match(/[1-8] - [\w]{12}/g)
 	if (lkeys !== null) {lkeys.forEach(function (a) {data.note.keys[a.slice(0,1)] = a.slice(4,16)});}
 	document.getElementById("keyoutput").innerHTML = `<b>Key Data</b><br>${data.note.keys.join("").substr(0,48)}<br>${data.note.keys.join("").substr(48,48)}`;
 	if (data.note.keys.indexOf("????????????") == -1) {document.getElementById("keyoutput").innerHTML = `<b>Master Key</b><br><span class="select-all">${data.note.keys.join("")}</span>`;}
+	if (data.popup.notes.active == 1) {
+		data.popup.notes.reference.document.getElementById("content").innerHTML = content
+	}
 }
 
 //=============================
@@ -870,7 +880,9 @@ function timerdisplay() {//Updates the timer display
 	var b = Math.ceil((data.wifi.timer[0]/data.wifi.timer[1]*100)/(100/a.length))
 	var c = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b)
 	document.getElementById("wifitimer").innerHTML = c
-	data.popup.wifi.reference.document.getElementById("wifitimer").innerHTML = c
+	if (data.popup.wifi.active == 1) {
+		data.popup.wifi.reference.document.getElementById("content").innerHTML = c
+	}
 }
 
 function timerset(i,n) {//Updates wifi timer
