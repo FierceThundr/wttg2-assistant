@@ -725,6 +725,7 @@ function Full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v);};retu
 //=============================
 function popwifi() {
 	if (data.popup.wifi.active != 1) {
+		data.popup.wifi.active = 1
 		data.popup.wifi.reference = window.open("popup.html","Wifi Mimic","height=500,width=500,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
 		data.popup.wifi.reference.document.onunload = function() {
 			var win = window.opener
@@ -740,6 +741,7 @@ function popwificlose() {
 
 function popnotes() {
 	if (data.popup.notes.active != 1) {
+		data.popup.wifi.active = 1
 		data.popup.notes.reference = window.open("popup.html","Notes Mimic","height=500,width=500,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
 		data.popup.notes.reference.document.onunload = function() {
 			var win = window.opener
