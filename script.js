@@ -727,7 +727,6 @@ function Full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v);};retu
 function popwifi() {
 	if (data.popup.wifi.active != 1) {
 		data.popup.wifi.reference = window.open("popup.html","Wifi Mimic","height=300,width=450,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
-		data.popup.wifi.open()
 		timerdisplay()
 	}
 }
@@ -871,7 +870,7 @@ function timerdisplay() {//Updates the timer display
 	var b = Math.ceil((data.wifi.timer[0]/data.wifi.timer[1]*100)/(100/a.length))
 	var c = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b)
 	document.getElementById("wifitimer").innerHTML = c
-	data.popup.wifi.reference.getElementById("wifitimer") = c
+	data.popup.wifi.reference.document.getElementById("wifitimer") = c
 }
 
 function timerset(i,n) {//Updates wifi timer
