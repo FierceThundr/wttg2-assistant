@@ -699,10 +699,10 @@ var data = {
 		"active":0,
 		"reference":0,
 		"timer":[0,0,"",""],
-		"passwords":Full_array(100,"")},
+		"passwords":Full_array(wifidata.length,"")},
 	"tenant":{
-		"rooms":Full_array(100,""),
-		"availability":Full_array(100,1)},
+		"rooms":Full_array(tenantdata.length,""),
+		"availability":Full_array(tenantdata.length,1)},
 	"simulator":{
 		"soundplayed":0,
 		"active":0,
@@ -715,7 +715,8 @@ var data = {
 		"notes":{"active":0,"reference":0}}
 }
 
-window.temp = 100
+//Clickpoints Cycle Test Variable
+//window.temp = 100
 
 //==========================================================================Functions
 
@@ -944,10 +945,11 @@ function wifiupdate(i) {//Changes the current wifi page
 		<tr><td>Channel</td><td>${v.channel}</td></tr>
 
 		${(v.level == 1) ? `<tr><td>Port Range</td><td>${v.probe.port}</td></tr>`:``}
-		${(v.level >= 2) ? `<tr><td>Inject Limit</td><td>${v.inject.count}</td></tr>`:``}
-		${(v.level >= 2) ? `<tr><td>Inject Cooldown</td><td>${v.inject.wait}s</td></tr>`:``}
-		${(v.level >= 2) ? `<tr><td>Inject Success Range</td><td>${v.inject.total}</td></tr>`:``}
-		${(v.level >= 2) ? `<tr><td>Inject Crash Time</td><td>${v.inject.crash}s</td></tr>`:``}
+		${(v.level >= 2) ? `
+		<tr><td>Inject Limit</td><td>${v.inject.count}</td></tr>
+		<tr><td>Inject Cooldown</td><td>${v.inject.wait}s</td></tr>
+		<tr><td>Inject Success Range</td><td>${v.inject.total}</td></tr>
+		<tr><td>Inject Crash Time</td><td>${v.inject.crash}s</td></tr>`:``}
 		${(v.secret) ? `<tr><td colspan="2">This wifi is not available by normal means as it is not listed when the scan command is run at its location</td></tr>`:``}
 	</tbody>
 </table>
