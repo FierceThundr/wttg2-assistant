@@ -1137,6 +1137,16 @@ function setup() {//Prepares website lists and appearance
 	data.wifi.reference = setInterval(timerupdate,1000)
 	wifidata.forEach(function(v,i){data.wifi.timerlist[i] = v.track.time})
 	document.getElementById("animated").style = "animation:slide 1s 0.3s forwards"
+	var x = new XMLHttpRequest()
+	x.onreadystatechange = function() { 
+		if (x.readyState == 4 && x.status == 200) {
+			var d = JSON.parse(x.responseText)
+			console.log(d)
+			document.getElementById("version").innerHTML = `<i>Wttg Assistant Version 1.4.0.${d[0].sha.slice(0,7)}</i>`
+		}
+	}
+	x.open("GET","https://api.github.com/repos/fiercethundr/wttg2-assistant/commits?per_page=1",true)
+	x.send()
 }
 
 function click() {//Plays the click sound

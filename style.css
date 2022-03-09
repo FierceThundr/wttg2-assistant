@@ -152,9 +152,6 @@ top:70px;
 width:355px;
 }
 
-
-
-
 .blockinput_wrapper {
 display:flex;
 gap:3px;
@@ -187,7 +184,6 @@ font-size:15px;
 overflow:hidden;
 padding:2px;
 }
-
 
 .block_ver {
 font-size:9px;
