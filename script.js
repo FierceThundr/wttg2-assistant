@@ -696,6 +696,7 @@ var data = {
 		"total":[null,2,3,3]},
 	"wifi":{
 		"current":1,
+		"reference":undefined,
 		"button":"No Timer Active",
 		"timer":[0,0,0,0,"",""],
 		"cooldowns":Full_array(wifidata.length,0),
@@ -874,26 +875,25 @@ function passwordinput(i,p) {//Updates wifi label if password is provided
 	document.getElementById("wifibutton" + i).innerHTML = "<i class='fa " + ((data.wifi.passwords[i] !== "") ? 'fa-check-square':'fa-square') + " fa-lg'></i> " + wifidata[i]["name"]
 }
 
-function timerupdate() {//Updates wifi timers and cooldowns every second
-	if (data.wifi.timer[0] == 1) {
-		data.wifi.cooldowns = data.wifi.cooldowns.map(function(v,i){
-			if (v != 0 && i != data.wifi.timer[1]) {
-				if (--v == 0) {
-					data.wifi.timerlist[i] = wifidata[i].track.time
-					console.log(`The cooldown for network ${wifidata[i].name} has reached ${v} seconds!`)
-				} else {
-					console.log(`The cooldown for network ${wifidata[i].name} is currently at ${v} seconds!`)
-				}
+function timerupdate() {//Updates wifi timers and cooldowns
+	data.wifi.cooldowns = data.wifi.cooldowns.map(function(v,i){
+		if (v != 0 && i != data.wifi.timer[1]) {
+			if (--v == 0) {
+				data.wifi.timerlist[i] = wifidata[i].track.time
+				//console.log(`The cooldown for network ${wifidata[i].name} has reached ${v} seconds!`)
 			}
-			return v
-		})
+		}
+		return v
+	})
+	if (data.wifi.timer[2] != 0) {
 		data.wifi.timer[2] -= 1
 		data.wifi.timerlist[data.wifi.timer[1]] = data.wifi.timer[2]
 		timerdisplay()
 		if (data.wifi.timer[2] == 60) {data.general.beep.play()}
 		if (data.wifi.timer[2] == 0) {
-			data.wifi.timer[0] = 0
-			timerpausebutton("No Timer Active")
+			//data.wifi.timer[0] = 0
+			//timerpausebutton("No Timer Active")
+			//Should this call disconnect or restart the timer?
 		}
 	}
 }
@@ -929,12 +929,12 @@ function wifileave() {
 
 function timerpause() {//Pauses wifi timer
 	if (data.wifi.timer[2] != 0) {
-		if (data.wifi.timer[0] == 0) {
-			data.wifi.timer[0] = 1
+		if (data.wifi.reference == undefined) {
+			data.wifi.reference = setInterval(timerupdate,1000)
 			data.wifi.timer[5] = (data.wifi.timer[1] == -1) ? "DISCONNECTED":""
 			timerpausebutton("Pause Timer")
 		} else {
-			data.wifi.timer[0] = 0
+			data.wifi.reference = clearInterval(data.wifi.reference)
 			data.wifi.timer[5] = "PAUSED"
 			timerpausebutton("Resume Timer")
 		}
@@ -973,13 +973,19 @@ function wifiupdate(i) {//Changes the current wifi page
 	</tbody>
 </table>
 
-<textarea oninput="passwordinput(${i},this.value)" class="blockinput" placeholder="${(v.level == 0) ? `Unsecured Network...`:`Password...`}" style="bottom:90px;"${(v.level == 0) ? `disabled`:``}>${data.wifi.passwords[i]}</textarea><br>
-
-<span class="blockbutton" style="bottom: 60px;">
-	<button onclick="wifijoin(${i},1)" style="width:49.25%;">Start Wifi Timer</button>
-	<button onclick="wifijoin(${i},0)" style="width:49.25%;">Start 1337 Timer</button>
-</span>
-<button onclick="timerpause()" class="blockbutton" style="bottom:30px;" id="timerpausebutton">${data.wifi.button}</button>`
+<div class="blockinput_wrapper" style="bottom:30px">
+	<div>
+		<input id="passwordinput" type="text" maxlength="20" oninput="passwordinput(${i},this.value)" placeholder="${(v.level == 0) ? `Unsecured Network...`:`Password...`}" ${(v.level == 0) ? `disabled`:``}>
+	</div>
+	<div>
+		<button onclick="wifijoin(${i},1)">Start Wifi Timer</button>
+		<button onclick="wifijoin(${i},0)">Start 1337 Timer</button>
+	</div>
+	<div>
+		<button onclick="timerpause()" id="timerpausebutton">${data.wifi.button}</button>
+	</div>
+</div>`
+	document.getElementById("passwordinput").value = data.wifi.passwords[i]
 }
 
 function timeformat(i) {
@@ -1015,8 +1021,14 @@ function tenantupdate(i) {//Changes the currently displayed tenant page
 	</tbody>
 </table>
 
-<textarea oninput="tenantinput(${i},this.value)" class="blockinput" placeholder="Tenant room number..." style="bottom:230px;" ${(v.doll == 0) ? `disabled`:``}>${data.tenant.rooms[i]}</textarea><br>
-<button onclick='tenanttoggle(${i})' class="blockbutton" id="tenantbutton" style="bottom:200px;" ${(v.doll == 0) ? `disabled`:``}>${(v.doll == 0) ? `Invalid Doll Maker Target`:data.tenant.availability[i] ? `Mark Tenant Unavailable`:`Mark Tenant Available`}</button>`
+<div class="blockinput_wrapper" style="bottom:200px">
+	<div>
+		<input id="roominput" type="text" maxlength="20" oninput="tenantinput(${i},this.value)" placeholder="Tenant room number..." ${(v.doll == 0) ? `disabled`:``}>
+	</div>
+	<div>
+		<button onclick='tenanttoggle(${i})' class="blockbutton" id="tenantbutton" style="bottom:200px;" ${(v.doll == 0) ? `disabled`:``}>${(v.doll == 0) ? `Invalid Doll Maker Target`:data.tenant.availability[i] ? `Mark Tenant Unavailable`:`Mark Tenant Available`}</button>
+</div>`
+	document.getElementById("roominput").value = data.tenant.rooms[i]
 }
 
 //=============================
@@ -1122,7 +1134,7 @@ function setup() {//Prepares website lists and appearance
 	if (localStorage.getItem('color0') == undefined) {localStorage.setItem('color0',120)}
 	if (localStorage.getItem('color1') == undefined) {localStorage.setItem('color1',0)}
 	document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`
-	setInterval(timerupdate,1000)
+	data.wifi.reference = setInterval(timerupdate,1000)
 	wifidata.forEach(function(v,i){data.wifi.timerlist[i] = v.track.time})
 	document.getElementById("animated").style = "animation:slide 1s 0.3s forwards"
 }
