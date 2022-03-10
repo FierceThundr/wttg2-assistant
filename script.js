@@ -992,7 +992,7 @@ function wifi_update(i) {//Changes the current wifi page
 </table>
 
 <div class="blockinput_wrapper" style="bottom:30px">
-	<div>
+	<div style="border:1px solid">
 		<p id="wifi_summary">[True Time ${timeformat(data.wifi.timerlive[data.wifi.current])}] [Cool Time ${timeformat(data.wifi.cooldowns[data.wifi.current])}]</p>
 	</div>
 	<div>
