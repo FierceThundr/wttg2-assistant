@@ -846,12 +846,12 @@ function guideload() {//Create a click event listener when the clickpoints popup
 function sitepreview(i) {//Updates and displays the key clickpoints popup
 	click()
 	if (i == -1) {
-		document.getElementById("preview_div").style.display = "none";
+		document.getElementById("preview_wrapper").style.display = "none";
 		document.body.classList.remove("noscroll");
 		return;
 	}
 	document.getElementById("preview").src = 'Clickpoint Guides/' + i + '.html'
-	document.getElementById("preview_div").style.display = "block"
+	document.getElementById("preview_wrapper").style.display = "block"
 	document.body.classList.add("noscroll");
 }
 
@@ -991,8 +991,8 @@ function wifi_update(i) {//Changes the current wifi page
 	</tbody>
 </table>
 
-<div class="blockinput_wrapper" style="bottom:30px">
-	<div style="border:1px solid">
+<div class="block_inputwrapper" style="bottom:30px">
+	<div style="border:1px solid gray;align-content:center;">
 		<p id="wifi_summary">[True Time ${timeformat(data.wifi.timerlive[data.wifi.current])}] [Cool Time ${timeformat(data.wifi.cooldowns[data.wifi.current])}]</p>
 	</div>
 	<div>
@@ -1043,12 +1043,12 @@ function tenantupdate(i) {//Changes the currently displayed tenant page
 	</tbody>
 </table>
 
-<div class="blockinput_wrapper" style="bottom:200px">
+<div class="block_inputwrapper" style="bottom:200px">
 	<div>
 		<input id="roominput" type="text" maxlength="20" oninput="tenantinput(${i},this.value)" placeholder="Tenant room number..." ${(v.doll == 0) ? `disabled`:``}>
 	</div>
 	<div>
-		<button onclick='tenanttoggle(${i})' class="blockbutton" id="tenantbutton" style="bottom:200px;" ${(v.doll == 0) ? `disabled`:``}>${(v.doll == 0) ? `Invalid Doll Maker Target`:data.tenant.availability[i] ? `Mark Tenant Unavailable`:`Mark Tenant Available`}</button>
+		<button id="tenantbutton" onclick='tenanttoggle(${i})' style="bottom:200px;" ${(v.doll == 0) ? `disabled`:``}>${(v.doll == 0) ? `Invalid Doll Maker Target`:data.tenant.availability[i] ? `Mark Tenant Unavailable`:`Mark Tenant Available`}</button>
 </div>`
 	document.getElementById("roominput").value = data.tenant.rooms[i]
 }
