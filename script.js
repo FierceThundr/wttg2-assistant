@@ -695,10 +695,14 @@ var data = {
 		"keys":[null,0,0,0],
 		"total":[null,2,3,3]},
 	"wifi":{
+		"intro":1,
+		"current":-1,
+		"reference":undefined,
 		"button":"No Timer Active",
-		"active":0,
-		"reference":0,
-		"timer":[0,0,"",""],
+		"timer":[0,0,0,0,"",""],
+		"cooldowns":Full_array(wifidata.length,0),
+		"timerfull":Full_array(wifidata.length,0),
+		"timerlive":Full_array(wifidata.length,0),
 		"passwords":Full_array(wifidata.length,"")},
 	"tenant":{
 		"rooms":Full_array(tenantdata.length,""),
@@ -720,7 +724,7 @@ var data = {
 
 //==========================================================================Functions
 
-function Full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v);};return a;}
+function Full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v)};return a}
 
 //=============================
 //=============================Popup Functions
@@ -767,39 +771,39 @@ function popnotesclose() {
 //=============================Wiki Functions
 //=============================
 function wikiinput(content) {//Updates wiki data from import field
-	document.getElementById("wikidata").value = "";
-	if (content.length == 1) {return;}
+	document.getElementById("wikidata").value = ""
+	if (content.length == 1) {return}
 	var sites = content.match(/(?=^)[\w ]+[!?]?(?= -)/gm)
 	if (sites == null) {
-		return;
+		return
 	} else {
-		var table = document.getElementById("wiki" + data.wiki.current + "list");
-		for (var y = table.rows.length - 1; y > 0; y--) {table.deleteRow(-1);}
+		var table = document.getElementById("wiki" + data.wiki.current + "list")
+		for (var y = table.rows.length - 1; y > 0; y--) {table.deleteRow(-1)}
 		sites.forEach(function (name) {
-			var i = sitedata[name];
+			var i = sitedata[name]
 			if (i == undefined) {
 				buttons(name,i,0,0,0,1)
 			} else {
-				var o = i.id;buttons(name,i,0,0,o,2);
+				var o = i.id;buttons(name,i,0,0,o,2)
 				if (i.sub !== undefined) {
 					i.sub.forEach(function (name,m,n) {
-						o++;
+						o++
 						buttons(name,i,m,n,o,3)
 					})
 				}
 			}
 		})
-		data.wiki.keys[data.wiki.current] = 0;
-		keysupdate();
+		data.wiki.keys[data.wiki.current] = 0
+		keysupdate()
 	}
 
 	function buttons(name,i,m,n,o,v) {
-		var a = document.getElementById("wiki" + data.wiki.current + "list").insertRow(-1);
-		var b = a.insertCell(0);
-		var c = a.insertCell(1);
-		var d = a.insertCell(2);
-		b.innerHTML = ((v == 3) ? ((n.length - 1 == m) ? '⠀└─ ':'⠀├─ '):"") + name;
-		c.innerHTML = (v == 3) ? ('<i class="child">⠀Subpage</i>'):(v == 2) ? ((i.times == undefined) ? 'Always Available':i.times):('<i class="secondary">Dead Site</i>');
+		var a = document.getElementById("wiki" + data.wiki.current + "list").insertRow(-1)
+		var b = a.insertCell(0)
+		var c = a.insertCell(1)
+		var d = a.insertCell(2)
+		b.innerHTML = ((v == 3) ? ((n.length - 1 == m) ? '⠀└─ ':'⠀├─ '):"") + name
+		c.innerHTML = (v == 3) ? ('<i class="child">⠀Subpage</i>'):(v == 2) ? ((i.times == undefined) ? 'Always Available':i.times):('<i class="secondary">Dead Site</i>')
 		d.innerHTML = `<button class="${(v == 1) ? "disabled":""}" ${(v !== 1) ? 'onclick="sitepreview(' + o + ')"':""}><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-search fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-search-plus fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this,1)"':""}><i class="fa fa-key fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-link fa-lg"></i></button>`
 	}
 }
@@ -811,12 +815,12 @@ function wikidemo() {//Forces update of wiki data
 
 function wikiupdate(m) {//Changes the wiki page
 	click()
-	document.getElementById("wiki" + data.wiki.current).style.display = "none";
+	document.getElementById("wiki" + data.wiki.current).style.display = "none"
 	data.wiki.current += m
-	if (data.wiki.current == 4) {data.wiki.current = 1;};
-	if (data.wiki.current == 0) {data.wiki.current = 3;};
-	document.getElementById("wiki" + data.wiki.current).style.display = "block";
-	document.getElementById("wikititle").innerHTML = "Wiki " + "III".slice(0,data.wiki.current);
+	if (data.wiki.current == 4) {data.wiki.current = 1}
+	if (data.wiki.current == 0) {data.wiki.current = 3}
+	document.getElementById("wiki" + data.wiki.current).style.display = "block"
+	document.getElementById("wikititle").innerHTML = "Wiki " + "III".slice(0,data.wiki.current)
 	keysupdate()
 }
 
@@ -827,7 +831,7 @@ function toggle(element,k) {//Toggle color of note taking buttons
 }
 
 function keysupdate() {//Updates the remaining keys count
-	document.getElementById("keycount").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>';
+	document.getElementById("keycount").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>'
 }
 
 function guideload() {//Create a click event listener when the clickpoints popup finished loading
@@ -842,13 +846,13 @@ function guideload() {//Create a click event listener when the clickpoints popup
 function sitepreview(i) {//Updates and displays the key clickpoints popup
 	click()
 	if (i == -1) {
-		document.getElementById("preview_div").style.display = "none";
-		document.body.classList.remove("noscroll");
+		document.getElementById("preview_wrapper").style.display = "none";
+		document.body.classList.remove("noscroll")
 		return;
 	}
 	document.getElementById("preview").src = 'Clickpoint Guides/' + i + '.html'
-	document.getElementById("preview_div").style.display = "block"
-	document.body.classList.add("noscroll");
+	document.getElementById("preview_wrapper").style.display = "block"
+	document.body.classList.add("noscroll")
 }
 
 //=============================
@@ -868,70 +872,103 @@ function noteinput() {//Attempts to find and save keys within the note block's d
 //=============================
 //=============================Wifi Functions
 //=============================
-function passwordinput(i,p) {//Updates wifi label if password is provided
+function wifi_passwordinput(i,p) {//Updates wifi label if password is provided
 	data.wifi.passwords[i] = p
-	document.getElementById("wifibutton" + i).innerHTML = "<i class='fa " + ((data.wifi.passwords[i] !== "") ? 'fa-check-square':'fa-square') + " fa-lg'></i> " + wifidata[i]["name"]
+	document.getElementById("wifi_listbutton" + i).innerHTML = "<i class='fa " + ((data.wifi.passwords[i] !== "") ? 'fa-check-square':'fa-square') + " fa-lg'></i> " + wifidata[i]["name"]
 }
 
-function timerupdate() {//Updates wifi timer every second
-	data.wifi.timer[0] -= 1
-	if (data.wifi.timer[0] == 60) {data.general.beep.play()}
-	timerdisplay()
-	if (data.wifi.timer[0] == 0) {
-		clearTimeout(data.wifi.reference)
-		data.wifi.reference = -1
-		timerpausebutton("No Timer Active")
+function wifi_timerupdate() {//Updates wifi timers and cooldowns
+	data.wifi.cooldowns = data.wifi.cooldowns.map(function(v,i){
+		if (v != 0 && i != data.wifi.timer[1]) {
+			if (--v == 0) {
+				data.wifi.timerlive[i] = data.wifi.timerfull[i]
+				//console.log(`The cooldown for network ${wifidata[i].name} has reached ${v} seconds!`)
+			}
+		}
+		return v
+	})
+	if (data.wifi.timer[2] != 0) {
+		data.wifi.timer[2] -= 1
+		data.wifi.timerlive[data.wifi.timer[1]] = data.wifi.timer[2]
+		if (data.wifi.timer[2] == 60) {data.general.beep.play()}
+		if (data.wifi.timer[2] == 0) {
+			//timerpausebutton("No Timer Active")
+			//Should this call disconnect or restart the timer?
+		}
 	}
+	wifi_timerdisplay()
 }
 
-function timerdisplay() {//Updates the timer display
+function wifi_timerdisplay() {//This function updates dynamic displays of the wifi timers
+	var timer = data.wifi.timer
 	var string = "###########################"
-	var a = "[" + data.wifi.timer[2] + string.slice(data.wifi.timer[2].length) + String(Math.floor(data.wifi.timer[0]/60)).padStart(2,'0') + ":" + String(Math.floor(data.wifi.timer[0]%60)).padStart(2,'0') + string.slice(data.wifi.timer[3].length) + data.wifi.timer[3] + "]";
-	var b = Math.ceil((data.wifi.timer[0]/data.wifi.timer[1]*100)/(100/a.length))
+	var a = "[" + timer[4] + string.slice(timer[4].length) + timeformat(timer[2]) + string.slice(timer[5].length) + timer[5] + "]"
+	var b = Math.ceil((timer[2]/timer[3]*100)/(100/a.length))
 	var c = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b)
-	document.getElementById("wifitimer").innerHTML = c
+	document.getElementById("wifi_timer").innerHTML = c
+	document.getElementById("wifi_summary").innerHTML = `[True Time ${timeformat(data.wifi.timerlive[data.wifi.current])}] [Cool Time ${timeformat(data.wifi.cooldowns[data.wifi.current])}]`
 	if (data.popup.wifi.active == 1) {
 		data.popup.wifi.reference.document.getElementById("content").innerHTML = c
 	}
 }
 
-function timerset(i,n) {//Updates wifi timer
-	click();
-	data.wifi.timer = [i,i,n,""]
-	timerpausebutton("Pause Timer")
-	if (data.wifi.reference !== -1) {
-		clearTimeout(data.wifi.reference)
-		data.wifi.reference = -1
-	}
-	data.wifi.reference = setInterval(timerupdate,1000);
-	timerupdate();
+function wifi_wifijoin(d) {//Updates wifi timer
+	if (data.wifi.timer[0] == 0) {wifi_timersetup(d)}
+	var i = data.wifi.current
+	var f = data.wifi.timerfull[i]
+	var l = data.wifi.timerlive[i]
+	data.wifi.timer = [data.wifi.timer[0],i,l,f,wifidata[i].name,""]
+	wifi_timerpausebutton("Pause Timer")
+	wifi_timerupdate()
+	click()
+	data.wifi.cooldowns[i] = 300
 }
 
-function timerpause() {//Pauses wifi timer
+function wifi_wifileave() {
+	if (data.wifi.timer[0] == 2) {
+		data.wifi.timerlive[data.wifi.timer[1]] = Math.floor(data.wifi.timerlive[data.wifi.timer[1]] * 0.7)
+	}
+	data.wifi.timer = [data.wifi.timer[0],-1,0,0,"",(data.wifi.reference == undefined) ? "PAUSED":"DISCONNECTED"]
+	wifi_timerdisplay()
+}
+
+function wifi_timersetup(d) {
+	data.wifi.timer[0] = d
+	wifidata.forEach(function(v,i){
+		var t = v.track.time
+		if (data.wifi.timer[0] == 2) {t = Math.floor(t * 0.7)}
+		data.wifi.timerfull[i] = t
+		data.wifi.timerlive[i] = t
+	})
+	//document.getElementById(`wifi_button${(d == 1) ? 2:1}`).style.display = "none"
+	data.wifi.reference = setInterval(wifi_timerupdate,1000)
+}
+
+function wifi_timerpause() {//Pauses wifi timer
 	if (data.wifi.timer[0] != 0) {
-		if (data.wifi.reference == -1) {
-			data.wifi.reference = setInterval(timerupdate,1000);
-			data.wifi.timer[3] = ""
-			timerpausebutton("Pause Timer")
+		if (data.wifi.reference == undefined) {
+			data.wifi.reference = setInterval(wifi_timerupdate,1000)
+			data.wifi.timer[5] = (data.wifi.timer[1] == -1) ? "DISCONNECTED":""
+			wifi_timerpausebutton("Pause Timer")
 		} else {
-			clearTimeout(data.wifi.reference)
-			data.wifi.reference = -1
-			data.wifi.timer[3] = "PAUSED"
-			timerpausebutton("Resume Timer")
+			data.wifi.reference = clearInterval(data.wifi.reference)
+			data.wifi.timer[5] = "PAUSED"
+			wifi_timerpausebutton("Resume Timer")
 		}
-		timerdisplay()
+		wifi_timerdisplay()
 	}
 }
 
-function timerpausebutton(x) {//Modifies the text displayed on the wifi pause button
-	document.getElementById("timerpausebutton").innerHTML = x
+function wifi_timerpausebutton(x) {//Modifies the text displayed on the wifi pause button
+	document.getElementById("wifi_button3").innerHTML = x
 	data.wifi.button = x
 }
 
-function wifiupdate(i) {//Changes the current wifi page
+function wifi_update(i) {//Changes the current wifi page
 	click()
 	var v = wifidata[i]
-	document.getElementById("wifidata").innerHTML = `
+	data.wifi.current = i
+	document.getElementById("wifi_data").innerHTML = `
 <h2>${v.name}</h2>
 <table>
 	<tbody>
@@ -950,17 +987,27 @@ function wifiupdate(i) {//Changes the current wifi page
 		<tr><td>Inject Cooldown</td><td>${v.inject.wait}s</td></tr>
 		<tr><td>Inject Success Range</td><td>${v.inject.total}</td></tr>
 		<tr><td>Inject Crash Time</td><td>${v.inject.crash}s</td></tr>`:``}
-		${(v.secret) ? `<tr><td colspan="2">This wifi is not available by normal means as it is not listed when the scan command is run at its location</td></tr>`:``}
+		${(v.secret) ? `<tr><td colspan="2">This wifi is not available by normal means as the network BSSID cannot be found using SkyBreak</td></tr>`:``}
 	</tbody>
 </table>
 
-<textarea oninput="passwordinput(${i},this.value)" class="blockinput" placeholder="${(v.level == 0) ? `Unsecured Network...`:`Password...`}" style="bottom:90px;"${(v.level == 0) ? `disabled`:``}>${data.wifi.passwords[i]}</textarea><br>
-
-<span class="blockbutton" style="bottom: 60px;">
-	<button onclick='timerset(${v.track.time},"${v.name}")' style="width:49.25%;">Start Wifi Timer</button>
-	<button onclick='timerset(${Math.floor(v.track.time*0.7)},"${v.name}")' style="width:49.25%;">Start 1337 Timer</button>
-</span>
-<button onclick='timerpause()' class="blockbutton" style="bottom:30px;" id="timerpausebutton">${data.wifi.button}</button>`
+<div class="block_inputwrapper" style="bottom:30px">
+	<div style="border:1px solid gray;align-content:center;">
+		<p id="wifi_summary">[True Time ${timeformat(data.wifi.timerlive[data.wifi.current])}] [Cool Time ${timeformat(data.wifi.cooldowns[data.wifi.current])}]</p>
+	</div>
+	<div>
+		<input id="wifi_passwordinput" type="text" maxlength="20" oninput="passwordinput(${i},this.value)" placeholder="${(v.level == 0) ? `Unsecured Network...`:`Password...`}" ${(v.level == 0) ? `disabled`:``}>
+	</div>
+	<div>
+		<button id="wifi_button1" onclick="wifi_wifijoin(1)">Start Wifi Timer</button>
+		<button id="wifi_button2" onclick="wifi_wifijoin(2)">Start 1337 Timer</button>
+	</div>
+	<div>
+		<button id="wifi_button3" onclick="wifi_timerpause()">${data.wifi.button}</button>
+		<button id="wifi_button4" onclick="wifi_wifileave()">Disconnect</button>
+	</div>
+</div>`
+	document.getElementById("wifi_passwordinput").value = data.wifi.passwords[i]
 }
 
 function timeformat(i) {
@@ -972,14 +1019,14 @@ function timeformat(i) {
 //=============================
 function tenantinput(i,p) {//Updates tenant label if room number is provided
 	data.tenant.rooms[i] = p
-	document.getElementById("tenantbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"];
+	document.getElementById("tenantbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
 }
 
 function tenanttoggle(i) {//Updates tenant label and button if tenant is marked unavailable
 	click()
 	data.tenant.availability[i] = (data.tenant.availability[i]) ? 0:1;
 	document.getElementById("tenantbutton").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`
-	document.getElementById("tenantbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"];
+	document.getElementById("tenantbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
 }
 
 function tenantupdate(i) {//Changes the currently displayed tenant page
@@ -996,8 +1043,14 @@ function tenantupdate(i) {//Changes the currently displayed tenant page
 	</tbody>
 </table>
 
-<textarea oninput="tenantinput(${i},this.value)" class="blockinput" placeholder="Tenant room number..." style="bottom:230px;" ${(v.doll == 0) ? `disabled`:``}>${data.tenant.rooms[i]}</textarea><br>
-<button onclick='tenanttoggle(${i})' class="blockbutton" id="tenantbutton" style="bottom:200px;" ${(v.doll == 0) ? `disabled`:``}>${(v.doll == 0) ? `Invalid Doll Maker Target`:data.tenant.availability[i] ? `Mark Tenant Unavailable`:`Mark Tenant Available`}</button>`
+<div class="block_inputwrapper" style="bottom:200px">
+	<div>
+		<input id="roominput" type="text" maxlength="20" oninput="tenantinput(${i},this.value)" placeholder="Tenant room number..." ${(v.doll == 0) ? `disabled`:``}>
+	</div>
+	<div>
+		<button id="tenantbutton" onclick='tenanttoggle(${i})' style="bottom:200px;" ${(v.doll == 0) ? `disabled`:``}>${(v.doll == 0) ? `Invalid Doll Maker Target`:data.tenant.availability[i] ? `Mark Tenant Unavailable`:`Mark Tenant Available`}</button>
+</div>`
+	document.getElementById("roominput").value = data.tenant.rooms[i]
 }
 
 //=============================
@@ -1062,7 +1115,7 @@ function simulatorverify() {//Tells the player if they correctly responded to a 
 function simulatorhide() {//Toggles visibility of the simulator
 	click()
 	document.getElementById("sim_div").style.visibility = (data.simulator.visible) ? "hidden":"visible"
-	data.simulator.visible = (data.simulator.visible) ? 0:1;
+	data.simulator.visible = (data.simulator.visible) ? 0:1
 }
 
 function simulatordisplay(x) {//Modifies the simulator header
@@ -1075,7 +1128,7 @@ function simulatordisplay(x) {//Modifies the simulator header
 function tipupdate() {//Updates the displayed tip
 	document.getElementById("tips").innerHTML = '[Tip] ' + tips[Math.floor(Math.random() * tips.length)]
 }
-setInterval(tipupdate,10000);
+setInterval(tipupdate,10000)
 
 /*
 function serversidesecret() {
@@ -1087,8 +1140,8 @@ function serversidesecret() {
 function setup() {//Prepares website lists and appearance
 	wifidata.forEach(function (data,index) {
 		var button = document.createElement("button")
-		document.getElementById("wifilist").appendChild(button)
-		button.outerHTML = `<button id="wifibutton${index}" onclick="wifiupdate(${index})">${"<i class='fa " + ((data["level"] == 0) ? 'fa-square-o':'fa-square') + " fa-lg'></i> " + data.name}</button>`
+		document.getElementById("wifi_list").appendChild(button)
+		button.outerHTML = `<button id="wifi_listbutton${index}" onclick="wifi_update(${index})">${"<i class='fa " + ((data["level"] == 0) ? 'fa-square-o':'fa-square') + " fa-lg'></i> " + data.name}</button>`
 	})
 	guidedata.forEach(function (data,index) {
 		var button = document.createElement("button")
@@ -1104,10 +1157,20 @@ function setup() {//Prepares website lists and appearance
 	if (localStorage.getItem('color1') == undefined) {localStorage.setItem('color1',0)}
 	document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`
 	document.getElementById("animated").style = "animation:slide 1s 0.3s forwards"
+	var x = new XMLHttpRequest()
+	x.onreadystatechange = function() { 
+		if (x.readyState == 4 && x.status == 200) {
+			var d = JSON.parse(x.responseText)
+			console.log(d)
+			document.getElementById("version").innerHTML = `<i>Wttg Assistant Version 1.4.0.${d[0].sha.slice(0,7)}</i>`
+		}
+	}
+	x.open("GET","https://api.github.com/repos/fiercethundr/wttg2-assistant/commits?per_page=1",true)
+	x.send()
 }
 
 function click() {//Plays the click sound
-	data.general.click.play();
+	data.general.click.play()
 }
 
 function sitecycle() {//Temporary dev function (Cycle through clickpoint guides)
