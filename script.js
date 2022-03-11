@@ -724,7 +724,7 @@ var data = {
 
 //==========================================================================Functions
 
-function Full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v);};return a;}
+function Full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v)};return a}
 
 //=============================
 //=============================Popup Functions
@@ -771,39 +771,39 @@ function popnotesclose() {
 //=============================Wiki Functions
 //=============================
 function wikiinput(content) {//Updates wiki data from import field
-	document.getElementById("wikidata").value = "";
-	if (content.length == 1) {return;}
+	document.getElementById("wikidata").value = ""
+	if (content.length == 1) {return}
 	var sites = content.match(/(?=^)[\w ]+[!?]?(?= -)/gm)
 	if (sites == null) {
-		return;
+		return
 	} else {
-		var table = document.getElementById("wiki" + data.wiki.current + "list");
-		for (var y = table.rows.length - 1; y > 0; y--) {table.deleteRow(-1);}
+		var table = document.getElementById("wiki" + data.wiki.current + "list")
+		for (var y = table.rows.length - 1; y > 0; y--) {table.deleteRow(-1)}
 		sites.forEach(function (name) {
-			var i = sitedata[name];
+			var i = sitedata[name]
 			if (i == undefined) {
 				buttons(name,i,0,0,0,1)
 			} else {
-				var o = i.id;buttons(name,i,0,0,o,2);
+				var o = i.id;buttons(name,i,0,0,o,2)
 				if (i.sub !== undefined) {
 					i.sub.forEach(function (name,m,n) {
-						o++;
+						o++
 						buttons(name,i,m,n,o,3)
 					})
 				}
 			}
 		})
-		data.wiki.keys[data.wiki.current] = 0;
-		keysupdate();
+		data.wiki.keys[data.wiki.current] = 0
+		keysupdate()
 	}
 
 	function buttons(name,i,m,n,o,v) {
-		var a = document.getElementById("wiki" + data.wiki.current + "list").insertRow(-1);
-		var b = a.insertCell(0);
-		var c = a.insertCell(1);
-		var d = a.insertCell(2);
-		b.innerHTML = ((v == 3) ? ((n.length - 1 == m) ? '⠀└─ ':'⠀├─ '):"") + name;
-		c.innerHTML = (v == 3) ? ('<i class="child">⠀Subpage</i>'):(v == 2) ? ((i.times == undefined) ? 'Always Available':i.times):('<i class="secondary">Dead Site</i>');
+		var a = document.getElementById("wiki" + data.wiki.current + "list").insertRow(-1)
+		var b = a.insertCell(0)
+		var c = a.insertCell(1)
+		var d = a.insertCell(2)
+		b.innerHTML = ((v == 3) ? ((n.length - 1 == m) ? '⠀└─ ':'⠀├─ '):"") + name
+		c.innerHTML = (v == 3) ? ('<i class="child">⠀Subpage</i>'):(v == 2) ? ((i.times == undefined) ? 'Always Available':i.times):('<i class="secondary">Dead Site</i>')
 		d.innerHTML = `<button class="${(v == 1) ? "disabled":""}" ${(v !== 1) ? 'onclick="sitepreview(' + o + ')"':""}><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-search fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-search-plus fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this,1)"':""}><i class="fa fa-key fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-link fa-lg"></i></button>`
 	}
 }
@@ -815,12 +815,12 @@ function wikidemo() {//Forces update of wiki data
 
 function wikiupdate(m) {//Changes the wiki page
 	click()
-	document.getElementById("wiki" + data.wiki.current).style.display = "none";
+	document.getElementById("wiki" + data.wiki.current).style.display = "none"
 	data.wiki.current += m
-	if (data.wiki.current == 4) {data.wiki.current = 1;};
-	if (data.wiki.current == 0) {data.wiki.current = 3;};
-	document.getElementById("wiki" + data.wiki.current).style.display = "block";
-	document.getElementById("wikititle").innerHTML = "Wiki " + "III".slice(0,data.wiki.current);
+	if (data.wiki.current == 4) {data.wiki.current = 1}
+	if (data.wiki.current == 0) {data.wiki.current = 3}
+	document.getElementById("wiki" + data.wiki.current).style.display = "block"
+	document.getElementById("wikititle").innerHTML = "Wiki " + "III".slice(0,data.wiki.current)
 	keysupdate()
 }
 
@@ -831,7 +831,7 @@ function toggle(element,k) {//Toggle color of note taking buttons
 }
 
 function keysupdate() {//Updates the remaining keys count
-	document.getElementById("keycount").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>';
+	document.getElementById("keycount").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>'
 }
 
 function guideload() {//Create a click event listener when the clickpoints popup finished loading
@@ -847,12 +847,12 @@ function sitepreview(i) {//Updates and displays the key clickpoints popup
 	click()
 	if (i == -1) {
 		document.getElementById("preview_wrapper").style.display = "none";
-		document.body.classList.remove("noscroll");
+		document.body.classList.remove("noscroll")
 		return;
 	}
 	document.getElementById("preview").src = 'Clickpoint Guides/' + i + '.html'
 	document.getElementById("preview_wrapper").style.display = "block"
-	document.body.classList.add("noscroll");
+	document.body.classList.add("noscroll")
 }
 
 //=============================
@@ -902,7 +902,7 @@ function wifi_timerupdate() {//Updates wifi timers and cooldowns
 function wifi_timerdisplay() {//This function updates dynamic displays of the wifi timers
 	var timer = data.wifi.timer
 	var string = "###########################"
-	var a = "[" + timer[4] + string.slice(timer[4].length) + timeformat(timer[2]) + string.slice(timer[5].length) + timer[5] + "]";
+	var a = "[" + timer[4] + string.slice(timer[4].length) + timeformat(timer[2]) + string.slice(timer[5].length) + timer[5] + "]"
 	var b = Math.ceil((timer[2]/timer[3]*100)/(100/a.length))
 	var c = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b)
 	document.getElementById("wifi_timer").innerHTML = c
@@ -1019,14 +1019,14 @@ function timeformat(i) {
 //=============================
 function tenantinput(i,p) {//Updates tenant label if room number is provided
 	data.tenant.rooms[i] = p
-	document.getElementById("tenantbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"];
+	document.getElementById("tenantbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
 }
 
 function tenanttoggle(i) {//Updates tenant label and button if tenant is marked unavailable
 	click()
 	data.tenant.availability[i] = (data.tenant.availability[i]) ? 0:1;
 	document.getElementById("tenantbutton").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`
-	document.getElementById("tenantbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"];
+	document.getElementById("tenantbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
 }
 
 function tenantupdate(i) {//Changes the currently displayed tenant page
@@ -1115,7 +1115,7 @@ function simulatorverify() {//Tells the player if they correctly responded to a 
 function simulatorhide() {//Toggles visibility of the simulator
 	click()
 	document.getElementById("sim_div").style.visibility = (data.simulator.visible) ? "hidden":"visible"
-	data.simulator.visible = (data.simulator.visible) ? 0:1;
+	data.simulator.visible = (data.simulator.visible) ? 0:1
 }
 
 function simulatordisplay(x) {//Modifies the simulator header
@@ -1128,7 +1128,7 @@ function simulatordisplay(x) {//Modifies the simulator header
 function tipupdate() {//Updates the displayed tip
 	document.getElementById("tips").innerHTML = '[Tip] ' + tips[Math.floor(Math.random() * tips.length)]
 }
-setInterval(tipupdate,10000);
+setInterval(tipupdate,10000)
 
 /*
 function serversidesecret() {
@@ -1170,7 +1170,7 @@ function setup() {//Prepares website lists and appearance
 }
 
 function click() {//Plays the click sound
-	data.general.click.play();
+	data.general.click.play()
 }
 
 function sitecycle() {//Temporary dev function (Cycle through clickpoint guides)
