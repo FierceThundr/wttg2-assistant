@@ -46,42 +46,31 @@
 		<!-- Wiki Data Block -->
 		<div class="block_main">
 			<p class="version"><i>Wiki Block Version 1.2.9</i></p>
-			<button onclick="wikiupdate(-1)" style="width:38px;height:38px;margin: 0 45px 0 0;"><i class="fa fa-arrow-left fa-2x"></i></button><div style="width:161px;display:inline-block"><h1 id="wikititle" style="margin: 10px 0 0 0;">Wiki I</h1></div><button onclick="wikiupdate(1)" style="width:38px;height:38px;margin: 0 0 0 45px;"><i class="fa fa-arrow-right fa-2x"></i></button><br>
-			<textarea oninput="wikiinput(this.value)" id="wikidata" placeholder="Copy and Paste wiki sites here to import..." style="font-size:13px;margin:10px 0 0 0;width:320px;background-color:rgba(0, 0, 0, 0);color:inherit;resize: none;overflow:hidden;" rows="1"></textarea>
+			<button onclick="wiki_update(-1)" style="width:38px;height:38px;margin: 0 45px 0 0;"><i class="fa fa-arrow-left fa-2x"></i></button><div style="width:161px;display:inline-block"><h1 id="wikititle" style="margin: 10px 0 0 0;">Wiki I</h1></div><button onclick="wiki_update(1)" style="width:38px;height:38px;margin: 0 0 0 45px;"><i class="fa fa-arrow-right fa-2x"></i></button><br>
+			<textarea oninput="wiki_input()" id="wikidata" placeholder="Copy and Paste wiki sites here to import..." style="font-size:13px;margin:10px 0 0 0;width:320px;background-color:rgba(0, 0, 0, 0);color:inherit;resize: none;overflow:hidden;" rows="1"></textarea>
 			<table style="margin: 5px 0 0 0;bottom:515px;left:50%;position:absolute;transform:translate(-50%,0);">
 				<caption id="keycount"><b>Keys remaining: 2</b></caption>
 				<tr><th>Site Name</th><th>Availability</th><th>Markers</th></tr>
 			</table>
 			<div class="wiki_data" data-simplebar>
-				<div id="wiki1">
-					<table id="wiki1list">
-						<tr></tr>
-						<tr><td style="text-align:center;"><h1>Welcome</h1>Please copy the site contents from a wiki into the box above to begin!</td></tr>
-						<tr><td><br><button><i class="fa fa-mouse-pointer fa-lg"></i></button> - View Click Points</td></tr>
-						<tr><td><button><i class="fa fa-search fa-lg"></i></button> - Searched Manually</td></tr>
-						<tr><td><button><i class="fa fa-search-plus fa-lg"></i></button> - Searched With Key Cue</td></tr>
-						<tr><td><button><i class="fa fa-key fa-lg"></i></button> - Key Found Here</td></tr>
-						<tr><td><button><i class="fa fa-link fa-lg"></i></button> - Wiki Link Found Here</td></tr>
-						<tr><td><br>&gt; Use the arrows above to cycle imported wikis</td></tr>
-						<tr><td>&gt; Keys entered into the integrated notepad are saved automatically</td></tr>
-						<tr><td>&gt; Save site passwords into the wifi block</td></tr>
-						<tr><td>&gt; If you need help getting started you can visit the info block</td></tr>
-						<tr><td class="secondary">&gt; Refreshing the page will erase all data</td></tr>
-						<tr><td onclick="wikidemo()"><br>&gt; Click here for a demo of the wiki block!</td></tr>
-					</table>
-				</div>
-				<div id="wiki2" style="display:none;">
-					<table id="wiki2list">
-						<tr></tr>
-						<tr><td style="text-align:center;"><br><br><br><br>It's quite empty in here...<br><br>Why not import some sites?</td></tr>
-					</table>
-				</div>
-				<div id="wiki3" style="display:none;">
-					<table id="wiki3list">
-						<tr></tr>
-						<tr><td style="text-align:center;"><br><br><br><br>It's quite empty in here...<br><br>Why not import some sites?</td></tr>
-					</table>
-				</div>
+				<table id="wiki1list">
+					<tr></tr>
+					<tr><td style="text-align:center;"><h1>Welcome</h1>Please copy the site contents from a wiki into the box above to begin!</td></tr>
+					<tr><td><br><button><i class="fa fa-mouse-pointer fa-lg"></i></button> - View Click Points</td></tr>
+					<tr><td><button><i class="fa fa-search fa-lg"></i></button> - Searched Manually</td></tr>
+					<tr><td><button><i class="fa fa-search-plus fa-lg"></i></button> - Searched With Key Cue</td></tr>
+					<tr><td><button><i class="fa fa-key fa-lg"></i></button> - Key Found Here</td></tr>
+					<tr><td><button><i class="fa fa-link fa-lg"></i></button> - Wiki Link Found Here</td></tr>
+					<tr><td><br>&gt; Use the arrows above to cycle imported wikis</td></tr>
+					<tr><td>&gt; Keys entered into the integrated notepad are saved automatically</td></tr>
+					<tr><td>&gt; Save site passwords into the wifi block</td></tr>
+					<tr><td>&gt; If you need help getting started you can visit the info block</td></tr>
+					<tr><td class="secondary">&gt; Refreshing the page will erase all data</td></tr>
+					<tr><td onclick="wiki_demo()"><br>&gt; Click here for a demo of the wiki block!</td></tr>
+				</table>
+				<!--
+					<tr><td style="text-align:center;"><br><br><br><br>It's quite empty in here...<br><br>Why not import some sites?</td></tr>
+				-->
 			</div>
 		</div>
 

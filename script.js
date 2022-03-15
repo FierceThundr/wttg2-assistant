@@ -692,6 +692,7 @@ var data = {
 		"content":""},
 	"wiki":{
 		"current":1,
+		"sites":[null,[],[],[]],
 		"keys":[null,0,0,0],
 		"total":[null,2,3,3]},
 	"wifi":{
@@ -770,13 +771,57 @@ function popnotesclose() {
 //=============================
 //=============================Wiki Functions
 //=============================
-function wikiinput(content) {//Updates wiki data from import field
-	document.getElementById("wikidata").value = ""
-	if (content.length == 1) {return}
-	var sites = content.match(/(?=^)[\w ]+[!?]?(?= -)/gm)
-	if (sites == null) {
-		return
-	} else {
+function wiki_input() {//Updates wiki data from import field
+	var r = document.getElementById("wikidata")
+	var c = r.value
+	r.value = ""
+	if (c.length == 1) {return}
+	var d = []
+	var s = [...new Set(c.match(/(?=^)[\w ]+[!?]?(?= -)/gm))]
+	if (s != null) {
+		s.forEach(function(n){
+			var t = []
+			var i = sitedata[n]
+			if (i == undefined) {
+				console.log([n])
+				d.push([n])
+			} else {
+				t.push(n)
+				t.push([0,0,0,0])
+				if (i.sub != undefined) {
+					for (var y = i.sub.length; y > 0; y--) {
+						t.push([0,0,0,0])
+					}
+				}
+				console.log(t)
+				d.push(t)
+			}
+		})
+	}
+	console.log("Final",d)
+	data.wiki.sites[data.wiki.current] = d
+	wiki_update()
+}
+
+function wiki_demo() {//Forces update of wiki data
+	click()
+	data.wiki.sites[data.wiki.current] = []
+	//wikiinput("BathRoom Cams - \n\rBrutal Underground - \n\rCheap Surgery - \n\rChosen Awake - \n\rCorpses For Sell - \n\rCry Bitch - \n\rDeep Journal - \n\rDEEPDOTWEB - \n\rDream Place - \n\rEvil Collection - \n\rEye - \n\rForgive Me - \n\rHot Burners - \n\rIAMHERE - \n\rKeep Sake - \n\rLittle Friends - \n\rScream Bitch - \n\rSecure Drop - \n\rSKYWEB - \n\rSt Louis Arch - \n\rThe 8th Sin - \n\rThe Doll Maker - \n\rThe Light Within - \n\Vacation - \n\rYOU THERE? - ")
+	wiki_update()
+}
+
+function wiki_update(m) {//Updates the currently displayed data, also handles current page
+	if (m != undefined) {
+	click()
+		data.wiki.current += m
+		if (data.wiki.current == 4) {data.wiki.current = 1}
+		if (data.wiki.current == 0) {data.wiki.current = 3}
+		document.getElementById("wikititle").innerHTML = "Wiki " + "III".slice(0,data.wiki.current)
+		keysupdate()
+	}
+
+
+	if (sites != null) {
 		var table = document.getElementById("wiki" + data.wiki.current + "list")
 		for (var y = table.rows.length - 1; y > 0; y--) {table.deleteRow(-1)}
 		sites.forEach(function (name) {
@@ -797,7 +842,7 @@ function wikiinput(content) {//Updates wiki data from import field
 		keysupdate()
 	}
 
-	function buttons(name,i,m,n,o,v) {
+	function wiki_updatebuttons(name,i,m,n,o,v) {
 		var a = document.getElementById("wiki" + data.wiki.current + "list").insertRow(-1)
 		var b = a.insertCell(0)
 		var c = a.insertCell(1)
@@ -806,35 +851,25 @@ function wikiinput(content) {//Updates wiki data from import field
 		c.innerHTML = (v == 3) ? ('<i class="child">⠀Subpage</i>'):(v == 2) ? ((i.times == undefined) ? 'Always Available':i.times):('<i class="secondary">Dead Site</i>')
 		d.innerHTML = `<button class="${(v == 1) ? "disabled":""}" ${(v !== 1) ? 'onclick="sitepreview(' + o + ')"':""}><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-search fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-search-plus fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this,1)"':""}><i class="fa fa-key fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-link fa-lg"></i></button>`
 	}
+
+
 }
 
-function wikidemo() {//Forces update of wiki data
-	click()
-	wikiinput("BathRoom Cams - \n\rBrutal Underground - \n\rCheap Surgery - \n\rChosen Awake - \n\rCorpses For Sell - \n\rCry Bitch - \n\rDeep Journal - \n\rDEEPDOTWEB - \n\rDream Place - \n\rEvil Collection - \n\rEye - \n\rForgive Me - \n\rHot Burners - \n\rIAMHERE - \n\rKeep Sake - \n\rLittle Friends - \n\rScream Bitch - \n\rSecure Drop - \n\rSKYWEB - \n\rSt Louis Arch - \n\rThe 8th Sin - \n\rThe Doll Maker - \n\rThe Light Within - \n\Vacation - \n\rYOU THERE? - ")
+function wiki_editor() {
+	
 }
 
-function wikiupdate(m) {//Changes the wiki page
-	click()
-	document.getElementById("wiki" + data.wiki.current).style.display = "none"
-	data.wiki.current += m
-	if (data.wiki.current == 4) {data.wiki.current = 1}
-	if (data.wiki.current == 0) {data.wiki.current = 3}
-	document.getElementById("wiki" + data.wiki.current).style.display = "block"
-	document.getElementById("wikititle").innerHTML = "Wiki " + "III".slice(0,data.wiki.current)
-	keysupdate()
-}
-
-function toggle(element,k) {//Toggle color of note taking buttons
+function wiki_toggle(element,k) {//Toggle color of note taking buttons
 	click()
 	if (k == 1) {data.wiki.keys[data.wiki.current] += (element.classList.contains("secondary")) ? 1:-1;keysupdate()}
 	element.classList.toggle("secondary")
 }
 
-function keysupdate() {//Updates the remaining keys count
+function wiki_keysupdate() {//Updates the remaining keys count
 	document.getElementById("keycount").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>'
 }
 
-function guideload() {//Create a click event listener when the clickpoints popup finished loading
+function wiki_guideload() {//Create a click event listener when the clickpoints popup finished loading
 	try {
 		document.getElementById("preview").contentWindow.addEventListener('click', function(e) {sitepreview(-1)})
 	} catch (e) {
@@ -843,7 +878,7 @@ function guideload() {//Create a click event listener when the clickpoints popup
 	}
 }
 
-function sitepreview(i) {//Updates and displays the key clickpoints popup
+function wiki_sitepreview(i) {//Updates and displays the key clickpoints popup
 	click()
 	if (i == -1) {
 		document.getElementById("preview_wrapper").style.display = "none";
@@ -1161,7 +1196,7 @@ function setup() {//Prepares website lists and appearance
 	x.onreadystatechange = function() { 
 		if (x.readyState == 4 && x.status == 200) {
 			var d = JSON.parse(x.responseText)
-			console.log(d)
+			//console.log(d)
 			document.getElementById("version").innerHTML = `<i>Wttg Assistant Version 1.4.0.${d[0].sha.slice(0,7)}</i>`
 		}
 	}
