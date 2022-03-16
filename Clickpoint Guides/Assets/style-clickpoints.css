@@ -1,21 +1,29 @@
 .CPTAG {
-  outline: 10px solid rgba(255,255,0,0.75)
+  outline:10px solid rgba(255,255,0,0.75);
 }
 
 .CFTAG {
-  outline: 10px solid rgba(0,255,30,0.75)
+  outline:10px solid rgba(0,255,30,0.75);
+}
+
+.PTAG {
+	outline:10px solid rgba(255,0,0,0.75);
 }
 
 .CFTAG.CPTAG {
-	outline: 10px solid rgba(0,255,255,0.75)
+	outline:10px solid rgba(0,255,255,0.75);
 }
 
 .CPTAG_area {
-  background: rgba(255,255,0,0.25)
+  background:rgba(255,255,0,0.25);
 }
 
 .CFTAG_area {
-  background: rgba(0,255,30,0.25)
+  background:rgba(0,255,30,0.25);
+}
+
+.CFTAG_area.CPTAG_area {
+	background:rgba(0,255,255,0.25);
 }
 
 * {
