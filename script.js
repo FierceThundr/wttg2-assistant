@@ -281,11 +281,11 @@ var sitedata = {
 			</details>
 			<details>
 				<summary><h3>The Wifi Block</h3></summary>
-				<p>The wifi block allows you to survey the many wifi networks present in the game. It will also information useful for cracking and accessing such wifis. Along with this, the block has password fields and an inbuilt tracking timer that will play a warning when you have one minute remaining to get off a network before the cops trace you.</p>
+				<p>The wifi block allows you to survey the many wifi networks present in the game. It will also provide information useful for cracking and accessing such wifis. Along with this, the block has password fields and an inbuilt tracking timer that will play a warning when you have one minute remaining to get off a network before the cops trace you.</p>
 			</details>
 			<details>
 				<summary><h3>The Tenant Block</h3></summary>
-				<p>The tenant block can be used to view a database of tenants of Clint's apartment. It provides their ages, names, and their notes from the lobby computer. Along with this, it will also tell you if the tenant is a valid victim for the Doll Maker.</p>
+				<p>The tenant block can be used to view a database of tenants located in Clint's apartment. It provides their ages, names, and their notes from the lobby computer. Along with this, it will also tell you if the tenant is a valid victim for the Doll Maker.</p>
 			</details>
 			<details>
 				<summary><h3>The Info Block</h3></summary>
@@ -338,7 +338,7 @@ var sitedata = {
 					<li>The DosCoin icon shows you your current balance of DosCoin. Additionally, clicking on it will allow you to view information about placed remote VPNs and their performance. It lists each VPNs yield and seconds between yields.</li>
 					<li>The Backdoor Hack label lists how many backdoor hacks you currently have installed.</li>
 					<li>In the center you can see the in-game time displayed. It runs two times faster than real life time.</li>
-					<li>The VPN Icon allows you to view and manage purchased any VPNs.</li>
+					<li>The VPN Icon allows you to view and manage any purchased VPNs.</li>
 					<li>The Motion Alert icon can be used to view and monitor any placed motion sensors. In addition, the icon will blink if a motion sensor is triggered and Sound Alert is pruchased.</li>
 					<li>The Wifi Icon will be quite familiar to those who use PCs. It allows you to view nearby networks and log into them.</li>
 					<li>The Sound Icon allows you to mute your PCs volume. An important note, doing this will mute all sounds produced by your PC.</li>
@@ -435,7 +435,7 @@ var sitedata = {
 				<li>Make sure that you can hear the lockpicking sound cue. Normally this is the only way to identify that the hitman is at your door and preparing to break in. <i>(Sound cue can be found below)</i></li>
 				<li>Purchase and place motion sensors in addition to buying sound alert. This will give you a more effective method to know when the hitman is coming to your door in addition to giving you more time to hide. <i>(The motion sensors should be placed on the wall on both ends of the hallway, as the hitman can approach from both sides of the hallway)</i></li>
 			</ol>
-			<p>When you know the Hitman is currently preparing to barge in you must turn of your computer and hide in either the shower in the bathroom or the closet near your balcony. In both cases you must be quiet as to not alert the hitman. <i>(This is only relevant if you have the mic enabled in your settings)</i> Also note that if you do not turn off the computer the hitman can erase notes saved into the games internal notepad in addition to stealing portions of your DosCoin balance. During the time he is in your apartment, stay in your hiding place until you hear him leave. <i>(Sound can be found below)</i> You can affect the time he is in your apartment by turning off more lights in the seconds before you hide and prior.</p>
+			<p>When you know the Hitman is currently preparing to barge in you must turn off your computer and hide in either the shower in the bathroom or the closet near your balcony. In both cases you must be quiet as to not alert the hitman. <i>(This is only relevant if you have the mic enabled in your settings)</i> Also note that if you do not turn off the computer the hitman can erase notes saved into the games internal notepad in addition to stealing portions of your DosCoin balance. During the time he is in your apartment, stay in your hiding place until you hear him leave. <i>(Sound can be found below)</i> You can affect the time he is in your apartment by turning off more lights in the seconds before you hide and prior.</p>
 			<p>In addition to encountering the Hitman as he pays a visit to your apartment it is possible for them to kill you when returning to your apartment if they spawn when you are not at the apartment. Unfortunately, if this rare event occurs it is impossible to mitigate and you will die the next time you open a hallway door.</p>
 			<details>
 				<summary><b>Hitman Activation</b></summary>
@@ -465,7 +465,7 @@ var sitedata = {
 		{"name":`<i class="fa fa-circle fa-lg"></i> The Noir`,"content":`
 		<h1>The Noir</h1>
 			<p>The Noir are a threat prevalent in the game. They appear randomly in various places such as in the apartment, the apartment window, the hallway, behind doors, and in rare cases behind the gate in back of the alley.</p>
-			<p>They are a basic threat to mitigate, but can quite easily catch those unfamiliar with them. To make them go away, turn around as soon as you see them and count to ten. After this they should be gone. If not, repeat the process. However, they pose a more active threat when they spawn behind doorways. This often catches players who are attempting to rush to and from the alley/lobby and back as fast as possible. In addition, the Noir have a chance to instantly kill you if you have at least two lights turned off in your apartment. <i>(For more details of the Noir insta-kill, check below)</i>
+			<p>They are a basic threat to mitigate, but can quite easily catch those unfamiliar with them off gaurd. To make them go away, turn around as soon as you see them and count to ten. After this they should be gone. If not, repeat the process. However, they pose a more active threat when they spawn behind doorways. This often catches players who are attempting to rush to and from the alley/lobby and back as fast as possible. In addition, the Noir have a chance to instantly kill you if you have at least two lights turned off in your apartment. <i>(For more details of the Noir insta-kill, check below)</i>
 			<details>
 				<summary><b>Noir insta-kill</b></summary>
 				<p>The noir insta-kill is one of the most dangerous aspects of the Noir. It allows the Noir to instantly kill the player if a few criteria are met.</p>
@@ -528,7 +528,7 @@ var sitedata = {
 				<summary><b>Notes</b></summary>
 				<ul>
 					<li>If possible, you should avoid triggering the Dollmaker in a run going for completion</li>
-					<li>If you want to complete the quest, go for it AFTER you have sufficient funds for a better chance of success</li>
+					<li>If you want to complete the quest, you should attempt to go for it after you have sufficient funds for a better chance of success</li>
 					<li>While the time the Dollmaker quest provides is generous, it should be completed as soon as you can manage</li>
 				</ul>
 			</details>`},
@@ -797,10 +797,10 @@ function wiki_input() {//Updates wiki data from import field
 				d.push(t)
 			}
 		})
+		console.log("Final",d)
+		data.wiki.sites[data.wiki.current] = d
+		wiki_update()
 	}
-	console.log("Final",d)
-	data.wiki.sites[data.wiki.current] = d
-	wiki_update()
 }
 
 function wiki_demo() {//Forces update of wiki data
@@ -812,15 +812,13 @@ function wiki_demo() {//Forces update of wiki data
 
 function wiki_update(m) {//Updates the currently displayed data, also handles current page
 	if (m != undefined) {
-	click()
-		data.wiki.current += m
-		if (data.wiki.current == 4) {data.wiki.current = 1}
-		if (data.wiki.current == 0) {data.wiki.current = 3}
+		click()
+		data.wiki.current = ((data.wiki.current + m + 2) % 3) + 1
 		document.getElementById("wikititle").innerHTML = "Wiki " + "III".slice(0,data.wiki.current)
-		keysupdate()
+		wiki_keysupdate()
 	}
 
-
+	/*
 	if (sites != null) {
 		var table = document.getElementById("wiki" + data.wiki.current + "list")
 		for (var y = table.rows.length - 1; y > 0; y--) {table.deleteRow(-1)}
@@ -841,6 +839,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 		data.wiki.keys[data.wiki.current] = 0
 		keysupdate()
 	}
+	*/
 
 	function wiki_updatebuttons(name,i,m,n,o,v) {
 		var a = document.getElementById("wiki" + data.wiki.current + "list").insertRow(-1)
