@@ -92,6 +92,10 @@ user-select: all;
 overflow:hidden;
 }
 
+.italic {
+font-style:italic;
+}
+
 /* General block formatting */
 
 .block_main {

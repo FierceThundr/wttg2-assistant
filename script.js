@@ -665,7 +665,7 @@ var sitedata = {
 		{"name":`<i class="fa fa-dot-circle-o fa-lg"></i> Hitman Simulator`,"content":`
 		<h1>Hitman Simulator</h1>
 			<p>The button below will open a simulator for the Hitmans lockpicking noise. Once you hear it, you should go to the widget for the simulator and click 'I heard that'. It will then tell you if you correct or incorrect. It will play five seconds after you start the simulation as a test, after that you must pay attention for when it plays. If you fail to catch a noise it plays, it will tell you that you have died and will continue the simulator as normal.</p>
-			<button onclick="simulatorlaunch()">Launch Simulator</button>`},
+			<button onclick="simulator_launch()">Launch Simulator</button>`},
 		{"name":`<i class="fa fa-cog fa-lg"></i> Settings`,"content":`
 		<h1>Settings</h1>
 			<table>
@@ -692,7 +692,7 @@ var data = {
 		"content":""},
 	"wiki":{
 		"current":1,
-		"sites":[null,[],[],[]],
+		"sites":[null,{},{},{}],
 		"keys":[null,0,0,0],
 		"total":[null,2,3,3]},
 	"wifi":{
@@ -772,33 +772,28 @@ function popnotesclose() {
 //=============================Wiki Functions
 //=============================
 function wiki_input() {//Updates wiki data from import field
-	var r = document.getElementById("wikidata")
+	var r = document.getElementById("wiki_data")
 	var c = r.value
 	r.value = ""
 	if (c.length == 1) {return}
-	var d = []
+	var d = {}
 	var s = [...new Set(c.match(/(?=^)[\w ]+[!?]?(?= -)/gm))]
 	if (s != null) {
 		s.forEach(function(n){
-			var t = []
 			var i = sitedata[n]
 			if (i == undefined) {
-				console.log([n])
-				d.push([n])
+				d[n] = []
 			} else {
-				t.push(n)
-				t.push([0,0,0,0])
-				if (i.sub != undefined) {
-					for (var y = i.sub.length; y > 0; y--) {
-						t.push([0,0,0,0])
-					}
+				var t = []
+				for (var y = i.sub?.length ?? 1; y > 0; y--) {
+					t.push([0,0,0,0])
 				}
-				console.log(t)
-				d.push(t)
+				d[n] = t
 			}
 		})
 		console.log("Final",d)
 		data.wiki.sites[data.wiki.current] = d
+		data.wiki.keys[data.wiki.current] = 0
 		wiki_update()
 	}
 }
@@ -807,77 +802,114 @@ function wiki_demo() {//Forces update of wiki data
 	click()
 	data.wiki.sites[data.wiki.current] = []
 	//wikiinput("BathRoom Cams - \n\rBrutal Underground - \n\rCheap Surgery - \n\rChosen Awake - \n\rCorpses For Sell - \n\rCry Bitch - \n\rDeep Journal - \n\rDEEPDOTWEB - \n\rDream Place - \n\rEvil Collection - \n\rEye - \n\rForgive Me - \n\rHot Burners - \n\rIAMHERE - \n\rKeep Sake - \n\rLittle Friends - \n\rScream Bitch - \n\rSecure Drop - \n\rSKYWEB - \n\rSt Louis Arch - \n\rThe 8th Sin - \n\rThe Doll Maker - \n\rThe Light Within - \n\Vacation - \n\rYOU THERE? - ")
+	data.wiki.sites[data.wiki.current] = {"BathRoom Cams":[],"Brutal Underground":[[0,0,0,0]],"Cheap Surgery":[],"Chosen Awake":[],"Corpses For Sell":[],"Cry Bitch":[[0,0,0,0]],"Deep Journal":[[0,0,0,0],[0,0,0,0]],"DEEPDOTWEB":[],"Dream Place":[],"Evil Collection":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"Eye":[[0,0,0,0]],"Forgive Me":[[0,0,0,0]],"Hot Burners":[],"IAMHERE":[[0,0,0,0]],"Keep Sake":[[0,0,0,0]],"Little Friends":[[0,0,0,0]],"Scream Bitch":[[0,0,0,0]],"Secure Drop":[],"SKYWEB":[],"St Louis Arch":[[0,0,0,0],[0,0,0,0],[0,0,0,0]],"The 8th Sin":[],"The Doll Maker":[[0,0,0,0]],"The Light Within":[[0,0,0,0]],"Vacation":[[0,0,0,0]],"YOU THERE?":[[0,0,0,0]]}
 	wiki_update()
 }
 
 function wiki_update(m) {//Updates the currently displayed data, also handles current page
+	//Disable editor flag
+
 	if (m != undefined) {
 		click()
 		data.wiki.current = ((data.wiki.current + m + 2) % 3) + 1
-		document.getElementById("wikititle").innerHTML = "Wiki " + "III".slice(0,data.wiki.current)
-		wiki_keysupdate()
+		document.getElementById("wiki_title").innerHTML = "Wiki " + "III".slice(0,data.wiki.current)
+		wiki_updatekeys()
 	}
 
-	/*
-	if (sites != null) {
-		var table = document.getElementById("wiki" + data.wiki.current + "list")
-		for (var y = table.rows.length - 1; y > 0; y--) {table.deleteRow(-1)}
-		sites.forEach(function (name) {
-			var i = sitedata[name]
+	var s = Object.getOwnPropertyNames(data.wiki.sites[data.wiki.current]).sort()
+	if (s.length == 0) {
+		
+	} else {
+		var t = document.getElementById("wiki_list")
+		for (var y = t.rows.length - 1; y > 0; y--) {t.deleteRow(-1)}
+		s.forEach(function(n){
+			var i = sitedata[n]
 			if (i == undefined) {
-				buttons(name,i,0,0,0,1)
+				wiki_createrow(t,n,i,0,0,0,1)
 			} else {
-				var o = i.id;buttons(name,i,0,0,o,2)
-				if (i.sub !== undefined) {
-					i.sub.forEach(function (name,m,n) {
+				var o = i.id
+				wiki_createrow(t,n,i,0,0,o,2)
+				if (i.sub != undefined) {
+					i.sub.forEach(function(n,m,p){
 						o++
-						buttons(name,i,m,n,o,3)
+						wiki_createrow(t,n,i,m,p,o,3)
 					})
 				}
 			}
 		})
-		data.wiki.keys[data.wiki.current] = 0
-		keysupdate()
 	}
-	*/
-
-	function wiki_updatebuttons(name,i,m,n,o,v) {
-		var a = document.getElementById("wiki" + data.wiki.current + "list").insertRow(-1)
+	
+	function wiki_createrow(t,n,i,m,p,o,v) {
+		//I don't particularly like how this is being done, but I am not super sure how to do better at the moment. 
+		var a = t.insertRow(-1)
 		var b = a.insertCell(0)
 		var c = a.insertCell(1)
 		var d = a.insertCell(2)
-		b.innerHTML = ((v == 3) ? ((n.length - 1 == m) ? '⠀└─ ':'⠀├─ '):"") + name
+		b.innerHTML = ((v == 3) ? ((p.length - 1 == m) ? '⠀└─ ':'⠀├─ '):"") + n
 		c.innerHTML = (v == 3) ? ('<i class="child">⠀Subpage</i>'):(v == 2) ? ((i.times == undefined) ? 'Always Available':i.times):('<i class="secondary">Dead Site</i>')
-		d.innerHTML = `<button class="${(v == 1) ? "disabled":""}" ${(v !== 1) ? 'onclick="sitepreview(' + o + ')"':""}><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-search fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-search-plus fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this,1)"':""}><i class="fa fa-key fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-link fa-lg"></i></button>`
+		d.innerHTML = `
+		<button class="${(v == 1) ? "disabled":""}" ${(v !== 1) ? 'onclick="wiki_previewupdate(' + o + ')"':""}><i class="fa fa-mouse-pointer fa-lg"></i></button>
+		<button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="wiki_notetoggle(this)"':""}><i class="fa fa-search fa-lg"></i></button>
+		<button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="wiki_notetoggle(this)"':""}><i class="fa fa-search-plus fa-lg"></i></button>
+		<button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="wiki_notetoggle(this,1)"':""}><i class="fa fa-key fa-lg"></i></button>
+		<button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="wiki_notetoggle(this)"':""}><i class="fa fa-link fa-lg"></i></button>`
+		
+		//Logic order 
+			//Cell 1
+				//Is it a subpage?
+					//Is it the last subpage?
+						//Append hook to website name
+					//Else
+						//Append branch to website name
+				//Display the website name 
+			//Cell 2
+				//Is it a subpage?
+					//Display "Subpage"
+				//Is it a dead page?
+					//Display "Dead"
+				//Else
+					//Is it a timed site?
+						//Display uptime
+					//Else
+						//Display "Always Available"
+			//Cell 3
+				//Is it a real page?
+					//Buttons should be enabled
+				//Else
+					//Buttons should be disabled
 	}
-
-
 }
 
-function wiki_editor() {
-	
+function wiki_editor() {//Replaces currently displayed data with website editor
+	//Is editor enabled?
+		//Call wiki_update and return
+	//Else
+		//Erase and load editor
+		//Set editor flag
+	var t = document.getElementById("wiki_list")
+	for (var y = t.rows.length - 1; y > 0; y--) {t.deleteRow(-1)}
 }
 
-function wiki_toggle(element,k) {//Toggle color of note taking buttons
+function wiki_notetoggle(e,k) {//Toggle color of note taking buttons
 	click()
-	if (k == 1) {data.wiki.keys[data.wiki.current] += (element.classList.contains("secondary")) ? 1:-1;keysupdate()}
-	element.classList.toggle("secondary")
+	if (k == 1) {data.wiki.keys[data.wiki.current] += (e.classList.contains("secondary")) ? 1:-1;wiki_updatekeys()}
+	e.classList.toggle("secondary")
 }
 
-function wiki_keysupdate() {//Updates the remaining keys count
-	document.getElementById("keycount").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>'
+function wiki_updatekeys() {//Updates the remaining keys count
+	document.getElementById("wiki_keys").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>'
 }
 
-function wiki_guideload() {//Create a click event listener when the clickpoints popup finished loading
+function wiki_previewload() {//Create a click event listener when the clickpoints popup finished loading
 	try {
-		document.getElementById("preview").contentWindow.addEventListener('click', function(e) {sitepreview(-1)})
+		document.getElementById("preview").contentWindow.addEventListener('click', function(e) {wiki_previewupdate(-1)})
 	} catch (e) {
-		sitepreview(-1)
+		wiki_previewupdate(-1)
 		console.log("Clickpoint Guide Failure: " + e)
 	}
 }
 
-function wiki_sitepreview(i) {//Updates and displays the key clickpoints popup
+function wiki_previewupdate(i) {//Updates and displays the key clickpoints popup
 	click()
 	if (i == -1) {
 		document.getElementById("preview_wrapper").style.display = "none";
@@ -892,11 +924,11 @@ function wiki_sitepreview(i) {//Updates and displays the key clickpoints popup
 //=============================
 //=============================Note Functions
 //=============================
-function noteinput() {//Attempts to find and save keys within the note block's data
-	var content = document.getElementById("notes").value
+function note_input() {//Attempts to find and save keys within the note block's data
+	var content = document.getElementById("note_input").value
 	var lkeys = content.match(/[1-8] - [\w]{12}/g)
 	if (lkeys !== null) {lkeys.forEach(function (a) {data.note.keys[a.slice(0,1)] = a.slice(4,16)})}
-	document.getElementById("keyoutput").innerHTML = `<b>Key Data</b><br>${data.note.keys.join("").substr(0,48)}<br>${data.note.keys.join("").substr(48,48)}`
+	document.getElementById("note_keyoutput").innerHTML = `<b>Key Data</b><br>${data.note.keys.join("").substr(0,48)}<br>${data.note.keys.join("").substr(48,48)}`
 	if (data.note.keys.indexOf("????????????") == -1) {document.getElementById("keyoutput").innerHTML = `<b>Master Key</b><br><span class="select-all">${data.note.keys.join("")}</span>`}
 	if (data.popup.notes.active == 1) {
 		data.popup.notes.reference.document.getElementById("content").innerHTML = content
@@ -946,7 +978,7 @@ function wifi_timerdisplay() {//This function updates dynamic displays of the wi
 	}
 }
 
-function wifi_wifijoin(d) {//Updates wifi timer
+function wifi_wifijoin(d) {//Updates wifi timer (onjoin)
 	if (data.wifi.timer[0] == 0) {wifi_timersetup(d)}
 	var i = data.wifi.current
 	var f = data.wifi.timerfull[i]
@@ -958,7 +990,7 @@ function wifi_wifijoin(d) {//Updates wifi timer
 	data.wifi.cooldowns[i] = 300
 }
 
-function wifi_wifileave() {
+function wifi_wifileave() {//Updates wifi timer (onleave)
 	if (data.wifi.timer[0] == 2) {
 		data.wifi.timerlive[data.wifi.timer[1]] = Math.floor(data.wifi.timerlive[data.wifi.timer[1]] * 0.7)
 	}
@@ -966,7 +998,7 @@ function wifi_wifileave() {
 	wifi_timerdisplay()
 }
 
-function wifi_timersetup(d) {
+function wifi_timersetup(d) {//Prepares wifi timer arrays on first join event
 	data.wifi.timer[0] = d
 	wifidata.forEach(function(v,i){
 		var t = v.track.time
@@ -1051,22 +1083,22 @@ function timeformat(i) {
 //=============================
 //=============================Tenant Functions
 //=============================
-function tenantinput(i,p) {//Updates tenant label if room number is provided
+function tenant_input(i,p) {//Updates tenant label if room number is provided
 	data.tenant.rooms[i] = p
-	document.getElementById("tenantbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
+	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
 }
 
-function tenanttoggle(i) {//Updates tenant label and button if tenant is marked unavailable
+function tenant_toggle(i) {//Updates tenant label and button if tenant is marked unavailable
 	click()
 	data.tenant.availability[i] = (data.tenant.availability[i]) ? 0:1;
-	document.getElementById("tenantbutton").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`
-	document.getElementById("tenantbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
+	document.getElementById("tenant_button1").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`
+	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
 }
 
-function tenantupdate(i) {//Changes the currently displayed tenant page
+function tenant_update(i) {//Changes the currently displayed tenant page
 	click()
 	var v = tenantdata[i]
-	document.getElementById("tenantdata").innerHTML = `
+	document.getElementById("tenant_data").innerHTML = `
 <h2>${v.name}</h2>
 <table>
 	<tbody>
@@ -1079,20 +1111,20 @@ function tenantupdate(i) {//Changes the currently displayed tenant page
 
 <div class="block_inputwrapper" style="bottom:200px">
 	<div>
-		<input id="roominput" type="text" maxlength="20" oninput="tenantinput(${i},this.value)" placeholder="Tenant room number..." ${(v.doll == 0) ? `disabled`:``}>
+		<input id="tenant_roominput" type="text" maxlength="20" oninput="tenant_input(${i},this.value)" placeholder="Tenant room number..." ${(v.doll == 0) ? `disabled`:``}>
 	</div>
 	<div>
-		<button id="tenantbutton" onclick='tenanttoggle(${i})' style="bottom:200px;" ${(v.doll == 0) ? `disabled`:``}>${(v.doll == 0) ? `Invalid Doll Maker Target`:data.tenant.availability[i] ? `Mark Tenant Unavailable`:`Mark Tenant Available`}</button>
+		<button id="tenant_button1" onclick='tenant_toggle(${i})' style="bottom:200px;" ${(v.doll == 0) ? `disabled`:``}>${(v.doll == 0) ? `Invalid Doll Maker Target`:data.tenant.availability[i] ? `Mark Tenant Unavailable`:`Mark Tenant Available`}</button>
 </div>`
-	document.getElementById("roominput").value = data.tenant.rooms[i]
+	document.getElementById("tenant_roominput").value = data.tenant.rooms[i]
 }
 
 //=============================
 //=============================Info Block Functions
 //=============================
-function guideupdate(i) {//Change info page
+function info_update(i) {//Change info page
 	click()
-	document.getElementById("guidedata").innerHTML = guidedata[i].content
+	document.getElementById("info_data").innerHTML = guidedata[i].content
 }
 
 function setcolor(i,c) {//Updates the site color configuration in memory
@@ -1102,57 +1134,57 @@ function setcolor(i,c) {//Updates the site color configuration in memory
 
 
 //==================Lucas Simulator
-function simulatorlaunch() {//Makes the simulator visible
+function simulator_launch() {//Makes the simulator visible
 	click()
 	document.getElementById("sim_wrapper").style.display = "block"
 }
 
-function simulatortoggle() {//Starts and stops the simulator
+function simulator_toggle() {//Starts and stops the simulator
 	click()
 	if (data.simulator.active) {
 		document.getElementById("sim_start").innerHTML = "Start Simulation"
 		clearTimeout(data.simulator.reference)
 	} else {
 		document.getElementById("sim_start").innerHTML = "End Simulation"
-		data.simulator.reference = setTimeout(simulatorplaysound,5000)
+		data.simulator.reference = setTimeout(simulator_playsound,5000)
 	}
 	data.simulator.active = (data.simulator.active) ? 0:1;
 }
 
-function simulatorplaysound() {//Plays the doorknob sound cue and waits for result
+function simulator_playsound() {//Plays the doorknob sound cue and waits for result
 	data.simulator.sound1.play();
 	data.simulator.soundplayed = 1
-	data.simulator.reference = setTimeout(simulatorevaluate,10000)
+	data.simulator.reference = setTimeout(simulator_evaluate,10000)
 }
 
-function simulatorevaluate() {//Checks if the player acknowledged the sound cue
+function simulator_evaluate() {//Checks if the player acknowledged the sound cue
 	if (data.simulator.soundplayed == 1) {
 		data.simulator.soundplayed = 0
 		data.simulator.sound2.play()
-		simulatordisplay(`<span class="secondary"><i class="fa fa-times"></i> You have died</span>`)
-		setTimeout(function () {simulatordisplay("Hitman Trainer")},180000)
+		simulator_display(`<span class="secondary"><i class="fa fa-times"></i> You have died</span>`)
+		setTimeout(function () {simulator_display("Hitman Trainer")},180000)
 	}
-	data.simulator.reference = setTimeout(simulatorplaysound,(Math.floor(Math.random() * 11) * 30000) + 600000)
+	data.simulator.reference = setTimeout(simulator_playsound,(Math.floor(Math.random() * 11) * 30000) + 600000)
 }
 
-function simulatorverify() {//Tells the player if they correctly responded to a sound cue
+function simulator_verify() {//Tells the player if they correctly responded to a sound cue
 	if (data.simulator.soundplayed == 1) {
 		var a = `<i class="fa fa-check"></i> Correct`
 		data.simulator.soundplayed = 0
 	} else {
 		var a = `<span class="secondary"><i class="fa fa-times"></i> Incorrect</span>`
 	}
-	simulatordisplay(a)
-	setTimeout(function () {simulatordisplay("Hitman Trainer")},10000)
+	simulator_display(a)
+	setTimeout(function () {simulator_display("Hitman Trainer")},10000)
 }
 
-function simulatorhide() {//Toggles visibility of the simulator
+function simulator_hide() {//Toggles visibility of the simulator
 	click()
 	document.getElementById("sim_div").style.visibility = (data.simulator.visible) ? "hidden":"visible"
 	data.simulator.visible = (data.simulator.visible) ? 0:1
 }
 
-function simulatordisplay(x) {//Modifies the simulator header
+function simulator_display(x) {//Modifies the simulator header
 	document.getElementById("sim_title").innerHTML = x
 }
 
@@ -1179,13 +1211,13 @@ function setup() {//Prepares website lists and appearance
 	})
 	guidedata.forEach(function (data,index) {
 		var button = document.createElement("button")
-		document.getElementById("guidelist").appendChild(button)
-		button.outerHTML = `<button onclick="guideupdate(${index})">${data.name}</button>`
+		document.getElementById("info_list").appendChild(button)
+		button.outerHTML = `<button onclick="info_update(${index})">${data.name}</button>`
 	})
 	tenantdata.forEach(function (data,index) {
 		var button = document.createElement("button")
-		document.getElementById("tenantlist").appendChild(button)
-		button.outerHTML = `<button id="tenantbutton${index}" onclick="tenantupdate(${index})">${"<i class='fa " + ((data["doll"] == 0) ? 'fa-square-o':'fa-square') + " fa-lg'></i> " + data.name}</button>`
+		document.getElementById("tenant_list").appendChild(button)
+		button.outerHTML = `<button id="tenant_listbutton${index}" onclick="tenant_update(${index})">${"<i class='fa " + ((data["doll"] == 0) ? 'fa-square-o':'fa-square') + " fa-lg'></i> " + data.name}</button>`
 	})
 	if (localStorage.getItem('color0') == undefined) {localStorage.setItem('color0',120)}
 	if (localStorage.getItem('color1') == undefined) {localStorage.setItem('color1',0)}
