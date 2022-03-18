@@ -701,13 +701,13 @@ var data = {
 		"reference":undefined,
 		"button":"No Timer Active",
 		"timer":[0,0,0,0,"",""],
-		"cooldowns":Full_array(wifidata.length,0),
-		"timerfull":Full_array(wifidata.length,0),
-		"timerlive":Full_array(wifidata.length,0),
-		"passwords":Full_array(wifidata.length,"")},
+		"cooldowns":full_array(wifidata.length,0),
+		"timerfull":full_array(wifidata.length,0),
+		"timerlive":full_array(wifidata.length,0),
+		"passwords":full_array(wifidata.length,"")},
 	"tenant":{
-		"rooms":Full_array(tenantdata.length,""),
-		"availability":Full_array(tenantdata.length,1)},
+		"rooms":full_array(tenantdata.length,""),
+		"availability":full_array(tenantdata.length,1)},
 	"simulator":{
 		"soundplayed":0,
 		"active":0,
@@ -725,7 +725,7 @@ var data = {
 
 //==========================================================================Functions
 
-function Full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v)};return a}
+function full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v)};return a}
 
 //=============================
 //=============================Popup Functions
@@ -784,11 +784,7 @@ function wiki_input() {//Updates wiki data from import field
 			if (i == undefined) {
 				d[n] = []
 			} else {
-				var t = []
-				for (var y = i.sub?.length ?? 1; y > 0; y--) {
-					t.push([0,0,0,0])
-				}
-				d[n] = t
+				d[n] = full_array((i.sub?.length ?? 0) + 1,[0,0,0,0])
 			}
 		})
 		console.log("Final",d)
@@ -823,60 +819,34 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 		var t = document.getElementById("wiki_list")
 		for (var y = t.rows.length - 1; y > 0; y--) {t.deleteRow(-1)}
 		s.forEach(function(n){
-			var i = sitedata[n]
-			if (i == undefined) {
-				wiki_createrow(t,n,i,0,0,0,1)
-			} else {
-				var o = i.id
-				wiki_createrow(t,n,i,0,0,o,2)
-				if (i.sub != undefined) {
-					i.sub.forEach(function(n,m,p){
-						o++
-						wiki_createrow(t,n,i,m,p,o,3)
-					})
-				}
-			}
+			wiki_appendsite(t,n)
 		})
 	}
 	
-	function wiki_createrow(t,n,i,m,p,o,v) {
-		//I don't particularly like how this is being done, but I am not super sure how to do better at the moment. 
-		var a = t.insertRow(-1)
-		var b = a.insertCell(0)
-		var c = a.insertCell(1)
-		var d = a.insertCell(2)
-		b.innerHTML = ((v == 3) ? ((p.length - 1 == m) ? '⠀└─ ':'⠀├─ '):"") + n
-		c.innerHTML = (v == 3) ? ('<i class="child">⠀Subpage</i>'):(v == 2) ? ((i.times == undefined) ? 'Always Available':i.times):('<i class="secondary">Dead Site</i>')
-		d.innerHTML = `
-		<button class="${(v == 1) ? "disabled":""}" ${(v !== 1) ? 'onclick="wiki_previewupdate(' + o + ')"':""}><i class="fa fa-mouse-pointer fa-lg"></i></button>
-		<button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="wiki_notetoggle(this)"':""}><i class="fa fa-search fa-lg"></i></button>
-		<button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="wiki_notetoggle(this)"':""}><i class="fa fa-search-plus fa-lg"></i></button>
-		<button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="wiki_notetoggle(this,1)"':""}><i class="fa fa-key fa-lg"></i></button>
-		<button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="wiki_notetoggle(this)"':""}><i class="fa fa-link fa-lg"></i></button>`
-		
-		//Logic order 
-			//Cell 1
-				//Is it a subpage?
-					//Is it the last subpage?
-						//Append hook to website name
-					//Else
-						//Append branch to website name
-				//Display the website name 
-			//Cell 2
-				//Is it a subpage?
-					//Display "Subpage"
-				//Is it a dead page?
-					//Display "Dead"
-				//Else
-					//Is it a timed site?
-						//Display uptime
-					//Else
-						//Display "Always Available"
-			//Cell 3
-				//Is it a real page?
-					//Buttons should be enabled
-				//Else
-					//Buttons should be disabled
+	function wiki_appendsite(t,n) {
+		var a,b,c,d,e,f,g,h
+		e = sitedata[n]
+		if (e == undefined) {
+			a = t.insertRow(-1)
+			b = a.insertCell(0)
+			c = a.insertCell(1)
+			d = a.insertCell(2)
+			b.innerHTML = n
+			c.innerHTML = `<i class="secondary">Dead Site</i>`
+			d.innerHTML = `<button class="disabled"><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="disabled"><i class="fa fa-search fa-lg"></i></button><button class="disabled"><i class="fa fa-search-plus fa-lg"></i></button><button class="disabled"><i class="fa fa-key fa-lg"></i></button><button class="disabled"><i class="fa fa-link fa-lg"></i></button>`
+			return
+		}
+		f = e.id
+		g = (e.sub?.length ?? 0) + 1
+		for (h = 0; g > h; h++) {
+			a = t.insertRow(-1)
+			b = a.insertCell(0)
+			c = a.insertCell(1)
+			d = a.insertCell(2)
+			b.innerHTML = (h != 0) ? (((h + 1 == g) ? '⠀└─ ':'⠀├─ ') + e.sub[h - 1]):n
+			c.innerHTML = (h != 0) ? ('<i class="child">⠀Subpage</i>'):((e.times == undefined) ? 'Always Available':e.times)
+			d.innerHTML = `<button onclick="wiki_previewupdate(${f + h})"><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="secondary" onclick="wiki_notetoggle(this)"><i class="fa fa-search fa-lg"></i></button><button class="secondary" onclick="wiki_notetoggle(this)"><i class="fa fa-search-plus fa-lg"></i></button><button class="secondary" onclick="wiki_notetoggle(this,1)"><i class="fa fa-key fa-lg"></i></button><button class="secondary" onclick="wiki_notetoggle(this)"><i class="fa fa-link fa-lg"></i></button>`
+		}
 	}
 }
 
