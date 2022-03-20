@@ -787,7 +787,7 @@ function wiki_input() {//Updates wiki data from import field
 				d[n] = full_array((i.sub?.length ?? 0) + 1,[0,0,0,0])
 			}
 		})
-		console.log("Final",d)
+		//console.log("Final",d)
 		data.wiki.sites[data.wiki.current] = d
 		data.wiki.keys[data.wiki.current] = 0
 		wiki_update()
@@ -798,7 +798,7 @@ function wiki_demo() {//Forces update of wiki data
 	click()
 	data.wiki.sites[data.wiki.current] = []
 	//wikiinput("BathRoom Cams - \n\rBrutal Underground - \n\rCheap Surgery - \n\rChosen Awake - \n\rCorpses For Sell - \n\rCry Bitch - \n\rDeep Journal - \n\rDEEPDOTWEB - \n\rDream Place - \n\rEvil Collection - \n\rEye - \n\rForgive Me - \n\rHot Burners - \n\rIAMHERE - \n\rKeep Sake - \n\rLittle Friends - \n\rScream Bitch - \n\rSecure Drop - \n\rSKYWEB - \n\rSt Louis Arch - \n\rThe 8th Sin - \n\rThe Doll Maker - \n\rThe Light Within - \n\Vacation - \n\rYOU THERE? - ")
-	data.wiki.sites[data.wiki.current] = {"BathRoom Cams":[],"Brutal Underground":[[0,0,0,0]],"Cheap Surgery":[],"Chosen Awake":[],"Corpses For Sell":[],"Cry Bitch":[[0,0,0,0]],"Deep Journal":[[0,0,0,0],[0,0,0,0]],"DEEPDOTWEB":[],"Dream Place":[],"Evil Collection":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"Eye":[[0,0,0,0]],"Forgive Me":[[0,0,0,0]],"Hot Burners":[],"IAMHERE":[[0,0,0,0]],"Keep Sake":[[0,0,0,0]],"Little Friends":[[0,0,0,0]],"Scream Bitch":[[0,0,0,0]],"Secure Drop":[],"SKYWEB":[],"St Louis Arch":[[0,0,0,0],[0,0,0,0],[0,0,0,0]],"The 8th Sin":[],"The Doll Maker":[[0,0,0,0]],"The Light Within":[[0,0,0,0]],"Vacation":[[0,0,0,0]],"YOU THERE?":[[0,0,0,0]]}
+	data.wiki.sites[data.wiki.current] = {"BathRoom Cams":[],"Brutal Underground":[[0,0,0,0],[0,0,0,0]],"Cheap Surgery":[],"Chosen Awake":[],"Corpses For Sell":[],"Cry Bitch":[[0,0,0,0],[0,0,0,0]],"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]],"DEEPDOTWEB":[],"Dream Place":[],"Evil Collection":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"Eye":[[0,0,0,0]],"Forgive Me":[[0,0,0,0],[0,0,0,0]],"Hot Burners":[],"IAMHERE":[[0,0,0,0]],"Keep Sake":[[0,0,0,0]],"Little Friends":[[0,0,0,0],[0,0,0,0]],"Scream Bitch":[[0,0,0,0]],"Secure Drop":[],"SKYWEB":[],"St Louis Arch":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"The 8th Sin":[],"The Doll Maker":[[0,0,0,0],[0,0,0,0]],"The Light Within":[[0,0,0,0],[0,0,0,0]],"Vacation":[[0,0,0,0]],"YOU THERE?":[[0,0,0,0]]}
 	wiki_update()
 }
 
@@ -813,19 +813,20 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 	}
 
 	var s = Object.getOwnPropertyNames(data.wiki.sites[data.wiki.current]).sort()
+	var t = document.getElementById("wiki_list")
+	for (var y = t.rows.length - 1; y > 0; y--) {t.deleteRow(-1)}
 	if (s.length == 0) {
-		
+		t.insertRow(-1).innerHTML = "<br><br><br><br>It's quite empty in here...<br><br>Why not add some sites?"
 	} else {
-		var t = document.getElementById("wiki_list")
-		for (var y = t.rows.length - 1; y > 0; y--) {t.deleteRow(-1)}
 		s.forEach(function(n){
 			wiki_appendsite(t,n)
 		})
 	}
 	
-	function wiki_appendsite(t,n) {
+	function wiki_appendsite(t,n) {//Take a website name and display the associated data
 		var a,b,c,d,e,f,g,h
 		e = sitedata[n]
+		i = data.wiki.sites[data.wiki.current][n]
 		if (e == undefined) {
 			a = t.insertRow(-1)
 			b = a.insertCell(0)
@@ -845,7 +846,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 			d = a.insertCell(2)
 			b.innerHTML = (h != 0) ? (((h + 1 == g) ? '⠀└─ ':'⠀├─ ') + e.sub[h - 1]):n
 			c.innerHTML = (h != 0) ? ('<i class="child">⠀Subpage</i>'):((e.times == undefined) ? 'Always Available':e.times)
-			d.innerHTML = `<button onclick="wiki_previewupdate(${f + h})"><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="secondary" onclick="wiki_notetoggle(this)"><i class="fa fa-search fa-lg"></i></button><button class="secondary" onclick="wiki_notetoggle(this)"><i class="fa fa-search-plus fa-lg"></i></button><button class="secondary" onclick="wiki_notetoggle(this,1)"><i class="fa fa-key fa-lg"></i></button><button class="secondary" onclick="wiki_notetoggle(this)"><i class="fa fa-link fa-lg"></i></button>`
+			d.innerHTML = `<button onclick="wiki_previewupdate(${f + h})"><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="${(i[h][0]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},0)"><i class="fa fa-search fa-lg"></i></button><button class="${(i[h][1]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},1)"><i class="fa fa-search-plus fa-lg"></i></button><button class="${(i[h][2]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},2)"><i class="fa fa-key fa-lg"></i></button><button class="${(i[h][3]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},3)"><i class="fa fa-link fa-lg"></i></button>`
 		}
 	}
 }
@@ -860,9 +861,11 @@ function wiki_editor() {//Replaces currently displayed data with website editor
 	for (var y = t.rows.length - 1; y > 0; y--) {t.deleteRow(-1)}
 }
 
-function wiki_notetoggle(e,k) {//Toggle color of note taking buttons
+function wiki_notetoggle(e,n,i,b) {//Toggle color of note taking buttons
 	click()
-	if (k == 1) {data.wiki.keys[data.wiki.current] += (e.classList.contains("secondary")) ? 1:-1;wiki_updatekeys()}
+	if (b == 2) {data.wiki.keys[data.wiki.current] += (e.classList.contains("secondary")) ? 1:-1;wiki_updatekeys()}
+	data.wiki.sites[data.wiki.current][n][i][b] ^= 1
+	console.log(data.wiki.sites[data.wiki.current][n][i][b])
 	e.classList.toggle("secondary")
 }
 
@@ -930,6 +933,7 @@ function wifi_timerupdate() {//Updates wifi timers and cooldowns
 		if (data.wifi.timer[2] == 0) {
 			//timerpausebutton("No Timer Active")
 			//Should this call disconnect or restart the timer?
+				//Let's say restart, but it should be on advanced mode ONLY, otherwise it should just halt
 		}
 	}
 	wifi_timerdisplay()
@@ -1197,7 +1201,6 @@ function setup() {//Prepares website lists and appearance
 	x.onreadystatechange = function() { 
 		if (x.readyState == 4 && x.status == 200) {
 			var d = JSON.parse(x.responseText)
-			//console.log(d)
 			document.getElementById("version").innerHTML = `<i>Wttg Assistant Version 1.4.0.${d[0].sha.slice(0,7)}</i>`
 		}
 	}
@@ -1206,6 +1209,7 @@ function setup() {//Prepares website lists and appearance
 }
 
 function click() {//Plays the click sound
+	data.general.click.currentTime = 0
 	data.general.click.play()
 }
 
