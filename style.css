@@ -169,6 +169,8 @@ gap:3px;
 width:100%;
 height:27px;
 box-sizing:border-box;
+align-items:center;
+justify-content:center;
 }
 
 .block_inputwrapper > div > * {
@@ -179,7 +181,7 @@ box-sizing:border-box;
 
 .block_inputwrapper > div > p {
 margin:0;
-height:1px;
+height:24px;
 text-align:center;
 font-family:Consolas,monaco,monospace;
 }

@@ -688,9 +688,10 @@ var data = {
 		"click":new Audio('Assets/general_mouseclick.mp3'),
 		"beep":new Audio('Assets/general_motionsensoralert.mp3')},
 	"note":{
-		"keys":["","????????????","????????????","????????????","????????????","????????????","????????????","????????????","????????????"],
+		"keys":[null,"????????????","????????????","????????????","????????????","????????????","????????????","????????????","????????????"],
 		"content":""},
 	"wiki":{
+		"editor":0,
 		"current":1,
 		"sites":[null,{},{},{}],
 		"keys":[null,0,0,0],
@@ -797,7 +798,6 @@ function wiki_input() {//Updates wiki data from import field
 function wiki_demo() {//Forces update of wiki data
 	click()
 	data.wiki.sites[data.wiki.current] = []
-	//wikiinput("BathRoom Cams - \n\rBrutal Underground - \n\rCheap Surgery - \n\rChosen Awake - \n\rCorpses For Sell - \n\rCry Bitch - \n\rDeep Journal - \n\rDEEPDOTWEB - \n\rDream Place - \n\rEvil Collection - \n\rEye - \n\rForgive Me - \n\rHot Burners - \n\rIAMHERE - \n\rKeep Sake - \n\rLittle Friends - \n\rScream Bitch - \n\rSecure Drop - \n\rSKYWEB - \n\rSt Louis Arch - \n\rThe 8th Sin - \n\rThe Doll Maker - \n\rThe Light Within - \n\Vacation - \n\rYOU THERE? - ")
 	data.wiki.sites[data.wiki.current] = {"BathRoom Cams":[],"Brutal Underground":[[0,0,0,0],[0,0,0,0]],"Cheap Surgery":[],"Chosen Awake":[],"Corpses For Sell":[],"Cry Bitch":[[0,0,0,0],[0,0,0,0]],"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]],"DEEPDOTWEB":[],"Dream Place":[],"Evil Collection":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"Eye":[[0,0,0,0]],"Forgive Me":[[0,0,0,0],[0,0,0,0]],"Hot Burners":[],"IAMHERE":[[0,0,0,0]],"Keep Sake":[[0,0,0,0]],"Little Friends":[[0,0,0,0],[0,0,0,0]],"Scream Bitch":[[0,0,0,0]],"Secure Drop":[],"SKYWEB":[],"St Louis Arch":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"The 8th Sin":[],"The Doll Maker":[[0,0,0,0],[0,0,0,0]],"The Light Within":[[0,0,0,0],[0,0,0,0]],"Vacation":[[0,0,0,0]],"YOU THERE?":[[0,0,0,0]]}
 	wiki_update()
 }
@@ -816,7 +816,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 	var t = document.getElementById("wiki_list")
 	for (var y = t.rows.length - 1; y > 0; y--) {t.deleteRow(-1)}
 	if (s.length == 0) {
-		t.insertRow(-1).innerHTML = "<br><br><br><br>It's quite empty in here...<br><br>Why not add some sites?"
+		t.insertRow(-1).innerHTML = `<br><br><br><br>It's quite empty in here...<br><br>Why not add some sites?`
 	} else {
 		s.forEach(function(n){
 			wiki_appendsite(t,n)
@@ -1021,13 +1021,15 @@ function wifi_update(i) {//Changes the current wifi page
 		<tr><td>Loading Speed</td><td>${(v.connection.ping*0.2*[0.95,0.9,0.85,0.8,0.75][["B","BP","G","N","AC"].indexOf(v.connection.type)]).toFixed(2)}~ Seconds</td></tr>
 		<tr><td>Channel</td><td>${v.channel}</td></tr>
 
-		${(v.level == 1) ? `<tr><td>Port Range</td><td>${v.probe.port}</td></tr>`:``}
+		${(v.level == 1) ? `
+		<tr><td>Port Range</td><td>${v.probe.port}</td></tr>`:``}
 		${(v.level >= 2) ? `
 		<tr><td>Inject Limit</td><td>${v.inject.count}</td></tr>
 		<tr><td>Inject Cooldown</td><td>${v.inject.wait}s</td></tr>
 		<tr><td>Inject Success Range</td><td>${v.inject.total}</td></tr>
 		<tr><td>Inject Crash Time</td><td>${v.inject.crash}s</td></tr>`:``}
-		${(v.secret) ? `<tr><td colspan="2">This wifi is not available by normal means as the network BSSID cannot be found using SkyBreak</td></tr>`:``}
+		${(v.secret) ? `
+		<tr><td colspan="2">This wifi is not available by normal means as the network BSSID cannot be found using SkyBreak</td></tr>`:``}
 	</tbody>
 </table>
 
@@ -1036,7 +1038,7 @@ function wifi_update(i) {//Changes the current wifi page
 		<p id="wifi_summary">[True Time ${timeformat(data.wifi.timerlive[data.wifi.current])}] [Cool Time ${timeformat(data.wifi.cooldowns[data.wifi.current])}]</p>
 	</div>
 	<div>
-		<input id="wifi_passwordinput" type="text" maxlength="20" oninput="passwordinput(${i},this.value)" placeholder="${(v.level == 0) ? `Unsecured Network...`:`Password...`}" ${(v.level == 0) ? `disabled`:``}>
+		<input id="wifi_passwordinput" type="text" maxlength="20" oninput="wifi_passwordinput(${i},this.value)" placeholder="${(v.level == 0) ? `Unsecured Network...`:`Password...`}" ${(v.level == 0) ? `disabled`:``}>
 	</div>
 	<div>
 		<button id="wifi_button1" onclick="wifi_wifijoin(1)">Start Wifi Timer</button>
