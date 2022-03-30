@@ -281,11 +281,11 @@ var sitedata = {
 			</details>
 			<details>
 				<summary><h3>The Wifi Block</h3></summary>
-				<p>The wifi block allows you to survey the many wifi networks present in the game. It will also information useful for cracking and accessing such wifis. Along with this, the block has password fields and an inbuilt tracking timer that will play a warning when you have one minute remaining to get off a network before the cops trace you.</p>
+				<p>The wifi block allows you to survey the many wifi networks present in the game. It will also provide information useful for cracking and accessing such wifis. Along with this, the block has password fields and an inbuilt tracking timer that will play a warning when you have one minute remaining to get off a network before the cops trace you.</p>
 			</details>
 			<details>
 				<summary><h3>The Tenant Block</h3></summary>
-				<p>The tenant block can be used to view a database of tenants of Clint's apartment. It provides their ages, names, and their notes from the lobby computer. Along with this, it will also tell you if the tenant is a valid victim for the Doll Maker.</p>
+				<p>The tenant block can be used to view a database of tenants located in Clint's apartment. It provides their ages, names, and their notes from the lobby computer. Along with this, it will also tell you if the tenant is a valid victim for the Doll Maker.</p>
 			</details>
 			<details>
 				<summary><h3>The Info Block</h3></summary>
@@ -338,7 +338,7 @@ var sitedata = {
 					<li>The DosCoin icon shows you your current balance of DosCoin. Additionally, clicking on it will allow you to view information about placed remote VPNs and their performance. It lists each VPNs yield and seconds between yields.</li>
 					<li>The Backdoor Hack label lists how many backdoor hacks you currently have installed.</li>
 					<li>In the center you can see the in-game time displayed. It runs two times faster than real life time.</li>
-					<li>The VPN Icon allows you to view and manage purchased any VPNs.</li>
+					<li>The VPN Icon allows you to view and manage any purchased VPNs.</li>
 					<li>The Motion Alert icon can be used to view and monitor any placed motion sensors. In addition, the icon will blink if a motion sensor is triggered and Sound Alert is pruchased.</li>
 					<li>The Wifi Icon will be quite familiar to those who use PCs. It allows you to view nearby networks and log into them.</li>
 					<li>The Sound Icon allows you to mute your PCs volume. An important note, doing this will mute all sounds produced by your PC.</li>
@@ -435,7 +435,7 @@ var sitedata = {
 				<li>Make sure that you can hear the lockpicking sound cue. Normally this is the only way to identify that the hitman is at your door and preparing to break in. <i>(Sound cue can be found below)</i></li>
 				<li>Purchase and place motion sensors in addition to buying sound alert. This will give you a more effective method to know when the hitman is coming to your door in addition to giving you more time to hide. <i>(The motion sensors should be placed on the wall on both ends of the hallway, as the hitman can approach from both sides of the hallway)</i></li>
 			</ol>
-			<p>When you know the Hitman is currently preparing to barge in you must turn of your computer and hide in either the shower in the bathroom or the closet near your balcony. In both cases you must be quiet as to not alert the hitman. <i>(This is only relevant if you have the mic enabled in your settings)</i> Also note that if you do not turn off the computer the hitman can erase notes saved into the games internal notepad in addition to stealing portions of your DosCoin balance. During the time he is in your apartment, stay in your hiding place until you hear him leave. <i>(Sound can be found below)</i> You can affect the time he is in your apartment by turning off more lights in the seconds before you hide and prior.</p>
+			<p>When you know the Hitman is currently preparing to barge in you must turn off your computer and hide in either the shower in the bathroom or the closet near your balcony. In both cases you must be quiet as to not alert the hitman. <i>(This is only relevant if you have the mic enabled in your settings)</i> Also note that if you do not turn off the computer the hitman can erase notes saved into the games internal notepad in addition to stealing portions of your DosCoin balance. During the time he is in your apartment, stay in your hiding place until you hear him leave. <i>(Sound can be found below)</i> You can affect the time he is in your apartment by turning off more lights in the seconds before you hide and prior.</p>
 			<p>In addition to encountering the Hitman as he pays a visit to your apartment it is possible for them to kill you when returning to your apartment if they spawn when you are not at the apartment. Unfortunately, if this rare event occurs it is impossible to mitigate and you will die the next time you open a hallway door.</p>
 			<details>
 				<summary><b>Hitman Activation</b></summary>
@@ -465,7 +465,7 @@ var sitedata = {
 		{"name":`<i class="fa fa-circle fa-lg"></i> The Noir`,"content":`
 		<h1>The Noir</h1>
 			<p>The Noir are a threat prevalent in the game. They appear randomly in various places such as in the apartment, the apartment window, the hallway, behind doors, and in rare cases behind the gate in back of the alley.</p>
-			<p>They are a basic threat to mitigate, but can quite easily catch those unfamiliar with them. To make them go away, turn around as soon as you see them and count to ten. After this they should be gone. If not, repeat the process. However, they pose a more active threat when they spawn behind doorways. This often catches players who are attempting to rush to and from the alley/lobby and back as fast as possible. In addition, the Noir have a chance to instantly kill you if you have at least two lights turned off in your apartment. <i>(For more details of the Noir insta-kill, check below)</i>
+			<p>They are a basic threat to mitigate, but can quite easily catch those unfamiliar with them off gaurd. To make them go away, turn around as soon as you see them and count to ten. After this they should be gone. If not, repeat the process. However, they pose a more active threat when they spawn behind doorways. This often catches players who are attempting to rush to and from the alley/lobby and back as fast as possible. In addition, the Noir have a chance to instantly kill you if you have at least two lights turned off in your apartment. <i>(For more details of the Noir insta-kill, check below)</i>
 			<details>
 				<summary><b>Noir insta-kill</b></summary>
 				<p>The noir insta-kill is one of the most dangerous aspects of the Noir. It allows the Noir to instantly kill the player if a few criteria are met.</p>
@@ -528,7 +528,7 @@ var sitedata = {
 				<summary><b>Notes</b></summary>
 				<ul>
 					<li>If possible, you should avoid triggering the Dollmaker in a run going for completion</li>
-					<li>If you want to complete the quest, go for it AFTER you have sufficient funds for a better chance of success</li>
+					<li>If you want to complete the quest, you should attempt to go for it after you have sufficient funds for a better chance of success</li>
 					<li>While the time the Dollmaker quest provides is generous, it should be completed as soon as you can manage</li>
 				</ul>
 			</details>`},
@@ -665,7 +665,7 @@ var sitedata = {
 		{"name":`<i class="fa fa-dot-circle-o fa-lg"></i> Hitman Simulator`,"content":`
 		<h1>Hitman Simulator</h1>
 			<p>The button below will open a simulator for the Hitmans lockpicking noise. Once you hear it, you should go to the widget for the simulator and click 'I heard that'. It will then tell you if you correct or incorrect. It will play five seconds after you start the simulation as a test, after that you must pay attention for when it plays. If you fail to catch a noise it plays, it will tell you that you have died and will continue the simulator as normal.</p>
-			<button onclick="simulatorlaunch()">Launch Simulator</button>`},
+			<button onclick="simulator_launch()">Launch Simulator</button>`},
 		{"name":`<i class="fa fa-cog fa-lg"></i> Settings`,"content":`
 		<h1>Settings</h1>
 			<table>
@@ -688,10 +688,12 @@ var data = {
 		"click":new Audio('Assets/general_mouseclick.mp3'),
 		"beep":new Audio('Assets/general_motionsensoralert.mp3')},
 	"note":{
-		"keys":["","????????????","????????????","????????????","????????????","????????????","????????????","????????????","????????????"],
+		"keys":[null,"????????????","????????????","????????????","????????????","????????????","????????????","????????????","????????????"],
 		"content":""},
 	"wiki":{
+		"editor":0,
 		"current":1,
+		"sites":[null,{},{},{}],
 		"keys":[null,0,0,0],
 		"total":[null,2,3,3]},
 	"wifi":{
@@ -700,13 +702,13 @@ var data = {
 		"reference":undefined,
 		"button":"No Timer Active",
 		"timer":[0,0,0,0,"",""],
-		"cooldowns":Full_array(wifidata.length,0),
-		"timerfull":Full_array(wifidata.length,0),
-		"timerlive":Full_array(wifidata.length,0),
-		"passwords":Full_array(wifidata.length,"")},
+		"cooldowns":full_array(wifidata.length,0),
+		"timerfull":full_array(wifidata.length,0),
+		"timerlive":full_array(wifidata.length,0),
+		"passwords":full_array(wifidata.length,"")},
 	"tenant":{
-		"rooms":Full_array(tenantdata.length,""),
-		"availability":Full_array(tenantdata.length,1)},
+		"rooms":full_array(tenantdata.length,""),
+		"availability":full_array(tenantdata.length,1)},
 	"simulator":{
 		"soundplayed":0,
 		"active":0,
@@ -724,7 +726,7 @@ var data = {
 
 //==========================================================================Functions
 
-function Full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v)};return a}
+function full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v)};return a}
 
 //=============================
 //=============================Popup Functions
@@ -770,80 +772,116 @@ function popnotesclose() {
 //=============================
 //=============================Wiki Functions
 //=============================
-function wikiinput(content) {//Updates wiki data from import field
-	document.getElementById("wikidata").value = ""
-	if (content.length == 1) {return}
-	var sites = content.match(/(?=^)[\w ]+[!?]?(?= -)/gm)
-	if (sites == null) {
-		return
-	} else {
-		var table = document.getElementById("wiki" + data.wiki.current + "list")
-		for (var y = table.rows.length - 1; y > 0; y--) {table.deleteRow(-1)}
-		sites.forEach(function (name) {
-			var i = sitedata[name]
+function wiki_input() {//Updates wiki data from import field
+	var r = document.getElementById("wiki_data")
+	var c = r.value
+	r.value = ""
+	if (c.length == 1) {return}
+	var d = {}
+	var s = [...new Set(c.match(/(?=^)[\w ]+[!?]?(?= -)/gm))]
+	if (s.length != 0) {
+		s.forEach(function(n){
+			var i = sitedata[n]
 			if (i == undefined) {
-				buttons(name,i,0,0,0,1)
+				d[n] = []
 			} else {
-				var o = i.id;buttons(name,i,0,0,o,2)
-				if (i.sub !== undefined) {
-					i.sub.forEach(function (name,m,n) {
-						o++
-						buttons(name,i,m,n,o,3)
-					})
-				}
+				d[n] = full_array((i.sub?.length ?? 0) + 1,[0,0,0,0])
 			}
 		})
+		//console.log("Final",d)
+		data.wiki.sites[data.wiki.current] = d
 		data.wiki.keys[data.wiki.current] = 0
-		keysupdate()
-	}
-
-	function buttons(name,i,m,n,o,v) {
-		var a = document.getElementById("wiki" + data.wiki.current + "list").insertRow(-1)
-		var b = a.insertCell(0)
-		var c = a.insertCell(1)
-		var d = a.insertCell(2)
-		b.innerHTML = ((v == 3) ? ((n.length - 1 == m) ? '⠀└─ ':'⠀├─ '):"") + name
-		c.innerHTML = (v == 3) ? ('<i class="child">⠀Subpage</i>'):(v == 2) ? ((i.times == undefined) ? 'Always Available':i.times):('<i class="secondary">Dead Site</i>')
-		d.innerHTML = `<button class="${(v == 1) ? "disabled":""}" ${(v !== 1) ? 'onclick="sitepreview(' + o + ')"':""}><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-search fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-search-plus fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this,1)"':""}><i class="fa fa-key fa-lg"></i></button><button class="${(v == 1) ? "disabled":"secondary"}" ${(v !== 1) ? 'onclick="toggle(this)"':""}><i class="fa fa-link fa-lg"></i></button>`
+		wiki_update()
 	}
 }
 
-function wikidemo() {//Forces update of wiki data
+function wiki_demo() {//Forces update of wiki data
 	click()
-	wikiinput("BathRoom Cams - \n\rBrutal Underground - \n\rCheap Surgery - \n\rChosen Awake - \n\rCorpses For Sell - \n\rCry Bitch - \n\rDeep Journal - \n\rDEEPDOTWEB - \n\rDream Place - \n\rEvil Collection - \n\rEye - \n\rForgive Me - \n\rHot Burners - \n\rIAMHERE - \n\rKeep Sake - \n\rLittle Friends - \n\rScream Bitch - \n\rSecure Drop - \n\rSKYWEB - \n\rSt Louis Arch - \n\rThe 8th Sin - \n\rThe Doll Maker - \n\rThe Light Within - \n\Vacation - \n\rYOU THERE? - ")
+	data.wiki.sites[data.wiki.current] = {"BathRoom Cams":[],"Brutal Underground":[[0,0,0,0],[0,0,0,0]],"Cheap Surgery":[],"Chosen Awake":[],"Corpses For Sell":[],"Cry Bitch":[[0,0,0,0],[0,0,0,0]],"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]],"DEEPDOTWEB":[],"Dream Place":[],"Evil Collection":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"Eye":[[0,0,0,0]],"Forgive Me":[[0,0,0,0],[0,0,0,0]],"Hot Burners":[],"IAMHERE":[[0,0,0,0]],"Keep Sake":[[0,0,0,0]],"Little Friends":[[0,0,0,0],[0,0,0,0]],"Scream Bitch":[[0,0,0,0]],"Secure Drop":[],"SKYWEB":[],"St Louis Arch":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"The 8th Sin":[],"The Doll Maker":[[0,0,0,0],[0,0,0,0]],"The Light Within":[[0,0,0,0],[0,0,0,0]],"Vacation":[[0,0,0,0]],"YOU THERE?":[[0,0,0,0]]}
+	wiki_update()
 }
 
-function wikiupdate(m) {//Changes the wiki page
+function wiki_update(m) {//Updates the currently displayed data, also handles current page
+	//Disable editor flag
+
+	if (m != undefined) {
+		click()
+		data.wiki.current = ((data.wiki.current + m + 2) % 3) + 1
+		document.getElementById("wiki_title").innerHTML = "Wiki " + "III".slice(0,data.wiki.current)
+		wiki_updatekeys()
+	}
+
+	var s = Object.getOwnPropertyNames(data.wiki.sites[data.wiki.current]).sort()
+	var t = document.getElementById("wiki_list")
+	for (var y = t.rows.length - 1; y > 0; y--) {t.deleteRow(-1)}
+	if (s.length == 0) {
+		t.insertRow(-1).innerHTML = `<br><br><br><br>It's quite empty in here...<br><br>Why not add some sites?`
+	} else {
+		s.forEach(function(n){
+			wiki_appendsite(t,n)
+		})
+	}
+	
+	function wiki_appendsite(t,n) {//Take a website name and display the associated data
+		var a,b,c,d,e,f,g,h
+		e = sitedata[n]
+		i = data.wiki.sites[data.wiki.current][n]
+		if (e == undefined) {
+			a = t.insertRow(-1)
+			b = a.insertCell(0)
+			c = a.insertCell(1)
+			d = a.insertCell(2)
+			b.innerHTML = n
+			c.innerHTML = `<i class="secondary">Dead Site</i>`
+			d.innerHTML = `<button class="disabled"><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="disabled"><i class="fa fa-search fa-lg"></i></button><button class="disabled"><i class="fa fa-search-plus fa-lg"></i></button><button class="disabled"><i class="fa fa-key fa-lg"></i></button><button class="disabled"><i class="fa fa-link fa-lg"></i></button>`
+			return
+		}
+		f = e.id
+		g = (e.sub?.length ?? 0) + 1
+		for (h = 0; g > h; h++) {
+			a = t.insertRow(-1)
+			b = a.insertCell(0)
+			c = a.insertCell(1)
+			d = a.insertCell(2)
+			b.innerHTML = (h != 0) ? (((h + 1 == g) ? '⠀└─ ':'⠀├─ ') + e.sub[h - 1]):n
+			c.innerHTML = (h != 0) ? ('<i class="child">⠀Subpage</i>'):((e.times == undefined) ? 'Always Available':e.times)
+			d.innerHTML = `<button onclick="wiki_previewupdate(${f + h})"><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="${(i[h][0]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},0)"><i class="fa fa-search fa-lg"></i></button><button class="${(i[h][1]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},1)"><i class="fa fa-search-plus fa-lg"></i></button><button class="${(i[h][2]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},2)"><i class="fa fa-key fa-lg"></i></button><button class="${(i[h][3]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},3)"><i class="fa fa-link fa-lg"></i></button>`
+		}
+	}
+}
+
+function wiki_editor() {//Replaces currently displayed data with website editor
+	//Is editor enabled?
+		//Call wiki_update and return
+	//Else
+		//Erase and load editor
+		//Set editor flag
+	var t = document.getElementById("wiki_list")
+	for (var y = t.rows.length - 1; y > 0; y--) {t.deleteRow(-1)}
+}
+
+function wiki_notetoggle(e,n,i,b) {//Toggle color of note taking buttons
 	click()
-	document.getElementById("wiki" + data.wiki.current).style.display = "none"
-	data.wiki.current += m
-	if (data.wiki.current == 4) {data.wiki.current = 1}
-	if (data.wiki.current == 0) {data.wiki.current = 3}
-	document.getElementById("wiki" + data.wiki.current).style.display = "block"
-	document.getElementById("wikititle").innerHTML = "Wiki " + "III".slice(0,data.wiki.current)
-	keysupdate()
+	if (b == 2) {data.wiki.keys[data.wiki.current] += (e.classList.contains("secondary")) ? 1:-1;wiki_updatekeys()}
+	data.wiki.sites[data.wiki.current][n][i][b] ^= 1
+	console.log(data.wiki.sites[data.wiki.current][n][i][b])
+	e.classList.toggle("secondary")
 }
 
-function toggle(element,k) {//Toggle color of note taking buttons
-	click()
-	if (k == 1) {data.wiki.keys[data.wiki.current] += (element.classList.contains("secondary")) ? 1:-1;keysupdate()}
-	element.classList.toggle("secondary")
+function wiki_updatekeys() {//Updates the remaining keys count
+	document.getElementById("wiki_keys").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>'
 }
 
-function keysupdate() {//Updates the remaining keys count
-	document.getElementById("keycount").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>'
-}
-
-function guideload() {//Create a click event listener when the clickpoints popup finished loading
+function wiki_previewload() {//Create a click event listener when the clickpoints popup finished loading
 	try {
-		document.getElementById("preview").contentWindow.addEventListener('click', function(e) {sitepreview(-1)})
+		document.getElementById("preview").contentWindow.addEventListener('click', function(e) {wiki_previewupdate(-1)})
 	} catch (e) {
-		sitepreview(-1)
+		wiki_previewupdate(-1)
 		console.log("Clickpoint Guide Failure: " + e)
 	}
 }
 
-function sitepreview(i) {//Updates and displays the key clickpoints popup
+function wiki_previewupdate(i) {//Updates and displays the key clickpoints popup
 	click()
 	if (i == -1) {
 		document.getElementById("preview_wrapper").style.display = "none";
@@ -858,11 +896,11 @@ function sitepreview(i) {//Updates and displays the key clickpoints popup
 //=============================
 //=============================Note Functions
 //=============================
-function noteinput() {//Attempts to find and save keys within the note block's data
-	var content = document.getElementById("notes").value
+function note_input() {//Attempts to find and save keys within the note block's data
+	var content = document.getElementById("note_input").value
 	var lkeys = content.match(/[1-8] - [\w]{12}/g)
 	if (lkeys !== null) {lkeys.forEach(function (a) {data.note.keys[a.slice(0,1)] = a.slice(4,16)})}
-	document.getElementById("keyoutput").innerHTML = `<b>Key Data</b><br>${data.note.keys.join("").substr(0,48)}<br>${data.note.keys.join("").substr(48,48)}`
+	document.getElementById("note_keyoutput").innerHTML = `<b>Key Data</b><br>${data.note.keys.join("").substr(0,48)}<br>${data.note.keys.join("").substr(48,48)}`
 	if (data.note.keys.indexOf("????????????") == -1) {document.getElementById("keyoutput").innerHTML = `<b>Master Key</b><br><span class="select-all">${data.note.keys.join("")}</span>`}
 	if (data.popup.notes.active == 1) {
 		data.popup.notes.reference.document.getElementById("content").innerHTML = content
@@ -894,6 +932,7 @@ function wifi_timerupdate() {//Updates wifi timers and cooldowns
 		if (data.wifi.timer[2] == 0) {
 			//timerpausebutton("No Timer Active")
 			//Should this call disconnect or restart the timer?
+				//Let's say restart, but it should be on advanced mode ONLY, otherwise it should just halt
 		}
 	}
 	wifi_timerdisplay()
@@ -912,7 +951,7 @@ function wifi_timerdisplay() {//This function updates dynamic displays of the wi
 	}
 }
 
-function wifi_wifijoin(d) {//Updates wifi timer
+function wifi_wifijoin(d) {//Updates wifi timer (onjoin)
 	if (data.wifi.timer[0] == 0) {wifi_timersetup(d)}
 	var i = data.wifi.current
 	var f = data.wifi.timerfull[i]
@@ -924,7 +963,7 @@ function wifi_wifijoin(d) {//Updates wifi timer
 	data.wifi.cooldowns[i] = 300
 }
 
-function wifi_wifileave() {
+function wifi_wifileave() {//Updates wifi timer (onleave)
 	if (data.wifi.timer[0] == 2) {
 		data.wifi.timerlive[data.wifi.timer[1]] = Math.floor(data.wifi.timerlive[data.wifi.timer[1]] * 0.7)
 	}
@@ -932,7 +971,7 @@ function wifi_wifileave() {
 	wifi_timerdisplay()
 }
 
-function wifi_timersetup(d) {
+function wifi_timersetup(d) {//Prepares wifi timer arrays on first join event
 	data.wifi.timer[0] = d
 	wifidata.forEach(function(v,i){
 		var t = v.track.time
@@ -981,13 +1020,15 @@ function wifi_update(i) {//Changes the current wifi page
 		<tr><td>Loading Speed</td><td>${(v.connection.ping*0.2*[0.95,0.9,0.85,0.8,0.75][["B","BP","G","N","AC"].indexOf(v.connection.type)]).toFixed(2)}~ Seconds</td></tr>
 		<tr><td>Channel</td><td>${v.channel}</td></tr>
 
-		${(v.level == 1) ? `<tr><td>Port Range</td><td>${v.probe.port}</td></tr>`:``}
+		${(v.level == 1) ? `
+		<tr><td>Port Range</td><td>${v.probe.port}</td></tr>`:``}
 		${(v.level >= 2) ? `
 		<tr><td>Inject Limit</td><td>${v.inject.count}</td></tr>
 		<tr><td>Inject Cooldown</td><td>${v.inject.wait}s</td></tr>
 		<tr><td>Inject Success Range</td><td>${v.inject.total}</td></tr>
 		<tr><td>Inject Crash Time</td><td>${v.inject.crash}s</td></tr>`:``}
-		${(v.secret) ? `<tr><td colspan="2">This wifi is not available by normal means as the network BSSID cannot be found using SkyBreak</td></tr>`:``}
+		${(v.secret) ? `
+		<tr><td colspan="2">This wifi is not available by normal means as the network BSSID cannot be found using SkyBreak</td></tr>`:``}
 	</tbody>
 </table>
 
@@ -996,7 +1037,7 @@ function wifi_update(i) {//Changes the current wifi page
 		<p id="wifi_summary">[True Time ${timeformat(data.wifi.timerlive[data.wifi.current])}] [Cool Time ${timeformat(data.wifi.cooldowns[data.wifi.current])}]</p>
 	</div>
 	<div>
-		<input id="wifi_passwordinput" type="text" maxlength="20" oninput="passwordinput(${i},this.value)" placeholder="${(v.level == 0) ? `Unsecured Network...`:`Password...`}" ${(v.level == 0) ? `disabled`:``}>
+		<input id="wifi_passwordinput" type="text" maxlength="20" oninput="wifi_passwordinput(${i},this.value)" placeholder="${(v.level == 0) ? `Unsecured Network...`:`Password...`}" ${(v.level == 0) ? `disabled`:``}>
 	</div>
 	<div>
 		<button id="wifi_button1" onclick="wifi_wifijoin(1)">Start Wifi Timer</button>
@@ -1017,22 +1058,22 @@ function timeformat(i) {
 //=============================
 //=============================Tenant Functions
 //=============================
-function tenantinput(i,p) {//Updates tenant label if room number is provided
+function tenant_input(i,p) {//Updates tenant label if room number is provided
 	data.tenant.rooms[i] = p
-	document.getElementById("tenantbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
+	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
 }
 
-function tenanttoggle(i) {//Updates tenant label and button if tenant is marked unavailable
+function tenant_toggle(i) {//Updates tenant label and button if tenant is marked unavailable
 	click()
 	data.tenant.availability[i] = (data.tenant.availability[i]) ? 0:1;
-	document.getElementById("tenantbutton").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`
-	document.getElementById("tenantbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
+	document.getElementById("tenant_button1").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`
+	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
 }
 
-function tenantupdate(i) {//Changes the currently displayed tenant page
+function tenant_update(i) {//Changes the currently displayed tenant page
 	click()
 	var v = tenantdata[i]
-	document.getElementById("tenantdata").innerHTML = `
+	document.getElementById("tenant_data").innerHTML = `
 <h2>${v.name}</h2>
 <table>
 	<tbody>
@@ -1045,20 +1086,20 @@ function tenantupdate(i) {//Changes the currently displayed tenant page
 
 <div class="block_inputwrapper" style="bottom:200px">
 	<div>
-		<input id="roominput" type="text" maxlength="20" oninput="tenantinput(${i},this.value)" placeholder="Tenant room number..." ${(v.doll == 0) ? `disabled`:``}>
+		<input id="tenant_roominput" type="text" maxlength="20" oninput="tenant_input(${i},this.value)" placeholder="Tenant room number..." ${(v.doll == 0) ? `disabled`:``}>
 	</div>
 	<div>
-		<button id="tenantbutton" onclick='tenanttoggle(${i})' style="bottom:200px;" ${(v.doll == 0) ? `disabled`:``}>${(v.doll == 0) ? `Invalid Doll Maker Target`:data.tenant.availability[i] ? `Mark Tenant Unavailable`:`Mark Tenant Available`}</button>
+		<button id="tenant_button1" onclick='tenant_toggle(${i})' style="bottom:200px;" ${(v.doll == 0) ? `disabled`:``}>${(v.doll == 0) ? `Invalid Doll Maker Target`:data.tenant.availability[i] ? `Mark Tenant Unavailable`:`Mark Tenant Available`}</button>
 </div>`
-	document.getElementById("roominput").value = data.tenant.rooms[i]
+	document.getElementById("tenant_roominput").value = data.tenant.rooms[i]
 }
 
 //=============================
 //=============================Info Block Functions
 //=============================
-function guideupdate(i) {//Change info page
+function info_update(i) {//Change info page
 	click()
-	document.getElementById("guidedata").innerHTML = guidedata[i].content
+	document.getElementById("info_data").innerHTML = guidedata[i].content
 }
 
 function setcolor(i,c) {//Updates the site color configuration in memory
@@ -1068,57 +1109,57 @@ function setcolor(i,c) {//Updates the site color configuration in memory
 
 
 //==================Lucas Simulator
-function simulatorlaunch() {//Makes the simulator visible
+function simulator_launch() {//Makes the simulator visible
 	click()
 	document.getElementById("sim_wrapper").style.display = "block"
 }
 
-function simulatortoggle() {//Starts and stops the simulator
+function simulator_toggle() {//Starts and stops the simulator
 	click()
 	if (data.simulator.active) {
 		document.getElementById("sim_start").innerHTML = "Start Simulation"
 		clearTimeout(data.simulator.reference)
 	} else {
 		document.getElementById("sim_start").innerHTML = "End Simulation"
-		data.simulator.reference = setTimeout(simulatorplaysound,5000)
+		data.simulator.reference = setTimeout(simulator_playsound,5000)
 	}
 	data.simulator.active = (data.simulator.active) ? 0:1;
 }
 
-function simulatorplaysound() {//Plays the doorknob sound cue and waits for result
+function simulator_playsound() {//Plays the doorknob sound cue and waits for result
 	data.simulator.sound1.play();
 	data.simulator.soundplayed = 1
-	data.simulator.reference = setTimeout(simulatorevaluate,10000)
+	data.simulator.reference = setTimeout(simulator_evaluate,10000)
 }
 
-function simulatorevaluate() {//Checks if the player acknowledged the sound cue
+function simulator_evaluate() {//Checks if the player acknowledged the sound cue
 	if (data.simulator.soundplayed == 1) {
 		data.simulator.soundplayed = 0
 		data.simulator.sound2.play()
-		simulatordisplay(`<span class="secondary"><i class="fa fa-times"></i> You have died</span>`)
-		setTimeout(function () {simulatordisplay("Hitman Trainer")},180000)
+		simulator_display(`<span class="secondary"><i class="fa fa-times"></i> You have died</span>`)
+		setTimeout(function () {simulator_display("Hitman Trainer")},180000)
 	}
-	data.simulator.reference = setTimeout(simulatorplaysound,(Math.floor(Math.random() * 11) * 30000) + 600000)
+	data.simulator.reference = setTimeout(simulator_playsound,(Math.floor(Math.random() * 11) * 30000) + 600000)
 }
 
-function simulatorverify() {//Tells the player if they correctly responded to a sound cue
+function simulator_verify() {//Tells the player if they correctly responded to a sound cue
 	if (data.simulator.soundplayed == 1) {
 		var a = `<i class="fa fa-check"></i> Correct`
 		data.simulator.soundplayed = 0
 	} else {
 		var a = `<span class="secondary"><i class="fa fa-times"></i> Incorrect</span>`
 	}
-	simulatordisplay(a)
-	setTimeout(function () {simulatordisplay("Hitman Trainer")},10000)
+	simulator_display(a)
+	setTimeout(function () {simulator_display("Hitman Trainer")},10000)
 }
 
-function simulatorhide() {//Toggles visibility of the simulator
+function simulator_hide() {//Toggles visibility of the simulator
 	click()
 	document.getElementById("sim_div").style.visibility = (data.simulator.visible) ? "hidden":"visible"
 	data.simulator.visible = (data.simulator.visible) ? 0:1
 }
 
-function simulatordisplay(x) {//Modifies the simulator header
+function simulator_display(x) {//Modifies the simulator header
 	document.getElementById("sim_title").innerHTML = x
 }
 
@@ -1145,13 +1186,13 @@ function setup() {//Prepares website lists and appearance
 	})
 	guidedata.forEach(function (data,index) {
 		var button = document.createElement("button")
-		document.getElementById("guidelist").appendChild(button)
-		button.outerHTML = `<button onclick="guideupdate(${index})">${data.name}</button>`
+		document.getElementById("info_list").appendChild(button)
+		button.outerHTML = `<button onclick="info_update(${index})">${data.name}</button>`
 	})
 	tenantdata.forEach(function (data,index) {
 		var button = document.createElement("button")
-		document.getElementById("tenantlist").appendChild(button)
-		button.outerHTML = `<button id="tenantbutton${index}" onclick="tenantupdate(${index})">${"<i class='fa " + ((data["doll"] == 0) ? 'fa-square-o':'fa-square') + " fa-lg'></i> " + data.name}</button>`
+		document.getElementById("tenant_list").appendChild(button)
+		button.outerHTML = `<button id="tenant_listbutton${index}" onclick="tenant_update(${index})">${"<i class='fa " + ((data["doll"] == 0) ? 'fa-square-o':'fa-square') + " fa-lg'></i> " + data.name}</button>`
 	})
 	if (localStorage.getItem('color0') == undefined) {localStorage.setItem('color0',120)}
 	if (localStorage.getItem('color1') == undefined) {localStorage.setItem('color1',0)}
@@ -1161,7 +1202,6 @@ function setup() {//Prepares website lists and appearance
 	x.onreadystatechange = function() { 
 		if (x.readyState == 4 && x.status == 200) {
 			var d = JSON.parse(x.responseText)
-			console.log(d)
 			document.getElementById("version").innerHTML = `<i>Wttg Assistant Version 1.4.0.${d[0].sha.slice(0,7)}</i>`
 		}
 	}
@@ -1170,6 +1210,7 @@ function setup() {//Prepares website lists and appearance
 }
 
 function click() {//Plays the click sound
+	data.general.click.currentTime = 0
 	data.general.click.play()
 }
 

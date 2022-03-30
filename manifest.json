@@ -1,7 +1,7 @@
 {
-	"short_name":"Helper",
-	"name": "Welcome To The Game II Helper",
-	"description": "A helper tool for the game Welcome To The Game II",
+	"short_name":"Assistant",
+	"name": "Welcome To The Game II Assistant",
+	"description": "An assistant tool for the game Welcome To The Game II",
 	"icons": [
 		{
 			"src": "Assets/icon-192.png",

@@ -27,9 +27,9 @@
 }
 
 * {
-  pointer-events: none !important;
+  pointer-events:none !important;
 }
 
 img.nudity {
-  filter: blur(18px) !important;
+  filter:blur(18px) !important;
 }
