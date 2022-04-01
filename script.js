@@ -664,10 +664,14 @@ var sitedata = {
 				<p>There is a bug in the game where if you lean into certain walls or run up against an elevator, you may trigger an easter egg where you are teleported inside an elevator. This is believed to be a form of noclip or glitch protection.</p>
 				<p>The landing page photo on I Love Cats was sourced from a popular furry site named furaffinity and modified before being used inside the game. The user who posted the orginal photo was named MethLab.</p>
 				<p>Hidden Pleasures actually has an unused page because of a typo in the game's code.</p>`},
-		{"name":`<i class="icon-plus-circle"></i> Hitman Simulator`,"content":`
+		{"name":`<i class="icon-crosshairs"></i> Hitman Simulator`,"content":`
 		<h1>Hitman Simulator</h1>
-			<p>The button below will open a simulator for the Hitmans lockpicking noise. Once you hear it, you should go to the widget for the simulator and click 'I heard that'. It will then tell you if you correct or incorrect. It will play five seconds after you start the simulation as a test, after that you must pay attention for when it plays. If you fail to catch a noise it plays, it will tell you that you have died and will continue the simulator as normal.</p>
+			<p>The button below will open a tool to practice catching the lockpicking noise made by the Hitman before he enters your apartment. After you activate the simulator it will occasionally play the sound cue. If you hear it, you should go to the widget for the simulator and click "I heard that". It will then tell you if you correctly identified the sound cue or if you were incorrect. It will first play five seconds after you start the simulation for the sake of testing, afterwards you must begin paying attention for when it plays. If you fail to catch the noise it plays, it will warn you that you would have died and will continue the simulator as normal.</p>
 			<button onclick="simulator_launch()">Launch Simulator</button>`},
+		{"name":`<i class="icon-user-secret"></i> Hacking Trainer`,"content":`
+		<h1>Hacking Trainer</h1>
+			<p>The hacking trainer is a project currently on hold, but I have added this entry so that it is ready for whenever (if ever) it is ready to implement.</p>
+			<button>Launch Trainer</button>`},
 		{"name":`<i class="icon-cog"></i> Settings`,"content":`
 		<h1>Settings</h1>
 			<table>
@@ -879,7 +883,7 @@ function wiki_previewload() {//Create a click event listener when the clickpoint
 		document.getElementById("preview").contentWindow.addEventListener('click', function(e) {wiki_previewupdate(-1)})
 	} catch (e) {
 		wiki_previewupdate(-1)
-		console.log("Clickpoint Guide Failure: " + e)
+		console.log("[Clickpoint Guide Failure] " + e)
 	}
 }
 
@@ -1062,13 +1066,17 @@ function timeformat(i) {
 //=============================
 function tenant_input(i,p) {//Updates tenant label if room number is provided
 	data.tenant.rooms[i] = p
-	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='" + ((data.tenant.availability[i] == 0) ? 'icon-minus-square':(data.tenant.rooms[i] == "") ? 'icon-square':'icon-check-square') + "'></i> " + tenantdata[i]["name"]
+	tenant_display()
 }
 
 function tenant_toggle(i) {//Updates tenant label and button if tenant is marked unavailable
 	click()
 	data.tenant.availability[i] = (data.tenant.availability[i]) ? 0:1;
 	document.getElementById("tenant_button1").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`
+	tenant_display()
+}
+
+function tenant_display() {
 	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='" + ((data.tenant.availability[i] == 0) ? 'icon-minus-square':(data.tenant.rooms[i] == "") ? 'icon-square':'icon-check-square') + "'></i> " + tenantdata[i]["name"]
 }
 

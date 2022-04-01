@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?iy0yx1');
-  src:  url('fonts/icomoon.eot?iy0yx1#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?iy0yx1') format('truetype'),
-    url('fonts/icomoon.woff?iy0yx1') format('woff'),
-    url('fonts/icomoon.svg?iy0yx1#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?drb0b2');
+  src:  url('fonts/icomoon.eot?drb0b2#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?drb0b2') format('truetype'),
+    url('fonts/icomoon.woff?drb0b2') format('woff'),
+    url('fonts/icomoon.svg?drb0b2#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -19,15 +19,15 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-	
-	/* Coped From Font Awesome */
+
+  /* Coped From Font Awesome */
   font-size: 1.33333333em;
   vertical-align: -15%;
 	
-	/* Fixed Width */
-	display: inline-block;
-	width: 0.9em;
-	text-align: center;
+  /* Fixed Width */
+  display: inline-block;
+  width: 0.9em;
+  text-align: center;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
@@ -35,7 +35,7 @@
 }
 
 .icon-2x {
-	font-size: 2em;
+  font-size: 2em;
 }
 
 .icon-search:before {
@@ -58,6 +58,9 @@
 }
 .icon-info-circle:before {
   content: "\f05a";
+}
+.icon-crosshairs:before {
+  content: "\f05b";
 }
 .icon-arrow-left:before {
   content: "\f060";
@@ -94,6 +97,9 @@
 }
 .icon-twitch:before {
   content: "\f1e8";
+}
+.icon-user-secret:before {
+  content: "\f21b";
 }
 .icon-mouse-pointer:before {
   content: "\f245";
