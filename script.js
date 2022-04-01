@@ -242,7 +242,7 @@ var sitedata = {
 			<p>Created by: FierceThundr_</p>
 			<p>Sounds and images used are property of reflect studios<br>Welcome to The Game II is property of reflect studios</p>
 			<p><i>Started July 5th 2020</i><br><i>Updated June 29th 2021</i></p>
-			<p><a href="https://github.com/FierceThundr/wttg2-assistant" target="_blank" rel="noreferrer"><i class="fa fa-github fa-lg"></i>Github Page</a></p>
+			<p><a href="https://github.com/FierceThundr/wttg2-assistant" target="_blank" rel="noreferrer"><i class="icon-github"></i> Github Page</a></p>
 			<h3>Information Sources</h3>
 				<p>
 					<a href="https://discord.gg/wa9Fy7gTtf" target="_blank" rel="noreferrer">Major Information Assistance ~Nasko222</a><br>
@@ -262,11 +262,11 @@ var sitedata = {
 				</p>
 			<h3>Special Thanks</h3>
 				<p>
-					<a href="https://www.twitch.tv/divineshadow_18" target="_blank" rel="noreferrer"><i class="fa fa-twitch fa-lg"></i>DivineShadow_18</a><br>
-					<a href="https://www.twitch.tv/chexparty" target="_blank" rel="noreferrer"><i class="fa fa-twitch fa-lg"></i>ChexParty</a><br>
-					<a href="https://www.twitch.tv/insym" target="_blank" rel="noreferrer"><i class="fa fa-twitch fa-lg"></i>Insym</a><br>
-					<a href="https://www.twitch.tv/nasko222n" target="_blank" rel="noreferrer"><i class="fa fa-twitch fa-lg"></i>Nasko222n</a><br>
-					<a href="https://www.twitch.tv/superfreshness" target="_blank" rel="noreferrer"><i class="fa fa-twitch fa-lg"></i>Superfreshness</a>
+					<a href="https://www.twitch.tv/divineshadow_18" target="_blank" rel="noreferrer"><i class="icon-twitch"></i> DivineShadow_18</a><br>
+					<a href="https://www.twitch.tv/chexparty" target="_blank" rel="noreferrer"><i class="icon-twitch"></i> ChexParty</a><br>
+					<a href="https://www.twitch.tv/insym" target="_blank" rel="noreferrer"><i class="icon-twitch"></i> Insym</a><br>
+					<a href="https://www.twitch.tv/nasko222n" target="_blank" rel="noreferrer"><i class="icon-twitch"></i> Nasko222n</a><br>
+					<a href="https://www.twitch.tv/superfreshness" target="_blank" rel="noreferrer"><i class="icon-twitch"></i> Superfreshness</a>
 				</p>`},
 		{"name":`<i class="icon-circle"></i> Tutorial`,"content":`
 		<h1>Tutorial</h1>
@@ -682,6 +682,15 @@ var sitedata = {
 					<tr><td><button onclick="popwifi()" style="width:100%">Open Timer Mimic</button></td><td><button onclick="popnotes()" style="width:100%">Open Notes Mimic</button></td></tr>
 				</tbody>
 			</table>`},
+		{"name":`<i class="icon-plus-circle"></i> Updates`,"content":`
+		<h1>Updates</h1>
+			<p>The updates listed here are currently in development, future additions, or unfinished features that are partially implemented</p>
+			<ul>
+				<li><b>Streamer Popouts</b> For streamers who use the assistant, popout windows will be created so that streamers can easily capture and share there notes or wifi timer to their viewers.</li>
+				<li><b>Hacking Trainer</b> The in-game hacking practice is not very comprehensive, so this feature will be a recreation of the hacks so that players can practice hacks at any level and without the risk of killing a run.</li>
+				<li><b>Wiki Block Manual Mode</b> The wiki block method of importing websites is not perfect and in some cases may be impractical or problematic. To fix this, there will be a menu where users can manually add and delete pages.</li>
+				<li><b>Wifi Block Cooldowns</b> The wifi block is not perfect and does not account for user error related to reconnecting to networks too quickly. For those who need it, there is be a toggle that enables an advanced mode that accounts for variance that comes from disconnecting and reconnecting such as connection penalties and cooldowns.</li>
+			</ul>`},
 		{"name":`<i class="icon-question-circle"></i> Feedback`,"content":`
 		<h1>Feedback</h1>
 			<p>If you wish to provide feedback or report a bug, please message leave a comment on the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2211437048" target="_blank" rel="noreferrer">steam guide</a> for the helper or open an issue on the <a href="https://github.com/FierceThundr/wttg2-assistant/issues" target="_blank" rel="noreferrer">github page</a>!</p>`}
