@@ -960,9 +960,9 @@ function wifi_wifijoin(d) {//Updates wifi timer (onjoin)
 	var l = data.wifi.timerlive[i]
 	data.wifi.timer = [data.wifi.timer[0],i,l,f,wifidata[i].name,""]
 	wifi_timerpausebutton("Pause Timer")
-	wifi_timerupdate()
-	click()
 	data.wifi.cooldowns[i] = 300
+	wifi_timerdisplay()
+	click()
 }
 
 function wifi_wifileave() {//Updates wifi timer (onleave)
