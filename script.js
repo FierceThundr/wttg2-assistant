@@ -242,7 +242,7 @@ var sitedata = {
 			<p>Created by: FierceThundr_</p>
 			<p>Sounds and images used are property of reflect studios<br>Welcome to The Game II is property of reflect studios</p>
 			<p><i>Started July 5th 2020</i><br><i>Updated June 29th 2021</i></p>
-			<p><a href="https://github.com/FierceThundr/wttg2-assistant" target="_blank" rel="noreferrer">Github Page</a></p>
+			<p><a href="https://github.com/FierceThundr/wttg2-assistant" target="_blank" rel="noreferrer"><i class="fa fa-github fa-lg"></i>Github Page</a></p>
 			<h3>Information Sources</h3>
 				<p>
 					<a href="https://discord.gg/wa9Fy7gTtf" target="_blank" rel="noreferrer">Major Information Assistance ~Nasko222</a><br>
@@ -662,7 +662,7 @@ var sitedata = {
 				<p>There is a bug in the game where if you lean into certain walls or run up against an elevator, you may trigger an easter egg where you are teleported inside an elevator. This is believed to be a form of noclip or glitch protection.</p>
 				<p>The landing page photo on I Love Cats was sourced from a popular furry site named furaffinity and modified before being used inside the game. The user who posted the orginal photo was named MethLab.</p>
 				<p>Hidden Pleasures actually has an unused page because of a typo in the game's code.</p>`},
-		{"name":`<i class="fa fa-dot-circle-o fa-lg"></i> Hitman Simulator`,"content":`
+		{"name":`<i class="fa fa-plus-circle fa-lg"></i> Hitman Simulator`,"content":`
 		<h1>Hitman Simulator</h1>
 			<p>The button below will open a simulator for the Hitmans lockpicking noise. Once you hear it, you should go to the widget for the simulator and click 'I heard that'. It will then tell you if you correct or incorrect. It will play five seconds after you start the simulation as a test, after that you must pay attention for when it plays. If you fail to catch a noise it plays, it will tell you that you have died and will continue the simulator as normal.</p>
 			<button onclick="simulator_launch()">Launch Simulator</button>`},
@@ -1060,14 +1060,14 @@ function timeformat(i) {
 //=============================
 function tenant_input(i,p) {//Updates tenant label if room number is provided
 	data.tenant.rooms[i] = p
-	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
+	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-minus-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
 }
 
 function tenant_toggle(i) {//Updates tenant label and button if tenant is marked unavailable
 	click()
 	data.tenant.availability[i] = (data.tenant.availability[i]) ? 0:1;
 	document.getElementById("tenant_button1").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`
-	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
+	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-minus-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
 }
 
 function tenant_update(i) {//Changes the currently displayed tenant page
