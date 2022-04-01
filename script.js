@@ -237,7 +237,7 @@ var sitedata = {
 		"Dont let Noir catch you off guard",
 		"The Noir love darkness"
 	], guidedata = [
-		{"name":`<i class="fa fa-info-circle fa-lg"></i> About`,"content":`
+		{"name":`<i class="icon-info-circle"></i> About`,"content":`
 		<h1>About</h1>
 			<p>Created by: FierceThundr_</p>
 			<p>Sounds and images used are property of reflect studios<br>Welcome to The Game II is property of reflect studios</p>
@@ -253,8 +253,10 @@ var sitedata = {
 					<a href="https://www.speedrun.com/wttg2/resources" target="_blank" rel="noreferrer">Original Click Point Locations ~Shadowk222</a><br>
 					<a target="_blank" rel="noreferrer">Wttg2 Tenant Data ~Lutonite</a>
 				</p>
+			<h3>Programming Resources</h3>
 				<p>
-					<a href="https://fontawesome.com/v4.7.0/" target="_blank" rel="noreferrer">Symbols</a><br>
+					<a href="https://icomoon.io/" target="_blank" rel="noreferrer">Symbol Packer</a><br>
+					<a href="https://fontawesome.com/v4.7.0/" target="_blank" rel="noreferrer">Symbol Library</a><br>
 					<a href="https://www.svgbackgrounds.com" target="_blank" rel="noreferrer">Website Background</a><br>
 					<a href="http://grsmto.github.io/simplebar/" target="_blank" rel="noreferrer">Custom Scrollbars</a>
 				</p>
@@ -266,7 +268,7 @@ var sitedata = {
 					<a href="https://www.twitch.tv/nasko222n" target="_blank" rel="noreferrer"><i class="fa fa-twitch fa-lg"></i>Nasko222n</a><br>
 					<a href="https://www.twitch.tv/superfreshness" target="_blank" rel="noreferrer"><i class="fa fa-twitch fa-lg"></i>Superfreshness</a>
 				</p>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Tutorial`,"content":`
+		{"name":`<i class="icon-circle"></i> Tutorial`,"content":`
 		<h1>Tutorial</h1>
 			<p>Thank you for using my welcome to the game assistant, I will try to make this section as straight to the point so anyone reading can get on their way.</p>
 			<details>
@@ -292,10 +294,10 @@ var sitedata = {
 				<p>The information block is the background of this tool and provides various features. These include project credits and resources, guides for threats and important skills, customization settings, and an area in which you can find ways provide feedback on this project.</p>
 			</details>
 			<p><b>With that, you have everything you need to know to use this tool, get on out there and beat this game!</b></p>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Game`,"content":`
+		{"name":`<i class="icon-circle"></i> The Game`,"content":`
 		<h1>The Game</h1>
 			<p>Welcome to the Game II is a deep web horror game where you are tasked with finding a female reporter kidnapped for looking into a group on the deep web suspected of horrific activity. To save her you must search the games websites to find 8 keys and gather 250 DosCoin to find her location. During this task you will face up against many killers, threats, and challenges. Perhaps you will be able to power through and join the 2%.</p>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Computer`,"content":`
+		{"name":`<i class="icon-circle"></i> The Computer`,"content":`
 		<h1>The Computer</h1>
 			<p>For the majority of the game, you will be stationed at your computer completing various tasks to aid in the generation of DosCoin, searching for keys, and exploring the deep web. To aid in this task, you have many programs and features on your within the computer.</p>
 
@@ -345,7 +347,7 @@ var sitedata = {
 					<li>The Power Icon can be clicked to shutdown your PC.</li>
 				</ul>
 			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Building`,"content":`
+		{"name":`<i class="icon-circle"></i> The Building`,"content":`
 		<h1>The Building</h1>
 			<p>While quite a good amount of your time will be spent sitting at your computer, there are many important things you should know about your apartment and the building as a whole.</p>
 
@@ -360,7 +362,7 @@ var sitedata = {
 			</ol>
 
 			<p>Once you exit your apartment you will be in a hallway located on the 8th floor. Upon entering the stairwell, you will be able to freely travel up and down to other floors. The various other floors are relevant to a certain threat and the placement of Remote VPNs. The most important location you can access via the stairwell is the lobby which can be found on the bottom floor. Once there, you access the lobby computer and exit the front doors to visit the alley. All Shadow Market purchases will be shipped by drone to the end of the alley. Additionally, there is a small closet located on the right side of the alleyway, it can be used to counter a threat local to the alley if they become active.</p>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Searching`,"content":`
+		{"name":`<i class="icon-circle"></i> Searching`,"content":`
 		<h1>Searching</h1>
 			<p>An important skill for the game includes finding keys hidden within websites on the Deep Web and you will need to learn it to beat the game. Keys can be found in a variety of ways and are always a number followed by a dash and a random string of 12 alphanumeric characters. 1 - a9b98dbc5745 It is quite easy to find these after you know where to look. Firstly, keys can be hidden in plain sight, this of course is the easiest and most straightforward method of which they can be hidden on a page. Secondly, keys and the link to Deep Wiki 2 can be hidden in a pages source code. This method can be more unpredictable, but can be quite easy if you know what to look for. All keys or links hidden in this way will be hidden inside of an HTML comment which looks like the following. &lt;!-- 7 - f26aaaac89a4 --&gt; Finally, keys may be hidden in a site behind a click point. This method is the hardest as it requires you to find and click on a certain word or picture in a site to reveal keys. To do this, you may either memorize the locations or use a guide. Once you find a functional clickpoint a sound will be played and either the key will appear on the page or as a file on your desktop.</p>
 			<p>In addition to finding keys, you will also need to find two hidden wiki pages to complete the game. Fortunately finding wikis is a much easier task to complete. The link to wiki two can be found on a website within the first wiki. It will always be hidden within the source code of the first page of the website it is hidden on. Unlike the link to wiki two, the link to wiki three is always found on the website Rule of Three which is always located on the second wiki. To get the link, the site requires you to complete a trial and error memory puzzle. The puzzle consists of six sets of three dots each which must be solved in order. This puzzle is best completed earlier in a run since the correct pattern will randomize every time the page is reloaded.</p>
@@ -371,12 +373,12 @@ var sitedata = {
 				<li>Rule of Three can never contain a key.</li>
 				<l1>Keys and key clickpoints will never appear inside PGP blocks, but they can be in the opening or closing text.</li>
 			</ul>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Events`,"content":`
+		{"name":`<i class="icon-circle"></i> Events`,"content":`
 		<h1>Events</h1>
 			<p>During your playthrough you will encounter two randomevents in addition to the killers attempting to kill you.</p>
 			<p>The first event is the blackout. This event is quite easy to beat as you must walk to the end of the hallway and turn the circuit breaker back on in the maintenance closet. This event requires that the player have the flashlight available to be able to navigate the pitch black hallway. It is important to keep in mind that the flashlight has a limited battery life and cant be recharged in the event that it dies. While the event isnt deadly by itself, Noir usually spawns during the event since the darkness allows them to be more active. It is useful to be cautious due to this fact.</p>
 			<p>The second event is hacks. These events are randomly occuring minigames which you must beat in order to avoid losing notes or DosCoin. In addition, hacks can be used as an easy method of DosCoin in conjunction with a Backdoor Hack. If you want more details about how hacks function, please refer to the hacking guide.</p>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Markets`,"content":`
+		{"name":`<i class="icon-circle"></i> The Markets`,"content":`
 		<h1>The Markets</h1>
 			<p>During your playthrough there are many useful items can be purchased to help with evading threats, speeding up your internet, or generating DosCoin. The following is a list of the items available for purchase.</p>
 			<h3>ZeroDay Market</h3>
@@ -402,7 +404,7 @@ var sitedata = {
 				<li><b>LOLPY Disc</b> A tool that can be used to hack the lobby computer to access the tenant database. It is used to complete the Doll Maker quest.</li>
 				<li><b>Blue Whisper</b> A device that allows you to remotely hear sounds produced by your PC.</li>
 			</ul>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Police`,"content":`
+		{"name":`<i class="icon-circle"></i> The Police`,"content":`
 		<h1>The Police</h1>
 			<p>The police are the easiest threat in the game to avoid. To avoid them you must switch wifi networks before you exceed their respective tracking timers. Though if you forget to switch, the game only has a certain chance to trigger the swat team to break down your door based on the network you stayed on. <i>(If they are triggered, they will wait until you approach your front door or the stairwell door of floor eight before causing a game over.)</i> Despite this, you should avoid gambling on that chance.</p>
 			<p>the task of avoiding the cops can be made easier by purchasing skybreak from the ZeroDay Market and cracking higher security networks. Not only will they give you more time to breath, they often perform better.</p>
@@ -425,7 +427,7 @@ var sitedata = {
 					<li>Hacking into more secure networks using skybreak will allow you more time between switching networks</li>
 				</ul>
 			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Hitman`,"content":`
+		{"name":`<i class="icon-circle"></i> The Hitman`,"content":`
 		<h1>The Hitman</h1>
 			<p>The Hitman (Also known as Lucas Kumiega) is an enemy that becomes active deeper into the game, they will become active after you have gone into three unique pages that have keys or after you accrue a total of three difficulty points by finding keys and forcing hacks. You can check whether or not they are active by checking if the window to the left of your desk is open. <i>(Please note that this is simplified for brevity, go to the bottom of this quide for a full explaination)</i></p>
 			<p><i>(In 1337 mode the Hitman will be active immediately)</i></p>
@@ -462,7 +464,7 @@ var sitedata = {
 					<li>If the Hitman is at the door he can kill you if you use the peep hole</li><li>It is a good investment to buy a pair of motion sensors and a sound alert</li>
 				</ul>
 			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Noir`,"content":`
+		{"name":`<i class="icon-circle"></i> The Noir`,"content":`
 		<h1>The Noir</h1>
 			<p>The Noir are a threat prevalent in the game. They appear randomly in various places such as in the apartment, the apartment window, the hallway, behind doors, and in rare cases behind the gate in back of the alley.</p>
 			<p>They are a basic threat to mitigate, but can quite easily catch those unfamiliar with them off gaurd. To make them go away, turn around as soon as you see them and count to ten. After this they should be gone. If not, repeat the process. However, they pose a more active threat when they spawn behind doorways. This often catches players who are attempting to rush to and from the alley/lobby and back as fast as possible. In addition, the Noir have a chance to instantly kill you if you have at least two lights turned off in your apartment. <i>(For more details of the Noir insta-kill, check below)</i>
@@ -489,7 +491,7 @@ var sitedata = {
 					<li>Make sure to occasionally check for the Noir in the window, on the balcony, and in the apartment</li>
 				</ul>
 			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Breather`,"content":`
+		{"name":`<i class="icon-circle"></i> The Breather`,"content":`
 		<h1>The Breather</h1>
 			<p>The Breather is by far the most annoying threat you can encounter in the game. While he is only active in the alley, it is very difficult to ward him off. The difficulty is also aided by the relative rarity of encountering them in the first place.</p>
 			<p>Normally, it is unlikely for the Breather to spawn on a visit to the alley. However, as you get more keys throughout the game, the chance for him to spawn will go up. To know if he is active on a visit to the alley, listen for any potential sound cues when passing the dumpster. <i>(Sound cues can be found below)</i> If you hear a sound (or you are not sure) you should go into the nearby closet in the alley and prepare to brace the door by clicking on the handle. You can look through the window in an attempt to see him, but the Breather will wait to kill you if he sees you. If he begins to push the door, immediately hold the doorknob. (Keep in mind that this minigame is very strict and will result in death upon failure) After he gives up, you should stop holding to prepare for his next attempt. Repeat this process until he leaves. After you hear him walking away you must wait a few more seconds so that he doesn't catch you. Then you can simply grab your packages and return to the building.</p>
@@ -515,7 +517,7 @@ var sitedata = {
 					<li>You should avoid visiting the alley later in the game to avoid meeting the Breather</li>
 				</ul>
 			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Doll Maker`,"content":`
+		{"name":`<i class="icon-circle"></i> The Doll Maker`,"content":`
 		<h1>The Dollmaker</h1>
 			<p>The Dollmaker is an optional threat that is activated upon entering the site by the same name. After a certain amount of time, the Dollmaker will ██████ ██ ████ ████ and force you to ████ ████ ███ ████-████. Then the power will ██ ███ ███ █ ████████ ████ ██ █████████.</p>
 			<p>After you have been given the marker on your doorknob you have a limited amount of time to place it on a suitable door. If you fail to do so, he will return disappointed and kill you wherever he happens to find you. There are two routes you can take in the Dollmakers task. You can attempt to randomly select a correct door or you can buy the Lolpy Disk item off the Shadow Market to have certainty of your selection. Once you have the Lolpy Disk, you can go to the lobby computer and hack it with the disk. Once it is finished, you will have access to a database of all tenants in the building. Simply select a suitable female target and place the marker on their door. Keep in mind that the Dollmaker will always request five targets during your encounter with him, remember to listen for him returning the marker.</p>
@@ -532,7 +534,7 @@ var sitedata = {
 					<li>While the time the Dollmaker quest provides is generous, it should be completed as soon as you can manage</li>
 				</ul>
 			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Hacking`,"content":`
+		{"name":`<i class="icon-circle"></i> Hacking`,"content":`
 		<h1>Hacking</h1>
 			<p>Occasionally throughout the game you can get hacked and face up against various minigames. While at first they are an annoying hinderance, they can be used to help you complete the game after you learn how to beat them.</p>
 			<details>
@@ -567,7 +569,7 @@ var sitedata = {
 					<li>VPNs can allow you to optionally suppress hacks</li>
 				</ul>
 			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Cracking`,"content":`
+		{"name":`<i class="icon-circle"></i> Cracking`,"content":`
 		<h1>Cracking</h1>
 			<p>An important skill for evading police and extending your available breathing room is cracking. Cracking can be performed after purchasing SkyBreak from the ZeroDay Market. To hack a wifi network, you must first open the application and proceed to type the name of the package you would like to run. ("wep","wpa","wpa2") By default, a basic installation will only include the ability to access the WEP library.</p> <p><b>[You do not need to be connected to a wifi network to use SkyBreak]</b></p>
 			<details>
@@ -579,7 +581,7 @@ var sitedata = {
 				<p>Hacking a wpa or wpa2 network starts similarly to wep networks. First type in 'scan' to see your available networks, then proceed to type 'inject &lt;The BSSID of the network you want to hack&gt; &lt;The channel of the network&gt; &lt;The amount of packets to inject&gt;'. This will proceed to inject the specified number of packets into the target network. Keep in mind that sending too many packets in a certain amount of time will result in a network being knocked offline for a period of time. To avoid this, try to extend the amount of injections over an extended period of time. (The exact injection rates are included in the wifi block) To complete the cracking of a wpa or wpa2 network, type 'crack &lt;The BSSID of the network you want to hack&gt; &lt;The channel of the network&gt;' which will procide you with the networks password upon completion.</p>
 			</details>
 			<p>[Skybreak allows you to access a history of commands by pressing the up and down arrow keys.]</p>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Exploits & Bugs`,"content":`
+		{"name":`<i class="icon-circle"></i> Exploits & Bugs`,"content":`
 		<h1>Exploits</h1>
 			<details>
 				<summary><h3>WPA2 Quick Crack</h3></summary>
@@ -646,7 +648,7 @@ var sitedata = {
 				<summary><h3>The Copy Bug</h3></summary>
 				<p>A nototiously annoying bug is the Copy Bug. It is triggered by using alt+tab while the game is not paused. When this bug is active all attempts to copy website content such as keys will fail. To fix the bug you must click inside the A.N.N. browser while holding alt</p>
 			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Miscellaneous`,"content":`
+		{"name":`<i class="icon-circle"></i> Miscellaneous`,"content":`
 		<h1>Miscellaneous</h1>
 			<h2>Miscellaneous Info</h2>
 				<p>Contrary to many popular myths, there are only one naturally occuring ambient sound cue that has meaning. This sound cue is the Hitman lockpicking your door.</p>
@@ -662,11 +664,11 @@ var sitedata = {
 				<p>There is a bug in the game where if you lean into certain walls or run up against an elevator, you may trigger an easter egg where you are teleported inside an elevator. This is believed to be a form of noclip or glitch protection.</p>
 				<p>The landing page photo on I Love Cats was sourced from a popular furry site named furaffinity and modified before being used inside the game. The user who posted the orginal photo was named MethLab.</p>
 				<p>Hidden Pleasures actually has an unused page because of a typo in the game's code.</p>`},
-		{"name":`<i class="fa fa-plus-circle fa-lg"></i> Hitman Simulator`,"content":`
+		{"name":`<i class="icon-plus-circle"></i> Hitman Simulator`,"content":`
 		<h1>Hitman Simulator</h1>
 			<p>The button below will open a simulator for the Hitmans lockpicking noise. Once you hear it, you should go to the widget for the simulator and click 'I heard that'. It will then tell you if you correct or incorrect. It will play five seconds after you start the simulation as a test, after that you must pay attention for when it plays. If you fail to catch a noise it plays, it will tell you that you have died and will continue the simulator as normal.</p>
 			<button onclick="simulator_launch()">Launch Simulator</button>`},
-		{"name":`<i class="fa fa-cog fa-lg"></i> Settings`,"content":`
+		{"name":`<i class="icon-cog"></i> Settings`,"content":`
 		<h1>Settings</h1>
 			<table>
 				<tbody>
@@ -676,7 +678,7 @@ var sitedata = {
 					<tr><td><button onclick="popwifi()" style="width:100%">Open Timer Mimic</button></td><td><button onclick="popnotes()" style="width:100%">Open Notes Mimic</button></td></tr>
 				</tbody>
 			</table>`},
-		{"name":`<i class="fa fa-question-circle fa-lg"></i> Feedback`,"content":`
+		{"name":`<i class="icon-question-circle"></i> Feedback`,"content":`
 		<h1>Feedback</h1>
 			<p>If you wish to provide feedback or report a bug, please message leave a comment on the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2211437048" target="_blank" rel="noreferrer">steam guide</a> for the helper or open an issue on the <a href="https://github.com/FierceThundr/wttg2-assistant/issues" target="_blank" rel="noreferrer">github page</a>!</p>`}
 	]
@@ -833,7 +835,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 			d = a.insertCell(2)
 			b.innerHTML = n
 			c.innerHTML = `<i class="secondary">Dead Site</i>`
-			d.innerHTML = `<button class="disabled"><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="disabled"><i class="fa fa-search fa-lg"></i></button><button class="disabled"><i class="fa fa-search-plus fa-lg"></i></button><button class="disabled"><i class="fa fa-key fa-lg"></i></button><button class="disabled"><i class="fa fa-link fa-lg"></i></button>`
+			d.innerHTML = `<button class="disabled"><i class="icon-mouse-pointer"></i></button> <button class="disabled"><i class="icon-search"></i></button><button class="disabled"><i class="icon-search-plus"></i></button><button class="disabled"><i class="icon-key"></i></button><button class="disabled"><i class="icon-link"></i></button>`
 			return
 		}
 		f = e.id
@@ -845,7 +847,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 			d = a.insertCell(2)
 			b.innerHTML = (h != 0) ? (((h + 1 == g) ? '⠀└─ ':'⠀├─ ') + e.sub[h - 1]):n
 			c.innerHTML = (h != 0) ? ('<i class="child">⠀Subpage</i>'):((e.times == undefined) ? 'Always Available':e.times)
-			d.innerHTML = `<button onclick="wiki_previewupdate(${f + h})"><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="${(i[h][0]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},0)"><i class="fa fa-search fa-lg"></i></button><button class="${(i[h][1]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},1)"><i class="fa fa-search-plus fa-lg"></i></button><button class="${(i[h][2]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},2)"><i class="fa fa-key fa-lg"></i></button><button class="${(i[h][3]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},3)"><i class="fa fa-link fa-lg"></i></button>`
+			d.innerHTML = `<button onclick="wiki_previewupdate(${f + h})"><i class="icon-mouse-pointer"></i></button> <button class="${(i[h][0]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},0)"><i class="icon-search"></i></button><button class="${(i[h][1]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},1)"><i class="icon-search-plus"></i></button><button class="${(i[h][2]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},2)"><i class="icon-key"></i></button><button class="${(i[h][3]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},3)"><i class="icon-link"></i></button>`
 		}
 	}
 }
@@ -912,7 +914,7 @@ function note_input() {//Attempts to find and save keys within the note block's 
 //=============================
 function wifi_passwordinput(i,p) {//Updates wifi label if password is provided
 	data.wifi.passwords[i] = p
-	document.getElementById("wifi_listbutton" + i).innerHTML = "<i class='fa " + ((data.wifi.passwords[i] !== "") ? 'fa-check-square':'fa-square') + " fa-lg'></i> " + wifidata[i]["name"]
+	document.getElementById("wifi_listbutton" + i).innerHTML = "<i class='" + ((data.wifi.passwords[i] !== "") ? 'icon-check-square':'icon-square') + "'></i> " + wifidata[i]["name"]
 }
 
 function wifi_timerupdate() {//Updates wifi timers and cooldowns
@@ -1060,14 +1062,14 @@ function timeformat(i) {
 //=============================
 function tenant_input(i,p) {//Updates tenant label if room number is provided
 	data.tenant.rooms[i] = p
-	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-minus-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
+	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='" + ((data.tenant.availability[i] == 0) ? 'icon-minus-square':(data.tenant.rooms[i] == "") ? 'icon-square':'icon-check-square') + "'></i> " + tenantdata[i]["name"]
 }
 
 function tenant_toggle(i) {//Updates tenant label and button if tenant is marked unavailable
 	click()
 	data.tenant.availability[i] = (data.tenant.availability[i]) ? 0:1;
 	document.getElementById("tenant_button1").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`
-	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-minus-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
+	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='" + ((data.tenant.availability[i] == 0) ? 'icon-minus-square':(data.tenant.rooms[i] == "") ? 'icon-square':'icon-check-square') + "'></i> " + tenantdata[i]["name"]
 }
 
 function tenant_update(i) {//Changes the currently displayed tenant page
@@ -1182,7 +1184,7 @@ function setup() {//Prepares website lists and appearance
 	wifidata.forEach(function (data,index) {
 		var button = document.createElement("button")
 		document.getElementById("wifi_list").appendChild(button)
-		button.outerHTML = `<button id="wifi_listbutton${index}" onclick="wifi_update(${index})">${"<i class='fa " + ((data["level"] == 0) ? 'fa-square-o':'fa-square') + " fa-lg'></i> " + data.name}</button>`
+		button.outerHTML = `<button id="wifi_listbutton${index}" onclick="wifi_update(${index})">${"<i class='" + ((data["level"] == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`
 	})
 	guidedata.forEach(function (data,index) {
 		var button = document.createElement("button")
@@ -1192,7 +1194,7 @@ function setup() {//Prepares website lists and appearance
 	tenantdata.forEach(function (data,index) {
 		var button = document.createElement("button")
 		document.getElementById("tenant_list").appendChild(button)
-		button.outerHTML = `<button id="tenant_listbutton${index}" onclick="tenant_update(${index})">${"<i class='fa " + ((data["doll"] == 0) ? 'fa-square-o':'fa-square') + " fa-lg'></i> " + data.name}</button>`
+		button.outerHTML = `<button id="tenant_listbutton${index}" onclick="tenant_update(${index})">${"<i class='" + ((data["doll"] == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`
 	})
 	if (localStorage.getItem('color0') == undefined) {localStorage.setItem('color0',120)}
 	if (localStorage.getItem('color1') == undefined) {localStorage.setItem('color1',0)}
