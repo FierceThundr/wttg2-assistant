@@ -804,7 +804,7 @@ function wiki_input() {//Updates wiki data from import field
 			}
 		})
 		//console.log("Final",d)
-		data.wiki.sites[data.wiki.current] = d
+		data.wiki.sites[data.wiki.current] = JSON.parse(JSON.stringify(d))
 		data.wiki.keys[data.wiki.current] = 0
 		wiki_update()
 	}
@@ -812,8 +812,8 @@ function wiki_input() {//Updates wiki data from import field
 
 function wiki_demo() {//Forces update of wiki data
 	click()
-	data.wiki.sites[data.wiki.current] = {"BathRoom Cams":[],"Brutal Underground":[[0,0,0,0],[0,0,0,0]],"Cheap Surgery":[],"Chosen Awake":[],"Corpses For Sell":[],"Cry Bitch":[[0,0,0,0],[0,0,0,0]],"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]],"DEEPDOTWEB":[],"Dream Place":[],"Evil Collection":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"Eye":[[0,0,0,0]],"Forgive Me":[[0,0,0,0],[0,0,0,0]],"Hot Burners":[],"IAMHERE":[[0,0,0,0]],"Keep Sake":[[0,0,0,0]],"Little Friends":[[0,0,0,0],[0,0,0,0]],"Scream Bitch":[[0,0,0,0]],"Secure Drop":[],"SKYWEB":[],"St Louis Arch":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"The 8th Sin":[],"The Doll Maker":[[0,0,0,0],[0,0,0,0]],"The Light Within":[[0,0,0,0],[0,0,0,0]],"Vacation":[[0,0,0,0]],"YOU THERE?":[[0,0,0,0]]}
-	//data.wiki.sites[data.wiki.current] = {"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]]}
+	//data.wiki.sites[data.wiki.current] = {"BathRoom Cams":[],"Brutal Underground":[[0,0,0,0],[0,0,0,0]],"Cheap Surgery":[],"Chosen Awake":[],"Corpses For Sell":[],"Cry Bitch":[[0,0,0,0],[0,0,0,0]],"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]],"DEEPDOTWEB":[],"Dream Place":[],"Evil Collection":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"Eye":[[0,0,0,0]],"Forgive Me":[[0,0,0,0],[0,0,0,0]],"Hot Burners":[],"IAMHERE":[[0,0,0,0]],"Keep Sake":[[0,0,0,0]],"Little Friends":[[0,0,0,0],[0,0,0,0]],"Scream Bitch":[[0,0,0,0]],"Secure Drop":[],"SKYWEB":[],"St Louis Arch":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"The 8th Sin":[],"The Doll Maker":[[0,0,0,0],[0,0,0,0]],"The Light Within":[[0,0,0,0],[0,0,0,0]],"Vacation":[[0,0,0,0]],"YOU THERE?":[[0,0,0,0]]}
+	data.wiki.sites[data.wiki.current] = {"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]]}
 	wiki_update()
 }
 
@@ -880,17 +880,9 @@ function wiki_editor() {//Replaces currently displayed data with website editor
 function wiki_notetoggle(e,n,i,b) {//Toggle color of note taking buttons
 	click()
 	if (b == 2) {data.wiki.keys[data.wiki.current] += (e.classList.contains("secondary")) ? 1:-1;wiki_updatekeys()}
-	//console.log((data.wiki.sites[data.wiki.current][n][i][b] ^ 1),data.wiki.sites[data.wiki.current][n][i][b],`data.wiki.sites[${data.wiki.current}][${n}][${i}][${b}]`)
-	data.wiki.sites[data.wiki.current][n][i][b] = data.wiki.sites[data.wiki.current][n][i][b] ^ 1
+	data.wiki.sites[data.wiki.current][n][i][b] ^= 1
+	console.log(data.wiki.sites[data.wiki.current][n][i][b])
 	e.classList.toggle("secondary")
-}
-
-function xor_test() {
-	var a = [null,{"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]]},{},{}]
-	console.log((a[1]["Deep Journal"][0][0] ^ 1),a[1]["Deep Journal"][0][0])
-	a[1]["Deep Journal"][0][0] ^= 1
-	a[1]["Deep Journal"][1][0] ^= 1
-	console.log(a)
 }
 
 function wiki_updatekeys() {//Updates the remaining keys count
