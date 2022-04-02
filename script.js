@@ -812,8 +812,8 @@ function wiki_input() {//Updates wiki data from import field
 
 function wiki_demo() {//Forces update of wiki data
 	click()
-	//data.wiki.sites[data.wiki.current] = {"BathRoom Cams":[],"Brutal Underground":[[0,0,0,0],[0,0,0,0]],"Cheap Surgery":[],"Chosen Awake":[],"Corpses For Sell":[],"Cry Bitch":[[0,0,0,0],[0,0,0,0]],"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]],"DEEPDOTWEB":[],"Dream Place":[],"Evil Collection":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"Eye":[[0,0,0,0]],"Forgive Me":[[0,0,0,0],[0,0,0,0]],"Hot Burners":[],"IAMHERE":[[0,0,0,0]],"Keep Sake":[[0,0,0,0]],"Little Friends":[[0,0,0,0],[0,0,0,0]],"Scream Bitch":[[0,0,0,0]],"Secure Drop":[],"SKYWEB":[],"St Louis Arch":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"The 8th Sin":[],"The Doll Maker":[[0,0,0,0],[0,0,0,0]],"The Light Within":[[0,0,0,0],[0,0,0,0]],"Vacation":[[0,0,0,0]],"YOU THERE?":[[0,0,0,0]]}
-	data.wiki.sites[data.wiki.current] = {"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]]}
+	data.wiki.sites[data.wiki.current] = {"BathRoom Cams":[],"Brutal Underground":[[0,0,0,0],[0,0,0,0]],"Cheap Surgery":[],"Chosen Awake":[],"Corpses For Sell":[],"Cry Bitch":[[0,0,0,0],[0,0,0,0]],"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]],"DEEPDOTWEB":[],"Dream Place":[],"Evil Collection":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"Eye":[[0,0,0,0]],"Forgive Me":[[0,0,0,0],[0,0,0,0]],"Hot Burners":[],"IAMHERE":[[0,0,0,0]],"Keep Sake":[[0,0,0,0]],"Little Friends":[[0,0,0,0],[0,0,0,0]],"Scream Bitch":[[0,0,0,0]],"Secure Drop":[],"SKYWEB":[],"St Louis Arch":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"The 8th Sin":[],"The Doll Maker":[[0,0,0,0],[0,0,0,0]],"The Light Within":[[0,0,0,0],[0,0,0,0]],"Vacation":[[0,0,0,0]],"YOU THERE?":[[0,0,0,0]]}
+	//data.wiki.sites[data.wiki.current] = {"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]]}
 	wiki_update()
 }
 
