@@ -235,261 +235,33 @@ var sitedata = {
 		"It is best not to tempt the police",
 		"If the Hitman finds you aren't home you will have a bad day",
 		"Dont let Noir catch you off guard",
-		"The Noir love darkness"
+		"The Noir love darkness",
+		"Tick Tock",
+		"It is best to skip to the WPA2 Skybreak library"
 	], guidedata = [
-		{"name":`<i class="fa fa-info-circle fa-lg"></i> About`,"content":`
-		<h1>About</h1>
-			<p>Created by: FierceThundr_</p>
-			<p>Sounds and images used are property of reflect studios<br>Welcome to The Game II is property of reflect studios</p>
-			<p><i>Started July 5th 2020</i><br><i>Updated June 29th 2021</i></p>
-			<p><a href="https://github.com/FierceThundr/wttg2-assistant" target="_blank" rel="noreferrer">Github Page</a></p>
-			<h3>Information Sources</h3>
-				<p>
-					<a href="https://discord.gg/wa9Fy7gTtf" target="_blank" rel="noreferrer">Major Information Assistance ~Nasko222</a><br>
-					<a href="https://cdn.discordapp.com/attachments/572088008723922954/572089747649069056/Welcome_to_the_Game_II_WiFi_Table.xlsx" target="_blank" rel="noreferrer">Wifi data ~Nasko222</a><br>
-					<a target="_blank" rel="noreferrer">Improved Click Point Locations ~Nasko222</a><br>
-					<a href="https://welcometothegame.fandom.com/wiki/Sound_Files_(WTTG2)" target="_blank" rel="noreferrer">Sound Files</a><br>
-					<a href="https://www.speedrun.com/wttg2/guide/h2pkg" target="_blank" rel="noreferrer">Website and Key information ~Insym</a><br>
-					<a href="https://www.speedrun.com/wttg2/resources" target="_blank" rel="noreferrer">Original Click Point Locations ~Shadowk222</a><br>
-					<a target="_blank" rel="noreferrer">Wttg2 Tenant Data ~Lutonite</a>
-				</p>
-				<p>
-					<a href="https://fontawesome.com/v4.7.0/" target="_blank" rel="noreferrer">Symbols</a><br>
-					<a href="https://www.svgbackgrounds.com" target="_blank" rel="noreferrer">Website Background</a><br>
-					<a href="http://grsmto.github.io/simplebar/" target="_blank" rel="noreferrer">Custom Scrollbars</a>
-				</p>
-			<h3>Special Thanks</h3>
-				<p>
-					<a href="https://www.twitch.tv/divineshadow_18" target="_blank" rel="noreferrer"><i class="fa fa-twitch fa-lg"></i>DivineShadow_18</a><br>
-					<a href="https://www.twitch.tv/chexparty" target="_blank" rel="noreferrer"><i class="fa fa-twitch fa-lg"></i>ChexParty</a><br>
-					<a href="https://www.twitch.tv/insym" target="_blank" rel="noreferrer"><i class="fa fa-twitch fa-lg"></i>Insym</a><br>
-					<a href="https://www.twitch.tv/nasko222n" target="_blank" rel="noreferrer"><i class="fa fa-twitch fa-lg"></i>Nasko222n</a><br>
-					<a href="https://www.twitch.tv/superfreshness" target="_blank" rel="noreferrer"><i class="fa fa-twitch fa-lg"></i>Superfreshness</a>
-				</p>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Tutorial`,"content":`
-		<h1>Tutorial</h1>
-			<p>Thank you for using my welcome to the game assistant, I will try to make this section as straight to the point so anyone reading can get on their way.</p>
-			<details>
-				<summary><h3>The Wiki Block</h3></summary>
-				<p>The wiki block is the primary note taking tool and can be immensely helpful if you know how to use it. To begin, copy the website list from a wiki page in the game by using Ctrl+A and Ctrl+C, then paste the contents into the textarea at the top of the block. It will then scan and determine the websites on your wiki. Once your wiki sites are processed you will see their names, sub-pages, availability, and multiple markers.</p>
-				<p>The markers can be used to indicate that you've searched a site and whether you have found anything on it so that you never forget where you need to search in the end-game for remaining keys. The buttons provided are for <i class="fa fa-search"></i> manual searches, <i class="fa fa-search-plus"></i> key cue aided searches, and whether a <i class="fa fa-key"></i> key or <i class="fa fa-link"></i> link has been found respectively.</p>
-				<p>The final feature that may need explaining is the <i class="fa fa-mouse-pointer"></i> mouse button, clicking on it will show you a copy of the site you've clicked on with multiple indicators that show the games predetermined key click points. Yellow clickpoints will place a key somewhere on the page you are currently on while green clickpoints will place a key in a file on your desktop.</p>
-			</details>
-			<details>
-				<summary><h3>The Notes Block</h3></summary>
-				<p>The notes block is quite self-explanatory. The main purpose of this is that of a basic notepad that you can use to store keys, wiki links, and anything else you deem important. However, an additional feature is that any keys pasted into the textarea will be saved and compiled into the master key as you progressively find and enter the eight hidden keys.</p>
-			</details>
-			<details>
-				<summary><h3>The Wifi Block</h3></summary>
-				<p>The wifi block allows you to survey the many wifi networks present in the game. It will also provide information useful for cracking and accessing such wifis. Along with this, the block has password fields and an inbuilt tracking timer that will play a warning when you have one minute remaining to get off a network before the cops trace you.</p>
-			</details>
-			<details>
-				<summary><h3>The Tenant Block</h3></summary>
-				<p>The tenant block can be used to view a database of tenants located in Clint's apartment. It provides their ages, names, and their notes from the lobby computer. Along with this, it will also tell you if the tenant is a valid victim for the Doll Maker.</p>
-			</details>
-			<details>
-				<summary><h3>The Info Block</h3></summary>
-				<p>The information block is the background of this tool and provides various features. These include project credits and resources, guides for threats and important skills, customization settings, and an area in which you can find ways provide feedback on this project.</p>
-			</details>
-			<p><b>With that, you have everything you need to know to use this tool, get on out there and beat this game!</b></p>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Game`,"content":`
-		<h1>The Game</h1>
-			<p>Welcome to the Game II is a deep web horror game where you are tasked with finding a female reporter kidnapped for looking into a group on the deep web suspected of horrific activity. To save her you must search the games websites to find 8 keys and gather 250 DosCoin to find her location. During this task you will face up against many killers, threats, and challenges. Perhaps you will be able to power through and join the 2%.</p>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Computer`,"content":`
-		<h1>The Computer</h1>
-			<p>For the majority of the game, you will be stationed at your computer completing various tasks to aid in the generation of DosCoin, searching for keys, and exploring the deep web. To aid in this task, you have many programs and features on your within the computer.</p>
-
-			<details>
-				<summary><h4>A.N.N.</h4></summary>
-				<p>A.N.N (Anonymous Node Network) is your Deep Web browser which you will be utilizing to find keys and navigate the web. It is mostly self explainatory to operate... You have the arrows navigate forward or back a page, the home button to jump to wiki #1, the refresh button which refreshes the current site, and there is one more button on the right of the URL bar that opens the source code of the current website as well. In addition to wiki #1, two more can be found via searching pages. If you wish to know how to search the Deep Web, that is covered in a separate section.</p>
-			</details>
-
-			<details>
-				<summary><h4>ZeroDay Market</h4></summary>
-				<p>The ZeroDay Market can be used throughout the game to buy critical software and tools to aid in defending yourself or searching the Deep Web. These include applications that allow you to crack into other wifi networks, Backdoor Hacks that let you earn money from counter-hacking, and a Key Cue widget which helps you search for keys on the deep web.</p>
-				<p><i>(Specific item information can be found under the Markets guide)</i></p>
-			</details>
-
-			<details>
-				<summary><h4>Shadow Market</h4></summary>
-				<p>The Shadow Market can be used throughtout the game to buy important hardware items that will be useful throughout the game. Among the items sold are Motion Sensors which can be placed in the hallway, Remote VPNs that can be used to generate DosCoin, and better Wifi Dongles to help you search the Deep Web.</p>
-				<p><i>(Specific item information can be found under the Markets guide)</i></p>
-			</details>
-
-			<details>
-				<summary><h4>Notes</h4></summary>
-				<p>This section is quite self-explanatory. It is the in-game note taking program that can be used to store keys, passwords, or wiki addresses.</p>
-			</details>
-
-			<details>
-				<summary><h4>Noir Tunnel</h4></summary>
-				<p>The Noir Tunnel is your ultimate goal at the end of the game. To beat the game, you must enter the compiled master key into the tunnel and pay 250 DosCoin. At which point ███ ████ ████ ████ ███ ███ ████ ██ █████ ████ ███ █████ ██████.</p>
-			</details>
-
-			<details>
-				<summary><h4>Skybreak</h4></summary>
-				<p>Skybreak is a wifi cracking tool that can be purchased from the ZeroDay Market to hack into additional wifi networks. Additionally, libraries can be purchased to allow cracking of better networks. If you want to know how to crack networks, visit the Cracking guide.</p>
-			</details>
-
-			<details>
-				<summary><h4>The Status Bar</h4></summary>
-				<p>The Status Bar at the top of the computer screen includes many menus and buttons that can be useful throughout the game. The following is what the icons do from left to right.</p>
-				<ul>
-					<li>The DosCoin icon shows you your current balance of DosCoin. Additionally, clicking on it will allow you to view information about placed remote VPNs and their performance. It lists each VPNs yield and seconds between yields.</li>
-					<li>The Backdoor Hack label lists how many backdoor hacks you currently have installed.</li>
-					<li>In the center you can see the in-game time displayed. It runs two times faster than real life time.</li>
-					<li>The VPN Icon allows you to view and manage any purchased VPNs.</li>
-					<li>The Motion Alert icon can be used to view and monitor any placed motion sensors. In addition, the icon will blink if a motion sensor is triggered and Sound Alert is pruchased.</li>
-					<li>The Wifi Icon will be quite familiar to those who use PCs. It allows you to view nearby networks and log into them.</li>
-					<li>The Sound Icon allows you to mute your PCs volume. An important note, doing this will mute all sounds produced by your PC.</li>
-					<li>The Power Icon can be clicked to shutdown your PC.</li>
-				</ul>
-			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Building`,"content":`
-		<h1>The Building</h1>
-			<p>While quite a good amount of your time will be spent sitting at your computer, there are many important things you should know about your apartment and the building as a whole.</p>
-
-			<p>When inside the computer you can right click to exit the computer at which point you will be able to look around and see your desk. Here you can boot your pc by interacting with your PC on the right of your desk if it is powered down. By right clicking again you will be able to get up and travel around your room. While there is not much to see, there are some important things to note.</p>
-			<ol>
-				<li>Your bedside table has a flashlight which will be useful later in the game. It is important to keep in mind that the flashlight has a limited battery life and cant be recharged in the event that it dies.</li>
-				<li>The bedside table also has your wifi dongle which can be moved to various locations throughout the apartment. This feature can be used to evade the police.</li>
-				<li>Your apartment has various lights each with their own switch. While their purpose will not be discussed in this section, you should keep note of them.</li>
-				<li>You can access the bathroom, the balcony, and the hallway by the doors located around the apartment.</li>
-				<li>If you look on the left of your desk you will see your wifi dongle. It can be picked up and moved between 4 spots in your room, these spots include the window, the desk, the bedside table, and the table on your balcony. Moving your dongle to a new location will change the list of networks available on your PC.</li>
-				<li>The closet next to the balcony and the shower located in the bathroom can be used as hiding places. Be mindful if you have not turned off your mic in your game settings as the game will listen to it and will deem you not truly hidden if you are caught making noise. These hiding places are relevant for a threat called the Hitman that is discussed in its own guide.</li>
-			</ol>
-
-			<p>Once you exit your apartment you will be in a hallway located on the 8th floor. Upon entering the stairwell, you will be able to freely travel up and down to other floors. The various other floors are relevant to a certain threat and the placement of Remote VPNs. The most important location you can access via the stairwell is the lobby which can be found on the bottom floor. Once there, you access the lobby computer and exit the front doors to visit the alley. All Shadow Market purchases will be shipped by drone to the end of the alley. Additionally, there is a small closet located on the right side of the alleyway, it can be used to counter a threat local to the alley if they become active.</p>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Searching`,"content":`
-		<h1>Searching</h1>
-			<p>An important skill for the game includes finding keys hidden within websites on the Deep Web and you will need to learn it to beat the game. Keys can be found in a variety of ways and are always a number followed by a dash and a random string of 12 alphanumeric characters. 1 - a9b98dbc5745 It is quite easy to find these after you know where to look. Firstly, keys can be hidden in plain sight, this of course is the easiest and most straightforward method of which they can be hidden on a page. Secondly, keys and the link to Deep Wiki 2 can be hidden in a pages source code. This method can be more unpredictable, but can be quite easy if you know what to look for. All keys or links hidden in this way will be hidden inside of an HTML comment which looks like the following. &lt;!-- 7 - f26aaaac89a4 --&gt; Finally, keys may be hidden in a site behind a click point. This method is the hardest as it requires you to find and click on a certain word or picture in a site to reveal keys. To do this, you may either memorize the locations or use a guide. Once you find a functional clickpoint a sound will be played and either the key will appear on the page or as a file on your desktop.</p>
-			<p>In addition to finding keys, you will also need to find two hidden wiki pages to complete the game. Fortunately finding wikis is a much easier task to complete. The link to wiki two can be found on a website within the first wiki. It will always be hidden within the source code of the first page of the website it is hidden on. Unlike the link to wiki two, the link to wiki three is always found on the website Rule of Three which is always located on the second wiki. To get the link, the site requires you to complete a trial and error memory puzzle. The puzzle consists of six sets of three dots each which must be solved in order. This puzzle is best completed earlier in a run since the correct pattern will randomize every time the page is reloaded.</p>
-			<p>There are also a couple quirks with how keys and links are hidden that you can find below.</p>
-			<ul>
-				<li>Keys and wiki links can exist on the same page, and can also both exist in the source code of a website at the same time.</li>
-				<li>Forgive me will never contain a key, but can contain a wiki link.</li>
-				<li>Rule of Three can never contain a key.</li>
-				<l1>Keys and key clickpoints will never appear inside PGP blocks, but they can be in the opening or closing text.</li>
-			</ul>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Events`,"content":`
-		<h1>Events</h1>
-			<p>During your playthrough you will encounter two randomevents in addition to the killers attempting to kill you.</p>
-			<p>The first event is the blackout. This event is quite easy to beat as you must walk to the end of the hallway and turn the circuit breaker back on in the maintenance closet. This event requires that the player have the flashlight available to be able to navigate the pitch black hallway. It is important to keep in mind that the flashlight has a limited battery life and cant be recharged in the event that it dies. While the event isnt deadly by itself, Noir usually spawns during the event since the darkness allows them to be more active. It is useful to be cautious due to this fact.</p>
-			<p>The second event is hacks. These events are randomly occuring minigames which you must beat in order to avoid losing notes or DosCoin. In addition, hacks can be used as an easy method of DosCoin in conjunction with a Backdoor Hack. If you want more details about how hacks function, please refer to the hacking guide.</p>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Markets`,"content":`
-		<h1>The Markets</h1>
-			<p>During your playthrough there are many useful items can be purchased to help with evading threats, speeding up your internet, or generating DosCoin. The following is a list of the items available for purchase.</p>
-			<h3>ZeroDay Market</h3>
-			<p>The ZeroDay Market sells useful software and tools for use on your computer.</p>
-			<ul>
-				<li><b>Skybreak</b> The basic installation of Skybreak which allows for the cracking of WEP security networks. Can be upgraded with Skybreak libraries.</li>
-				<li><b>Skybreak WPA lib</b> An upgrade to the basic installation of Skybreak which allows for the cracking of WPA security networks.</li>
-				<li><b>Skybreak WPA2 lib</b> An upgrade to the basic installation of Skybreak which allows for the cracking of WPA2 security networks.</li>
-				<li><b>Backdoor Hack</b> Cheap consumables that reward DosCoin for successfully defending against hack events. (Excluding ZoneWall)</li>
-				<li><b>Motion Alert</b> An addon to Motion Sensors. It will create an auditory alert when a placed Motion Sensor is tripped.</li>
-				<li><b>VPN Level #</b> A variety of VPNs that can be purchased to suppress hacks. They can also be disabled at will to control whether hacks can occur. Becomes more effective for each level purchased.</li>
-				<li><b>Key Cue</b> An addon to the A.N.N. browser which detects if a key is on the currently loaded page. It will put a key symbol on the bottom right corner of the browser if it detects a key.</li>
-				<li><b>VWipes</b> VWipes can be purchased to scan for viruses and remove them. VWipes are one use and another must be purchased every time you wish to scan your computer. Viruses can be obtained when hacks are failed and can tamper with your DosCoin and shutdown your computer.</li>
-			</ul>
-			<h3>Shadow Market</h3>
-			<p>The Shadow Market sells useful hardware and tools to aid in various tasks. All purchases here will be delivered to the buildings alley for pickup.</p>
-			<ul>
-				<li><b>Wifi Dongle Level 2</b> A more capable wifi dongle that allows for faster web browsing and access to additional wifi networks.</li>
-				<li><b>Wifi Dongle Level 3</b> The most capable wifi dongle in the game that allows for faster browsing and access to all available wifi networks.</li>
-				<li><b>Motion Sensors</b> Motion Sensors can be used to detect movement outside of your apartment. However, they are only effective on the Hitman.</li>
-				<li><b>Remote VPNs</b> DosCoin generators that can be placed around the building. They should be placed in locations in which they appear green for best performance.</li>
-				<li><b>Police Scanner</b> A device that allows you to listen in on police communications. It can allow you to tell when the police are planning on arriving at your apartment.</li>
-				<li><b>LOLPY Disc</b> A tool that can be used to hack the lobby computer to access the tenant database. It is used to complete the Doll Maker quest.</li>
-				<li><b>Blue Whisper</b> A device that allows you to remotely hear sounds produced by your PC.</li>
-			</ul>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Police`,"content":`
-		<h1>The Police</h1>
-			<p>The police are the easiest threat in the game to avoid. To avoid them you must switch wifi networks before you exceed their respective tracking timers. Though if you forget to switch, the game only has a certain chance to trigger the swat team to break down your door based on the network you stayed on. <i>(If they are triggered, they will wait until you approach your front door or the stairwell door of floor eight before causing a game over.)</i> Despite this, you should avoid gambling on that chance.</p>
-			<p>the task of avoiding the cops can be made easier by purchasing skybreak from the ZeroDay Market and cracking higher security networks. Not only will they give you more time to breath, they often perform better.</p>
-			<p><i>(In 1337 mode the tracking rates are shortened which allow the police to find you faster and with a guaranteed chance of success)</i></p>
-			<p>The Police Scanner is an optional device that can be purchased to know when the police are close to tracing. When turned on, the police scanner will occasionally intercept and output random police communications. Certain phrases indicate that they are close to tracing you. Aside from this device, the police do not have any sound cues. <i>(Sound cues can be found below)</i></p>
-			<details>
-				<summary><b>Police Scanner Cues</b></summary>
-				<h4>Morse Code</h4>
-					<audio controls><source src="Assets/police_scanner_real1.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
-				<h4>1 11 1 10</h4>
-					<audio controls><source src="Assets/police_scanner_real2.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
-				<h4>We need your expertise on that</h4>
-					<audio controls><source src="Assets/police_scanner_real3.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
-				<br><br>
-			</details>
-			<details>
-				<summary><b>Notes</b></summary>
-				<ul>
-					<li>Remember to switch wifi often</li>
-					<li>Hacking into more secure networks using skybreak will allow you more time between switching networks</li>
-				</ul>
-			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Hitman`,"content":`
-		<h1>The Hitman</h1>
-			<p>The Hitman (Also known as Lucas Kumiega) is an enemy that becomes active deeper into the game, they will become active after you have gone into three unique pages that have keys or after you accrue a total of three difficulty points by finding keys and forcing hacks. You can check whether or not they are active by checking if the window to the left of your desk is open. <i>(Please note that this is simplified for brevity, go to the bottom of this quide for a full explaination)</i></p>
-			<p><i>(In 1337 mode the Hitman will be active immediately)</i></p>
-			<p>The Hitman is a very difficult enemy to beat due to various reasons, but let's start from the bottom.</p>
-			<ol>
-				<li>Remember to always lock your door. The Hitman is the only threat this mechanic is relevant to, but you should practice doing this regularly.</li>
-				<li>Make sure that you can hear the lockpicking sound cue. Normally this is the only way to identify that the hitman is at your door and preparing to break in. <i>(Sound cue can be found below)</i></li>
-				<li>Purchase and place motion sensors in addition to buying sound alert. This will give you a more effective method to know when the hitman is coming to your door in addition to giving you more time to hide. <i>(The motion sensors should be placed on the wall on both ends of the hallway, as the hitman can approach from both sides of the hallway)</i></li>
-			</ol>
-			<p>When you know the Hitman is currently preparing to barge in you must turn off your computer and hide in either the shower in the bathroom or the closet near your balcony. In both cases you must be quiet as to not alert the hitman. <i>(This is only relevant if you have the mic enabled in your settings)</i> Also note that if you do not turn off the computer the hitman can erase notes saved into the games internal notepad in addition to stealing portions of your DosCoin balance. During the time he is in your apartment, stay in your hiding place until you hear him leave. <i>(Sound can be found below)</i> You can affect the time he is in your apartment by turning off more lights in the seconds before you hide and prior.</p>
-			<p>In addition to encountering the Hitman as he pays a visit to your apartment it is possible for them to kill you when returning to your apartment if they spawn when you are not at the apartment. Unfortunately, if this rare event occurs it is impossible to mitigate and you will die the next time you open a hallway door.</p>
-			<details>
-				<summary><b>Hitman Activation</b></summary>
-				<p>The Hitman activates based off of a system of difficulty points in the game, this system has two factors that feed into it. For every key you find, you gain one difficulty point and you gain a difficulty point for every 3 forced hacks. <i>(Force hacking can be found in the exploits section)</i> Whenever you get 3 difficulty points in total, the Hitman will activate and the window of your apartment will open. However, in 1337 mode you automatically start with 8 difficulty points.</p>
-			</details>
-			<details>
-				<summary><b>Hitman Simulater</b></summary>
-				<p>If you want to work on improving your ability to hear the Hitmans lockpicking sound cue, I have created a web version of a tool created by a Welcome to the Game modder named Nasko. This tool can be found on the left side of the info block in the guide list.</p>
-			</details>
-			<details>
-				<summary><b>Hitman Sound Cues</b></summary>
-				<h4>Lockpicking</h4>
-					<audio controls><source src="Assets/hitman_doorknob.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
-				<h4>Hitman Leaving</h4>
-					<audio controls><source src="Assets/hitman_softdoorshut.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
-				<br><br>
-			</details>
-			<details>
-				<summary><b>Notes</b></summary>
-				<ul>
-					<li>The default sound cue for the hitman is very faint, you should set up your sound options to mitigate this</li>
-					<li>The hitman can erase the in-game notepad if the PC is not turned off during an encounter with him</li>
-					<li>Your apartment lights affect how long the hitman stays during his visits, the more off the faster he leaves</li>
-					<li>If the Hitman is at the door he can kill you if you use the peep hole</li><li>It is a good investment to buy a pair of motion sensors and a sound alert</li>
-				</ul>
-			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Noir`,"content":`
-		<h1>The Noir</h1>
-			<p>The Noir are a threat prevalent in the game. They appear randomly in various places such as in the apartment, the apartment window, the hallway, behind doors, and in rare cases behind the gate in back of the alley.</p>
-			<p>They are a basic threat to mitigate, but can quite easily catch those unfamiliar with them off gaurd. To make them go away, turn around as soon as you see them and count to ten. After this they should be gone. If not, repeat the process. However, they pose a more active threat when they spawn behind doorways. This often catches players who are attempting to rush to and from the alley/lobby and back as fast as possible. In addition, the Noir have a chance to instantly kill you if you have at least two lights turned off in your apartment. <i>(For more details of the Noir insta-kill, check below)</i>
-			<details>
-				<summary><b>Noir insta-kill</b></summary>
-				<p>The noir insta-kill is one of the most dangerous aspects of the Noir. It allows the Noir to instantly kill the player if a few criteria are met.</p>
-				<ul>
-					<li>At least two lights in the apartment are off</li>
-					<li>You have at least 4 difficulty points</li>
-					<li>No other threat is currently active</li>
-				</ul>
-				<p>Noir will check if these criteria are met every 120 seconds, and if they are met you will be killed the next time you stand from your desk.</p>
-				<details>
-					<summary><h4>Difficulty Points</h4></summary>
-					<p>The game has a system of difficulty points that affect how aggressive enemies are. For every key you find, you gain one difficulty point. Additionally, you gain a difficulty point for every 3 forced hacks you perform. However, in 1337 mode you automatically start with 8 difficulty points which forces killers to start at maximum aggression.</p>
-				</details>
-				<br>
-			</details>
-			<details>
-				<summary><b>Notes</b></summary>
-				<ul>
-					<li>It is advised that you do not run through doors</li>
-					<li>The Noir are more active in darkness, be careful if you turn your lights off or if the power goes out</li>
-					<li>Make sure to occasionally check for the Noir in the window, on the balcony, and in the apartment</li>
-				</ul>
-			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Breather`,"content":`
+		{"name":`<i class="icon-info-circle"></i> About`,"content":`
+`},
+		{"name":`<i class="icon-circle"></i> Tutorial`,"content":`
+`},
+		{"name":`<i class="icon-circle"></i> The Game`,"content":`
+`},
+		{"name":`<i class="icon-circle"></i> The Computer`,"content":`
+`},
+		{"name":`<i class="icon-circle"></i> The Building`,"content":`
+`},
+		{"name":`<i class="icon-circle"></i> Searching`,"content":`
+`},
+		{"name":`<i class="icon-circle"></i> Events`,"content":`
+`},
+		{"name":`<i class="icon-circle"></i> The Markets`,"content":`
+`},
+		{"name":`<i class="icon-circle"></i> The Police`,"content":`
+`},
+		{"name":`<i class="icon-circle"></i> The Hitman`,"content":`
+`},
+		{"name":`<i class="icon-circle"></i> The Noir`,"content":`
+`},
+		{"name":`<i class="icon-circle"></i> The Breather`,"content":`
 		<h1>The Breather</h1>
 			<p>The Breather is by far the most annoying threat you can encounter in the game. While he is only active in the alley, it is very difficult to ward him off. The difficulty is also aided by the relative rarity of encountering them in the first place.</p>
 			<p>Normally, it is unlikely for the Breather to spawn on a visit to the alley. However, as you get more keys throughout the game, the chance for him to spawn will go up. To know if he is active on a visit to the alley, listen for any potential sound cues when passing the dumpster. <i>(Sound cues can be found below)</i> If you hear a sound (or you are not sure) you should go into the nearby closet in the alley and prepare to brace the door by clicking on the handle. You can look through the window in an attempt to see him, but the Breather will wait to kill you if he sees you. If he begins to push the door, immediately hold the doorknob. (Keep in mind that this minigame is very strict and will result in death upon failure) After he gives up, you should stop holding to prepare for his next attempt. Repeat this process until he leaves. After you hear him walking away you must wait a few more seconds so that he doesn't catch you. Then you can simply grab your packages and return to the building.</p>
@@ -515,7 +287,7 @@ var sitedata = {
 					<li>You should avoid visiting the alley later in the game to avoid meeting the Breather</li>
 				</ul>
 			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> The Doll Maker`,"content":`
+		{"name":`<i class="icon-circle"></i> The Doll Maker`,"content":`
 		<h1>The Dollmaker</h1>
 			<p>The Dollmaker is an optional threat that is activated upon entering the site by the same name. After a certain amount of time, the Dollmaker will ██████ ██ ████ ████ and force you to ████ ████ ███ ████-████. Then the power will ██ ███ ███ █ ████████ ████ ██ █████████.</p>
 			<p>After you have been given the marker on your doorknob you have a limited amount of time to place it on a suitable door. If you fail to do so, he will return disappointed and kill you wherever he happens to find you. There are two routes you can take in the Dollmakers task. You can attempt to randomly select a correct door or you can buy the Lolpy Disk item off the Shadow Market to have certainty of your selection. Once you have the Lolpy Disk, you can go to the lobby computer and hack it with the disk. Once it is finished, you will have access to a database of all tenants in the building. Simply select a suitable female target and place the marker on their door. Keep in mind that the Dollmaker will always request five targets during your encounter with him, remember to listen for him returning the marker.</p>
@@ -532,7 +304,7 @@ var sitedata = {
 					<li>While the time the Dollmaker quest provides is generous, it should be completed as soon as you can manage</li>
 				</ul>
 			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Hacking`,"content":`
+		{"name":`<i class="icon-circle"></i> Hacking`,"content":`
 		<h1>Hacking</h1>
 			<p>Occasionally throughout the game you can get hacked and face up against various minigames. While at first they are an annoying hinderance, they can be used to help you complete the game after you learn how to beat them.</p>
 			<details>
@@ -567,7 +339,7 @@ var sitedata = {
 					<li>VPNs can allow you to optionally suppress hacks</li>
 				</ul>
 			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Cracking`,"content":`
+		{"name":`<i class="icon-circle"></i> Cracking`,"content":`
 		<h1>Cracking</h1>
 			<p>An important skill for evading police and extending your available breathing room is cracking. Cracking can be performed after purchasing SkyBreak from the ZeroDay Market. To hack a wifi network, you must first open the application and proceed to type the name of the package you would like to run. ("wep","wpa","wpa2") By default, a basic installation will only include the ability to access the WEP library.</p> <p><b>[You do not need to be connected to a wifi network to use SkyBreak]</b></p>
 			<details>
@@ -579,7 +351,7 @@ var sitedata = {
 				<p>Hacking a wpa or wpa2 network starts similarly to wep networks. First type in 'scan' to see your available networks, then proceed to type 'inject &lt;The BSSID of the network you want to hack&gt; &lt;The channel of the network&gt; &lt;The amount of packets to inject&gt;'. This will proceed to inject the specified number of packets into the target network. Keep in mind that sending too many packets in a certain amount of time will result in a network being knocked offline for a period of time. To avoid this, try to extend the amount of injections over an extended period of time. (The exact injection rates are included in the wifi block) To complete the cracking of a wpa or wpa2 network, type 'crack &lt;The BSSID of the network you want to hack&gt; &lt;The channel of the network&gt;' which will procide you with the networks password upon completion.</p>
 			</details>
 			<p>[Skybreak allows you to access a history of commands by pressing the up and down arrow keys.]</p>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Exploits & Bugs`,"content":`
+		{"name":`<i class="icon-circle"></i> Exploits & Bugs`,"content":`
 		<h1>Exploits</h1>
 			<details>
 				<summary><h3>WPA2 Quick Crack</h3></summary>
@@ -646,7 +418,7 @@ var sitedata = {
 				<summary><h3>The Copy Bug</h3></summary>
 				<p>A nototiously annoying bug is the Copy Bug. It is triggered by using alt+tab while the game is not paused. When this bug is active all attempts to copy website content such as keys will fail. To fix the bug you must click inside the A.N.N. browser while holding alt</p>
 			</details>`},
-		{"name":`<i class="fa fa-circle fa-lg"></i> Miscellaneous`,"content":`
+		{"name":`<i class="icon-circle"></i> Miscellaneous`,"content":`
 		<h1>Miscellaneous</h1>
 			<h2>Miscellaneous Info</h2>
 				<p>Contrary to many popular myths, there are only one naturally occuring ambient sound cue that has meaning. This sound cue is the Hitman lockpicking your door.</p>
@@ -662,11 +434,15 @@ var sitedata = {
 				<p>There is a bug in the game where if you lean into certain walls or run up against an elevator, you may trigger an easter egg where you are teleported inside an elevator. This is believed to be a form of noclip or glitch protection.</p>
 				<p>The landing page photo on I Love Cats was sourced from a popular furry site named furaffinity and modified before being used inside the game. The user who posted the orginal photo was named MethLab.</p>
 				<p>Hidden Pleasures actually has an unused page because of a typo in the game's code.</p>`},
-		{"name":`<i class="fa fa-dot-circle-o fa-lg"></i> Hitman Simulator`,"content":`
+		{"name":`<i class="icon-crosshairs"></i> Hitman Simulator`,"content":`
 		<h1>Hitman Simulator</h1>
-			<p>The button below will open a simulator for the Hitmans lockpicking noise. Once you hear it, you should go to the widget for the simulator and click 'I heard that'. It will then tell you if you correct or incorrect. It will play five seconds after you start the simulation as a test, after that you must pay attention for when it plays. If you fail to catch a noise it plays, it will tell you that you have died and will continue the simulator as normal.</p>
+			<p>The button below will open a tool to practice catching the lockpicking noise made by the Hitman before he enters your apartment. After you activate the simulator it will occasionally play the sound cue. If you hear it, you should go to the widget for the simulator and click "I heard that". It will then tell you if you correctly identified the sound cue or if you were incorrect. It will first play five seconds after you start the simulation for the sake of testing, afterwards you must begin paying attention for when it plays. If you fail to catch the noise it plays, it will warn you that you would have died and will continue the simulator as normal.</p>
 			<button onclick="simulator_launch()">Launch Simulator</button>`},
-		{"name":`<i class="fa fa-cog fa-lg"></i> Settings`,"content":`
+		{"name":`<i class="icon-user-secret"></i> Hacking Trainer`,"content":`
+		<h1>Hacking Trainer</h1>
+			<p>The hacking trainer is a project currently on hold, but I have added this entry so that it is ready for whenever (if ever) it is ready to implement.</p>
+			<button>Launch Trainer</button>`},
+		{"name":`<i class="icon-cog"></i> Settings`,"content":`
 		<h1>Settings</h1>
 			<table>
 				<tbody>
@@ -676,7 +452,16 @@ var sitedata = {
 					<tr><td><button onclick="popwifi()" style="width:100%">Open Timer Mimic</button></td><td><button onclick="popnotes()" style="width:100%">Open Notes Mimic</button></td></tr>
 				</tbody>
 			</table>`},
-		{"name":`<i class="fa fa-question-circle fa-lg"></i> Feedback`,"content":`
+		{"name":`<i class="icon-plus-circle"></i> Updates`,"content":`
+		<h1>Updates</h1>
+			<p>The updates listed here are currently in development, future additions, or unfinished features that are partially implemented</p>
+			<ul>
+				<li><b>Streamer Popouts</b> For streamers who use the assistant, popout windows will be created so that streamers can easily capture and share there notes or wifi timer to their viewers.</li>
+				<li><b>Hacking Trainer</b> The in-game hacking practice is not very comprehensive, so this feature will be a recreation of the hacks so that players can practice hacks at any level and without the risk of killing a run.</li>
+				<li><b>Wiki Block Manual Mode</b> The wiki block method of importing websites is not perfect and in some cases may be impractical or problematic. To fix this, there will be a menu where users can manually add and delete pages.</li>
+				<li><b>Wifi Block Cooldowns</b> The wifi block is not perfect and does not account for user error related to reconnecting to networks too quickly. For those who need it, there is be a toggle that enables an advanced mode that accounts for variance that comes from disconnecting and reconnecting such as connection penalties and cooldowns.</li>
+			</ul>`},
+		{"name":`<i class="icon-question-circle"></i> Feedback`,"content":`
 		<h1>Feedback</h1>
 			<p>If you wish to provide feedback or report a bug, please message leave a comment on the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2211437048" target="_blank" rel="noreferrer">steam guide</a> for the helper or open an issue on the <a href="https://github.com/FierceThundr/wttg2-assistant/issues" target="_blank" rel="noreferrer">github page</a>!</p>`}
 	]
@@ -789,7 +574,7 @@ function wiki_input() {//Updates wiki data from import field
 			}
 		})
 		//console.log("Final",d)
-		data.wiki.sites[data.wiki.current] = d
+		data.wiki.sites[data.wiki.current] = JSON.parse(JSON.stringify(d))
 		data.wiki.keys[data.wiki.current] = 0
 		wiki_update()
 	}
@@ -798,6 +583,7 @@ function wiki_input() {//Updates wiki data from import field
 function wiki_demo() {//Forces update of wiki data
 	click()
 	data.wiki.sites[data.wiki.current] = {"BathRoom Cams":[],"Brutal Underground":[[0,0,0,0],[0,0,0,0]],"Cheap Surgery":[],"Chosen Awake":[],"Corpses For Sell":[],"Cry Bitch":[[0,0,0,0],[0,0,0,0]],"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]],"DEEPDOTWEB":[],"Dream Place":[],"Evil Collection":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"Eye":[[0,0,0,0]],"Forgive Me":[[0,0,0,0],[0,0,0,0]],"Hot Burners":[],"IAMHERE":[[0,0,0,0]],"Keep Sake":[[0,0,0,0]],"Little Friends":[[0,0,0,0],[0,0,0,0]],"Scream Bitch":[[0,0,0,0]],"Secure Drop":[],"SKYWEB":[],"St Louis Arch":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"The 8th Sin":[],"The Doll Maker":[[0,0,0,0],[0,0,0,0]],"The Light Within":[[0,0,0,0],[0,0,0,0]],"Vacation":[[0,0,0,0]],"YOU THERE?":[[0,0,0,0]]}
+	//data.wiki.sites[data.wiki.current] = {"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]]}
 	wiki_update()
 }
 
@@ -833,19 +619,20 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 			d = a.insertCell(2)
 			b.innerHTML = n
 			c.innerHTML = `<i class="secondary">Dead Site</i>`
-			d.innerHTML = `<button class="disabled"><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="disabled"><i class="fa fa-search fa-lg"></i></button><button class="disabled"><i class="fa fa-search-plus fa-lg"></i></button><button class="disabled"><i class="fa fa-key fa-lg"></i></button><button class="disabled"><i class="fa fa-link fa-lg"></i></button>`
+			d.innerHTML = `<button class="disabled"><i class="icon-mouse-pointer"></i></button> <button class="disabled"><i class="icon-search"></i></button><button class="disabled"><i class="icon-search-plus"></i></button><button class="disabled"><i class="icon-key"></i></button><button class="disabled"><i class="icon-link"></i></button>`
 			return
 		}
 		f = e.id
 		g = (e.sub?.length ?? 0) + 1
 		for (h = 0; g > h; h++) {
+			console.log(n,i,i[h])
 			a = t.insertRow(-1)
 			b = a.insertCell(0)
 			c = a.insertCell(1)
 			d = a.insertCell(2)
 			b.innerHTML = (h != 0) ? (((h + 1 == g) ? '⠀└─ ':'⠀├─ ') + e.sub[h - 1]):n
 			c.innerHTML = (h != 0) ? ('<i class="child">⠀Subpage</i>'):((e.times == undefined) ? 'Always Available':e.times)
-			d.innerHTML = `<button onclick="wiki_previewupdate(${f + h})"><i class="fa fa-mouse-pointer fa-lg"></i></button> <button class="${(i[h][0]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},0)"><i class="fa fa-search fa-lg"></i></button><button class="${(i[h][1]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},1)"><i class="fa fa-search-plus fa-lg"></i></button><button class="${(i[h][2]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},2)"><i class="fa fa-key fa-lg"></i></button><button class="${(i[h][3]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},3)"><i class="fa fa-link fa-lg"></i></button>`
+			d.innerHTML = `<button onclick="wiki_previewupdate(${f + h})"><i class="icon-mouse-pointer"></i></button> <button class="${(i[h][0]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},0)"><i class="icon-search"></i></button><button class="${(i[h][1]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},1)"><i class="icon-search-plus"></i></button><button class="${(i[h][2]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},2)"><i class="icon-key"></i></button><button class="${(i[h][3]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},3)"><i class="icon-link"></i></button>`
 		}
 	}
 }
@@ -877,7 +664,7 @@ function wiki_previewload() {//Create a click event listener when the clickpoint
 		document.getElementById("preview").contentWindow.addEventListener('click', function(e) {wiki_previewupdate(-1)})
 	} catch (e) {
 		wiki_previewupdate(-1)
-		console.log("Clickpoint Guide Failure: " + e)
+		console.log("[Clickpoint Guide Failure] " + e)
 	}
 }
 
@@ -912,7 +699,7 @@ function note_input() {//Attempts to find and save keys within the note block's 
 //=============================
 function wifi_passwordinput(i,p) {//Updates wifi label if password is provided
 	data.wifi.passwords[i] = p
-	document.getElementById("wifi_listbutton" + i).innerHTML = "<i class='fa " + ((data.wifi.passwords[i] !== "") ? 'fa-check-square':'fa-square') + " fa-lg'></i> " + wifidata[i]["name"]
+	document.getElementById("wifi_listbutton" + i).innerHTML = "<i class='" + ((data.wifi.passwords[i] !== "") ? 'icon-check-square':'icon-square') + "'></i> " + wifidata[i]["name"]
 }
 
 function wifi_timerupdate() {//Updates wifi timers and cooldowns
@@ -958,9 +745,9 @@ function wifi_wifijoin(d) {//Updates wifi timer (onjoin)
 	var l = data.wifi.timerlive[i]
 	data.wifi.timer = [data.wifi.timer[0],i,l,f,wifidata[i].name,""]
 	wifi_timerpausebutton("Pause Timer")
-	wifi_timerupdate()
-	click()
 	data.wifi.cooldowns[i] = 300
+	wifi_timerdisplay()
+	click()
 }
 
 function wifi_wifileave() {//Updates wifi timer (onleave)
@@ -1060,14 +847,18 @@ function timeformat(i) {
 //=============================
 function tenant_input(i,p) {//Updates tenant label if room number is provided
 	data.tenant.rooms[i] = p
-	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
+	tenant_display()
 }
 
 function tenant_toggle(i) {//Updates tenant label and button if tenant is marked unavailable
 	click()
 	data.tenant.availability[i] = (data.tenant.availability[i]) ? 0:1;
 	document.getElementById("tenant_button1").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`
-	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='fa " + ((data.tenant.availability[i] == 0) ? 'fa-odnoklassniki-square':(data.tenant.rooms[i] == "") ? 'fa-square':'fa-check-square') + " fa-lg'></i> " + tenantdata[i]["name"]
+	tenant_display()
+}
+
+function tenant_display() {
+	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='" + ((data.tenant.availability[i] == 0) ? 'icon-minus-square':(data.tenant.rooms[i] == "") ? 'icon-square':'icon-check-square') + "'></i> " + tenantdata[i]["name"]
 }
 
 function tenant_update(i) {//Changes the currently displayed tenant page
@@ -1182,7 +973,7 @@ function setup() {//Prepares website lists and appearance
 	wifidata.forEach(function (data,index) {
 		var button = document.createElement("button")
 		document.getElementById("wifi_list").appendChild(button)
-		button.outerHTML = `<button id="wifi_listbutton${index}" onclick="wifi_update(${index})">${"<i class='fa " + ((data["level"] == 0) ? 'fa-square-o':'fa-square') + " fa-lg'></i> " + data.name}</button>`
+		button.outerHTML = `<button id="wifi_listbutton${index}" onclick="wifi_update(${index})">${"<i class='" + ((data["level"] == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`
 	})
 	guidedata.forEach(function (data,index) {
 		var button = document.createElement("button")
@@ -1192,7 +983,7 @@ function setup() {//Prepares website lists and appearance
 	tenantdata.forEach(function (data,index) {
 		var button = document.createElement("button")
 		document.getElementById("tenant_list").appendChild(button)
-		button.outerHTML = `<button id="tenant_listbutton${index}" onclick="tenant_update(${index})">${"<i class='fa " + ((data["doll"] == 0) ? 'fa-square-o':'fa-square') + " fa-lg'></i> " + data.name}</button>`
+		button.outerHTML = `<button id="tenant_listbutton${index}" onclick="tenant_update(${index})">${"<i class='" + ((data["doll"] == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`
 	})
 	if (localStorage.getItem('color0') == undefined) {localStorage.setItem('color0',120)}
 	if (localStorage.getItem('color1') == undefined) {localStorage.setItem('color1',0)}
@@ -1207,6 +998,9 @@ function setup() {//Prepares website lists and appearance
 	}
 	x.open("GET","https://api.github.com/repos/fiercethundr/wttg2-assistant/commits?per_page=1",true)
 	x.send()
+	
+	var test_element = document.getElementById("test").attributes
+	console.log(test_element.getNamedItem("f"))
 }
 
 function click() {//Plays the click sound
