@@ -1,6 +1,6 @@
 # wttg2-assistant
 
-![Assistant Icon](/Assets/icon-192.png)
+![Assistant Icon](/Assets/icon-bar.png)
 
 The Welcome to the Game Assistant is a tool for learning and beating the game "Welcome to The Game 2". It includes interactive resources, descriptions of threats present in the game, and other information about the game. 
 
