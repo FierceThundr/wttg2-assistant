@@ -65,6 +65,10 @@ color:inherit;
 padding:5px;
 }
 
+a {
+color:inherit;
+}
+
 summary h1,
 summary h2,
 summary h3,
@@ -296,6 +300,10 @@ width:100%;
 
 .info_data {
 padding-bottom:100px;
+}
+
+.info_data > div {
+display:none;
 }
 
 .help_photo {
