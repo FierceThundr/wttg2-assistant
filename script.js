@@ -238,232 +238,6 @@ var sitedata = {
 		"The Noir love darkness",
 		"Tick Tock",
 		"It is best to skip to the WPA2 Skybreak library"
-	], guidedata = [
-		{"name":`<i class="icon-info-circle"></i> About`,"content":`
-`},
-		{"name":`<i class="icon-circle"></i> Tutorial`,"content":`
-`},
-		{"name":`<i class="icon-circle"></i> The Game`,"content":`
-`},
-		{"name":`<i class="icon-circle"></i> The Computer`,"content":`
-`},
-		{"name":`<i class="icon-circle"></i> The Building`,"content":`
-`},
-		{"name":`<i class="icon-circle"></i> Searching`,"content":`
-`},
-		{"name":`<i class="icon-circle"></i> Events`,"content":`
-`},
-		{"name":`<i class="icon-circle"></i> The Markets`,"content":`
-`},
-		{"name":`<i class="icon-circle"></i> The Police`,"content":`
-`},
-		{"name":`<i class="icon-circle"></i> The Hitman`,"content":`
-`},
-		{"name":`<i class="icon-circle"></i> The Noir`,"content":`
-`},
-		{"name":`<i class="icon-circle"></i> The Breather`,"content":`
-		<h1>The Breather</h1>
-			<p>The Breather is by far the most annoying threat you can encounter in the game. While he is only active in the alley, it is very difficult to ward him off. The difficulty is also aided by the relative rarity of encountering them in the first place.</p>
-			<p>Normally, it is unlikely for the Breather to spawn on a visit to the alley. However, as you get more keys throughout the game, the chance for him to spawn will go up. To know if he is active on a visit to the alley, listen for any potential sound cues when passing the dumpster. <i>(Sound cues can be found below)</i> If you hear a sound (or you are not sure) you should go into the nearby closet in the alley and prepare to brace the door by clicking on the handle. You can look through the window in an attempt to see him, but the Breather will wait to kill you if he sees you. If he begins to push the door, immediately hold the doorknob. (Keep in mind that this minigame is very strict and will result in death upon failure) After he gives up, you should stop holding to prepare for his next attempt. Repeat this process until he leaves. After you hear him walking away you must wait a few more seconds so that he doesn't catch you. Then you can simply grab your packages and return to the building.</p>
-			<details>
-				<summary><b>Breather Cues</b></summary>
-				<h4>Laugh</h4>
-					<audio controls><source src="Assets/breather_cue1.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
-				<h4>Phone Ring</h4>
-					<audio controls><source src="Assets/breather_cue2.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
-				<h4>Footsteps</h4>
-					<audio controls><source src="Assets/breather_cue3.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
-				<br><br>
-			</details>
-			<details>
-				<summary><b>Breather spawnrate</b></summary>
-				<p>For those interested in the specifics of the Breathers spawnrate, the breather has percentage chance to be spawned which depends on how many keys you've discovered. <i>(This does not require actually finding them)</i> When you have zero or one keys, the Breather will spawn 20% of the times you visit the alley. Upon discovering any keys after your first, he will gain 5% to his chance of spawning up. However, when you acquire your eighth key, the chance will jump to 65%. <i>(When playing in 1337 mode, the Breather will always have a fixed 65% chance of spawning.)</i></p>
-			</details>
-			<details>
-				<summary><b>Notes</b></summary>
-				<ul>
-					<li>Listen for the Breather when you enter the alley</li>
-					<li>Pay close attention to the movement of the door handle as you brace it</li>
-					<li>You should avoid visiting the alley later in the game to avoid meeting the Breather</li>
-				</ul>
-			</details>`},
-		{"name":`<i class="icon-circle"></i> The Doll Maker`,"content":`
-		<h1>The Dollmaker</h1>
-			<p>The Dollmaker is an optional threat that is activated upon entering the site by the same name. After a certain amount of time, the Dollmaker will ██████ ██ ████ ████ and force you to ████ ████ ███ ████-████. Then the power will ██ ███ ███ █ ████████ ████ ██ █████████.</p>
-			<p>After you have been given the marker on your doorknob you have a limited amount of time to place it on a suitable door. If you fail to do so, he will return disappointed and kill you wherever he happens to find you. There are two routes you can take in the Dollmakers task. You can attempt to randomly select a correct door or you can buy the Lolpy Disk item off the Shadow Market to have certainty of your selection. Once you have the Lolpy Disk, you can go to the lobby computer and hack it with the disk. Once it is finished, you will have access to a database of all tenants in the building. Simply select a suitable female target and place the marker on their door. Keep in mind that the Dollmaker will always request five targets during your encounter with him, remember to listen for him returning the marker.</p>
-			<details>
-				<summary><b>Extra Information</b></summary>
-				<p>The following are specific timers and information for the Doll Makers various events.</p>
-				<p>When you activate the Doll Maker they will spawn after 3:20 to 7:10 minutes. Once you recieve the door marker from the Doll Maker he will check your selection after 14:00 to 19:00 minutes. After the Doll Maker claims your selection he will wait 7:05 to 14:20 minutes to return the door marker.</p>
-			</details>
-			<details>
-				<summary><b>Notes</b></summary>
-				<ul>
-					<li>If possible, you should avoid triggering the Dollmaker in a run going for completion</li>
-					<li>If you want to complete the quest, you should attempt to go for it after you have sufficient funds for a better chance of success</li>
-					<li>While the time the Dollmaker quest provides is generous, it should be completed as soon as you can manage</li>
-				</ul>
-			</details>`},
-		{"name":`<i class="icon-circle"></i> Hacking`,"content":`
-		<h1>Hacking</h1>
-			<p>Occasionally throughout the game you can get hacked and face up against various minigames. While at first they are an annoying hinderance, they can be used to help you complete the game after you learn how to beat them.</p>
-			<details>
-				<summary><h3>ZoneWall</h3></summary>
-				<p>Zonewall is always the first hack you will encounter upon being presented with a hack. ZoneWall consists of multiple lines with randomly selected target areas on each. In addition, you will see a moving bar on the topmost line. The goal is to left click when the bar is hovering over the red section, whether you succeed or not you will then be moved to the next bar down in the sequence. If you successfully time and complete a certain amount of bars, the hack will be instantly blocked. If you fail too many however, you will be randomly given one of the following hacks...</p>
-			</details>
-			<details>
-				<summary><h3>StackPUSHER</h3></summary>
-				<p>StackPUSHER consists of a randomly sized grid with a randomly generated layout. To successfully defend against this hack you must drop all stack nodes <img class="help_photo" src="Assets/stack3.png"> into the center where the popper node <img class="help_photo" src="Assets/stack1.png"> is located. You can only interact with stack nodes which are adjacent to the pusher node <img class="help_photo" src="Assets/stack2.png">. You can move the pusher node to any location on the board by clicking on it and clicking a destination. At higher levels, you will also need to avoid clicking on skull nodes that will start being generated. Clicking on them will result in an immediate failure of the hack.</p>
-			</details>
-			<details>
-				<summary><h3>NodeH3X3R</h3></summary>
-				<p>NodeH3X3R is often regarded as the hardest hack by the greater majority of players. It consists of a randomly sized grid of nodes. Which can each either be Alpha or Beta. <img class="help_photo" src="Assets/node3.png"><img class="help_photo" src="Assets/node2.png"> Your goal is to connect the starting node to all corrupted nodes (indicated by a bright green outline) <img class="help_photo" src="Assets/node1.png"> via a continuous line from the indicated starting node. However, when making this path you must be cautious to make every connection to the alternative node type. Connecting a node to another of the same type will not result in a failure until the hack attempts to verify your route through the nodes. Make sure to check your work and remember that you cant pass through the same node twice.</p>
-			</details>
-			<details>
-				<summary><h3>MemD3FR4G3R</h3></summary>
-				<p>MemD3FR4G3R is by far the easiest hack, at least at lower levels. You will be shown a sequence of letters and numbers in a box that you will be required to remember and reproduce with the buttons that will be provided by the hack. In addition, you may replay the pattern by clicking on the block in the center if you need a second chance to see a pattern. Keep in mind that you may be required to complete multiple levels of MemD3fr4g3r to pass the hack. Also, in 1337 mode or in the late game of a normal run, you may want to have a piece of paper at the ready as the sequence generated can be excessively long if given the right conditions.</p>
-			</details>
-			<br>
-			<p>When presented with ZoneWall, you may either fail this to get a secondary hack or succeed to instantly block the hack. While instantly blocking hacks sounds better, if you buy backdoors you can get DosCoin by failing ZoneWall and beating the secondary hack. The difficulty of hacks gradually increases based on the games duration, but you can effect the difficulty by the amount of levels succeeded during ZoneWall. Keep in mind, failing hacks can result in losing your in-game notes and a randomly selected amount of DosCoin. In addition, failing can cause you to get a virus which can hinder you from beating the game by causing random shutdowns and stealing DosCoin.</p>
-			<p><i>(In 1337 mode all hacks will be given at max level despite zonewall performace or duration of the run)</i></p>
-			<p>If you want to avoid getting hacked, you can buy VPN levels on the ZeroDay Market to supress the chance of a hack occuring for the remainder of the game. The supression depends on how many VPN levels you purchase from the ZeroDay market with each lowering the chance a hack will go through by 20%. VPNs can also be disabled by accessing their section on the right side of the taskbar.</p>
-			<!--<details>
-				<summary><b>Hack difficulty</b></summary>
-				<p>If you want specific values about the difficulty of hacks a player named Lutonite has created a <a href="Assets/wttg2hacks.txt" target="_blank" rel="noreferrer">file</a> containing that information.</p>
-			</details>-->
-			<details>
-				<summary><b>Notes</b></summary>
-				<ul>
-					<li>Backdoors bought from the ZeroDay Market will give you DosCoin for succeeding hacks other than ZoneWall</li>
-					<li>Your success on zonewall affects the difficulty of secondary hacks</li>
-					<li>VPNs can allow you to optionally suppress hacks</li>
-				</ul>
-			</details>`},
-		{"name":`<i class="icon-circle"></i> Cracking`,"content":`
-		<h1>Cracking</h1>
-			<p>An important skill for evading police and extending your available breathing room is cracking. Cracking can be performed after purchasing SkyBreak from the ZeroDay Market. To hack a wifi network, you must first open the application and proceed to type the name of the package you would like to run. ("wep","wpa","wpa2") By default, a basic installation will only include the ability to access the WEP library.</p> <p><b>[You do not need to be connected to a wifi network to use SkyBreak]</b></p>
-			<details>
-				<summary><h3>WEP</h3></summary>
-				<p>Wep networks are the weakest security network you can crack in the game. They will give you slightly improved times over most free networks available. To hack a WEP network you must first type 'scan' to see the currently available wifi networks. Then after choosing the network you wish to crack, type the command 'probe &lt;The BSSID of the network you want to hack&gt; 1 1000'. Skybreak will then find the open port on your chosen wifi. You can then crack the wifi by typing the command 'crack &lt;The BSSID of the network&gt; &lt;The channel of the network&gt; &lt;The wifi networks open port&gt;' which will provide you with the networks password upon completion.</p>
-			</details>
-			<details>
-				<summary><h3>WPA & WPA2</h3></summary>
-				<p>Hacking a wpa or wpa2 network starts similarly to wep networks. First type in 'scan' to see your available networks, then proceed to type 'inject &lt;The BSSID of the network you want to hack&gt; &lt;The channel of the network&gt; &lt;The amount of packets to inject&gt;'. This will proceed to inject the specified number of packets into the target network. Keep in mind that sending too many packets in a certain amount of time will result in a network being knocked offline for a period of time. To avoid this, try to extend the amount of injections over an extended period of time. (The exact injection rates are included in the wifi block) To complete the cracking of a wpa or wpa2 network, type 'crack &lt;The BSSID of the network you want to hack&gt; &lt;The channel of the network&gt;' which will procide you with the networks password upon completion.</p>
-			</details>
-			<p>[Skybreak allows you to access a history of commands by pressing the up and down arrow keys.]</p>`},
-		{"name":`<i class="icon-circle"></i> Exploits & Bugs`,"content":`
-		<h1>Exploits</h1>
-			<details>
-				<summary><h3>WPA2 Quick Crack</h3></summary>
-				<p>Hacking a WPA or WPA2 takes quite a lot of time due to the requirement to inject these networks before attempting a crack. This can cause a lot of grief both by the innate time cost and the consequences for failure. However, an exploit has been discovered that can easily skip this part of the process by a couple simple steps.</p>
-				<ol>
-					<li>Open skybreak and find the BSSID of the WPA or WPA2 network you wish to crack.</li>
-					<li>Type and copy the following command 'probe &lt;Target network BSSID&gt; 1 1'.</li>
-					<li>Probe and begin to crack a WEP network.</li>
-					<li>Before the crack completes paste the command from the previous steps</li>
-				</ol>
-				<p>If you completed the steps correctly SkyBreak will display an error related to the port range as the crack is occuring. It will then complete and display the password for the target network</p>
-			</details>
-			<details>
-				<summary><h3>Window Key Cue</h3></summary>
-				<p>The window to left of Clint's desk opens based on the games difficulty point system. Due to how this system works, it can be exploited as a single use key cue. To put it simply... If you enter a site and the window opens immediately afterwards, you can say with certainty that the website you enters contains a key somewhere. <i>(Unlike the proper key cue, this trick does not give you a precise page)</i> Additionally, this trick can also be used to rule out websites if you understand the system behind how it works. <i>(If you do not know how the system works refer to the dropdown below)</i> If you search through wiki 1 and successfully discover the locations of both keys, you can go through the sites on wiki2 and eliminate any site for which the window does not open. At the same time, when it finally opens you know the site you just entered has a key located on it somewhere.</p>
-				<details>
-					<summary><h4>Advanced Explanation</h4></summary>
-					<p>The window opens based off of a system of difficulty points in the game, this system has two factors that feed into it. For every key you find, you gain one difficulty point. Additionally, you gain a difficulty point for every 3 forced hacks. Whenever you get 3 difficulty points in total, the window of your apartment will open. However, in 1337 mode you automatically start with 8 difficulty points which prevents the use of this strategy in that mode.</p>
-				</details>
-				<br>
-			</details>
-			<details>
-				<summary><h3>Force Hacking</h3></summary>
-				<p>Force hacking is a strategy you can use to trigger additional hacks by navigating to a dead site and repeatedly refreshing. To perform a force hack you simply need to find a dead website and refresh it repeatedly. This trick works due to the fact the game has a chance to triggere a hack when a dead page is loaded. Unfortunately in the newest patch this trick has been significantly nerfed. In older patches you can attempt force hacks every second, while in the newest patch the cooldown has been raised to 30 seconds.</p>
-			</details>
-			<details>
-				<summary><h3>God Spot</h3></summary>
-				<p>The god spot is the name given to a strange VPN location known for its strange attributes. It is a red location that gives 277 DosCoin every 2770 seconds. (1 DosCoin every 10 seconds) It is not currently known why this location exists, but it can be a powerful tool to earn a lot of DosCoin if you can find it. The following is a strategy that can be used to find it...</p>
-				<ol>
-					<li>Take a VPN and place it into a red location.</li>
-					<li>After a couple seconds, switch to a new red location.</li>
-					<li>After you have placed the VPN in a handful of red locations, return to the PC and check your DosCoin balance.</li>
-					<li>If your DosCoin balance has significantly changed, you can go back to the last places you searched and trial and error the god spot. Otherwise, you can test other red locations to find it.</li>
-				</ol>
-			</details>
-			<details>
-				<summary><h3>Package Quick Grab</h3></summary>
-				<p>Package Quick Grab is a trick that can be done if you enter the alley and the drone is arriving. If this is the case it is possible to grab the package directly from the drone. This can be done by standing right below where the drone dips down near the entrance to the alley and clicking the button to grab the package.</p>
-				<p><i>(This exploit will also trigger a bug which prevents the delivery of any packages matching the types you snatch from the drone.)</i></p>
-			</details>
-			<details>
-				<summary><h3>Noir Quick Hide</h3></summary>
-				<p>The Noir Quick Hide is a strategy you can use to skip turning your back on the Noir. In the event that a Noir is in your apartment your first instinct may be to turn around. However, you can also open the balcony door to make the Noir disappear as well. <i>(This will not work if the Noir is located on your balcony)</i></p>
-			</details>
-			<details>
-				<summary><h3>Door Clipping</h3></summary>
-				<p>Door Clips are tricks you can perform to cause yourself to go out of bounds and often to useful areas.<i>(Please note that these tricks will not work in the current version of the game and may be unpredictable in all versions)</i></p>
-				<details>
-					<summary><h4>Apartment Closet</h4></summary>
-					<p>To clip out of bounds using the apartments closet, enter the closet and exit. Immediately after exiting the closet turn around and run into the closet doors. If performed correctly you should fall out of bounds and potentially land in the lobby area.</p>
-				</details>
-				<details>
-					<summary><h4>Alley Closet</h4></summary>
-					<p>The alley closet can be used to clip by exploiting the doors hitbox. To do so, open the door from the inside and run to the boxes in the right of the closet. If you sucessfully get behind the door you will fall out of bounds and may land in the partment.</p>
-				</details>
-				<br>
-			</details>
-			<details>
-				<summary><h3>Quick Navigation</h3></summary>
-				<p>Quick Back Navigation is a simple exploit that exists for an unknown reason. When you press backspace on the A.N.N. browser it will take you to a visual copy of the website that you were in last. Pressing backspace subsequent times will take you to the next site in your browsing history and so on. While the copies you will see look identical to the webpages you visited, they will not have clickpoints and you can not open their source code.</p>
-				<p>Additionally, this exploit can cause a bug on websites featuring recurring audio. If used on those pages their audio will continue to play after you leave the website. To fix the bug, you must close A.N.N. while you are loading into the website whose audio is glitched. Doing so should fix the bug.</p>
-			</details>
-			<details>
-				<summary><h3>The Copy Bug</h3></summary>
-				<p>A nototiously annoying bug is the Copy Bug. It is triggered by using alt+tab while the game is not paused. When this bug is active all attempts to copy website content such as keys will fail. To fix the bug you must click inside the A.N.N. browser while holding alt</p>
-			</details>`},
-		{"name":`<i class="icon-circle"></i> Miscellaneous`,"content":`
-		<h1>Miscellaneous</h1>
-			<h2>Miscellaneous Info</h2>
-				<p>Contrary to many popular myths, there are only one naturally occuring ambient sound cue that has meaning. This sound cue is the Hitman lockpicking your door.</p>
-				<p>It is not possible to hide from the police. Once they are at your door they will stay there until you approach them.</p>
-				<p>When placing remote VPNs, both walls of each hallway have identical color zones.</p>
-			<h2>Fun Facts</h2>
-				<p>There is actually a page on Bug Friendly in which nudity is shown because it was improperly programmed.</p>
-				<p>YOU THERE? uses minimal text despite it's appearance.</p>
-				<p>The center photo on ISEVIL is a picture of an untreated snake bite.</p>
-				<!-- I don't remember what this is for so I left it out HAQC2IBVMJTGGOBQGNTDKODFGIQOFIEA -->
-				<p>On the yellow sub-page of Don't waste it, the boy located on the left of the photo moves a few seconds after the page is loaded.</p>
-				<p>The name for the Hitman is a reference to a moderater in Adam's twitch channel. In addition, the brand name for the police scanner is a direct reference to their username.</p>
-				<p>There is a bug in the game where if you lean into certain walls or run up against an elevator, you may trigger an easter egg where you are teleported inside an elevator. This is believed to be a form of noclip or glitch protection.</p>
-				<p>The landing page photo on I Love Cats was sourced from a popular furry site named furaffinity and modified before being used inside the game. The user who posted the orginal photo was named MethLab.</p>
-				<p>Hidden Pleasures actually has an unused page because of a typo in the game's code.</p>`},
-		{"name":`<i class="icon-crosshairs"></i> Hitman Simulator`,"content":`
-		<h1>Hitman Simulator</h1>
-			<p>The button below will open a tool to practice catching the lockpicking noise made by the Hitman before he enters your apartment. After you activate the simulator it will occasionally play the sound cue. If you hear it, you should go to the widget for the simulator and click "I heard that". It will then tell you if you correctly identified the sound cue or if you were incorrect. It will first play five seconds after you start the simulation for the sake of testing, afterwards you must begin paying attention for when it plays. If you fail to catch the noise it plays, it will warn you that you would have died and will continue the simulator as normal.</p>
-			<button onclick="simulator_launch()">Launch Simulator</button>`},
-		{"name":`<i class="icon-user-secret"></i> Hacking Trainer`,"content":`
-		<h1>Hacking Trainer</h1>
-			<p>The hacking trainer is a project currently on hold, but I have added this entry so that it is ready for whenever (if ever) it is ready to implement.</p>
-			<button>Launch Trainer</button>`},
-		{"name":`<i class="icon-cog"></i> Settings`,"content":`
-		<h1>Settings</h1>
-			<table>
-				<tbody>
-					<tr><td>Primary Color</td><td><input oninput="setcolor(0,this.value)" type="range" min="0" max="360" value="120" id="primary"></td></tr>
-					<tr><td>Secondary Color</td><td><input oninput="setcolor(1,this.value)" type="range" min="0" max="360" value="0" id="secondary"></td></tr>
-					<tr><td colspan=2>The buttons below create popups users can open for the purpose of streaming the wifi timer or the content of the notepad. These features are unfinished and may not work as expected.</td></tr>
-					<tr><td><button onclick="popwifi()" style="width:100%">Open Timer Mimic</button></td><td><button onclick="popnotes()" style="width:100%">Open Notes Mimic</button></td></tr>
-				</tbody>
-			</table>`},
-		{"name":`<i class="icon-plus-circle"></i> Updates`,"content":`
-		<h1>Updates</h1>
-			<p>The updates listed here are currently in development, future additions, or unfinished features that are partially implemented</p>
-			<ul>
-				<li><b>Streamer Popouts</b> For streamers who use the assistant, popout windows will be created so that streamers can easily capture and share there notes or wifi timer to their viewers.</li>
-				<li><b>Hacking Trainer</b> The in-game hacking practice is not very comprehensive, so this feature will be a recreation of the hacks so that players can practice hacks at any level and without the risk of killing a run.</li>
-				<li><b>Wiki Block Manual Mode</b> The wiki block method of importing websites is not perfect and in some cases may be impractical or problematic. To fix this, there will be a menu where users can manually add and delete pages.</li>
-				<li><b>Wifi Block Cooldowns</b> The wifi block is not perfect and does not account for user error related to reconnecting to networks too quickly. For those who need it, there is be a toggle that enables an advanced mode that accounts for variance that comes from disconnecting and reconnecting such as connection penalties and cooldowns.</li>
-			</ul>`},
-		{"name":`<i class="icon-question-circle"></i> Feedback`,"content":`
-		<h1>Feedback</h1>
-			<p>If you wish to provide feedback or report a bug, please message leave a comment on the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2211437048" target="_blank" rel="noreferrer">steam guide</a> for the helper or open an issue on the <a href="https://github.com/FierceThundr/wttg2-assistant/issues" target="_blank" rel="noreferrer">github page</a>!</p>`}
 	]
 }
 
@@ -475,6 +249,8 @@ var data = {
 	"note":{
 		"keys":[null,"????????????","????????????","????????????","????????????","????????????","????????????","????????????","????????????"],
 		"content":""},
+	"info":{
+		"current":0},
 	"wiki":{
 		"editor":0,
 		"current":1,
@@ -625,7 +401,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 		f = e.id
 		g = (e.sub?.length ?? 0) + 1
 		for (h = 0; g > h; h++) {
-			console.log(n,i,i[h])
+			//console.log(n,i,i[h])
 			a = t.insertRow(-1)
 			b = a.insertCell(0)
 			c = a.insertCell(1)
@@ -651,7 +427,7 @@ function wiki_notetoggle(e,n,i,b) {//Toggle color of note taking buttons
 	click()
 	if (b == 2) {data.wiki.keys[data.wiki.current] += (e.classList.contains("secondary")) ? 1:-1;wiki_updatekeys()}
 	data.wiki.sites[data.wiki.current][n][i][b] ^= 1
-	console.log(data.wiki.sites[data.wiki.current][n][i][b])
+	//console.log(data.wiki.sites[data.wiki.current][n][i][b])
 	e.classList.toggle("secondary")
 }
 
@@ -890,7 +666,9 @@ function tenant_update(i) {//Changes the currently displayed tenant page
 //=============================
 function info_update(i) {//Change info page
 	click()
-	document.getElementById("info_data").innerHTML = guidedata[i].content
+	document.getElementById(`info_guide${data.info.current}`).style.display = "none"
+	document.getElementById(`info_guide${i}`).style.display = "block"
+	data.info.current = i
 }
 
 function setcolor(i,c) {//Updates the site color configuration in memory
@@ -975,18 +753,23 @@ function setup() {//Prepares website lists and appearance
 		document.getElementById("wifi_list").appendChild(button)
 		button.outerHTML = `<button id="wifi_listbutton${index}" onclick="wifi_update(${index})">${"<i class='" + ((data["level"] == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`
 	})
-	guidedata.forEach(function (data,index) {
-		var button = document.createElement("button")
-		document.getElementById("info_list").appendChild(button)
-		button.outerHTML = `<button onclick="info_update(${index})">${data.name}</button>`
-	})
 	tenantdata.forEach(function (data,index) {
 		var button = document.createElement("button")
 		document.getElementById("tenant_list").appendChild(button)
 		button.outerHTML = `<button id="tenant_listbutton${index}" onclick="tenant_update(${index})">${"<i class='" + ((data["doll"] == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`
 	})
+	document.querySelectorAll("#info_data > div").forEach(function (element,index) {
+		element.id = `info_guide${index}`
+		var attributes = element.attributes
+		if (attributes.getNamedItem("title") == null) {return}
+		var button = document.createElement("button")
+		document.getElementById("info_list").appendChild(button)
+		button.outerHTML = `<button onclick="info_update(${index})"><i class="${attributes.getNamedItem("icon").value}"></i> ${attributes.getNamedItem("title").value}</button>`
+	})
 	if (localStorage.getItem('color0') == undefined) {localStorage.setItem('color0',120)}
 	if (localStorage.getItem('color1') == undefined) {localStorage.setItem('color1',0)}
+	document.getElementById("setting_colorprimary").value = localStorage.getItem('color0')
+	document.getElementById("setting_colorsecondary").value = localStorage.getItem('color1')
 	document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`
 	document.getElementById("animated").style = "animation:slide 1s 0.3s forwards"
 	var x = new XMLHttpRequest()
@@ -998,9 +781,6 @@ function setup() {//Prepares website lists and appearance
 	}
 	x.open("GET","https://api.github.com/repos/fiercethundr/wttg2-assistant/commits?per_page=1",true)
 	x.send()
-	
-	var test_element = document.getElementById("test").attributes
-	console.log(test_element.getNamedItem("f"))
 }
 
 function click() {//Plays the click sound
