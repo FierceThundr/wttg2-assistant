@@ -277,6 +277,9 @@ var data = {
 		"visible":1,
 		"sound1":new Audio('Assets/hitman_doorknob.mp3'),
 		"sound2":new Audio('Assets/hitman_prayforyou.mp3')},
+//	"test":{ This data is now obsolete but may become necessary in the future
+//		"value":"HAQC2IBVMJTGGOBQGNTDKODFGIQOFIEA"
+//	},
 	"popup":{
 		"wifi":{"active":0,"reference":0},
 		"notes":{"active":0,"reference":0}}
