@@ -1,10 +1,32 @@
+//Notes
+/*
+
+
+
+*/
+
+
+
+//Global
+
+function hack_fail() {
+	//cleartimeouts
+}
+
+function hack_success() {
+	//cleartimeouts
+}
+
+
+
+
+
 //Node
 
-//The node hack will be drawn with 3 layers
-
-//Layer 1: The static layer which includes the basic interface including the nodes themselves and target outlines
-//Layer 2: The connection layer which includes all connection the player creates or is hovering
-//Layer 3: The controls layer which includes all highlight/click triggers that control the puzzle
+//This hack will be drawn in three layers
+//Layer 1: The static layer which includes the basic interface which includes static elements
+//Layer 2: The dynamic later which includes moving elements or elements subject to change
+//Layer 3: The controls layer which includes all triggers that control the puzzle
 
 function node_start(difficulty) {
 	var levels = [
@@ -17,17 +39,17 @@ function node_start(difficulty) {
 		[
 			{"type":0,"target":0},
 			{"type":1,"target":1},
-			{"type":0,"target":0},
+			{"type":0,"target":0}
 		],
 		[
 			{"type":1,"target":0},
 			{"type":0,"target":0},
-			{"type":1,"target":1},
+			{"type":1,"target":1}
 		],
 		[
 			{"type":0,"target":1},
 			{"type":1,"target":0},
-			{"type":0,"target":0},
+			{"type":0,"target":0}
 		],
 	]
 	
@@ -101,7 +123,168 @@ function node_timerend() {
 	*/
 }
 
+
+
+
+
 //Stack
+
+//This hack will be drawn in three layers
+//Layer 1: The static layer which includes the basic interface which includes static elements
+//Layer 2: The dynamic later which includes moving elements or elements subject to change
+//Layer 3: The controls layer which includes all triggers that control the puzzle
+
+function stack_start(difficulty) {
+	var levels = [
+		null,
+		{"size":0,"skulls":0,"stacks":0,"timer":"?"}
+	]
+	
+	//Generate array pattern with random stacks, skulls, and pusher
+	[
+		[
+			{"content":0},
+			{"content":0},
+			{"content":0}
+		],
+		[
+			{"content":0},
+			{"content":0},
+			{"content":0}
+		],
+		[
+			{"content":0},
+			{"content":0},
+			{"content":0}
+		],
+	]
+	
+	//Trigger initial draw of pattern
+	//Wait for a moment and give player control
+}
+
+function stack_hoverhandler() {
+	//Is something held?
+		//If not 
+			//If tile has pusher or stack
+				//Highlight tile
+		//If so
+			//Show placement highlight
+}
+
+function stack_actionhandler() {
+	//Is something held?
+		//Is the selected location occupied?
+			//If not
+				//If stack
+					//Are x&y coordinates both less than 2 units away from the pusher
+						//If so
+							//Place the stack in the new position
+						//If not
+							//Place the stack in the original position
+				//If Pusher
+					//Place Pusher
+			//If so
+				//Place the held item back in the original position
+			
+	//If skull
+		//Trigger hack fail
+	//If stack
+		//Are x&y coordinates both less than 2 units away from the pusher
+			//Pick up stack
+	//If pusher
+		//Pick up pusher
+}
+
+function stack_timerstart(t) {
+	//Start settimeout to stack_timerend()
+}
+
+function stack_timerend() {
+	//Trigger hack fail
+}
+
+
+
 
 
 //Mem
+
+//This hack will be drawn in three layers
+//Layer 1: The static layer which includes the basic interface which includes static elements
+//Layer 2: The dynamic later which includes moving elements or elements subject to change
+//Layer 3: The controls layer which includes all triggers that control the puzzle
+
+function mem_start(difficulty) {
+	var levels = [
+		null,
+		{"rounds":0,"length_max":0,"length_min":10}
+	]
+	var characters = "abcdefghijklmnopqrstuvwxyz".split("")
+	
+	var solve = [] //Solve will be used to verify player choices
+	var order = [] //Order will be used to display the order back
+	
+	//Trigger initial draw of pattern
+	//Call mem_roundstart
+}
+
+function mem_roundstart() {
+	//Generate length
+	//Shuffle character array
+	//Redefine timer to start time
+	//Slice the first <length> characters from the array to use as the round
+	//Trigger draw
+	//Display sequence
+	//Give player control
+}
+
+function mem_roundreplay() {
+	//Lock controls
+	//Replay current sequence
+	//Unlock controls
+}
+
+function mem_roundfail() {
+	//Pause timer
+	//create new sequence
+	//Display new sequence
+	//Unpause timer
+}
+
+function mem_roundhandler(c) {
+	//is c equal to scrap sequence index 0?
+		//If so
+			//Shift character out and mark character as correct
+			//Is array length 0?
+				//If so
+					//Advance round
+					//Is there another round
+						//If not
+							//Trigger success
+						//If so
+							//call mem_roundstart()
+				//If not
+					//Continue
+		//if not
+			//call mem_roundfail()
+}
+
+function mem_timerstart(t) {
+	//Save start time
+	//Save full time
+	//Start settimeout to mem_timerend()
+}
+
+function mem_timerpause() {
+	//Redefine full time as full time minus the difference of current timer minus start time
+	//cleartimeout
+}
+
+function mem_timerplay() {
+	//Start settimeout to mem_timerend() for <full time> seconds
+}
+
+function mem_timerend() {
+	//Trigger hack fail
+}
