@@ -1,13 +1,29 @@
-//Notes
-/*
+var img, map, con, can, ctx
 
+window.onload = function () {
+	lay1 = document.getElementById("lay1")
+	lay2 = document.getElementById("lay2")
+	lay3 = document.getElementById("lay3")
+	map = document.getElementById("map")
+	con = document.getElementById("con")
+	ctx1 = lay1.getContext("2d")
+	ctx2 = lay2.getContext("2d")
+}
 
-
-*/
-
-
+function canvas_resize(i) {
+	con.style.width = i + "px"
+	con.style.height = i + "px"
+  lay1.width = lay2.width = cnw = lay1.offsetWidth
+  lay1.height = lay2.height = cnh = lay1.offsetHeight
+}
 
 //Global
+
+function hack_reset() {
+	//Wipe both canvases
+	//Wipe all buttons from map
+	//Return to menu
+}
 
 function hack_fail() {
 	//cleartimeouts
@@ -29,12 +45,36 @@ function hack_success() {
 //Layer 3: The controls layer which includes all triggers that control the puzzle
 
 function node_start(difficulty) {
+	var display = { //content size will be unit*size+(2*offset)
+		"offset":10,
+		"unit":10
+	}
 	var levels = [
 		null,
-		{"size":0,"targets":0,"timer":"?"}
+		{"size":5,"targets":2,"time":8,"boost":3.0,"warmup":3},
+		{"size":5,"targets":3,"time":6,"boost":1.5,"warmup":3},
+		{"size":7,"targets":3,"time":8,"boost":3.5,"warmup":3},
+		{"size":7,"targets":5,"time":8,"boost":2.5,"warmup":3},
+		{"size":9,"targets":5,"time":7.5,"boost":2.0,"warmup":3},
+		{"size":9,"targets":7,"time":8.5,"boost":2.5,"warmup":2},
+		{"size":11,"targets":7,"time":10,"boost":3.3,"warmup":2},
+		{"size":11,"targets":9,"time":10,"boost":3.0,"warmup":2},
+		{"size":13,"targets":10,"time":11,"boost":3.2,"warmup":1},
+		{"size":13,"targets":14,"time":11,"boost":2.8,"warmup":1}
 	]
 	
+	canvas_resize(display.unit * levels[difficulty] + (2 * display.offset))
+	
+	//https://www.w3schools.com/tags/ref_canvas.asp
+	//Draw experiment
+	//Draw node shape
+	var c = [0,0]
+	ctx1.beginpath()
+	ctx1.strokeStyle = hsla(119,53,51,1)
+	ctx1.fillStyle = hsla(116,89,4,1)
+	
 	//Generate array pattern with types and targets
+	/*
 	[
 		[
 			{"type":0,"target":0},
@@ -50,15 +90,18 @@ function node_start(difficulty) {
 			{"type":0,"target":1},
 			{"type":1,"target":0},
 			{"type":0,"target":0}
-		],
+		]
 	]
+	*/
 	
 	//Link array
+	/*
 	[
 		[0,1],
 		[2,3],
 		[4,5]
 	]
+	*/
 	//Trigger initial draw of pattern
 	//Wait for a moment and give player control
 }
@@ -135,11 +178,16 @@ function node_timerend() {
 //Layer 3: The controls layer which includes all triggers that control the puzzle
 
 function stack_start(difficulty) {
+	var display = { //content size will be unit*size+(2*offset)
+		"offset":10,
+		"unit":10
+	}
 	var levels = [
 		null,
 		{"size":0,"skulls":0,"stacks":0,"timer":"?"}
 	]
 	
+	//Define content size
 	//Generate array pattern with random stacks, skulls, and pusher
 	[
 		[
@@ -156,7 +204,7 @@ function stack_start(difficulty) {
 			{"content":0},
 			{"content":0},
 			{"content":0}
-		],
+		]
 	]
 	
 	//Trigger initial draw of pattern
@@ -221,6 +269,8 @@ function mem_start(difficulty) {
 		{"rounds":0,"length_max":0,"length_min":10}
 	]
 	var characters = "abcdefghijklmnopqrstuvwxyz".split("")
+	
+	//Define content size
 	
 	var solve = [] //Solve will be used to verify player choices
 	var order = [] //Order will be used to display the order back
