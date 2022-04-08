@@ -467,7 +467,7 @@ function note_input() {//Attempts to find and save keys within the note block's 
 	var lkeys = content.match(/[1-8] - [\w]{12}/g)
 	if (lkeys !== null) {lkeys.forEach(function (a) {data.note.keys[a.slice(0,1)] = a.slice(4,16)})}
 	document.getElementById("note_keyoutput").innerHTML = `<b>Key Data</b><br>${data.note.keys.join("").substr(0,48)}<br>${data.note.keys.join("").substr(48,48)}`
-	if (data.note.keys.indexOf("????????????") == -1) {document.getElementById("keyoutput").innerHTML = `<b>Master Key</b><br><span class="select-all">${data.note.keys.join("")}</span>`}
+	if (data.note.keys.indexOf("????????????") == -1) {document.getElementById("note_keyoutput").innerHTML = `<b>Master Key</b><br><span class="select-all">${data.note.keys.join("")}</span>`}
 	if (data.popup.notes.active == 1) {
 		data.popup.notes.reference.document.getElementById("content").innerHTML = content
 	}
