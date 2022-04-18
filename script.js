@@ -245,7 +245,8 @@ var sitedata = {
 var data = {
 	"general":{
 		"click":new Audio('Assets/general_mouseclick.mp3'),
-		"beep":new Audio('Assets/general_motionsensoralert.mp3')},
+		"beep":new Audio('Assets/general_motionsensoralert.mp3'),
+		"ding":new Audio('Assets/general_positivebeep.mp3')},
 	"note":{
 		"keys":[null,"????????????","????????????","????????????","????????????","????????????","????????????","????????????","????????????"],
 		"content":""},
@@ -477,11 +478,6 @@ function note_input() {//Attempts to find and save keys within the note block's 
 //=============================Wifi Functions
 //=============================
 
-//Finish timer looping
-//Add noise to timer finish
-//Make cooldowns care about timer mode
-//User timer array index 4 for tracking whether 1 minute warning has been given and use that to determine if it should be played on below 1 minute connection
-
 function wifi_passwordinput() {//Updates wifi label if password is provided
 	var current = data.wifi.current
 	data.wifi.passwords[current] = this.value
@@ -502,11 +498,12 @@ function wifi_timerupdate() {//Updates wifi timers and cooldowns
 	})
 	if (data.wifi.timerlive[live] != 0) {
 		data.wifi.timerlive[live] -= 1
-		if (data.wifi.timerlive[live] == 60) {data.general.beep.play()}
+		if (data.wifi.timerlive[live] == 60) {beep()}
 		if (data.wifi.timerlive[live] == 0) {
-			//timerpausebutton("No Timer Active")
-			//Should this call disconnect or restart the timer?
-				//Let's say restart, but it should be on advanced mode ONLY, otherwise it should just halt
+			ding()
+			if (data.wifi.timer[1] == 3) {
+				data.wifi.timerlive[live] = data.wifi.timerfull[live]
+			}
 		}
 	}
 	wifi_timerdisplay()
@@ -572,23 +569,22 @@ function wifi_buttonhandler(b) {//This function is the main handling function fo
 function wifi_wifijoin() {//Updates wifi timer (onjoin)
 	var current = data.wifi.current
 	if (data.wifi.reference == undefined) {return}
-	if (data.wifi.timer[3] != -1 && data.wifi.timer[3] != current) {wifi_wifileave()}
+	if (data.wifi.timer[3] != -1) {wifi_wifileave()}
+	if (data.wifi.timerlive[current] < 60) {beep()}
 	data.wifi.timer[3] = current
 	data.wifi.timer[5] = ""
-	//--------
-	data.wifi.cooldowns[current] = 300
-	//On basic timer mode?
-		//Yes
-			//Set timerlive to value of timerfull
-		//No
-			//Set cooldown to 300 seconds
-	//--------
+	if (data.wifi.timer[1] == 3) {
+		data.wifi.cooldowns[current] = 300
+	}
 	wifi_timerdisplay()
 }
 
 function wifi_wifileave() {//Updates wifi timer (onleave)
-	if (data.wifi.timer[0] == 3) {
-		data.wifi.timerlive[data.wifi.timer[3]] = Math.floor(data.wifi.timerlive[data.wifi.timer[3]] * 0.7)
+	var live = data.wifi.timer[3]
+	if (data.wifi.timer[1] == 2) {
+		data.wifi.timerlive[live] = data.wifi.timerfull[live]
+	} else if (data.wifi.timer[0] == 3) {
+		data.wifi.timerlive[live] = Math.max(Math.floor(data.wifi.timerlive[live] * 0.7),1)
 	}
 	data.wifi.timer[3] = -1
 	data.wifi.timer[5] = (data.wifi.reference == undefined) ? "PAUSED":"DISCONNECTED"
@@ -823,6 +819,16 @@ function setup() {//Prepares website lists and appearance
 function click() {//Plays the click sound
 	data.general.click.currentTime = 0
 	data.general.click.play()
+}
+
+function beep() {//Plays the beep sound
+	data.general.beep.currentTime = 0
+	data.general.beep.play()
+}
+
+function ding() {//Plays the ding sound
+	data.general.ding.currentTime = 0
+	data.general.ding.play()
 }
 
 function sitecycle() {//Temporary dev function (Cycle through clickpoint guides)
