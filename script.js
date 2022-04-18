@@ -245,7 +245,8 @@ var sitedata = {
 var data = {
 	"general":{
 		"click":new Audio('Assets/general_mouseclick.mp3'),
-		"beep":new Audio('Assets/general_motionsensoralert.mp3')},
+		"beep":new Audio('Assets/general_motionsensoralert.mp3'),
+		"ding":new Audio('Assets/general_positivebeep.mp3')},
 	"note":{
 		"keys":[null,"????????????","????????????","????????????","????????????","????????????","????????????","????????????","????????????"],
 		"content":""},
@@ -261,8 +262,8 @@ var data = {
 		"intro":1,
 		"current":-1,
 		"reference":undefined,
-		"button":"No Timer Active",
-		"timer":[0,0,0,0,"",""],
+		"timer":[0,0,0,-1,0,""],
+		//[diff,mode,stage,id_of_network,"status"]
 		"cooldowns":full_array(wifidata.length,0),
 		"timerfull":full_array(wifidata.length,0),
 		"timerlive":full_array(wifidata.length,0),
@@ -467,7 +468,7 @@ function note_input() {//Attempts to find and save keys within the note block's 
 	var lkeys = content.match(/[1-8] - [\w]{12}/g)
 	if (lkeys !== null) {lkeys.forEach(function (a) {data.note.keys[a.slice(0,1)] = a.slice(4,16)})}
 	document.getElementById("note_keyoutput").innerHTML = `<b>Key Data</b><br>${data.note.keys.join("").substr(0,48)}<br>${data.note.keys.join("").substr(48,48)}`
-	if (data.note.keys.indexOf("????????????") == -1) {document.getElementById("keyoutput").innerHTML = `<b>Master Key</b><br><span class="select-all">${data.note.keys.join("")}</span>`}
+	if (data.note.keys.indexOf("????????????") == -1) {document.getElementById("note_keyoutput").innerHTML = `<b>Master Key</b><br><span class="select-all">${data.note.keys.join("")}</span>`}
 	if (data.popup.notes.active == 1) {
 		data.popup.notes.reference.document.getElementById("content").innerHTML = content
 	}
@@ -476,14 +477,18 @@ function note_input() {//Attempts to find and save keys within the note block's 
 //=============================
 //=============================Wifi Functions
 //=============================
-function wifi_passwordinput(i,p) {//Updates wifi label if password is provided
-	data.wifi.passwords[i] = p
-	document.getElementById("wifi_listbutton" + i).innerHTML = "<i class='" + ((data.wifi.passwords[i] !== "") ? 'icon-check-square':'icon-square') + "'></i> " + wifidata[i]["name"]
+
+function wifi_passwordinput() {//Updates wifi label if password is provided
+	var current = data.wifi.current
+	data.wifi.passwords[current] = this.value
+	document.getElementById("wifi_listbutton" + current).innerHTML = "<i class='" + ((data.wifi.passwords[current] !== "") ? 'icon-check-square':'icon-square') + "'></i> " + wifidata[current].name
 }
 
 function wifi_timerupdate() {//Updates wifi timers and cooldowns
+	//console.log(JSON.stringify(data.wifi.timer))
+	var live = data.wifi.timer[3]
 	data.wifi.cooldowns = data.wifi.cooldowns.map(function(v,i){
-		if (v != 0 && i != data.wifi.timer[1]) {
+		if (v != 0 && i != live) {
 			if (--v == 0) {
 				data.wifi.timerlive[i] = data.wifi.timerfull[i]
 				//console.log(`The cooldown for network ${wifidata[i].name} has reached ${v} seconds!`)
@@ -491,25 +496,28 @@ function wifi_timerupdate() {//Updates wifi timers and cooldowns
 		}
 		return v
 	})
-	if (data.wifi.timer[2] != 0) {
-		data.wifi.timer[2] -= 1
-		data.wifi.timerlive[data.wifi.timer[1]] = data.wifi.timer[2]
-		if (data.wifi.timer[2] == 60) {data.general.beep.play()}
-		if (data.wifi.timer[2] == 0) {
-			//timerpausebutton("No Timer Active")
-			//Should this call disconnect or restart the timer?
-				//Let's say restart, but it should be on advanced mode ONLY, otherwise it should just halt
+	if (data.wifi.timerlive[live] != 0) {
+		data.wifi.timerlive[live] -= 1
+		if (data.wifi.timerlive[live] == 60) {beep()}
+		if (data.wifi.timerlive[live] == 0) {
+			ding()
+			if (data.wifi.timer[1] == 3) {
+				data.wifi.timerlive[live] = data.wifi.timerfull[live]
+			}
 		}
 	}
 	wifi_timerdisplay()
 }
 
 function wifi_timerdisplay() {//This function updates dynamic displays of the wifi timers
-	var timer = data.wifi.timer
+	var live = data.wifi.timer[3]
+	var name = (live == -1) ? "":wifidata[live].name
+	var status = data.wifi.timer[5]
 	var string = "###########################"
-	var a = "[" + timer[4] + string.slice(timer[4].length) + timeformat(timer[2]) + string.slice(timer[5].length) + timer[5] + "]"
-	var b = Math.ceil((timer[2]/timer[3]*100)/(100/a.length))
+	var a = "[" + name + string.slice(name.length) + timeformat((live == -1) ? 0:data.wifi.timerlive[live]) + string.slice(status.length) + status + "]"
+	var b = (live == -1) ? a.length:Math.ceil((data.wifi.timerlive[live]/data.wifi.timerfull[live]*100)/(100/a.length))
 	var c = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b)
+	//console.log(a,b,c,a.length - b)
 	document.getElementById("wifi_timer").innerHTML = c
 	document.getElementById("wifi_summary").innerHTML = `[True Time ${timeformat(data.wifi.timerlive[data.wifi.current])}] [Cool Time ${timeformat(data.wifi.cooldowns[data.wifi.current])}]`
 	if (data.popup.wifi.active == 1) {
@@ -517,60 +525,96 @@ function wifi_timerdisplay() {//This function updates dynamic displays of the wi
 	}
 }
 
-function wifi_wifijoin(d) {//Updates wifi timer (onjoin)
-	if (data.wifi.timer[0] == 0) {wifi_timersetup(d)}
-	var i = data.wifi.current
-	var f = data.wifi.timerfull[i]
-	var l = data.wifi.timerlive[i]
-	data.wifi.timer = [data.wifi.timer[0],i,l,f,wifidata[i].name,""]
-	wifi_timerpausebutton("Pause Timer")
-	data.wifi.cooldowns[i] = 300
-	wifi_timerdisplay()
+function wifi_buttonhandler(b) {//This function is the main handling function for all the buttons
 	click()
+	switch (data.wifi.timer[2]) {
+		case 0:
+			data.wifi.timer[0] = b
+			data.wifi.timer[2]++
+			document.getElementById("wifi_button1").innerHTML = "Please Select Your Timers"
+			document.getElementById("wifi_button2").innerHTML = "Basic Timers"
+			document.getElementById("wifi_button3").innerHTML = "Advanced Timers"
+			//document.getElementById("wifi_button1").innerHTML = "Please Select Your Difficulty"
+			//document.getElementById("wifi_button2").innerHTML = "Normal Mode"
+			//document.getElementById("wifi_button3").innerHTML = "1337 Mode"
+			break;
+		case 1:
+			data.wifi.timer[1] = b
+			data.wifi.timer[2]++
+			document.getElementById("wifi_button1").disabled = false
+			document.getElementById("wifi_button1").innerHTML = `Start ${(data.wifi.timer[0] == 2) ? "Normal":"1337"} Timer`
+			document.getElementById("wifi_button2").innerHTML = "Pause Timers"
+			document.getElementById("wifi_button3").innerHTML = "Disconnect"
+			document.getElementById("wifi_button3").style.display = (data.wifi.timer[1] == 3) ? "block":"none"
+			document.getElementById("wifi_summarywrapper").style.display = (data.wifi.timer[1] == 3) ? "block":"none"
+			wifidata.forEach(function(v,i){
+				var t = Math.floor(v.track.time * ((data.wifi.timer[0] == 3) ? 0.7:1))
+				//console.log(t)
+				//if (data.wifi.timer[0] == 3) {t = Math.floor(t * 0.7)}
+				data.wifi.timerfull[i] = t
+				data.wifi.timerlive[i] = t
+			})
+			data.wifi.reference = setInterval(wifi_timerupdate,1000)
+			break;
+		case 2:
+			switch (b) {
+				case 1:wifi_wifijoin();break;
+				case 2:wifi_timerpause();break;
+				case 3:wifi_wifileave();break;
+			}
+	}
+}
+
+//Make cooldown care about timer mode
+function wifi_wifijoin() {//Updates wifi timer (onjoin)
+	var current = data.wifi.current
+	if (data.wifi.reference == undefined) {return}
+	if (data.wifi.timer[3] != -1) {wifi_wifileave()}
+	if (data.wifi.timerlive[current] < 60) {beep()}
+	data.wifi.timer[3] = current
+	data.wifi.timer[5] = ""
+	if (data.wifi.timer[1] == 3) {
+		data.wifi.cooldowns[current] = 300
+	}
+	wifi_timerdisplay()
 }
 
 function wifi_wifileave() {//Updates wifi timer (onleave)
-	if (data.wifi.timer[0] == 2) {
-		data.wifi.timerlive[data.wifi.timer[1]] = Math.floor(data.wifi.timerlive[data.wifi.timer[1]] * 0.7)
+	var live = data.wifi.timer[3]
+	if (data.wifi.timer[1] == 2) {
+		data.wifi.timerlive[live] = data.wifi.timerfull[live]
+	} else if (data.wifi.timer[0] == 3) {
+		data.wifi.timerlive[live] = Math.max(Math.floor(data.wifi.timerlive[live] * 0.7),1)
 	}
-	data.wifi.timer = [data.wifi.timer[0],-1,0,0,"",(data.wifi.reference == undefined) ? "PAUSED":"DISCONNECTED"]
+	data.wifi.timer[3] = -1
+	data.wifi.timer[5] = (data.wifi.reference == undefined) ? "PAUSED":"DISCONNECTED"
 	wifi_timerdisplay()
 }
 
-function wifi_timersetup(d) {//Prepares wifi timer arrays on first join event
-	data.wifi.timer[0] = d
-	wifidata.forEach(function(v,i){
-		var t = v.track.time
-		if (data.wifi.timer[0] == 2) {t = Math.floor(t * 0.7)}
-		data.wifi.timerfull[i] = t
-		data.wifi.timerlive[i] = t
-	})
-	//document.getElementById(`wifi_button${(d == 1) ? 2:1}`).style.display = "none"
-	data.wifi.reference = setInterval(wifi_timerupdate,1000)
-}
-
 function wifi_timerpause() {//Pauses wifi timer
-	if (data.wifi.timer[0] != 0) {
-		if (data.wifi.reference == undefined) {
-			data.wifi.reference = setInterval(wifi_timerupdate,1000)
-			data.wifi.timer[5] = (data.wifi.timer[1] == -1) ? "DISCONNECTED":""
-			wifi_timerpausebutton("Pause Timer")
-		} else {
-			data.wifi.reference = clearInterval(data.wifi.reference)
-			data.wifi.timer[5] = "PAUSED"
-			wifi_timerpausebutton("Resume Timer")
-		}
-		wifi_timerdisplay()
+	if (data.wifi.reference == undefined) {
+		data.wifi.reference = setInterval(wifi_timerupdate,1000)
+		data.wifi.timer[5] = (data.wifi.timer[3] == -1) ? "DISCONNECTED":""
+		wifi_timerpausebutton("Pause Timers")
+	} else {
+		data.wifi.reference = clearInterval(data.wifi.reference)
+		data.wifi.timer[5] = "PAUSED"
+		wifi_timerpausebutton("Resume Timers")
 	}
+	wifi_timerdisplay()
 }
 
 function wifi_timerpausebutton(x) {//Modifies the text displayed on the wifi pause button
-	document.getElementById("wifi_button3").innerHTML = x
-	data.wifi.button = x
+	document.getElementById("wifi_button2").innerHTML = x
 }
 
 function wifi_update(i) {//Changes the current wifi page
 	click()
+	if (data.wifi.intro == 1) {
+		data.wifi.intro = 0
+		document.getElementById("wifi_intro").style.display = "none"
+		document.getElementById("wifi_content").style.display = "block"
+	}
 	var v = wifidata[i]
 	data.wifi.current = i
 	document.getElementById("wifi_data").innerHTML = `
@@ -596,25 +640,11 @@ function wifi_update(i) {//Changes the current wifi page
 		${(v.secret) ? `
 		<tr><td colspan="2">This wifi is not available by normal means as the network BSSID cannot be found using SkyBreak</td></tr>`:``}
 	</tbody>
-</table>
-
-<div class="block_inputwrapper" style="bottom:30px">
-	<div style="border:1px solid gray;align-content:center;">
-		<p id="wifi_summary">[True Time ${timeformat(data.wifi.timerlive[data.wifi.current])}] [Cool Time ${timeformat(data.wifi.cooldowns[data.wifi.current])}]</p>
-	</div>
-	<div>
-		<input id="wifi_passwordinput" type="text" maxlength="20" oninput="wifi_passwordinput(${i},this.value)" placeholder="${(v.level == 0) ? `Unsecured Network...`:`Password...`}" ${(v.level == 0) ? `disabled`:``}>
-	</div>
-	<div>
-		<button id="wifi_button1" onclick="wifi_wifijoin(1)">Start Wifi Timer</button>
-		<button id="wifi_button2" onclick="wifi_wifijoin(2)">Start 1337 Timer</button>
-	</div>
-	<div>
-		<button id="wifi_button3" onclick="wifi_timerpause()">${data.wifi.button}</button>
-		<button id="wifi_button4" onclick="wifi_wifileave()">Disconnect</button>
-	</div>
-</div>`
+</table>`
 	document.getElementById("wifi_passwordinput").value = data.wifi.passwords[i]
+	document.getElementById("wifi_passwordinput").disabled = (v.level == 0)
+	document.getElementById("wifi_passwordinput").placeholder = (v.level == 0) ? `Unsecured Network...`:`Password...`
+	wifi_timerdisplay()
 }
 
 function timeformat(i) {
@@ -789,6 +819,16 @@ function setup() {//Prepares website lists and appearance
 function click() {//Plays the click sound
 	data.general.click.currentTime = 0
 	data.general.click.play()
+}
+
+function beep() {//Plays the beep sound
+	data.general.beep.currentTime = 0
+	data.general.beep.play()
+}
+
+function ding() {//Plays the ding sound
+	data.general.ding.currentTime = 0
+	data.general.ding.play()
 }
 
 function sitecycle() {//Temporary dev function (Cycle through clickpoint guides)
