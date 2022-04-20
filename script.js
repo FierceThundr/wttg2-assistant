@@ -18,7 +18,7 @@
 
 //==========================================================================Static Data
 {
-var sitedata = {
+var wikidata = {
 		"Bug Friendly":       {id:100,sub:["Store","FAQ","Noid","Join"]},
 		"Cleaning Services":  {id:105,sub:["Burial","Freezing"]},
 		"Cry Bitch":          {id:108,sub:["Login"]},
@@ -253,8 +253,9 @@ var data = {
 	"info":{
 		"current":0},
 	"wiki":{
-		"editor":0,
 		"current":1,
+		"editor":0,
+		"template":{},
 		"sites":[null,{},{},{}],
 		"keys":[null,0,0,0],
 		"total":[null,2,3,3]},
@@ -269,6 +270,7 @@ var data = {
 		"timerlive":full_array(wifidata.length,0),
 		"passwords":full_array(wifidata.length,"")},
 	"tenant":{
+		"intro":1,
 		"rooms":full_array(tenantdata.length,""),
 		"availability":full_array(tenantdata.length,1)},
 	"simulator":{
@@ -278,12 +280,11 @@ var data = {
 		"visible":1,
 		"sound1":new Audio('Assets/hitman_doorknob.mp3'),
 		"sound2":new Audio('Assets/hitman_prayforyou.mp3')},
-//	"test":{ This data is now obsolete but may become necessary in the future
-//		"value":"HAQC2IBVMJTGGOBQGNTDKODFGIQOFIEA"
-//	},
+//"test":{ This data is now obsolete but may become necessary in the future
+//	"value":"HAQC2IBVMJTGGOBQGNTDKODFGIQOFIEA"},
 	"popup":{
-		"wifi":{"active":0,"reference":0},
-		"notes":{"active":0,"reference":0}}
+		"wifi":{"active":0,"reference":undefined},
+		"notes":{"active":0,"reference":undefined}}
 }
 
 //Clickpoints Cycle Test Variable
@@ -346,7 +347,7 @@ function wiki_input() {//Updates wiki data from import field
 	var s = [...new Set(c.match(/(?=^)[\w ]+[!?]?(?= -)/gm))]
 	if (s.length != 0) {
 		s.forEach(function(n){
-			var i = sitedata[n]
+			var i = wikidata[n]
 			if (i == undefined) {
 				d[n] = []
 			} else {
@@ -368,7 +369,7 @@ function wiki_demo() {//Forces update of wiki data
 }
 
 function wiki_update(m) {//Updates the currently displayed data, also handles current page
-	//Disable editor flag
+	data.wiki.editor = 0
 
 	if (m != undefined) {
 		click()
@@ -377,9 +378,9 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 		wiki_updatekeys()
 	}
 
-	var s = Object.getOwnPropertyNames(data.wiki.sites[data.wiki.current]).sort()
+	var s = Object.keys(data.wiki.sites[data.wiki.current]).sort()
 	var t = document.getElementById("wiki_list")
-	for (var y = t.rows.length - 1; y > 0; y--) {t.deleteRow(-1)}
+	wiki_erase()
 	if (s.length == 0) {
 		t.insertRow(-1).innerHTML = `<br><br><br><br>It's quite empty in here...<br><br>Why not add some sites?`
 	} else {
@@ -390,7 +391,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 	
 	function wiki_appendsite(t,n) {//Take a website name and display the associated data
 		var a,b,c,d,e,f,g,h
-		e = sitedata[n]
+		e = wikidata[n]
 		i = data.wiki.sites[data.wiki.current][n]
 		if (e == undefined) {
 			a = t.insertRow(-1)
@@ -418,13 +419,58 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 }
 
 function wiki_editor() {//Replaces currently displayed data with website editor
-	//Is editor enabled?
-		//Call wiki_update and return
-	//Else
-		//Erase and load editor
-		//Set editor flag
+	if (data.wiki.editor == 1) {wiki_update();return}
+	data.wiki.editor = 1
+	
 	var t = document.getElementById("wiki_list")
-	for (var y = t.rows.length - 1; y > 0; y--) {t.deleteRow(-1)}
+	var r = Object.keys(wikidata)
+	var w = Object.keys(data.wiki.sites[data.wiki.current])
+	var o = {}
+	wiki_erase()
+	r.forEach(function(n){if (o[n] == undefined) {o[n] = 0};o[n] += 2})
+	w.forEach(function(n){if (o[n] == undefined) {o[n] = 0};o[n] += 1})
+	data.wiki.template = JSON.parse(JSON.stringify(o))
+	var l = Object.keys(o).sort()
+	l.forEach(function(n){
+		a = t.insertRow(-1)
+		b = a.insertCell(0)
+		c = a.insertCell(1)
+		d = a.insertCell(2)
+		a.id = `editor_${n}`
+		b.innerHTML = n
+		c.innerHTML = (o[n] == 1) ? '<i class="secondary">Dead Site</i>':'Working Site'
+		d.innerHTML = `<button onclick="wiki_editortoggle(this,'${n}')" class="disabled"></button>`
+	})
+	//3 Real + Enabled  (Remove)
+	//2 Real + Disabled (Append)
+	//1 Fake + Enabled  (Delete)
+	//console.log(JSON.stringify(l))
+}
+
+function wiki_editortoggle(e,n) {//Toggle or remove necessary websites
+	var current = data.wiki.current
+	switch (data.wiki.template[n]) {
+		case 3:
+			data.wiki.template[n] = 2
+			delete data.wiki.sites[current][n]
+			e.innerText = "Append Site"
+		break
+		case 2:
+			data.wiki.template[n] = 3
+			data.wiki.sites[current][n] = full_array((wikidata[n].sub?.length ?? 0) + 1,[0,0,0,0])
+			e.innerText = "Remove Site"
+		break
+		case 1:
+			document.getElementById(`editor_${n}`).remove()
+			delete data.wiki.sites[current][n]
+		break
+	}
+	//console.log(data.wiki.template,n,data.wiki.template[n])
+}
+
+function wiki_erase() {//Removes all content from the wiki table
+	var r = document.getElementById("wiki_list")
+	for (var y = r.rows.length - 1; y > 0; y--) {r.deleteRow(-1)}
 }
 
 function wiki_notetoggle(e,n,i,b) {//Toggle color of note taking buttons
@@ -534,9 +580,7 @@ function wifi_buttonhandler(b) {//This function is the main handling function fo
 			document.getElementById("wifi_button1").innerHTML = "Please Select Your Timers"
 			document.getElementById("wifi_button2").innerHTML = "Basic Timers"
 			document.getElementById("wifi_button3").innerHTML = "Advanced Timers"
-			//document.getElementById("wifi_button1").innerHTML = "Please Select Your Difficulty"
-			//document.getElementById("wifi_button2").innerHTML = "Normal Mode"
-			//document.getElementById("wifi_button3").innerHTML = "1337 Mode"
+			//"Please Select Your Difficulty" "Normal Mode" "1337 Mode"
 			break;
 		case 1:
 			data.wifi.timer[1] = b
