@@ -400,7 +400,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 			d = a.insertCell(2)
 			b.innerHTML = n
 			c.innerHTML = `<i class="secondary">Dead Site</i>`
-			d.innerHTML = `<button class="disabled"><i class="icon-mouse-pointer"></i></button> <button class="disabled"><i class="icon-search"></i></button><button class="disabled"><i class="icon-search-plus"></i></button><button class="disabled"><i class="icon-key"></i></button><button class="disabled"><i class="icon-link"></i></button>`
+			d.innerHTML = `<div class="wiki_notewrapper"><button class="disabled"><i class="icon-mouse-pointer"></i></button> <button class="disabled"><i class="icon-search"></i></button><button class="disabled"><i class="icon-search-plus"></i></button><button class="disabled"><i class="icon-key"></i></button><button class="disabled"><i class="icon-link"></i></button></div>`
 			return
 		}
 		f = e.id
@@ -413,7 +413,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 			d = a.insertCell(2)
 			b.innerHTML = (h != 0) ? (((h + 1 == g) ? '⠀└─ ':'⠀├─ ') + e.sub[h - 1]):n
 			c.innerHTML = (h != 0) ? ('<i class="child">⠀Subpage</i>'):((e.times == undefined) ? 'Always Available':e.times)
-			d.innerHTML = `<button onclick="wiki_previewupdate(${f + h})"><i class="icon-mouse-pointer"></i></button> <button class="${(i[h][0]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},0)"><i class="icon-search"></i></button><button class="${(i[h][1]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},1)"><i class="icon-search-plus"></i></button><button class="${(i[h][2]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},2)"><i class="icon-key"></i></button><button class="${(i[h][3]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},3)"><i class="icon-link"></i></button>`
+			d.innerHTML = `<div class="wiki_notewrapper"><button onclick="wiki_previewupdate(${f + h})"><i class="icon-mouse-pointer"></i></button> <button class="${(i[h][0]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},0)"><i class="icon-search"></i></button><button class="${(i[h][1]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},1)"><i class="icon-search-plus"></i></button><button class="${(i[h][2]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},2)"><i class="icon-key"></i></button><button class="${(i[h][3]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},3)"><i class="icon-link"></i></button></div>`
 		}
 	}
 }
@@ -439,7 +439,7 @@ function wiki_editor() {//Replaces currently displayed data with website editor
 		a.id = `editor_${n}`
 		b.innerHTML = n
 		c.innerHTML = (o[n] == 1) ? '<i class="secondary">Dead Site</i>':'Working Site'
-		d.innerHTML = `<button onclick="wiki_editortoggle(this,'${n}')" class="disabled"></button>`
+		d.innerHTML = `<div class="wiki_editorwrapper"><button onclick="wiki_editortoggle(this,'${n}')" class="${(o[n] == 2) ? "":"secondary"}">${(o[n] == 1) ? "Delete Site":((o[n] == 2) ? "Append Site":"Remove Site")}</button></div>`
 	})
 	//3 Real + Enabled  (Remove)
 	//2 Real + Disabled (Append)
@@ -454,11 +454,13 @@ function wiki_editortoggle(e,n) {//Toggle or remove necessary websites
 			data.wiki.template[n] = 2
 			delete data.wiki.sites[current][n]
 			e.innerText = "Append Site"
+			e.classList.remove("secondary")
 		break
 		case 2:
 			data.wiki.template[n] = 3
 			data.wiki.sites[current][n] = full_array((wikidata[n].sub?.length ?? 0) + 1,[0,0,0,0])
 			e.innerText = "Remove Site"
+			e.classList.add("secondary")
 		break
 		case 1:
 			document.getElementById(`editor_${n}`).remove()

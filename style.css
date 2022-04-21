@@ -269,15 +269,21 @@ transform:translate(-50%,0);
 width:530px;
 }
 
-.wiki_data button {
-height:25px;
-width:30px;
-}
-
 .wiki_data td {
 padding:0;
 text-align:left;
 width:33%;
+}
+
+.wiki_notewrapper > button {
+height:25px;
+width:30px;
+}
+
+.wiki_editorwrapper > button {
+height:25px;
+width:150px;
+font-family:Consolas,monaco,monospace;
 }
 
 /* Wifi formatting */
