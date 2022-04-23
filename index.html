@@ -49,8 +49,17 @@
 		<!-- Wiki Data Block -->
 		<div class="block_main">
 			<p class="version"><i>Wiki Block Version 1.2.9</i></p>
-			<button onclick="wiki_update(-1)" style="width:38px;height:38px;margin: 0 45px 0 0;"><i class="icon-arrow-left icon-2x"></i></button><div style="width:161px;display:inline-block"><h1 id="wiki_title" style="margin: 10px 0 0 0;">Wiki I</h1></div><button onclick="wiki_update(1)" style="width:38px;height:38px;margin: 0 0 0 45px;"><i class="icon-arrow-right icon-2x"></i></button><br>
-			<textarea oninput="wiki_input()" id="wiki_data" placeholder="Copy and Paste wiki sites here to import..." style="font-size:13px;margin:5px 0 0 0;width:320px;background-color:rgba(0, 0, 0, 0);color:inherit;resize: none;overflow:hidden;" rows="1"></textarea>
+			<div class="wiki_headerwrapper">
+				<div>
+					<button onclick="wiki_update(-1)" style="width:38px;height:38px;"><i class="icon-arrow-left icon-2x"></i></button>
+					<h1 id="wiki_title" style="display:inline-block;margin:0;">Wiki I</h1>
+					<button onclick="wiki_update(1)" style="width:38px;height:38px;"><i class="icon-arrow-right icon-2x"></i></button>
+				</div>
+				<div>
+					<textarea oninput="wiki_input()" id="wiki_data" placeholder="Copy and Paste wiki sites here to import..." style="font-size:13px;width:320px;overflow:hidden;" rows="1"></textarea>
+					<button onclick="wiki_editor()" class="monospaced" style="width:38px;height:21px;">Edit</button>
+				</div>
+			</div>
 			<table style="margin: 5px 0 0 0;bottom:515px;left:50%;position:absolute;transform:translate(-50%,0);">
 				<caption id="wiki_keys"><b>Keys remaining: 2</b></caption>
 				<tr><th>Site Name</th><th>Availability</th><th>Markers</th></tr>
@@ -59,11 +68,11 @@
 				<table id="wiki_list">
 					<tr></tr>
 					<tr><td style="text-align:center;"><h1>Welcome</h1>Please copy the site contents from a wiki into the box above to begin!</td></tr>
-					<tr><td><br><button><i class="icon-mouse-pointer"></i></button> - View Click Points</td></tr>
-					<tr><td><button><i class="icon-search"></i></button> - Searched Manually</td></tr>
-					<tr><td><button><i class="icon-search-plus"></i></button> - Searched With Key Cue</td></tr>
-					<tr><td><button><i class="icon-key"></i></button> - Key Found Here</td></tr>
-					<tr><td><button><i class="icon-link"></i></button> - Wiki Link Found Here</td></tr>
+					<tr><td><br>[ <i class="icon-mouse-pointer"></i> ] View Click Points</td></tr>
+					<tr><td>[ <i class="icon-search"></i> ] Searched Manually</td></tr>
+					<tr><td>[ <i class="icon-search-plus"></i> ] Searched With Key Cue</td></tr>
+					<tr><td>[ <i class="icon-key"></i> ] Key Found Here</td></tr>
+					<tr><td>[ <i class="icon-link"></i> ] Wiki Link Found Here</td></tr>
 					<tr><td><br>&gt; Use the arrows above to cycle imported wikis</td></tr>
 					<tr><td>&gt; Keys entered into the integrated notepad are saved automatically</td></tr>
 					<tr><td>&gt; Save site passwords into the wifi block</td></tr>
@@ -600,7 +609,6 @@
 								<p>When placing remote VPNs, both walls of each hallway have identical color zones.</p>
 							<h2>Fun Facts</h2>
 								<p>There is actually a page on Bug Friendly in which nudity is shown because it was improperly programmed.</p>
-								<p>YOU THERE? uses minimal text despite it's appearance.</p>
 								<p>The center photo on ISEVIL is a picture of an untreated snake bite.</p>
 								<p>On the yellow sub-page of Don't waste it, the boy located on the left of the photo moves a few seconds after the page is loaded.</p>
 								<p>The name for the Hitman is a reference to a moderater in Adam's twitch channel. In addition, the brand name for the police scanner is a direct reference to their username.</p>
@@ -636,7 +644,7 @@
 								<li><b>Streamer Popouts</b> For streamers who use the assistant, popout windows will be created so that streamers can easily capture and share there notes or wifi timer to their viewers.</li>
 								<li><b>Hacking Trainer</b> The in-game hacking practice is not very comprehensive, so this feature will be a recreation of the hacks so that players can practice hacks at any level and without the risk of killing a run.</li>
 								<li><b>Wiki Block Manual Mode</b> The wiki block method of importing websites is not perfect and in some cases may be impractical or problematic. To fix this, there will be a menu where users can manually add and delete pages.</li>
-								<li><b>Wifi Block Cooldowns</b> The wifi block is not perfect and does not account for user error related to reconnecting to networks too quickly. For those who need it, there is be a toggle that enables an advanced mode that accounts for variance that comes from disconnecting and reconnecting such as connection penalties and cooldowns.</li>
+								<li><b>Wifi Block Cooldowns (Complete)</b> The wifi block is not perfect and does not account for user error related to reconnecting to networks too quickly. For those who need it, there is be a toggle that enables an advanced mode that accounts for variance that comes from disconnecting and reconnecting such as connection penalties and cooldowns.</li>
 							</ul>
 					</div>
 					<div title="Feedback" icon="icon-question-circle">
