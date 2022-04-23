@@ -523,10 +523,9 @@ function note_input() {//Attempts to find and save keys within the note block's 
 //=============================
 //=============================Wifi Functions
 //=============================
-
-function wifi_passwordinput() {//Updates wifi label if password is provided
+function wifi_passwordinput(e) {//Updates wifi label if password is provided
 	var current = data.wifi.current
-	data.wifi.passwords[current] = this.value
+	data.wifi.passwords[current] = e.value
 	document.getElementById("wifi_listbutton" + current).innerHTML = "<i class='" + ((data.wifi.passwords[current] !== "") ? 'icon-check-square':'icon-square') + "'></i> " + wifidata[current].name
 }
 
@@ -609,7 +608,6 @@ function wifi_buttonhandler(b) {//This function is the main handling function fo
 	}
 }
 
-//Make cooldown care about timer mode
 function wifi_wifijoin() {//Updates wifi timer (onjoin)
 	var current = data.wifi.current
 	if (data.wifi.reference == undefined) {return}
