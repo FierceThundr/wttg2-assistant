@@ -107,28 +107,34 @@
 				</div>
 			</div>
 			<div class="block_data" style="text-align:left;" data-simplebar>
-				<div id="wifi_intro">
-					<h2 style="margin:90px 0 0 0">Welcome to the wifi block</h2>
-					<p>
-						Here you can view data collected about the wifi networks available in the game. This includes information such as trace times, injection information, and locations. In addition, there is a scripted timer you can use to keep track of when the cops will be done tracking you.
-					</p>
-				</div>
-				<div id="wifi_content" style="display:none">
-					<div id="wifi_data">
+				<div>
+					<!-- 
+					To anyone peeking at the code, the extra layer here was a fluke
+					to fix a critical interface bug. If it is still here later,
+					probably worked XD -->
+					<div id="wifi_intro">
+						<h2 style="margin:90px 0 0 0">Welcome to the wifi block</h2>
+						<p>
+							Here you can view data collected about the wifi networks available in the game. This includes information such as trace times, injection information, and locations. In addition, there is a scripted timer you can use to keep track of when the cops will be done tracking you.
+						</p>
 					</div>
-					<div class="block_inputwrapper" style="bottom:30px">
-						<div id="wifi_summarywrapper" style="border:1px solid gray;align-content:center;display:none;">
-							<p id="wifi_summary">[True Time 00:00] [Cool Time 00:00]</p>
+					<div id="wifi_content" style="display:none">
+						<div id="wifi_data">
 						</div>
-						<div>
-							<input id="wifi_passwordinput" type="text" maxlength="20" oninput="wifi_passwordinput()" placeholder="Placeholder">
-						</div>
-						<div>
-							<button id="wifi_button1" onclick="wifi_buttonhandler(1)" disabled>Please Select Your Difficulty</button>
-						</div>
-						<div>
-							<button id="wifi_button2" onclick="wifi_buttonhandler(2)">Normal Mode</button>
-							<button id="wifi_button3" onclick="wifi_buttonhandler(3)">1337 Mode</button>
+						<div class="block_inputwrapper" style="bottom:30px">
+							<div id="wifi_summarywrapper" style="border:1px solid gray;align-content:center;display:none;">
+								<p id="wifi_summary">[True Time 00:00] [Cool Time 00:00]</p>
+							</div>
+							<div>
+								<input id="wifi_passwordinput" type="text" maxlength="20" oninput="wifi_passwordinput()" placeholder="Placeholder">
+							</div>
+							<div>
+								<button id="wifi_button1" onclick="wifi_buttonhandler(1)" disabled>Please Select Your Difficulty</button>
+							</div>
+							<div>
+								<button id="wifi_button2" onclick="wifi_buttonhandler(2)">Normal Mode</button>
+								<button id="wifi_button3" onclick="wifi_buttonhandler(3)">1337 Mode</button>
+							</div>
 						</div>
 					</div>
 				</div>
