@@ -292,7 +292,7 @@ var data = {
 
 //==========================================================================Functions
 
-function full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v)};return a}
+function full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v)};return JSON.parse(JSON.stringify(a))}
 
 //=============================
 //=============================Popup Functions
@@ -439,7 +439,7 @@ function wiki_editor() {//Replaces currently displayed data with website editor
 		a.id = `editor_${n}`
 		b.innerHTML = n
 		c.innerHTML = (o[n] == 1) ? '<i class="secondary">Dead Site</i>':'Working Site'
-		d.innerHTML = `<div class="wiki_editorwrapper"><button onclick="wiki_editortoggle(this,'${n}')" class="${(o[n] == 2) ? "":"secondary"}">${(o[n] == 1) ? "Delete Site":((o[n] == 2) ? "Append Site":"Remove Site")}</button></div>`
+		d.innerHTML = `<div class="wiki_editorwrapper"><button onclick="wiki_editortoggle(this,'${n}')" class="monospaced ${(o[n] == 1) ? "secondary":""}">${(o[n] == 1) ? "Delete Site":((o[n] == 2) ? "Append Site":"Remove Site")}</button></div>`
 	})
 	//3 Real + Enabled  (Remove)
 	//2 Real + Disabled (Append)
@@ -454,13 +454,11 @@ function wiki_editortoggle(e,n) {//Toggle or remove necessary websites
 			data.wiki.template[n] = 2
 			delete data.wiki.sites[current][n]
 			e.innerText = "Append Site"
-			e.classList.remove("secondary")
 		break
 		case 2:
 			data.wiki.template[n] = 3
 			data.wiki.sites[current][n] = full_array((wikidata[n].sub?.length ?? 0) + 1,[0,0,0,0])
 			e.innerText = "Remove Site"
-			e.classList.add("secondary")
 		break
 		case 1:
 			document.getElementById(`editor_${n}`).remove()
