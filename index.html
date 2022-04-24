@@ -80,9 +80,6 @@
 					<tr><td class="secondary">&gt; Refreshing the page will erase all data</td></tr>
 					<tr><td onclick="wiki_demo()"><br>&gt; Click here for a demo of the wiki block!</td></tr>
 				</table>
-				<!--
-					<tr><td style="text-align:center;"><br><br><br><br>It's quite empty in here...<br><br>Why not import some sites?</td></tr>
-				-->
 			</div>
 		</div>
 
@@ -107,11 +104,7 @@
 				</div>
 			</div>
 			<div class="block_data" style="text-align:left;" data-simplebar>
-				<div>
-					<!-- 
-					To anyone peeking at the code, the extra layer here was a fluke
-					to fix a critical interface bug. If it is still here later,
-					probably worked XD -->
+				<div id="wifi_data" class="wifi_data">
 					<div id="wifi_intro">
 						<h2 style="margin:90px 0 0 0">Welcome to the wifi block</h2>
 						<p>
@@ -119,7 +112,7 @@
 						</p>
 					</div>
 					<div id="wifi_content" style="display:none">
-						<div id="wifi_data">
+						<div id="wifi_info">
 						</div>
 						<div class="block_inputwrapper" style="bottom:30px">
 							<div id="wifi_summarywrapper" style="border:1px solid gray;align-content:center;display:none;">

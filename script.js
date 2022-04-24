@@ -287,9 +287,6 @@ var data = {
 		"notes":{"active":0,"reference":undefined}}
 }
 
-//Clickpoints Cycle Test Variable
-//window.temp = 100
-
 //==========================================================================Functions
 
 function full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v)};return JSON.parse(JSON.stringify(a))}
@@ -439,7 +436,7 @@ function wiki_editor() {//Replaces currently displayed data with website editor
 		a.id = `editor_${n}`
 		b.innerHTML = n
 		c.innerHTML = (o[n] == 1) ? '<i class="secondary">Dead Site</i>':'Working Site'
-		d.innerHTML = `<div class="wiki_editorwrapper"><button onclick="wiki_editortoggle(this,'${n}')" class="monospaced ${(o[n] == 1) ? "secondary":""}">${(o[n] == 1) ? "Delete Site":((o[n] == 2) ? "Append Site":"Remove Site")}</button></div>`
+		d.innerHTML = `<div class="wiki_editorwrapper"><button onclick="wiki_editortoggle(this,'${n}')" class="monospaced ${(o[n] == 1) ? "secondary":""}">${(o[n] == 1) ? "! Delete Site":((o[n] == 2) ? "+ Append Site":"- Remove Site")}</button></div>`
 	})
 	//3 Real + Enabled  (Remove)
 	//2 Real + Disabled (Append)
@@ -452,13 +449,17 @@ function wiki_editortoggle(e,n) {//Toggle or remove necessary websites
 	switch (data.wiki.template[n]) {
 		case 3:
 			data.wiki.template[n] = 2
+			data.wiki.sites[current][n].forEach(function(s){
+				if (s[2] == 1) {data.wiki.keys[current] -= 1}
+			})
+			wiki_updatekeys()
 			delete data.wiki.sites[current][n]
-			e.innerText = "Append Site"
+			e.innerText = "+ Append Site"
 		break
 		case 2:
 			data.wiki.template[n] = 3
 			data.wiki.sites[current][n] = full_array((wikidata[n].sub?.length ?? 0) + 1,[0,0,0,0])
-			e.innerText = "Remove Site"
+			e.innerText = "- Remove Site"
 		break
 		case 1:
 			document.getElementById(`editor_${n}`).remove()
@@ -659,7 +660,7 @@ function wifi_update(i) {//Changes the current wifi page
 	}
 	var v = wifidata[i]
 	data.wifi.current = i
-	document.getElementById("wifi_data").innerHTML = `
+	document.getElementById("wifi_info").innerHTML = `
 <h2>${v.name}</h2>
 <table>
 	<tbody>
@@ -750,7 +751,6 @@ function setcolor(i,c) {//Updates the site color configuration in memory
 	localStorage.setItem(`color${i}`,c)
 	document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`
 }
-
 
 //==================Lucas Simulator
 function simulator_launch() {//Makes the simulator visible
@@ -873,7 +873,10 @@ function ding() {//Plays the ding sound
 	data.general.ding.play()
 }
 
+//==================Test Functions
 function sitecycle() {//Temporary dev function (Cycle through clickpoint guides)
 	sitepreview(window.temp)
 	window.temp++
 }
+
+window.temp = 100
