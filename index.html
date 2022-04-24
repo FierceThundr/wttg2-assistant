@@ -14,7 +14,14 @@
 		GNU General Public License for more details.
 
 		You should have received a copy of the GNU General Public License
-		along with this program.  If not, see <https://www.gnu.org/licenses/>.-->
+		along with this program.  If not, see <https://www.gnu.org/licenses/>.  -->
+<!--
+		Welcome to the code! I know some of you are here to look for secrets.
+		Luckily for you, this site contains a total of 8 hidden keys similarly
+		to the game which this site is built for. There may not be a reward for
+		finding them all, they are simply there for those who wish for a fun
+		challenge. Just keep in mind, since all the keys are in one site, I had
+		to get creative. Don't expect this to be easy now...                    -->
 <html lang="en">
 	<head>
 		<title>WTTG2 Assistant</title>
@@ -26,8 +33,9 @@
 		<meta property="og:title" content="WTTG2 Assistant">
 		<meta property="og:url" content="https://fiercethundr.github.io/wttg2-assistant/">
 		<meta property="og:description" content="An interactive assistant for Welcome To The Game 2">
+		<meta property="og:determiner" content="the"/>
 		<meta property="og:type" content="website">
-		<meta property="og:image" content="Assets/icon-bar.png">
+		<meta property="og:image" content="https://fiercethundr.github.io/wttg2-assistant/Assets/icon-bar.png">
 		<link rel="manifest" href="manifest.json">
 		<link rel="stylesheet" href="Assets/simplebar-5.3.6/simplebar.css"/>
 		<link rel="stylesheet" href="Assets/icomoon/style.css">
@@ -80,9 +88,6 @@
 					<tr><td class="secondary">&gt; Refreshing the page will erase all data</td></tr>
 					<tr><td onclick="wiki_demo()"><br>&gt; Click here for a demo of the wiki block!</td></tr>
 				</table>
-				<!--
-					<tr><td style="text-align:center;"><br><br><br><br>It's quite empty in here...<br><br>Why not import some sites?</td></tr>
-				-->
 			</div>
 		</div>
 
@@ -107,11 +112,7 @@
 				</div>
 			</div>
 			<div class="block_data" style="text-align:left;" data-simplebar>
-				<div>
-					<!-- 
-					To anyone peeking at the code, the extra layer here was a fluke
-					to fix a critical interface bug. If it is still here later,
-					probably worked XD -->
+				<div id="wifi_data" class="wifi_data">
 					<div id="wifi_intro">
 						<h2 style="margin:90px 0 0 0">Welcome to the wifi block</h2>
 						<p>
@@ -119,7 +120,7 @@
 						</p>
 					</div>
 					<div id="wifi_content" style="display:none">
-						<div id="wifi_data">
+						<div id="wifi_info">
 						</div>
 						<div class="block_inputwrapper" style="bottom:30px">
 							<div id="wifi_summarywrapper" style="border:1px solid gray;align-content:center;display:none;">
