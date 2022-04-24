@@ -352,7 +352,7 @@ function wiki_input() {//Updates wiki data from import field
 			}
 		})
 		//console.log("Final",d)
-		data.wiki.sites[data.wiki.current] = JSON.parse(JSON.stringify(d))
+		data.wiki.sites[data.wiki.current] = d
 		data.wiki.keys[data.wiki.current] = 0
 		wiki_update()
 	}
@@ -426,7 +426,7 @@ function wiki_editor() {//Replaces currently displayed data with website editor
 	wiki_erase()
 	r.forEach(function(n){if (o[n] == undefined) {o[n] = 0};o[n] += 2})
 	w.forEach(function(n){if (o[n] == undefined) {o[n] = 0};o[n] += 1})
-	data.wiki.template = JSON.parse(JSON.stringify(o))
+	data.wiki.template = o
 	var l = Object.keys(o).sort()
 	l.forEach(function(n){
 		a = t.insertRow(-1)
