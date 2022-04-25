@@ -407,6 +407,7 @@ padding:5px;
 /* Loading screen formatting */
 
 .load_cover {
+color:hsl(120,100%,50%);
 background-color:var(--global-background-color);
 background-image:var(--global-background-image);
 bottom:0;

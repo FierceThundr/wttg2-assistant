@@ -779,7 +779,7 @@ function simulator_evaluate() {//Checks if the player acknowledged the sound cue
 	if (data.simulator.soundplayed == 1) {
 		data.simulator.soundplayed = 0
 		data.simulator.sound2.play()
-		simulator_display(`<span class="secondary"><i class="fa fa-times"></i> You have died</span>`)
+		simulator_display(`<span class="secondary"><i class="icon-times"></i> You have died</span>`)
 		setTimeout(function () {simulator_display("Hitman Trainer")},180000)
 	}
 	data.simulator.reference = setTimeout(simulator_playsound,(Math.floor(Math.random() * 11) * 30000) + 600000)
@@ -787,10 +787,10 @@ function simulator_evaluate() {//Checks if the player acknowledged the sound cue
 
 function simulator_verify() {//Tells the player if they correctly responded to a sound cue
 	if (data.simulator.soundplayed == 1) {
-		var a = `<i class="fa fa-check"></i> Correct`
+		var a = `<i class="icon-check"></i> Correct`
 		data.simulator.soundplayed = 0
 	} else {
-		var a = `<span class="secondary"><i class="fa fa-times"></i> Incorrect</span>`
+		var a = `<span class="secondary"><i class="icon-times"></i> Incorrect</span>`
 	}
 	simulator_display(a)
 	setTimeout(function () {simulator_display("Hitman Trainer")},10000)
@@ -846,7 +846,7 @@ function setup() {//Prepares website lists and appearance
 		document.getElementById("setting_colorprimary").value = localStorage.getItem('color0')
 		document.getElementById("setting_colorsecondary").value = localStorage.getItem('color1')
 		document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`
-		document.getElementById("load_cover").remove()
+		setTimeout(function(){document.getElementById("load_cover").remove()},300)
 		var x = new XMLHttpRequest()
 		x.onreadystatechange = function() { 
 			if (x.readyState == 4 && x.status == 200) {
