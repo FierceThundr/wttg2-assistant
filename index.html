@@ -183,7 +183,7 @@
 					<div style="display:block;">
 						<h2 style="margin:90px 0 0 0">Welcome to the info block</h2>
 						<p>
-							Here you can view custom guides for the majority of the game that have been written specifically for this assistant. These guides have been reviewed many times to attempt to weed out as many inaccuracies as possible. In addition you can find information about how to provide feedback, a variety of other information about the helper, and smaller tools that did not warrant their own section.
+							Here you can view custom guides for the majority of the game that have been written specifically for this assistant. These guides have been reviewed many times to attempt to weed out as many inaccuracies as possible. In addition you can find information about how to provide feedback, a variety of other information about the assistant, and smaller tools that did not warrant their own section.
 						</p>
 					</div>
 					<div title="About" icon="icon-info-circle">
@@ -662,7 +662,7 @@
 					</div>
 					<div title="Feedback" icon="icon-question-circle">
 						<h1>Feedback</h1>
-							<p>If you wish to provide feedback or report a bug, please message leave a comment on the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2211437048" target="_blank" rel="noreferrer">steam guide</a> for the helper or open an issue on the <a href="https://github.com/FierceThundr/wttg2-assistant/issues" target="_blank" rel="noreferrer">github page</a>!</p>
+							<p>If you wish to provide feedback or report a bug, please message leave a comment on the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2211437048" target="_blank" rel="noreferrer">steam guide</a> for the assistant or open an issue on the <a href="https://github.com/FierceThundr/wttg2-assistant/issues" target="_blank" rel="noreferrer">github page</a>!</p>
 					</div>
 				</div>
 			</div>
@@ -688,7 +688,29 @@
 			<iframe id="preview" class="preview_frame" onload="wiki_previewload()"></iframe>
 		</div>
 
-		<!--<button onclick="sitecycle()" style="opacity:0.05">Clickpoints Cycle (Temporary dev button)</button>-->
-		<div id="animated" class="animation"></div>
+		<!-- Clickpoints test button
+		<button onclick="sitecycle()" style="opacity:0.05">Clickpoints Cycle (Temporary dev button)</button>
+		-->
+		
+		<!-- Animation Overlay -->
+		<div id="animated" class="animation">
+			<pre>
+	Welcome to the Assistant Kernel Version 1.0.0
+	Logging in as anonymous user...
+			
+	Loading data structures...
+	Loading wifidata...
+	Loading tenantdata...
+	Loading wikidata...
+	Loading keydata...
+	Loading user preferences...
+	Loading interface...
+	Loading stylesheets...
+	Loading functions...
+			
+	Welcome user!
+			</pre>
+			<pre id="start_error"></pre>
+		</div>
 	</body>
 </html>

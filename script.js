@@ -264,7 +264,6 @@ var data = {
 		"current":-1,
 		"reference":undefined,
 		"timer":[0,0,0,-1,0,""],
-		//[diff,mode,stage,id_of_network,"status"]
 		"cooldowns":full_array(wifidata.length,0),
 		"timerfull":full_array(wifidata.length,0),
 		"timerlive":full_array(wifidata.length,0),
@@ -823,6 +822,7 @@ function serversidesecret() {
 */
 
 function setup() {//Prepares website lists and appearance
+	try{
 	wifidata.forEach(function (data,index) {
 		var button = document.createElement("button")
 		document.getElementById("wifi_list").appendChild(button)
@@ -846,7 +846,7 @@ function setup() {//Prepares website lists and appearance
 	document.getElementById("setting_colorprimary").value = localStorage.getItem('color0')
 	document.getElementById("setting_colorsecondary").value = localStorage.getItem('color1')
 	document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`
-	document.getElementById("animated").style = "animation:slide 1s 0.3s forwards"
+	//document.getElementById("animated").style = "animation:slide 1s 0.3s forwards"
 	var x = new XMLHttpRequest()
 	x.onreadystatechange = function() { 
 		if (x.readyState == 4 && x.status == 200) {
@@ -856,6 +856,10 @@ function setup() {//Prepares website lists and appearance
 	}
 	x.open("GET","https://api.github.com/repos/fiercethundr/wttg2-assistant/commits?per_page=1",true)
 	x.send()
+	throw "Test Error"
+	}catch(e){
+	document.getElementById("start_error").innerText = "	[Critical Startup Error] " + e
+	}
 }
 
 function click() {//Plays the click sound
