@@ -369,7 +369,8 @@ bottom:0;
 background-color:rgba(0,0,0,0.4);
 border:1px solid;
 height:170px;
-margin:10px;
+margin-right:25px;
+margin-bottom:0px;
 overflow:auto;
 padding:5px;
 text-align:center;
@@ -403,9 +404,9 @@ transform:translate(-50%,-50%);
 padding:5px;
 }
 
-/* Animation formatting */
+/* Loading screen formatting */
 
-.animation {
+.load_cover {
 background-color:var(--global-background-color);
 background-image:var(--global-background-image);
 bottom:0;
@@ -418,9 +419,4 @@ box-sizing:border-box;
 border:solid 1px currentColor;
 text-align:left;
 padding:2em;
-}
-
-@keyframes slide {
-0%   {bottom:0%}
-100% {bottom:-100%}
 }

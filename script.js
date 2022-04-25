@@ -822,42 +822,42 @@ function serversidesecret() {
 */
 
 function setup() {//Prepares website lists and appearance
-	try{
-	wifidata.forEach(function (data,index) {
-		var button = document.createElement("button")
-		document.getElementById("wifi_list").appendChild(button)
-		button.outerHTML = `<button id="wifi_listbutton${index}" onclick="wifi_update(${index})">${"<i class='" + ((data["level"] == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`
-	})
-	tenantdata.forEach(function (data,index) {
-		var button = document.createElement("button")
-		document.getElementById("tenant_list").appendChild(button)
-		button.outerHTML = `<button id="tenant_listbutton${index}" onclick="tenant_update(${index})">${"<i class='" + ((data["doll"] == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`
-	})
-	document.querySelectorAll("#info_data > div").forEach(function (element,index) {
-		element.id = `info_guide${index}`
-		var attributes = element.attributes
-		if (attributes.getNamedItem("title") == null) {return}
-		var button = document.createElement("button")
-		document.getElementById("info_list").appendChild(button)
-		button.outerHTML = `<button onclick="info_update(${index})"><i class="${attributes.getNamedItem("icon").value}"></i> ${attributes.getNamedItem("title").value}</button>`
-	})
-	if (localStorage.getItem('color0') == undefined) {localStorage.setItem('color0',120)}
-	if (localStorage.getItem('color1') == undefined) {localStorage.setItem('color1',0)}
-	document.getElementById("setting_colorprimary").value = localStorage.getItem('color0')
-	document.getElementById("setting_colorsecondary").value = localStorage.getItem('color1')
-	document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`
-	document.getElementById("animated").style = "animation:slide 1s 0.3s forwards"
-	var x = new XMLHttpRequest()
-	x.onreadystatechange = function() { 
-		if (x.readyState == 4 && x.status == 200) {
-			var d = JSON.parse(x.responseText)
-			document.getElementById("version").innerHTML = `<i>Wttg Assistant Version 1.4.0.${d[0].sha.slice(0,7)}</i>`
+	try {
+		wifidata.forEach(function (data,index) {
+			var button = document.createElement("button")
+			document.getElementById("wifi_list").appendChild(button)
+			button.outerHTML = `<button id="wifi_listbutton${index}" onclick="wifi_update(${index})">${"<i class='" + ((data["level"] == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`
+		})
+		tenantdata.forEach(function (data,index) {
+			var button = document.createElement("button")
+			document.getElementById("tenant_list").appendChild(button)
+			button.outerHTML = `<button id="tenant_listbutton${index}" onclick="tenant_update(${index})">${"<i class='" + ((data["doll"] == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`
+		})
+		document.querySelectorAll("#info_data > div").forEach(function (element,index) {
+			element.id = `info_guide${index}`
+			var attributes = element.attributes
+			if (attributes.getNamedItem("title") == null) {return}
+			var button = document.createElement("button")
+			document.getElementById("info_list").appendChild(button)
+			button.outerHTML = `<button onclick="info_update(${index})"><i class="${attributes.getNamedItem("icon").value}"></i> ${attributes.getNamedItem("title").value}</button>`
+		})
+		if (localStorage.getItem('color0') == undefined) {localStorage.setItem('color0',120)}
+		if (localStorage.getItem('color1') == undefined) {localStorage.setItem('color1',0)}
+		document.getElementById("setting_colorprimary").value = localStorage.getItem('color0')
+		document.getElementById("setting_colorsecondary").value = localStorage.getItem('color1')
+		document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`
+		document.getElementById("load_cover").remove()
+		var x = new XMLHttpRequest()
+		x.onreadystatechange = function() { 
+			if (x.readyState == 4 && x.status == 200) {
+				var d = JSON.parse(x.responseText)
+				document.getElementById("version").innerHTML = `<i>Wttg Assistant Version 1.4.0.${d[0].sha.slice(0,7)}</i>`
+			}
 		}
-	}
-	x.open("GET","https://api.github.com/repos/fiercethundr/wttg2-assistant/commits?per_page=1",true)
-	x.send()
-	}catch(e){
-	document.getElementById("start_error").innerText = "	[Critical Startup Error] " + e
+		x.open("GET","https://api.github.com/repos/fiercethundr/wttg2-assistant/commits?per_page=1",true)
+		x.send()
+	} catch(e) {
+		document.getElementById("load_error").innerText = "	[Critical Startup Error] " + e
 	}
 }
 
