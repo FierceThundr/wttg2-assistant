@@ -48,7 +48,7 @@ function hack_success() {
 function node_start(difficulty) {
 	var display = { //content size will be unit*size+(2*offset)
 		"offset":10,
-		"unit":49
+		"unit":57
 	}
 	var levels = [
 		null,
@@ -64,20 +64,50 @@ function node_start(difficulty) {
 		{"size":13,"targets":14,"time":11,"boost":2.8,"warmup":1}
 	]
 	
+	
+	//12,25,4
+	//'M 4,16 L 4,41 L 16,53 L 41,53 L 53,41 L 53,16 L 41,4 L 16,4 L 4,16'
+	
+	var c = 11
+	var s = 22
+	var o = 4
+	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
+	
+	var shape1 = `M ${p[0]},${p[1]} L ${p[0]},${p[2]} L ${p[1]},${p[3]} L ${p[2]},${p[3]} L ${p[3]},${p[2]} L ${p[3]},${p[1]} L ${p[2]},${p[0]} L ${p[1]},${p[0]} L ${p[0]},${p[1]}`
+	console.log(`HIGHLIGHT`,shape1)
+	
+	var c = 10
+	var s = 20
+	var o = 6
+	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
+	
+	var shape2 = `M ${p[0]},${p[1]} L ${p[0]},${p[2]} L ${p[1]},${p[3]} L ${p[2]},${p[3]} L ${p[3]},${p[2]} L ${p[3]},${p[1]} L ${p[2]},${p[0]} L ${p[1]},${p[0]} L ${p[0]},${p[1]}`
+	console.log(`OUTER`,shape2)
+	
+	
+	
+	
 	canvas_resize(display.unit * levels[difficulty].size + (2 * display.offset))
 	//https://www.w3schools.com/tags/ref_canvas.asp
 	//Draw experiment
 	//Draw node shape
 	var c = [0,0]
-	ctx1.beginPath()
 	//ctx1.strokeStyle = "hsla(119,53,51,1)"
 	//ctx1.fillStyle = "hsla(116,89,4,1)"
-	ctx1.strokeStyle = "blue"
-	ctx1.fillStyle = "red"
+	ctx1.lineWidth = 2
 	
-	var outline1 = new Path2D('M 0,12 L 0,37 L 12,49 L 37,49 L 49,37 L 49,12 L 37,0 L 12,0 L 0,12')
-	ctx1.fill(outline1)
-	ctx1.stroke(outline1)
+	ctx1.strokeStyle = "lime"
+	ctx1.fillStyle = "lime"
+	var path = new Path2D(shape1)
+	ctx1.fill(path)
+	ctx1.stroke(path)
+	
+	ctx1.strokeStyle = "blue"
+	ctx1.fillStyle = "grey"
+	var path = new Path2D(shape2)
+	ctx1.fill(path)
+	ctx1.stroke(path)
+	
 	
 	//Generate array pattern with types and targets
 	/*
