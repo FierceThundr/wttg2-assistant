@@ -1,4 +1,5 @@
 var img, map, con, can, ctx
+var levels, display, difficulty, grid
 
 window.onload = function () {
 	lay1 = document.getElementById("lay1")
@@ -8,10 +9,11 @@ window.onload = function () {
 	con = document.getElementById("con")
 	ctx1 = lay1.getContext("2d")
 	ctx2 = lay2.getContext("2d")
-	node_start(7)
+	node_start(2)
 }
 
 function canvas_resize(i) {
+	console.log("Size",i)
 	con.style.width = i + "px"
 	con.style.height = i + "px"
   lay1.width = lay2.width = cnw = lay1.offsetWidth
@@ -45,12 +47,12 @@ function hack_success() {
 //Layer 2: The dynamic later which includes moving elements or elements subject to change
 //Layer 3: The controls layer which includes all triggers that control the puzzle
 
-function node_start(difficulty) {
-	var display = { //content size will be unit*size+(2*offset)
+function node_start(d) {
+	display = { //content size will be unit*size+(2*offset)
 		"offset":10,
-		"unit":57
+		"unit":52
 	}
-	var levels = [
+	levels = [
 		null,
 		{"size":5,"targets":2,"time":8,"boost":3.0,"warmup":3},
 		{"size":5,"targets":3,"time":6,"boost":1.5,"warmup":3},
@@ -63,6 +65,72 @@ function node_start(difficulty) {
 		{"size":13,"targets":10,"time":11,"boost":3.2,"warmup":1},
 		{"size":13,"targets":14,"time":11,"boost":2.8,"warmup":1}
 	]
+	difficulty = d
+	
+	//Generate array pattern with types and targets
+	grid = [
+		[
+			{"type":0,"target":0},
+			{"type":1,"target":0},
+			{"type":0,"target":0},
+			{"type":0,"target":0},
+			{"type":0,"target":0}
+		],
+		[
+			{"type":1,"target":0},
+			{"type":0,"target":0},
+			{"type":0,"target":0},
+			{"type":0,"target":0},
+			{"type":1,"target":1}
+		],
+		[
+			{"type":0,"target":0},
+			{"type":1,"target":0},
+			{"type":0,"target":0},
+			{"type":0,"target":0},
+			{"type":0,"target":0}
+		],
+		[
+			{"type":0,"target":0},
+			{"type":1,"target":0},
+			{"type":0,"target":1},
+			{"type":0,"target":0},
+			{"type":0,"target":0}
+		],
+		[
+			{"type":0,"target":0},
+			{"type":1,"target":0},
+			{"type":0,"target":0},
+			{"type":0,"target":1},
+			{"type":0,"target":0}
+		]
+	]
+	
+	//Link array
+	/*
+	[
+		[0,1],
+		[2,3],
+		[4,5]
+	]
+	*/
+	//Trigger initial draw of pattern
+	//Wait for a moment and give player control
+	
+	node_drawnodes()
+}
+
+function node_drawnodes() {
+	//Draws all nodes and interactive elements by iterating through all positions
+	
+	//Clear area
+	//Draw base shape with no inner symbol or outline
+	//Highlight node if target
+	//Draw inner shape
+	
+	
+	
+	
 	
 	
 	//12,25,4
@@ -97,70 +165,42 @@ function node_start(difficulty) {
 	
 	
 	canvas_resize(display.unit * levels[difficulty].size + (2 * display.offset))
-	//https://www.w3schools.com/tags/ref_canvas.asp
-	//Draw experiment
-	//Draw node shape
-	var c = [0,0]
-	//ctx1.strokeStyle = "hsla(119,53,51,1)"
-	//ctx1.fillStyle = "hsla(116,89,4,1)"
-	ctx1.lineWidth = 2
+	console.log((display.unit * levels[difficulty].size + (2 * display.offset)),display.unit,levels[difficulty].size,display.offset)
+	ctx1.translate(display.offset,display.offset)
 	
-	ctx1.strokeStyle = "lime"
-	ctx1.fillStyle = "lime"
-	var path = new Path2D(shape1)
-	ctx1.fill(path)
-	ctx1.stroke(path)
+	grid.forEach(function(r,x) {
+		r.forEach(function(v,y) {
+			drawposition(x,y,v)
+		})
+	})
 	
-	ctx1.strokeStyle = "rgb(33,48,29)"
-	ctx1.fillStyle = "rgb(5,17,5)"
-	var path = new Path2D(shape2)
-	ctx1.fill(path)
-	ctx1.stroke(path)
-	
-	var path = new Path2D(shape3)
-	ctx1.stroke(path)
-	
-	
-	//Generate array pattern with types and targets
-	/*
-	[
-		[
-			{"type":0,"target":0},
-			{"type":1,"target":1},
-			{"type":0,"target":0}
-		],
-		[
-			{"type":1,"target":0},
-			{"type":0,"target":0},
-			{"type":1,"target":1}
-		],
-		[
-			{"type":0,"target":1},
-			{"type":1,"target":0},
-			{"type":0,"target":0}
-		]
-	]
-	*/
-	
-	//Link array
-	/*
-	[
-		[0,1],
-		[2,3],
-		[4,5]
-	]
-	*/
-	//Trigger initial draw of pattern
-	//Wait for a moment and give player control
-}
-
-function node_drawnodes() {
-	//Draws all nodes and interactive elements by iterating through all positions
-	
-	//Clear area
-	//Draw base shape with no inner symbol or outline
-	//Highlight node if target
-	//Draw inner shape
+	function drawposition(x,y,v) {
+		//Move Drawing to Correct Position
+		ctx1.translate(x * display.unit,y * display.unit)
+		
+		ctx1.lineWidth = 2
+		
+		//Draw Highlight
+		if (v.target) {
+			ctx1.strokeStyle = "lime"
+			ctx1.fillStyle = "lime"
+			var path = new Path2D(shape1)
+			ctx1.fill(path)
+			ctx1.stroke(path)
+		}
+		
+		//Draw the Node
+		ctx1.strokeStyle = "rgb(33,48,29)"
+		ctx1.fillStyle = "rgb(5,17,5)"
+		var path = new Path2D(shape2)
+		ctx1.fill(path)
+		ctx1.stroke(path)
+		var path = new Path2D(shape3)
+		ctx1.stroke(path)
+		
+		//Reset Position
+		ctx1.translate(x * display.unit * -1,y * display.unit * -1)
+	}
 }
 
 function node_drawlinks() {
