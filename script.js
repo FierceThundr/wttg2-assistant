@@ -698,17 +698,17 @@ function timeformat(i) {
 //=============================
 function tenant_input(i,p) {//Updates tenant label if room number is provided
 	data.tenant.rooms[i] = p
-	tenant_display()
+	tenant_display(i)
 }
 
 function tenant_toggle(i) {//Updates tenant label and button if tenant is marked unavailable
 	click()
 	data.tenant.availability[i] = (data.tenant.availability[i]) ? 0:1;
 	document.getElementById("tenant_button1").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`
-	tenant_display()
+	tenant_display(i)
 }
 
-function tenant_display() {
+function tenant_display(i) {
 	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='" + ((data.tenant.availability[i] == 0) ? 'icon-minus-square':(data.tenant.rooms[i] == "") ? 'icon-square':'icon-check-square') + "'></i> " + tenantdata[i]["name"]
 }
 

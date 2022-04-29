@@ -8,6 +8,7 @@ window.onload = function () {
 	con = document.getElementById("con")
 	ctx1 = lay1.getContext("2d")
 	ctx2 = lay2.getContext("2d")
+	node_start(7)
 }
 
 function canvas_resize(i) {
@@ -47,7 +48,7 @@ function hack_success() {
 function node_start(difficulty) {
 	var display = { //content size will be unit*size+(2*offset)
 		"offset":10,
-		"unit":10
+		"unit":49
 	}
 	var levels = [
 		null,
@@ -63,15 +64,20 @@ function node_start(difficulty) {
 		{"size":13,"targets":14,"time":11,"boost":2.8,"warmup":1}
 	]
 	
-	canvas_resize(display.unit * levels[difficulty] + (2 * display.offset))
-	
+	canvas_resize(display.unit * levels[difficulty].size + (2 * display.offset))
 	//https://www.w3schools.com/tags/ref_canvas.asp
 	//Draw experiment
 	//Draw node shape
 	var c = [0,0]
-	ctx1.beginpath()
-	ctx1.strokeStyle = hsla(119,53,51,1)
-	ctx1.fillStyle = hsla(116,89,4,1)
+	ctx1.beginPath()
+	//ctx1.strokeStyle = "hsla(119,53,51,1)"
+	//ctx1.fillStyle = "hsla(116,89,4,1)"
+	ctx1.strokeStyle = "blue"
+	ctx1.fillStyle = "red"
+	
+	var outline1 = new Path2D('M 0,12 L 0,37 L 12,49 L 37,49 L 49,37 L 49,12 L 37,0 L 12,0 L 0,12')
+	ctx1.fill(outline1)
+	ctx1.stroke(outline1)
 	
 	//Generate array pattern with types and targets
 	/*
