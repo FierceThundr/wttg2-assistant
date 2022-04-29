@@ -74,15 +74,24 @@ function node_start(difficulty) {
 	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
 	
 	var shape1 = `M ${p[0]},${p[1]} L ${p[0]},${p[2]} L ${p[1]},${p[3]} L ${p[2]},${p[3]} L ${p[3]},${p[2]} L ${p[3]},${p[1]} L ${p[2]},${p[0]} L ${p[1]},${p[0]} L ${p[0]},${p[1]}`
-	console.log(`HIGHLIGHT`,shape1)
+	console.log(`HIGHLIGHT`,c,s,o,shape1)
 	
 	var c = 10
 	var s = 20
 	var o = 6
 	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
+	var a = p
 	
 	var shape2 = `M ${p[0]},${p[1]} L ${p[0]},${p[2]} L ${p[1]},${p[3]} L ${p[2]},${p[3]} L ${p[3]},${p[2]} L ${p[3]},${p[1]} L ${p[2]},${p[0]} L ${p[1]},${p[0]} L ${p[0]},${p[1]}`
-	console.log(`OUTER`,shape2)
+	console.log(`OUTER`,c,s,o,shape2)
+	
+	var c = 6
+	var s = 12
+	var o = 14
+	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
+	
+	var shape3 = `M ${p[0]},${p[1]} L ${p[0]},${p[2]} L ${p[1]},${p[3]} L ${p[2]},${p[3]} L ${p[3]},${p[2]} L ${p[3]},${p[1]} L ${p[2]},${p[0]} L ${p[1]},${p[0]} L ${p[0]},${p[1]} M ${p[0]},${p[1]} L ${a[0]},${a[1]} M ${p[0]},${p[2]} L ${a[0]},${a[2]} M ${p[1]},${p[3]} L ${a[1]},${a[3]} M ${p[2]},${p[3]} L ${a[2]},${a[3]} M ${p[3]},${p[2]} L ${a[3]},${a[2]} M ${p[3]},${p[1]} L ${a[3]},${a[1]} M ${p[2]},${p[0]} L ${a[2]},${a[0]} M ${p[1]},${p[0]} L ${a[1]},${a[0]}`
+	console.log(`INNER`,c,s,o,shape3)
 	
 	
 	
@@ -102,10 +111,13 @@ function node_start(difficulty) {
 	ctx1.fill(path)
 	ctx1.stroke(path)
 	
-	ctx1.strokeStyle = "blue"
-	ctx1.fillStyle = "grey"
+	ctx1.strokeStyle = "rgb(33,48,29)"
+	ctx1.fillStyle = "rgb(5,17,5)"
 	var path = new Path2D(shape2)
 	ctx1.fill(path)
+	ctx1.stroke(path)
+	
+	var path = new Path2D(shape3)
 	ctx1.stroke(path)
 	
 	
