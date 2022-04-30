@@ -13,7 +13,7 @@ window.onload = function () {
 }
 
 function canvas_resize(i) {
-	console.log("Size",i)
+	console.log("Canvas Resize",i)
 	con.style.width = i + "px"
 	con.style.height = i + "px"
   lay1.width = lay2.width = cnw = lay1.offsetWidth
@@ -50,7 +50,7 @@ function hack_success() {
 function node_start(d) {
 	display = { //content size will be unit*size+(2*offset)
 		"offset":10,
-		"unit":52
+		"unit":66
 	}
 	levels = [
 		null,
@@ -136,26 +136,26 @@ function node_drawnodes() {
 	//12,25,4
 	//'M 4,16 L 4,41 L 16,53 L 41,53 L 53,41 L 53,16 L 41,4 L 16,4 L 4,16'
 	
-	var c = 11
-	var s = 22
-	var o = 4
+	var c = 14
+	var s = 28
+	var o = 7
 	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
 	
 	var shape1 = `M ${p[0]},${p[1]} L ${p[0]},${p[2]} L ${p[1]},${p[3]} L ${p[2]},${p[3]} L ${p[3]},${p[2]} L ${p[3]},${p[1]} L ${p[2]},${p[0]} L ${p[1]},${p[0]} L ${p[0]},${p[1]}`
 	console.log(`HIGHLIGHT`,c,s,o,shape1)
 	
-	var c = 10
-	var s = 20
-	var o = 6
+	var c = 13
+	var s = 26
+	var o = 9
 	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
 	var a = p
 	
 	var shape2 = `M ${p[0]},${p[1]} L ${p[0]},${p[2]} L ${p[1]},${p[3]} L ${p[2]},${p[3]} L ${p[3]},${p[2]} L ${p[3]},${p[1]} L ${p[2]},${p[0]} L ${p[1]},${p[0]} L ${p[0]},${p[1]}`
 	console.log(`OUTER`,c,s,o,shape2)
 	
-	var c = 6
-	var s = 12
-	var o = 14
+	var c = 8
+	var s = 14
+	var o = 20
 	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
 	
 	var shape3 = `M ${p[0]},${p[1]} L ${p[0]},${p[2]} L ${p[1]},${p[3]} L ${p[2]},${p[3]} L ${p[3]},${p[2]} L ${p[3]},${p[1]} L ${p[2]},${p[0]} L ${p[1]},${p[0]} L ${p[0]},${p[1]} M ${p[0]},${p[1]} L ${a[0]},${a[1]} M ${p[0]},${p[2]} L ${a[0]},${a[2]} M ${p[1]},${p[3]} L ${a[1]},${a[3]} M ${p[2]},${p[3]} L ${a[2]},${a[3]} M ${p[3]},${p[2]} L ${a[3]},${a[2]} M ${p[3]},${p[1]} L ${a[3]},${a[1]} M ${p[2]},${p[0]} L ${a[2]},${a[0]} M ${p[1]},${p[0]} L ${a[1]},${a[0]}`
@@ -165,7 +165,6 @@ function node_drawnodes() {
 	
 	
 	canvas_resize(display.unit * levels[difficulty].size + (2 * display.offset))
-	console.log((display.unit * levels[difficulty].size + (2 * display.offset)),display.unit,levels[difficulty].size,display.offset)
 	ctx1.translate(display.offset,display.offset)
 	
 	grid.forEach(function(r,x) {
@@ -178,7 +177,7 @@ function node_drawnodes() {
 		//Move Drawing to Correct Position
 		ctx1.translate(x * display.unit,y * display.unit)
 		
-		ctx1.lineWidth = 2
+		ctx1.lineWidth = 1
 		
 		//Draw Highlight
 		if (v.target) {
