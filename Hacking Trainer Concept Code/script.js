@@ -1,5 +1,33 @@
 var img, map, con, can, ctx
-var levels, display, difficulty, grid
+var data = {
+	"hack":{
+		"difficulty":0,
+		"display":{},
+		"levels":[],
+		"grid":[],
+		"links":[],
+		"paths":{
+			"node_highlight":"",
+			"node_outline":"",
+			"node_edge1":"",
+			"node_edge2":"",
+			"node_edge3":"",
+			"node_edge4":"",
+			"node_edge5":"",
+			"node_edge6":"",
+			"node_edge7":"",
+			"node_edge8":"",
+			"node_connection1":"",
+			"node_connection2":"",
+			"node_connection3":"",
+			"node_connection4":"",
+			"node_connection5":"",
+			"node_connection6":"",
+			"node_connection7":"",
+			"node_connection8":""
+		}
+	}
+}
 
 window.onload = function () {
 	lay1 = document.getElementById("lay1")
@@ -10,6 +38,13 @@ window.onload = function () {
 	ctx1 = lay1.getContext("2d")
 	ctx2 = lay2.getContext("2d")
 	node_start(2)
+	
+	
+	var img = document.getElementById('lay3');
+	var coords = document.getElementById('coords');
+	img.addEventListener('mousemove', function(event){
+		coords.innerHTML = "x: " + event.offsetX + "<br/>y: " + event.offsetY;
+	});
 }
 
 function canvas_resize(i) {
@@ -48,24 +83,29 @@ function hack_success() {
 //Layer 3: The controls layer which includes all triggers that control the puzzle
 
 function node_start(d) {
-	display = { //content size will be unit*size+(2*offset)
-		"offset":10,
-		"unit":66
+	data.hack = {...data.hack,
+		...{
+			"difficulty":d,
+			"display":{
+				"offset":10,
+				"unit":66
+			},
+			"levels":[
+				null,
+				{"size":5,"targets":2,"time":8,"boost":3.0,"warmup":3},
+				{"size":5,"targets":3,"time":6,"boost":1.5,"warmup":3},
+				{"size":7,"targets":3,"time":8,"boost":3.5,"warmup":3},
+				{"size":7,"targets":5,"time":8,"boost":2.5,"warmup":3},
+				{"size":9,"targets":5,"time":7.5,"boost":2.0,"warmup":3},
+				{"size":9,"targets":7,"time":8.5,"boost":2.5,"warmup":2},
+				{"size":11,"targets":7,"time":10,"boost":3.3,"warmup":2},
+				{"size":11,"targets":9,"time":10,"boost":3.0,"warmup":2},
+				{"size":13,"targets":10,"time":11,"boost":3.2,"warmup":1},
+				{"size":13,"targets":14,"time":11,"boost":2.8,"warmup":1}
+			]
+		}
 	}
-	levels = [
-		null,
-		{"size":5,"targets":2,"time":8,"boost":3.0,"warmup":3},
-		{"size":5,"targets":3,"time":6,"boost":1.5,"warmup":3},
-		{"size":7,"targets":3,"time":8,"boost":3.5,"warmup":3},
-		{"size":7,"targets":5,"time":8,"boost":2.5,"warmup":3},
-		{"size":9,"targets":5,"time":7.5,"boost":2.0,"warmup":3},
-		{"size":9,"targets":7,"time":8.5,"boost":2.5,"warmup":2},
-		{"size":11,"targets":7,"time":10,"boost":3.3,"warmup":2},
-		{"size":11,"targets":9,"time":10,"boost":3.0,"warmup":2},
-		{"size":13,"targets":10,"time":11,"boost":3.2,"warmup":1},
-		{"size":13,"targets":14,"time":11,"boost":2.8,"warmup":1}
-	]
-	difficulty = d
+	
 	
 	//Generate array pattern with types and targets
 	grid = [
@@ -123,7 +163,6 @@ function node_start(d) {
 function node_drawnodes() {
 	//Draws all nodes and interactive elements by iterating through all positions
 	
-	//Clear area
 	//Draw base shape with no inner symbol or outline
 	//Highlight node if target
 	//Draw inner shape
@@ -133,13 +172,12 @@ function node_drawnodes() {
 	
 	
 	
-	//12,25,4
-	//'M 4,16 L 4,41 L 16,53 L 41,53 L 53,41 L 53,16 L 41,4 L 16,4 L 4,16'
 	
 	var c = 14
 	var s = 28
 	var o = 7
 	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
+	var s1 = [[p[0],p[1]],[p[0],p[2]],[p[1],p[3]],[p[2],p[3]],[p[3],p[2]],[p[3],p[1]],[p[2],p[0]],[p[1],p[0]]]
 	
 	var shape1 = `M ${p[0]},${p[1]} L ${p[0]},${p[2]} L ${p[1]},${p[3]} L ${p[2]},${p[3]} L ${p[3]},${p[2]} L ${p[3]},${p[1]} L ${p[2]},${p[0]} L ${p[1]},${p[0]} L ${p[0]},${p[1]}`
 	console.log(`HIGHLIGHT`,c,s,o,shape1)
@@ -148,24 +186,36 @@ function node_drawnodes() {
 	var s = 26
 	var o = 9
 	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
-	var a = p
-	
-	var shape2 = `M ${p[0]},${p[1]} L ${p[0]},${p[2]} L ${p[1]},${p[3]} L ${p[2]},${p[3]} L ${p[3]},${p[2]} L ${p[3]},${p[1]} L ${p[2]},${p[0]} L ${p[1]},${p[0]} L ${p[0]},${p[1]}`
-	console.log(`OUTER`,c,s,o,shape2)
+	var s2 = [[p[0],p[1]],[p[0],p[2]],[p[1],p[3]],[p[2],p[3]],[p[3],p[2]],[p[3],p[1]],[p[2],p[0]],[p[1],p[0]]]
 	
 	var c = 8
 	var s = 14
 	var o = 20
+	var a = p
 	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
+	var s3 = [[p[0],p[1]],[p[0],p[2]],[p[1],p[3]],[p[2],p[3]],[p[3],p[2]],[p[3],p[1]],[p[2],p[0]],[p[1],p[0]]]
 	
-	var shape3 = `M ${p[0]},${p[1]} L ${p[0]},${p[2]} L ${p[1]},${p[3]} L ${p[2]},${p[3]} L ${p[3]},${p[2]} L ${p[3]},${p[1]} L ${p[2]},${p[0]} L ${p[1]},${p[0]} L ${p[0]},${p[1]} M ${p[0]},${p[1]} L ${a[0]},${a[1]} M ${p[0]},${p[2]} L ${a[0]},${a[2]} M ${p[1]},${p[3]} L ${a[1]},${a[3]} M ${p[2]},${p[3]} L ${a[2]},${a[3]} M ${p[3]},${p[2]} L ${a[3]},${a[2]} M ${p[3]},${p[1]} L ${a[3]},${a[1]} M ${p[2]},${p[0]} L ${a[2]},${a[0]} M ${p[1]},${p[0]} L ${a[1]},${a[0]}`
-	console.log(`INNER`,c,s,o,shape3)
+	var shape2 = `M ${a[0]},${a[1]} L ${a[0]},${a[2]} L ${a[1]},${a[3]} L ${a[2]},${a[3]} L ${a[3]},${a[2]} L ${a[3]},${a[1]} L ${a[2]},${a[0]} L ${a[1]},${a[0]} L ${a[0]},${a[1]} Z M ${p[0]},${p[1]} L ${p[0]},${p[2]} L ${p[1]},${p[3]} L ${p[2]},${p[3]} L ${p[3]},${p[2]} L ${p[3]},${p[1]} L ${p[2]},${p[0]} L ${p[1]},${p[0]} L ${p[0]},${p[1]} M ${p[0]},${p[1]} L ${a[0]},${a[1]} M ${p[0]},${p[2]} L ${a[0]},${a[2]} M ${p[1]},${p[3]} L ${a[1]},${a[3]} M ${p[2]},${p[3]} L ${a[2]},${a[3]} M ${p[3]},${p[2]} L ${a[3]},${a[2]} M ${p[3]},${p[1]} L ${a[3]},${a[1]} M ${p[2]},${p[0]} L ${a[2]},${a[0]} M ${p[1]},${p[0]} L ${a[1]},${a[0]}`
+	console.log(`MAIN`,c,s,o,shape2)
+	
+	console.log(JSON.stringify([
+		[s2[0],s2[1],s3[1],s3[0]],
+		[s2[1],s2[2],s3[2],s3[1]],
+		[s2[2],s2[3],s3[3],s3[2]],
+		[s2[3],s2[4],s3[4],s3[3]],
+		[s2[4],s2[5],s3[5],s3[4]],
+		[s2[5],s2[6],s3[6],s3[5]],
+		[s2[6],s2[7],s3[7],s3[6]],
+		[s2[7],s2[0],s3[0],s3[7]]
+	]))
 	
 	
 	
 	
-	canvas_resize(display.unit * levels[difficulty].size + (2 * display.offset))
-	ctx1.translate(display.offset,display.offset)
+	
+	
+	canvas_resize(data.hack.display.unit * data.hack.levels[data.hack.difficulty].size + (2 * data.hack.display.offset))
+	ctx1.translate(data.hack.display.offset,data.hack.display.offset)
 	
 	grid.forEach(function(r,x) {
 		r.forEach(function(v,y) {
@@ -174,9 +224,13 @@ function node_drawnodes() {
 	})
 	
 	function drawposition(x,y,v) {
-		//Move Drawing to Correct Position
-		ctx1.translate(x * display.unit,y * display.unit)
+		var offset_x = x * data.hack.display.unit
+		var offset_y = y * data.hack.display.unit
 		
+		//Move Drawing to Correct Position
+		ctx1.translate(offset_x,offset_y)
+		
+		//Define Line Width
 		ctx1.lineWidth = 1
 		
 		//Draw Highlight
@@ -194,11 +248,37 @@ function node_drawnodes() {
 		var path = new Path2D(shape2)
 		ctx1.fill(path)
 		ctx1.stroke(path)
-		var path = new Path2D(shape3)
-		ctx1.stroke(path)
+		
+		//Draw the Symbol
+		if (v.type) {
+			
+		} else {
+			
+		}
+		
+		//Draw Buttons
+		var list = [[[9,22],[9,48],[20,42],[20,28]],[[9,48],[22,61],[28,50],[20,42]],[[22,61],[48,61],[42,50],[28,50]],[[48,61],[61,48],[50,42],[42,50]],[[61,48],[61,22],[50,28],[50,42]],[[61,22],[48,9],[42,20],[50,28]],[[48,9],[22,9],[28,20],[42,20]],[[22,9],[9,22],[20,28],[28,20]]]
+		
+		list.forEach(function(v,i) {
+			var e, t = []
+			v.forEach(function(c) {
+				c[0] += offset_x
+				c[1] += offset_y
+				t.push(...c)
+			})
+			e = document.createElement("area")
+			e.shape = "poly"
+			e.coords = t.join(",")
+			e.className = "hack_button"
+			e.setAttribute("onclick",`node_linkcreate(${x},${y},${i})`)
+			e.setAttribute("onmouseover",`node_linkpreview(${x},${y},${i})`)
+			e.setAttribute("onmouseout",`node_linkpreviewout(${x},${y},${i})`)
+			map.appendChild(e)
+			//console.log(t.join(","))
+		})
 		
 		//Reset Position
-		ctx1.translate(x * display.unit * -1,y * display.unit * -1)
+		ctx1.translate(offset_x * -1,offset_y * -1)
 	}
 }
 
@@ -208,14 +288,19 @@ function node_drawlinks() {
 }
 
 function node_linkpreview(x,y,r) {
+	console.log("linkpreview",x,y,r)
 	//Add highlights to currently hovered connection
+		//This only needs to draw the single connector since redrawing will result in erasing it
 }
 
 function node_linkpreviewout(x,y,r) {
+	console.log("linkpreviewout",x,y,r)
 	//Trigger redraw
+	node_drawlinks()
 }
 
 function node_linkcreate(x,y,r) {
+	console.log("linkcreate",x,y,r)
 	//Compare target and source for matches in link array
 	//If there is multiple matches, delete all elements after the earliest match and append the other node
 	//If there is any match, delete all elements in array after the match and append the other node
