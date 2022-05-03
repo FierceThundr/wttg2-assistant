@@ -174,7 +174,7 @@ function node_drawnodes() {
 	
 	
 	var c = 14
-	var s = 28
+	var s = 29
 	var o = 7
 	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
 	var s1 = [[p[0],p[1]],[p[0],p[2]],[p[1],p[3]],[p[2],p[3]],[p[3],p[2]],[p[3],p[1]],[p[2],p[0]],[p[1],p[0]]]
@@ -183,13 +183,13 @@ function node_drawnodes() {
 	console.log(`HIGHLIGHT`,c,s,o,shape1)
 	
 	var c = 13
-	var s = 26
+	var s = 27
 	var o = 9
 	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
 	var s2 = [[p[0],p[1]],[p[0],p[2]],[p[1],p[3]],[p[2],p[3]],[p[3],p[2]],[p[3],p[1]],[p[2],p[0]],[p[1],p[0]]]
 	
 	var c = 8
-	var s = 14
+	var s = 15
 	var o = 20
 	var a = p
 	var p = [(o),(o+c),(o+c+s),(o+c+s+c)]
@@ -257,7 +257,7 @@ function node_drawnodes() {
 		}
 		
 		//Draw Buttons
-		var list = [[[9,22],[9,48],[20,42],[20,28]],[[9,48],[22,61],[28,50],[20,42]],[[22,61],[48,61],[42,50],[28,50]],[[48,61],[61,48],[50,42],[42,50]],[[61,48],[61,22],[50,28],[50,42]],[[61,22],[48,9],[42,20],[50,28]],[[48,9],[22,9],[28,20],[42,20]],[[22,9],[9,22],[20,28],[28,20]]]
+		var list = [[[9,22],[9,49],[20,43],[20,28]],[[9,49],[22,62],[28,51],[20,43]],[[22,62],[49,62],[43,51],[28,51]],[[49,62],[62,49],[51,43],[43,51]],[[62,49],[62,22],[51,28],[51,43]],[[62,22],[49,9],[43,20],[51,28]],[[49,9],[22,9],[28,20],[43,20]],[[22,9],[9,22],[20,28],[28,20]]]
 		
 		list.forEach(function(v,i) {
 			var e, t = []
@@ -285,6 +285,20 @@ function node_drawnodes() {
 function node_drawlinks() {
 	//Clear area
 	//Iterate through the link array and create links
+	data.hack.links.forEach(function(v,i) {
+		//Skip first element
+		//Add element i and element i-1 and use that to determine direction of connection
+		//Call drawlink with x/y and direction found in prev step
+	})
+}
+
+function node_drawlink(x,y,r) {
+	//Translate canvas to correct x/y offsets
+	//Translate canvas to center of node
+	//Rotate if necessary
+	//Draw link
+	//Draw connecting line if necessary
+	//Undo translations and rotations
 }
 
 function node_linkpreview(x,y,r) {
