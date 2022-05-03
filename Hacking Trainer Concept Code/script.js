@@ -262,8 +262,8 @@ function node_drawnodes() {
 		list.forEach(function(v,i) {
 			var e, t = []
 			v.forEach(function(c) {
-				c[0] += offset_x
-				c[1] += offset_y
+				c[0] += offset_x + data.hack.display.offset
+				c[1] += offset_y + data.hack.display.offset
 				t.push(...c)
 			})
 			e = document.createElement("area")
