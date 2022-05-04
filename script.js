@@ -248,7 +248,7 @@ var data = {
 		"beep":new Audio('Assets/general_motionsensoralert.mp3'),
 		"ding":new Audio('Assets/general_positivebeep.mp3')},
 	"note":{
-		"keys":[null,"????????????","????????????","????????????","????????????","????????????","????????????","????????????","????????????"],
+		"keys":full_array(9,"????????????"),
 		"content":""},
 	"info":{
 		"current":0},
@@ -281,6 +281,8 @@ var data = {
 		"sound2":new Audio('Assets/hitman_prayforyou.mp3')},
 //"test":{ This data is now obsolete but may become necessary in the future
 //	"value":"HAQC2IBVMJTGGOBQGNTDKODFGIQOFIEA"},
+	"load":{
+		"remember":0},
 	"popup":{
 		"wifi":{"active":0,"reference":undefined},
 		"notes":{"active":0,"reference":undefined}}
@@ -846,7 +848,14 @@ function setup() {//Prepares website lists and appearance
 		document.getElementById("setting_colorprimary").value = localStorage.getItem('color0')
 		document.getElementById("setting_colorsecondary").value = localStorage.getItem('color1')
 		document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`
-		setTimeout(function(){document.getElementById("load_cover").remove()},300)
+		document.getElementById("load_message").innerText = "Welcome user!"
+		setTimeout(function(){
+			if (localStorage.getItem('remember') == 1) {
+				document.getElementById("load_cover").remove()
+			} else {
+				document.getElementById("load_first").style.display = "block"
+			}
+		},500)
 		var x = new XMLHttpRequest()
 		x.onreadystatechange = function() { 
 			if (x.readyState == 4 && x.status == 200) {
@@ -857,7 +866,29 @@ function setup() {//Prepares website lists and appearance
 		x.open("GET","https://api.github.com/repos/fiercethundr/wttg2-assistant/commits?per_page=1",true)
 		x.send()
 	} catch(e) {
-		document.getElementById("load_error").innerText = "	[Critical Startup Error] " + e
+		document.getElementById("load_error").innerText = "[Startup Error] " + e
+	}
+}
+
+function load_toggle() {
+	data.load.remember ^= 1
+	document.getElementById("load_remember").innerText = (data.load.remember) ? "☑":"☐"
+}
+
+function load_accept() {
+	localStorage.setItem('remember',data.load.remember)
+	document.getElementById("load_cover").remove()
+}
+
+function reset() {//Reset all run data in the assistant
+	data = {...data,...{
+		"wiki":{...data.wiki,...{
+			"sites":[null,{},{},{}],
+			"keys":[null,0,0,0],
+			"total":[null,2,3,3]}},
+		"note":{...data.note,...{
+			"keys":full_array(9,"????????????")}}
+		}
 	}
 }
 
