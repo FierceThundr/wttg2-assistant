@@ -421,3 +421,7 @@ border:solid 1px currentColor;
 text-align:left;
 padding:2em;
 }
+
+.load_cover pre {
+user-select: none;
+}
