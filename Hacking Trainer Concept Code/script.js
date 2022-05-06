@@ -6,28 +6,26 @@ var data = {
 		"levels":[],
 		"grid":[],
 		"links":[],
-		"paths":{
-			"node_highlight":"",
-			"node_outline":"",
-			"node_edge1":"",
-			"node_edge2":"",
-			"node_edge3":"",
-			"node_edge4":"",
-			"node_edge5":"",
-			"node_edge6":"",
-			"node_edge7":"",
-			"node_edge8":"",
-			"node_connection1":"",
-			"node_connection2":"",
-			"node_connection3":"",
-			"node_connection4":"",
-			"node_connection5":"",
-			"node_connection6":"",
-			"node_connection7":"",
-			"node_connection8":""
+		"shapes":{
+			"node_highlight":"M 7,21 L 7,50 L 21,64 L 50,64 L 64,50 L 64,21 L 50,7 L 21,7 L 7,21",
+			"node_node":"M 9,22 L 9,49 L 22,62 L 49,62 L 62,49 L 62,22 L 49,9 L 22,9 L 9,22 Z M 20,28 L 20,43 L 28,51 L 43,51 L 51,43 L 51,28 L 43,20 L 28,20 L 20,28 M 20,28 L 9,22 M 20,43 L 9,49 M 28,51 L 22,62 M 43,51 L 49,62 M 51,43 L 62,49 M 51,28 L 62,22 M 43,20 L 49,9 M 28,20 L 22,9",
+			"node_button_s":"M -16,-8 L -16,7 L -27,13 L -27,-14 L -16,-8",
+			"node_button_c":"M -16,7 L -8,15 L -14,26 L -27,13 L -16,7",
+			"node_link_s":"",
+			"node_link_c":"",
+			
+			"debug_center":"M -5,0 H 5 M 0,-5 V 5"
 		}
 	}
 }
+
+/*
+			"node_button_s":"M 9,22 L 9,49 L 20,43 L 20,28 L 9,22",
+			"node_button_c":"M 9,49 L 22,62 L 28,51 L 20,43 L 9,49",
+			
+			"node_button_s":"M -27,-14 L -27,13 L -16,7  L -16,-8 L -27,-14",
+			"node_button_c":"M -27,19  L -14,26 L -11,15 L -16,7  L -27,13",
+*/
 
 window.onload = function () {
 	lay1 = document.getElementById("lay1")
@@ -88,7 +86,7 @@ function node_start(d) {
 			"difficulty":d,
 			"display":{
 				"offset":10,
-				"unit":66
+				"unit":67
 			},
 			"levels":[
 				null,
@@ -160,6 +158,14 @@ function node_start(d) {
 	node_drawnodes()
 }
 
+function hack_drawshape(shape,stroke,fill) {
+	var path = new Path2D(data.hack.shapes[shape])
+	ctx1.strokeStyle = stroke
+	ctx1.fillStyle = fill
+	ctx1.fill(path)
+	ctx1.stroke(path)
+}
+
 function node_drawnodes() {
 	//Draws all nodes and interactive elements by iterating through all positions
 	
@@ -209,16 +215,37 @@ function node_drawnodes() {
 		[s2[7],s2[0],s3[0],s3[7]]
 	]))
 	
+	var shift = -36, shift_x = 0, shift_y = 1
+	var s3 = [[p[0],p[2]],[p[1],p[3]],[a[1],a[3]],[a[0],a[2]]]
+	var s4 = [[p[0],p[1]],[p[0],p[2]],[a[0],a[2]],[a[0],a[1]]]
+	
+	s3 = s3.map(function(v) {
+		return [v[0] + shift + shift_x,v[1] + shift + shift_y]
+	})
+	s4 = s4.map(function(v) {
+		return [v[0] + shift + shift_x,v[1] + shift + shift_y]
+	})
+	
+	var shape3 = `M ${s3[0].join(",")} L ${s3[1].join(",")} L ${s3[2].join(",")} L ${s3[3].join(",")} L ${s3[0].join(",")}`
+	console.log(`Edge_C`,shape3)
+	data.hack.shapes.node_button_c = shape3
+	
+	var shape4 = `M ${s4[0].join(",")} L ${s4[1].join(",")} L ${s4[2].join(",")} L ${s4[3].join(",")} L ${s4[0].join(",")}`
+	console.log(`Edge_S`,shape4)
+	data.hack.shapes.node_button_s = shape4
 	
 	
+
+
 	
+
 	
 	
 	canvas_resize(data.hack.display.unit * data.hack.levels[data.hack.difficulty].size + (2 * data.hack.display.offset))
 	ctx1.translate(data.hack.display.offset,data.hack.display.offset)
 	
-	grid.forEach(function(r,x) {
-		r.forEach(function(v,y) {
+	grid.forEach(function(c,x) {
+		c.forEach(function(v,y) {
 			drawposition(x,y,v)
 		})
 	})
@@ -235,19 +262,14 @@ function node_drawnodes() {
 		
 		//Draw Highlight
 		if (v.target) {
-			ctx1.strokeStyle = "lime"
-			ctx1.fillStyle = "lime"
-			var path = new Path2D(shape1)
-			ctx1.fill(path)
-			ctx1.stroke(path)
+			hack_drawshape("node_highlight","rgb(0,255,0)","rgb(0,255,0)")
 		}
 		
 		//Draw the Node
-		ctx1.strokeStyle = "rgb(33,48,29)"
-		ctx1.fillStyle = "rgb(5,17,5)"
-		var path = new Path2D(shape2)
-		ctx1.fill(path)
-		ctx1.stroke(path)
+		hack_drawshape("node_node","rgb(33,48,29)","rgb(5,17,5)")
+		
+		//hack_drawshape("node_button_c","rgba(0,0,0,0)","rgb(0,255,0)")
+		//hack_drawshape("node_button_s","rgba(0,0,0,0)","rgb(0,255,0)")
 		
 		//Draw the Symbol
 		if (v.type) {
@@ -257,9 +279,9 @@ function node_drawnodes() {
 		}
 		
 		//Draw Buttons
-		var list = [[[9,22],[9,49],[20,43],[20,28]],[[9,49],[22,62],[28,51],[20,43]],[[22,62],[49,62],[43,51],[28,51]],[[49,62],[62,49],[51,43],[43,51]],[[62,49],[62,22],[51,28],[51,43]],[[62,22],[49,9],[43,20],[51,28]],[[49,9],[22,9],[28,20],[43,20]],[[22,9],[9,22],[20,28],[28,20]]]
+		var button_coords = [[[9,22],[9,49],[20,43],[20,28]],[[9,49],[22,62],[28,51],[20,43]],[[22,62],[49,62],[43,51],[28,51]],[[49,62],[62,49],[51,43],[43,51]],[[62,49],[62,22],[51,28],[51,43]],[[62,22],[49,9],[43,20],[51,28]],[[49,9],[22,9],[28,20],[43,20]],[[22,9],[9,22],[20,28],[28,20]]]
 		
-		list.forEach(function(v,i) {
+		button_coords.forEach(function(v,i) {
 			var e, t = []
 			v.forEach(function(c) {
 				c[0] += offset_x + data.hack.display.offset
@@ -282,16 +304,6 @@ function node_drawnodes() {
 	}
 }
 
-function node_drawlinks() {
-	//Clear area
-	//Iterate through the link array and create links
-	data.hack.links.forEach(function(v,i) {
-		//Skip first element
-		//Add element i and element i-1 and use that to determine direction of connection
-		//Call drawlink with x/y and direction found in prev step
-	})
-}
-
 function node_drawlink(x,y,r) {
 	//Translate canvas to correct x/y offsets
 	//Translate canvas to center of node
@@ -299,12 +311,52 @@ function node_drawlink(x,y,r) {
 	//Draw link
 	//Draw connecting line if necessary
 	//Undo translations and rotations
+	
+	var offset_x = (x * data.hack.display.unit) + 33 + 3
+	var offset_y = (y * data.hack.display.unit) + 33 + 3
+	
+	hack_drawshape("node_button_c","rgb(255,0,0)","rgb(255,0,0)")
+	
+	ctx1.translate(offset_x,offset_y)
+	
+	//This is currently not functioning properly either due to a misplaced center or improper drawing instructions
+	
+	hack_drawshape("debug_center","rgb(255,0,0)","rgba(0,0,0,0)")
+	
+	hack_drawshape("node_button_s","rgba(0,0,0,0)","rgb(0,255,0)")
+	hack_drawshape("node_button_c","rgba(0,0,0,0)","rgb(0,255,0)")
+	ctx1.rotate(90 * Math.PI / 180)
+	hack_drawshape("node_button_s","rgba(0,0,0,0)","rgb(0,255,0)")
+	hack_drawshape("node_button_c","rgba(0,0,0,0)","rgb(0,255,0)")
+	ctx1.rotate(90 * Math.PI / 180)
+	hack_drawshape("node_button_s","rgba(0,0,0,0)","rgb(0,255,0)")
+	hack_drawshape("node_button_c","rgba(0,0,0,0)","rgb(0,255,0)")
+	ctx1.rotate(90 * Math.PI / 180)
+	hack_drawshape("node_button_s","rgba(0,0,0,0)","rgb(0,255,0)")
+	hack_drawshape("node_button_c","rgba(0,0,0,0)","rgb(0,255,0)")
+	ctx1.rotate(90 * Math.PI / 180)
+	
+	
+	
+	
+	ctx1.translate(offset_x * -1,offset_y * -1)
+}
+
+function node_drawlinks() {
+	//Clear area
+	//Iterate through the link array and create links
+	data.hack.links.forEach(function(v,i) {
+		//Skip last element
+		//Add element i and element i+1 and use that to determine direction of connection
+		//Call drawlink with x/y and direction found in prev step
+	})
 }
 
 function node_linkpreview(x,y,r) {
 	console.log("linkpreview",x,y,r)
 	//Add highlights to currently hovered connection
 		//This only needs to draw the single connector since redrawing will result in erasing it
+	node_drawlink(x,y,r)
 }
 
 function node_linkpreviewout(x,y,r) {
