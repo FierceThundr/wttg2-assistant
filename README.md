@@ -2,7 +2,7 @@
 
 ![Assistant Icon](/Assets/icon-bar.png)
 
-The Welcome to the Game Assistant is a tool for learning and beating the game "Welcome to The Game 2". It includes interactive resources, descriptions of threats present in the game, and other information about the game. 
+The Welcome to the Game 2 Assistant is a tool for learning and beating the game "Welcome to The Game 2". It includes interactive resources, descriptions of threats present in the game, and other information about the game. 
 
 **Please click the following link if you want to use the assistant. [Open the Assistant](https://fiercethundr.github.io/wttg2-assistant/)**  
 **If you wish to get in touch for bugs, questions, or feature suggestions please open an issue or comment on the [Steam Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2211437048).**
