@@ -17,7 +17,6 @@
 		along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 //==========================================================================Static Data
-{
 var wikidata = {
 		"Bug Friendly":       {id:100,sub:["Store","FAQ","Noid","Join"]},
 		"Cleaning Services":  {id:105,sub:["Burial","Freezing"]},
@@ -238,8 +237,7 @@ var wikidata = {
 		"The Noir love darkness",
 		"Tick Tock",
 		"It is best to skip to the WPA2 Skybreak library"
-	]
-}
+	];
 
 //==========================================================================Variable Data
 var data = {
@@ -248,7 +246,7 @@ var data = {
 		"beep":new Audio('Assets/general_motionsensoralert.mp3'),
 		"ding":new Audio('Assets/general_positivebeep.mp3')},
 	"note":{
-		"keys":full_array(9,"????????????"),
+		"keys":full_array(8,"????????????"),
 		"content":""},
 	"info":{
 		"current":0},
@@ -286,159 +284,159 @@ var data = {
 	"popup":{
 		"wifi":{"active":0,"reference":undefined},
 		"notes":{"active":0,"reference":undefined}}
-}
+};
 
 //==========================================================================Functions
 
-function full_array(i,v) {var a = [];for (var i = i;i > 0;i--) {a.push(v)};return JSON.parse(JSON.stringify(a))}
+function full_array(i,v) {var a = [];for (;i > 0;i--) {a.push(v);};return JSON.parse(JSON.stringify(a));}
 
 //=============================
 //=============================Popup Functions
 //=============================
 function popwifi() {
 	if (data.popup.wifi.active != 1) {
-		data.popup.wifi.active = 1
-		data.popup.wifi.reference = window.open("popup.html","Wifi Mimic","height=500,width=500,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
+		data.popup.wifi.active = 1;
+		data.popup.wifi.reference = window.open("popup.html","Wifi Mimic","height=500,width=500,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no");
 		data.popup.wifi.reference.document.onunload = function() {
-			var win = window.opener
-			if (!win.closed) {win.popwificlose()}
-		}
+			var win = window.opener;
+			if (!win.closed) {win.popwificlose();}
+		};
 		data.popup.wifi.reference.document.onload = function() {
-			var win = window.opener
-			if (!win.closed) {win.timerdisplay()}
-		}
+			var win = window.opener;
+			if (!win.closed) {win.timerdisplay();}
+		};
 	}
 }
 
 function popwificlose() {
-	data.popup.wifi.active = 0
+	data.popup.wifi.active = 0;
 }
 
 function popnotes() {
 	if (data.popup.notes.active != 1) {
-		data.popup.notes.active = 1
-		data.popup.notes.reference = window.open("popup.html","Notes Mimic","height=500,width=500,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no")
+		data.popup.notes.active = 1;
+		data.popup.notes.reference = window.open("popup.html","Notes Mimic","height=500,width=500,left=100,top=100,resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no");
 		data.popup.notes.reference.document.onunload = function() {
-			var win = window.opener
-			if (!win.closed) {win.popnotesclose()}
-		}
+			var win = window.opener;
+			if (!win.closed) {win.popnotesclose();}
+		};
 		data.popup.notes.reference.document.onload = function() {
-			var win = window.opener
-			if (!win.closed) {win.noteinput()}
-		}
+			var win = window.opener;
+			if (!win.closed) {win.noteinput();}
+		};
 	}
 }
 
 function popnotesclose() {
-	data.popup.notes.active = 0
+	data.popup.notes.active = 0;
 }
 
 //=============================
 //=============================Wiki Functions
 //=============================
 function wiki_input() {//Updates wiki data from import field
-	var r = document.getElementById("wiki_data")
-	var c = r.value
-	r.value = ""
-	if (c.length == 1) {return}
-	var d = {}
-	var s = [...new Set(c.match(/(?=^)[\w ]+[!?]?(?= -)/gm))]
+	var r = document.getElementById("wiki_data");
+	var c = r.value;
+	r.value = "";
+	if (c.length == 1) {return;}
+	var d = {};
+	var s = [...new Set(c.match(/(?=^)[\w ]+[!?]?(?= -)/gm))];
 	if (s.length != 0) {
 		s.forEach(function(n){
-			var i = wikidata[n]
+			var i = wikidata[n];
 			if (i == undefined) {
-				d[n] = []
+				d[n] = [];
 			} else {
-				d[n] = full_array((i.sub?.length ?? 0) + 1,[0,0,0,0])
+				d[n] = full_array((i.sub?.length ?? 0) + 1,[0,0,0,0]);
 			}
-		})
+		});
 		//console.log("Final",d)
-		data.wiki.sites[data.wiki.current] = d
-		data.wiki.keys[data.wiki.current] = 0
-		wiki_update()
+		data.wiki.sites[data.wiki.current] = d;
+		data.wiki.keys[data.wiki.current] = 0;
+		wiki_update();
 	}
 }
 
 function wiki_demo() {//Forces update of wiki data
-	click()
-	data.wiki.sites[data.wiki.current] = {"BathRoom Cams":[],"Brutal Underground":[[0,0,0,0],[0,0,0,0]],"Cheap Surgery":[],"Chosen Awake":[],"Corpses For Sell":[],"Cry Bitch":[[0,0,0,0],[0,0,0,0]],"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]],"DEEPDOTWEB":[],"Dream Place":[],"Evil Collection":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"Eye":[[0,0,0,0]],"Forgive Me":[[0,0,0,0],[0,0,0,0]],"Hot Burners":[],"IAMHERE":[[0,0,0,0]],"Keep Sake":[[0,0,0,0]],"Little Friends":[[0,0,0,0],[0,0,0,0]],"Scream Bitch":[[0,0,0,0]],"Secure Drop":[],"SKYWEB":[],"St Louis Arch":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"The 8th Sin":[],"The Doll Maker":[[0,0,0,0],[0,0,0,0]],"The Light Within":[[0,0,0,0],[0,0,0,0]],"Vacation":[[0,0,0,0]],"YOU THERE?":[[0,0,0,0]]}
+	click();
+	data.wiki.sites[data.wiki.current] = {"BathRoom Cams":[],"Brutal Underground":[[0,0,0,0],[0,0,0,0]],"Cheap Surgery":[],"Chosen Awake":[],"Corpses For Sell":[],"Cry Bitch":[[0,0,0,0],[0,0,0,0]],"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]],"DEEPDOTWEB":[],"Dream Place":[],"Evil Collection":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"Eye":[[0,0,0,0]],"Forgive Me":[[0,0,0,0],[0,0,0,0]],"Hot Burners":[],"IAMHERE":[[0,0,0,0]],"Keep Sake":[[0,0,0,0]],"Little Friends":[[0,0,0,0],[0,0,0,0]],"Scream Bitch":[[0,0,0,0]],"Secure Drop":[],"SKYWEB":[],"St Louis Arch":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"The 8th Sin":[],"The Doll Maker":[[0,0,0,0],[0,0,0,0]],"The Light Within":[[0,0,0,0],[0,0,0,0]],"Vacation":[[0,0,0,0]],"YOU THERE?":[[0,0,0,0]]};
 	//data.wiki.sites[data.wiki.current] = {"Deep Journal":[[0,0,0,0],[0,0,0,0],[0,0,0,0]]}
-	wiki_update()
+	wiki_update();
 }
 
 function wiki_update(m) {//Updates the currently displayed data, also handles current page
-	data.wiki.editor = 0
+	data.wiki.editor = 0;
 
 	if (m != undefined) {
-		click()
-		data.wiki.current = ((data.wiki.current + m + 2) % 3) + 1
-		document.getElementById("wiki_title").innerHTML = "Wiki " + "III".slice(0,data.wiki.current)
-		wiki_updatekeys()
+		click();
+		data.wiki.current = ((data.wiki.current + m + 2) % 3) + 1;
+		document.getElementById("wiki_title").innerHTML = "Wiki " + "III".slice(0,data.wiki.current);
+		wiki_updatekeys();
 	}
 
-	var s = Object.keys(data.wiki.sites[data.wiki.current]).sort()
-	var t = document.getElementById("wiki_list")
-	wiki_erase()
+	var s = Object.keys(data.wiki.sites[data.wiki.current]).sort();
+	var t = document.getElementById("wiki_list");
+	wiki_erase();
 	if (s.length == 0) {
-		t.insertRow(-1).innerHTML = `<br><br><br><br>It's quite empty in here...<br><br>Why not add some sites?`
+		t.insertRow(-1).innerHTML = `<br><br><br><br>It's quite empty in here...<br><br>Why not add some sites?`;
 	} else {
 		s.forEach(function(n){
-			wiki_appendsite(t,n)
-		})
+			wiki_appendsite(t,n);
+		});
 	}
 	
 	function wiki_appendsite(t,n) {//Take a website name and display the associated data
-		var a,b,c,d,e,f,g,h
-		e = wikidata[n]
-		i = data.wiki.sites[data.wiki.current][n]
+		var a,b,c,d,e,f,g,h,i;
+		e = wikidata[n];
+		i = data.wiki.sites[data.wiki.current][n];
 		if (e == undefined) {
-			a = t.insertRow(-1)
-			b = a.insertCell(0)
-			c = a.insertCell(1)
-			d = a.insertCell(2)
-			b.innerHTML = n
-			c.innerHTML = `<i class="secondary">Dead Site</i>`
-			d.innerHTML = `<div class="wiki_notewrapper"><button class="disabled"><i class="icon-mouse-pointer"></i></button> <button class="disabled"><i class="icon-search"></i></button><button class="disabled"><i class="icon-search-plus"></i></button><button class="disabled"><i class="icon-key"></i></button><button class="disabled"><i class="icon-link"></i></button></div>`
-			return
+			a = t.insertRow(-1);
+			b = a.insertCell(0);
+			c = a.insertCell(1);
+			d = a.insertCell(2);
+			b.innerHTML = n;
+			c.innerHTML = `<i class="secondary">Dead Site</i>`;
+			d.innerHTML = `<div class="wiki_notewrapper"><button class="disabled"><i class="icon-mouse-pointer"></i></button> <button class="disabled"><i class="icon-search"></i></button><button class="disabled"><i class="icon-search-plus"></i></button><button class="disabled"><i class="icon-key"></i></button><button class="disabled"><i class="icon-link"></i></button></div>`;
+			return;
 		}
-		f = e.id
-		g = (e.sub?.length ?? 0) + 1
+		f = e.id;
+		g = (e.sub?.length ?? 0) + 1;
 		for (h = 0; g > h; h++) {
 			//console.log(n,i,i[h])
-			a = t.insertRow(-1)
-			b = a.insertCell(0)
-			c = a.insertCell(1)
-			d = a.insertCell(2)
-			b.innerHTML = (h != 0) ? (((h + 1 == g) ? '⠀└─ ':'⠀├─ ') + e.sub[h - 1]):n
-			c.innerHTML = (h != 0) ? ('<i class="child">⠀Subpage</i>'):((e.times == undefined) ? 'Always Available':e.times)
-			d.innerHTML = `<div class="wiki_notewrapper"><button onclick="wiki_previewupdate(${f + h})"><i class="icon-mouse-pointer"></i></button> <button class="${(i[h][0]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},0)"><i class="icon-search"></i></button><button class="${(i[h][1]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},1)"><i class="icon-search-plus"></i></button><button class="${(i[h][2]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},2)"><i class="icon-key"></i></button><button class="${(i[h][3]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},3)"><i class="icon-link"></i></button></div>`
+			a = t.insertRow(-1);
+			b = a.insertCell(0);
+			c = a.insertCell(1);
+			d = a.insertCell(2);
+			b.innerHTML = (h != 0) ? (((h + 1 == g) ? '⠀└─ ':'⠀├─ ') + e.sub[h - 1]):n;
+			c.innerHTML = (h != 0) ? ('<i class="child">⠀Subpage</i>'):((e.times == undefined) ? 'Always Available':e.times);
+			d.innerHTML = `<div class="wiki_notewrapper"><button onclick="wiki_previewupdate(${f + h})"><i class="icon-mouse-pointer"></i></button> <button class="${(i[h][0]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},0)"><i class="icon-search"></i></button><button class="${(i[h][1]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},1)"><i class="icon-search-plus"></i></button><button class="${(i[h][2]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},2)"><i class="icon-key"></i></button><button class="${(i[h][3]) ? "":"secondary"}" onclick="wiki_notetoggle(this,'${n}',${h},3)"><i class="icon-link"></i></button></div>`;
 		}
 	}
 }
 
 function wiki_editor() {//Replaces currently displayed data with website editor
-	if (data.wiki.editor == 1) {wiki_update();return}
-	data.wiki.editor = 1
+	if (data.wiki.editor == 1) {wiki_update();return;}
+	data.wiki.editor = 1;
 	
-	var t = document.getElementById("wiki_list")
-	var r = Object.keys(wikidata)
-	var w = Object.keys(data.wiki.sites[data.wiki.current])
-	var o = {}
-	wiki_erase()
-	r.forEach(function(n){if (o[n] == undefined) {o[n] = 0};o[n] += 2})
-	w.forEach(function(n){if (o[n] == undefined) {o[n] = 0};o[n] += 1})
-	data.wiki.template = o
-	var l = Object.keys(o).sort()
+	var t = document.getElementById("wiki_list");
+	var r = Object.keys(wikidata);
+	var w = Object.keys(data.wiki.sites[data.wiki.current]);
+	var o = {};
+	wiki_erase();
+	r.forEach(function(n){if (o[n] == undefined) {o[n] = 0;};o[n] += 2;});
+	w.forEach(function(n){if (o[n] == undefined) {o[n] = 0;};o[n] += 1;});
+	data.wiki.template = o;
+	var l = Object.keys(o).sort();
 	l.forEach(function(n){
-		a = t.insertRow(-1)
-		b = a.insertCell(0)
-		c = a.insertCell(1)
-		d = a.insertCell(2)
-		a.id = `editor_${n}`
-		b.innerHTML = n
-		c.innerHTML = (o[n] == 1) ? '<i class="secondary">Dead Site</i>':'Working Site'
-		d.innerHTML = `<div class="wiki_editorwrapper"><button onclick="wiki_editortoggle(this,'${n}')" class="monospaced ${(o[n] == 1) ? "secondary":""}">${(o[n] == 1) ? "! Delete Site":((o[n] == 2) ? "+ Append Site":"- Remove Site")}</button></div>`
-	})
+		var a = t.insertRow(-1);
+		var b = a.insertCell(0);
+		var c = a.insertCell(1);
+		var d = a.insertCell(2);
+		a.id = `editor_${n}`;
+		b.innerHTML = n;
+		c.innerHTML = (o[n] == 1) ? '<i class="secondary">Dead Site</i>':'Working Site';
+		d.innerHTML = `<div class="wiki_editorwrapper"><button onclick="wiki_editortoggle(this,'${n}')" class="monospaced ${(o[n] == 1) ? "secondary":""}">${(o[n] == 1) ? "! Delete Site":((o[n] == 2) ? "+ Append Site":"- Remove Site")}</button></div>`;
+	});
 	//3 Real + Enabled  (Remove)
 	//2 Real + Disabled (Append)
 	//1 Fake + Enabled  (Delete)
@@ -446,79 +444,79 @@ function wiki_editor() {//Replaces currently displayed data with website editor
 }
 
 function wiki_editortoggle(e,n) {//Toggle or remove necessary websites
-	var current = data.wiki.current
+	var current = data.wiki.current;
 	switch (data.wiki.template[n]) {
 		case 3:
-			data.wiki.template[n] = 2
+			data.wiki.template[n] = 2;
 			data.wiki.sites[current][n].forEach(function(s){
-				if (s[2] == 1) {data.wiki.keys[current] -= 1}
-			})
-			wiki_updatekeys()
-			delete data.wiki.sites[current][n]
-			e.innerText = "+ Append Site"
-		break
+				if (s[2] == 1) {data.wiki.keys[current] -= 1;}
+			});
+			wiki_updatekeys();
+			delete data.wiki.sites[current][n];
+			e.innerText = "+ Append Site";
+		break;
 		case 2:
-			data.wiki.template[n] = 3
-			data.wiki.sites[current][n] = full_array((wikidata[n].sub?.length ?? 0) + 1,[0,0,0,0])
-			e.innerText = "- Remove Site"
-		break
+			data.wiki.template[n] = 3;
+			data.wiki.sites[current][n] = full_array((wikidata[n].sub?.length ?? 0) + 1,[0,0,0,0]);
+			e.innerText = "- Remove Site";
+		break;
 		case 1:
-			document.getElementById(`editor_${n}`).remove()
-			delete data.wiki.sites[current][n]
-		break
+			document.getElementById(`editor_${n}`).remove();
+			delete data.wiki.sites[current][n];
+		break;
 	}
 	//console.log(data.wiki.template,n,data.wiki.template[n])
 }
 
 function wiki_erase() {//Removes all content from the wiki table
-	var r = document.getElementById("wiki_list")
-	for (var y = r.rows.length - 1; y > 0; y--) {r.deleteRow(-1)}
+	var r = document.getElementById("wiki_list");
+	for (var y = r.rows.length - 1; y > 0; y--) {r.deleteRow(-1);}
 }
 
 function wiki_notetoggle(e,n,i,b) {//Toggle color of note taking buttons
-	click()
-	if (b == 2) {data.wiki.keys[data.wiki.current] += (e.classList.contains("secondary")) ? 1:-1;wiki_updatekeys()}
-	data.wiki.sites[data.wiki.current][n][i][b] ^= 1
+	click();
+	if (b == 2) {data.wiki.keys[data.wiki.current] += (e.classList.contains("secondary")) ? 1:-1;wiki_updatekeys();}
+	data.wiki.sites[data.wiki.current][n][i][b] ^= 1;
 	//console.log(data.wiki.sites[data.wiki.current][n][i][b])
-	e.classList.toggle("secondary")
+	e.classList.toggle("secondary");
 }
 
 function wiki_updatekeys() {//Updates the remaining keys count
-	document.getElementById("wiki_keys").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>'
+	document.getElementById("wiki_keys").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>';
 }
 
 function wiki_previewload() {//Create a click event listener when the clickpoints popup finished loading
 	try {
-		document.getElementById("preview").contentWindow.addEventListener('click', function(e) {wiki_previewupdate(-1)})
+		document.getElementById("preview").contentWindow.addEventListener('click', function(e) {wiki_previewupdate(-1);});
 	} catch (e) {
-		wiki_previewupdate(-1)
-		console.log("[Clickpoint Guide Failure] " + e)
+		wiki_previewupdate(-1);
+		console.log("[Clickpoint Guide Failure] " + e);
 	}
 }
 
 function wiki_previewupdate(i) {//Updates and displays the key clickpoints popup
-	click()
+	click();
 	if (i == -1) {
 		document.getElementById("preview_wrapper").style.display = "none";
-		document.body.classList.remove("noscroll")
+		document.body.classList.remove("noscroll");
 		return;
 	}
-	document.getElementById("preview").src = 'Clickpoint Guides/' + i + '.html'
-	document.getElementById("preview_wrapper").style.display = "block"
-	document.body.classList.add("noscroll")
+	document.getElementById("preview").src = 'Clickpoint Guides/' + i + '.html';
+	document.getElementById("preview_wrapper").style.display = "block";
+	document.body.classList.add("noscroll");
 }
 
 //=============================
 //=============================Note Functions
 //=============================
 function note_input() {//Attempts to find and save keys within the note block's data
-	var content = document.getElementById("note_input").value
-	var lkeys = content.match(/[1-8] - [\w]{12}/g)
-	if (lkeys !== null) {lkeys.forEach(function (a) {data.note.keys[a.slice(0,1) - 1] = a.slice(4,16)})}
-	document.getElementById("note_keyoutput").innerHTML = `<b>Key Data</b><br>${data.note.keys.join("").substr(0,48)}<br>${data.note.keys.join("").substr(48,48)}`
-	if (data.note.keys.indexOf("????????????") == -1) {document.getElementById("note_keyoutput").innerHTML = `<b>Master Key</b><br><span class="select-all">${data.note.keys.join("")}</span>`}
+	var content = document.getElementById("note_input").value;
+	var lkeys = content.match(/[1-8] - [\w]{12}/g);
+	if (lkeys !== null) {lkeys.forEach(function (a) {data.note.keys[a.slice(0,1) - 1] = a.slice(4,16);});}
+	document.getElementById("note_keyoutput").innerHTML = `<b>Key Data</b><br>${data.note.keys.join("").substr(0,48)}<br>${data.note.keys.join("").substr(48,48)}`;
+	if (data.note.keys.indexOf("????????????") == -1) {document.getElementById("note_keyoutput").innerHTML = `<b>Master Key</b><br><span class="select-all">${data.note.keys.join("")}</span>`;}
 	if (data.popup.notes.active == 1) {
-		data.popup.notes.reference.document.getElementById("content").innerHTML = content
+		data.popup.notes.reference.document.getElementById("content").innerHTML = content;
 	}
 }
 
@@ -526,80 +524,80 @@ function note_input() {//Attempts to find and save keys within the note block's 
 //=============================Wifi Functions
 //=============================
 function wifi_passwordinput(e) {//Updates wifi label if password is provided
-	var current = data.wifi.current
-	data.wifi.passwords[current] = e.value
-	document.getElementById("wifi_listbutton" + current).innerHTML = "<i class='" + ((data.wifi.passwords[current] !== "") ? 'icon-check-square':'icon-square') + "'></i> " + wifidata[current].name
+	var current = data.wifi.current;
+	data.wifi.passwords[current] = e.value;
+	document.getElementById("wifi_listbutton" + current).innerHTML = "<i class='" + ((data.wifi.passwords[current] !== "") ? 'icon-check-square':'icon-square') + "'></i> " + wifidata[current].name;
 }
 
 function wifi_timerupdate() {//Updates wifi timers and cooldowns
 	//console.log(JSON.stringify(data.wifi.timer))
-	var live = data.wifi.timer[3]
+	var live = data.wifi.timer[3];
 	data.wifi.cooldowns = data.wifi.cooldowns.map(function(v,i){
 		if (v != 0 && i != live) {
 			if (--v == 0) {
-				data.wifi.timerlive[i] = data.wifi.timerfull[i]
+				data.wifi.timerlive[i] = data.wifi.timerfull[i];
 				//console.log(`The cooldown for network ${wifidata[i].name} has reached ${v} seconds!`)
 			}
 		}
-		return v
-	})
+		return v;
+	});
 	if (data.wifi.timerlive[live] != 0) {
-		data.wifi.timerlive[live] -= 1
-		if (data.wifi.timerlive[live] == 60) {beep()}
+		data.wifi.timerlive[live] -= 1;
+		if (data.wifi.timerlive[live] == 60) {beep();}
 		if (data.wifi.timerlive[live] == 0) {
-			ding()
+			ding();
 			if (data.wifi.timer[1] == 3) {
-				data.wifi.timerlive[live] = data.wifi.timerfull[live]
+				data.wifi.timerlive[live] = data.wifi.timerfull[live];
 			}
 		}
 	}
-	wifi_timerdisplay()
+	wifi_timerdisplay();
 }
 
 function wifi_timerdisplay() {//This function updates dynamic displays of the wifi timers
-	var live = data.wifi.timer[3]
-	var name = (live == -1) ? "":wifidata[live].name
-	var status = data.wifi.timer[5]
-	var string = "###########################"
-	var a = "[" + name + string.slice(name.length) + timeformat((live == -1) ? 0:data.wifi.timerlive[live]) + string.slice(status.length) + status + "]"
-	var b = (live == -1) ? a.length:Math.ceil((data.wifi.timerlive[live]/data.wifi.timerfull[live]*100)/(100/a.length))
-	var c = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b)
+	var live = data.wifi.timer[3];
+	var name = (live == -1) ? "":wifidata[live].name;
+	var status = data.wifi.timer[5];
+	var string = "###########################";
+	var a = "[" + name + string.slice(name.length) + timeformat((live == -1) ? 0:data.wifi.timerlive[live]) + string.slice(status.length) + status + "]";
+	var b = (live == -1) ? a.length:Math.ceil((data.wifi.timerlive[live]/data.wifi.timerfull[live]*100)/(100/a.length));
+	var c = '<span class="secondary">' + a.slice(0,a.length - b) + '</span>' + a.slice(a.length - b);
 	//console.log(a,b,c,a.length - b)
-	document.getElementById("wifi_timer").innerHTML = c
-	document.getElementById("wifi_summary").innerHTML = `[True Time ${timeformat(data.wifi.timerlive[data.wifi.current])}] [Cool Time ${timeformat(data.wifi.cooldowns[data.wifi.current])}]`
+	document.getElementById("wifi_timer").innerHTML = c;
+	document.getElementById("wifi_summary").innerHTML = `[True Time ${timeformat(data.wifi.timerlive[data.wifi.current])}] [Cool Time ${timeformat(data.wifi.cooldowns[data.wifi.current])}]`;
 	if (data.popup.wifi.active == 1) {
-		data.popup.wifi.reference.document.getElementById("content").innerHTML = c
+		data.popup.wifi.reference.document.getElementById("content").innerHTML = c;
 	}
 }
 
 function wifi_buttonhandler(b) {//This function is the main handling function for all the buttons
-	click()
+	click();
 	switch (data.wifi.timer[2]) {
 		case 0:
-			data.wifi.timer[0] = b
-			data.wifi.timer[2]++
-			document.getElementById("wifi_button1").innerHTML = "Please Select Your Timers"
-			document.getElementById("wifi_button2").innerHTML = "Basic Timers"
-			document.getElementById("wifi_button3").innerHTML = "Advanced Timers"
+			data.wifi.timer[0] = b;
+			data.wifi.timer[2]++;
+			document.getElementById("wifi_button1").innerHTML = "Please Select Your Timers";
+			document.getElementById("wifi_button2").innerHTML = "Basic Timers";
+			document.getElementById("wifi_button3").innerHTML = "Advanced Timers";
 			//"Please Select Your Difficulty" "Normal Mode" "1337 Mode"
 			break;
 		case 1:
-			data.wifi.timer[1] = b
-			data.wifi.timer[2]++
-			document.getElementById("wifi_button1").disabled = false
-			document.getElementById("wifi_button1").innerHTML = `Start ${(data.wifi.timer[0] == 2) ? "Normal":"1337"} Timer`
-			document.getElementById("wifi_button2").innerHTML = "Pause Timers"
-			document.getElementById("wifi_button3").innerHTML = "Disconnect"
-			document.getElementById("wifi_button3").style.display = (data.wifi.timer[1] == 3) ? "block":"none"
-			document.getElementById("wifi_summarywrapper").style.display = (data.wifi.timer[1] == 3) ? "block":"none"
+			data.wifi.timer[1] = b;
+			data.wifi.timer[2]++;
+			document.getElementById("wifi_button1").disabled = false;
+			document.getElementById("wifi_button1").innerHTML = `Start ${(data.wifi.timer[0] == 2) ? "Normal":"1337"} Timer`;
+			document.getElementById("wifi_button2").innerHTML = "Pause Timers";
+			document.getElementById("wifi_button3").innerHTML = "Disconnect";
+			document.getElementById("wifi_button3").style.display = (data.wifi.timer[1] == 3) ? "block":"none";
+			document.getElementById("wifi_summarywrapper").style.display = (data.wifi.timer[1] == 3) ? "block":"none";
 			wifidata.forEach(function(v,i){
-				var t = Math.floor(v.track.time * ((data.wifi.timer[0] == 3) ? 0.7:1))
+				var t = Math.floor(v.track.time * ((data.wifi.timer[0] == 3) ? 0.7:1));
 				//console.log(t)
 				//if (data.wifi.timer[0] == 3) {t = Math.floor(t * 0.7)}
-				data.wifi.timerfull[i] = t
-				data.wifi.timerlive[i] = t
-			})
-			data.wifi.reference = setInterval(wifi_timerupdate,1000)
+				data.wifi.timerfull[i] = t;
+				data.wifi.timerlive[i] = t;
+			});
+			data.wifi.reference = setInterval(wifi_timerupdate,1000);
 			break;
 		case 2:
 			switch (b) {
@@ -611,56 +609,56 @@ function wifi_buttonhandler(b) {//This function is the main handling function fo
 }
 
 function wifi_wifijoin() {//Updates wifi timer (onjoin)
-	var current = data.wifi.current
-	if (data.wifi.reference == undefined) {return}
-	if (data.wifi.timer[3] != -1) {wifi_wifileave()}
-	if (data.wifi.timerlive[current] < 60) {beep()}
-	data.wifi.timer[3] = current
-	data.wifi.timer[5] = ""
+	var current = data.wifi.current;
+	if (data.wifi.reference == undefined) {return;}
+	if (data.wifi.timer[3] != -1) {wifi_wifileave();}
+	if (data.wifi.timerlive[current] < 60) {beep();}
+	data.wifi.timer[3] = current;
+	data.wifi.timer[5] = "";
 	if (data.wifi.timer[1] == 3) {
-		data.wifi.cooldowns[current] = 300
+		data.wifi.cooldowns[current] = 300;
 	}
-	wifi_timerdisplay()
+	wifi_timerdisplay();
 }
 
 function wifi_wifileave() {//Updates wifi timer (onleave)
-	var live = data.wifi.timer[3]
+	var live = data.wifi.timer[3];
 	if (data.wifi.timer[1] == 2) {
-		data.wifi.timerlive[live] = data.wifi.timerfull[live]
+		data.wifi.timerlive[live] = data.wifi.timerfull[live];
 	} else if (data.wifi.timer[0] == 3) {
-		data.wifi.timerlive[live] = Math.max(Math.floor(data.wifi.timerlive[live] * 0.7),1)
+		data.wifi.timerlive[live] = Math.max(Math.floor(data.wifi.timerlive[live] * 0.7),1);
 	}
-	data.wifi.timer[3] = -1
-	data.wifi.timer[5] = (data.wifi.reference == undefined) ? "PAUSED":"DISCONNECTED"
-	wifi_timerdisplay()
+	data.wifi.timer[3] = -1;
+	data.wifi.timer[5] = (data.wifi.reference == undefined) ? "PAUSED":"DISCONNECTED";
+	wifi_timerdisplay();
 }
 
 function wifi_timerpause() {//Pauses wifi timer
 	if (data.wifi.reference == undefined) {
-		data.wifi.reference = setInterval(wifi_timerupdate,1000)
-		data.wifi.timer[5] = (data.wifi.timer[3] == -1) ? "DISCONNECTED":""
-		wifi_timerpausebutton("Pause Timers")
+		data.wifi.reference = setInterval(wifi_timerupdate,1000);
+		data.wifi.timer[5] = (data.wifi.timer[3] == -1) ? "DISCONNECTED":"";
+		wifi_timerpausebutton("Pause Timers");
 	} else {
-		data.wifi.reference = clearInterval(data.wifi.reference)
-		data.wifi.timer[5] = "PAUSED"
-		wifi_timerpausebutton("Resume Timers")
+		data.wifi.reference = clearInterval(data.wifi.reference);
+		data.wifi.timer[5] = "PAUSED";
+		wifi_timerpausebutton("Resume Timers");
 	}
-	wifi_timerdisplay()
+	wifi_timerdisplay();
 }
 
 function wifi_timerpausebutton(x) {//Modifies the text displayed on the wifi pause button
-	document.getElementById("wifi_button2").innerHTML = x
+	document.getElementById("wifi_button2").innerHTML = x;
 }
 
 function wifi_update(i) {//Changes the current wifi page
-	click()
+	click();
 	if (data.wifi.intro == 1) {
-		data.wifi.intro = 0
-		document.getElementById("wifi_intro").style.display = "none"
-		document.getElementById("wifi_content").style.display = "block"
+		data.wifi.intro = 0;
+		document.getElementById("wifi_intro").style.display = "none";
+		document.getElementById("wifi_content").style.display = "block";
 	}
-	var v = wifidata[i]
-	data.wifi.current = i
+	var v = wifidata[i];
+	data.wifi.current = i;
 	document.getElementById("wifi_info").innerHTML = `
 <h2>${v.name}</h2>
 <table>
@@ -684,39 +682,39 @@ function wifi_update(i) {//Changes the current wifi page
 		${(v.secret) ? `
 		<tr><td colspan="2">This wifi is not available by normal means as the network BSSID cannot be found using SkyBreak</td></tr>`:``}
 	</tbody>
-</table>`
-	document.getElementById("wifi_passwordinput").value = data.wifi.passwords[i]
-	document.getElementById("wifi_passwordinput").disabled = (v.level == 0)
-	document.getElementById("wifi_passwordinput").placeholder = (v.level == 0) ? `Unsecured Network...`:`Password...`
-	wifi_timerdisplay()
+</table>`;
+	document.getElementById("wifi_passwordinput").value = data.wifi.passwords[i];
+	document.getElementById("wifi_passwordinput").disabled = (v.level == 0);
+	document.getElementById("wifi_passwordinput").placeholder = (v.level == 0) ? `Unsecured Network...`:`Password...`;
+	wifi_timerdisplay();
 }
 
 function timeformat(i) {
-	return String(Math.abs(Math.floor(i/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(i%60))).padStart(2,'0')
+	return String(Math.abs(Math.floor(i/60))).padStart(2,'0') + ":" + String(Math.abs(Math.floor(i%60))).padStart(2,'0');
 }
 
 //=============================
 //=============================Tenant Functions
 //=============================
 function tenant_input(i,p) {//Updates tenant label if room number is provided
-	data.tenant.rooms[i] = p
-	tenant_display(i)
+	data.tenant.rooms[i] = p;
+	tenant_display(i);
 }
 
 function tenant_toggle(i) {//Updates tenant label and button if tenant is marked unavailable
-	click()
+	click();
 	data.tenant.availability[i] = (data.tenant.availability[i]) ? 0:1;
-	document.getElementById("tenant_button1").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`
-	tenant_display(i)
+	document.getElementById("tenant_button1").innerHTML = (data.tenant.availability[i]) ? `Mark Tenant Unavailable`:`Mark Tenant Available`;
+	tenant_display(i);
 }
 
 function tenant_display(i) {
-	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='" + ((data.tenant.availability[i] == 0) ? 'icon-minus-square':(data.tenant.rooms[i] == "") ? 'icon-square':'icon-check-square') + "'></i> " + tenantdata[i]["name"]
+	document.getElementById("tenant_listbutton" + i).innerHTML = "<i class='" + ((data.tenant.availability[i] == 0) ? 'icon-minus-square':(data.tenant.rooms[i] == "") ? 'icon-square':'icon-check-square') + "'></i> " + tenantdata[i].name;
 }
 
 function tenant_update(i) {//Changes the currently displayed tenant page
-	click()
-	var v = tenantdata[i]
+	click();
+	var v = tenantdata[i];
 	document.getElementById("tenant_data").innerHTML = `
 <h2>${v.name}</h2>
 <table>
@@ -734,87 +732,88 @@ function tenant_update(i) {//Changes the currently displayed tenant page
 	</div>
 	<div>
 		<button id="tenant_button1" onclick='tenant_toggle(${i})' style="bottom:200px;" ${(v.doll == 0) ? `disabled`:``}>${(v.doll == 0) ? `Invalid Doll Maker Target`:data.tenant.availability[i] ? `Mark Tenant Unavailable`:`Mark Tenant Available`}</button>
-</div>`
-	document.getElementById("tenant_roominput").value = data.tenant.rooms[i]
+</div>`;
+	document.getElementById("tenant_roominput").value = data.tenant.rooms[i];
 }
 
 //=============================
 //=============================Info Block Functions
 //=============================
 function info_update(i) {//Change info page
-	click()
-	document.getElementById(`info_guide${data.info.current}`).style.display = "none"
-	document.getElementById(`info_guide${i}`).style.display = "block"
-	data.info.current = i
+	click();
+	document.getElementById(`info_guide${data.info.current}`).style.display = "none";
+	document.getElementById(`info_guide${i}`).style.display = "block";
+	data.info.current = i;
 }
 
 function setcolor(i,c) {//Updates the site color configuration in memory
-	localStorage.setItem(`color${i}`,c)
-	document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`
+	localStorage.setItem(`color${i}`,c);
+	document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`;
 }
 
 //==================Lucas Simulator
 function simulator_launch() {//Makes the simulator visible
-	click()
-	document.getElementById("sim_wrapper").style.display = "block"
+	click();
+	document.getElementById("sim_wrapper").style.display = "block";
 }
 
 function simulator_toggle() {//Starts and stops the simulator
-	click()
+	click();
 	if (data.simulator.active) {
-		document.getElementById("sim_start").innerHTML = "Start Simulation"
-		clearTimeout(data.simulator.reference)
+		document.getElementById("sim_start").innerHTML = "Start Simulation";
+		clearTimeout(data.simulator.reference);
 	} else {
-		document.getElementById("sim_start").innerHTML = "End Simulation"
-		data.simulator.reference = setTimeout(simulator_playsound,5000)
+		document.getElementById("sim_start").innerHTML = "End Simulation";
+		data.simulator.reference = setTimeout(simulator_playsound,5000);
 	}
 	data.simulator.active = (data.simulator.active) ? 0:1;
 }
 
 function simulator_playsound() {//Plays the doorknob sound cue and waits for result
 	data.simulator.sound1.play();
-	data.simulator.soundplayed = 1
-	data.simulator.reference = setTimeout(simulator_evaluate,10000)
+	data.simulator.soundplayed = 1;
+	data.simulator.reference = setTimeout(simulator_evaluate,10000);
 }
 
 function simulator_evaluate() {//Checks if the player acknowledged the sound cue
 	if (data.simulator.soundplayed == 1) {
-		data.simulator.soundplayed = 0
-		data.simulator.sound2.play()
-		simulator_display(`<span class="secondary"><i class="icon-times"></i> You have died</span>`)
-		setTimeout(function () {simulator_display("Hitman Trainer")},180000)
+		data.simulator.soundplayed = 0;
+		data.simulator.sound2.play();
+		simulator_display(`<span class="secondary"><i class="icon-times"></i> You have died</span>`);
+		setTimeout(function () {simulator_display("Hitman Trainer");},180000);
 	}
-	data.simulator.reference = setTimeout(simulator_playsound,(Math.floor(Math.random() * 11) * 30000) + 600000)
+	data.simulator.reference = setTimeout(simulator_playsound,(Math.floor(Math.random() * 11) * 30000) + 600000);
 }
 
 function simulator_verify() {//Tells the player if they correctly responded to a sound cue
-	if (data.simulator.soundplayed == 1) {
-		var a = `<i class="icon-check"></i> Correct`
-		data.simulator.soundplayed = 0
+	var a;
+  if (data.simulator.soundplayed == 1) {
+		a = `<i class="icon-check"></i> Correct`;
+		data.simulator.soundplayed = 0;
 	} else {
-		var a = `<span class="secondary"><i class="icon-times"></i> Incorrect</span>`
+		a = `<span class="secondary"><i class="icon-times"></i> Incorrect</span>`;
 	}
-	simulator_display(a)
-	setTimeout(function () {simulator_display("Hitman Trainer")},10000)
+	simulator_display(a);
+	setTimeout(function () {simulator_display("Hitman Trainer");},10000);
 }
 
 function simulator_hide() {//Toggles visibility of the simulator
-	click()
-	document.getElementById("sim_div").style.visibility = (data.simulator.visible) ? "hidden":"visible"
-	data.simulator.visible = (data.simulator.visible) ? 0:1
+	click();
+	document.getElementById("sim_div").style.visibility = (data.simulator.visible) ? "hidden":"visible";
+	data.simulator.visible = (data.simulator.visible) ? 0:1;
 }
 
 function simulator_display(x) {//Modifies the simulator header
-	document.getElementById("sim_title").innerHTML = x
+	document.getElementById("sim_title").innerHTML = x;
 }
 
 //=============================
 //=============================Other
 //=============================
 function tipupdate() {//Updates the displayed tip
-	document.getElementById("tips").innerHTML = '[Tip] ' + tips[Math.floor(Math.random() * tips.length)]
+	document.getElementById("tips").innerHTML = '[Tip] ' + tips[Math.floor(Math.random() * tips.length)];
 }
-setInterval(tipupdate,10000)
+setInterval(tipupdate,10000);
 
 /*
 function serversidesecret() {
@@ -826,58 +825,58 @@ function serversidesecret() {
 function setup() {//Prepares website lists and appearance
 	try {
 		wifidata.forEach(function (data,index) {
-			var button = document.createElement("button")
-			document.getElementById("wifi_list").appendChild(button)
-			button.outerHTML = `<button id="wifi_listbutton${index}" onclick="wifi_update(${index})">${"<i class='" + ((data["level"] == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`
-		})
+			var button = document.createElement("button");
+			document.getElementById("wifi_list").appendChild(button);
+			button.outerHTML = `<button id="wifi_listbutton${index}" onclick="wifi_update(${index})">${"<i class='" + ((data.level == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`;
+		});
 		tenantdata.forEach(function (data,index) {
-			var button = document.createElement("button")
-			document.getElementById("tenant_list").appendChild(button)
-			button.outerHTML = `<button id="tenant_listbutton${index}" onclick="tenant_update(${index})">${"<i class='" + ((data["doll"] == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`
-		})
+			var button = document.createElement("button");
+			document.getElementById("tenant_list").appendChild(button);
+			button.outerHTML = `<button id="tenant_listbutton${index}" onclick="tenant_update(${index})">${"<i class='" + ((data.doll == 0) ? 'icon-square-o':'icon-square') + "'></i> " + data.name}</button>`;
+		});
 		document.querySelectorAll("#info_data > div").forEach(function (element,index) {
-			element.id = `info_guide${index}`
-			var attributes = element.attributes
-			if (attributes.getNamedItem("title") == null) {return}
-			var button = document.createElement("button")
-			document.getElementById("info_list").appendChild(button)
-			button.outerHTML = `<button onclick="info_update(${index})"><i class="${attributes.getNamedItem("icon").value}"></i> ${attributes.getNamedItem("title").value}</button>`
-		})
-		if (localStorage.getItem('color0') == undefined) {localStorage.setItem('color0',120)}
-		if (localStorage.getItem('color1') == undefined) {localStorage.setItem('color1',0)}
-		document.getElementById("setting_colorprimary").value = localStorage.getItem('color0')
-		document.getElementById("setting_colorsecondary").value = localStorage.getItem('color1')
-		document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`
-		document.getElementById("load_message").innerText = "Welcome user!"
+			element.id = `info_guide${index}`;
+			var attributes = element.attributes;
+			if (attributes.getNamedItem("title") == null) {return;}
+			var button = document.createElement("button");
+			document.getElementById("info_list").appendChild(button);
+			button.outerHTML = `<button onclick="info_update(${index})"><i class="${attributes.getNamedItem("icon").value}"></i> ${attributes.getNamedItem("title").value}</button>`;
+		});
+		if (localStorage.getItem('color0') == undefined) {localStorage.setItem('color0',120);}
+		if (localStorage.getItem('color1') == undefined) {localStorage.setItem('color1',0);}
+		document.getElementById("setting_colorprimary").value = localStorage.getItem('color0');
+		document.getElementById("setting_colorsecondary").value = localStorage.getItem('color1');
+		document.getElementById("dom_color").innerHTML = `body {color:hsl(${localStorage.getItem('color0')},100%,50%)} .simplebar-scrollbar::before {background-color:hsl(${localStorage.getItem('color0')},100%,50%)} .child {color:hsl(${localStorage.getItem('color0')},100%,30%)} .secondary {color:hsl(${localStorage.getItem('color1')},100%,50%)} .disabled {color:hsl(${localStorage.getItem('color1')},100%,20%)}`;
+		document.getElementById("load_message").innerText = "Welcome user!";
 		setTimeout(function(){
 			if (localStorage.getItem('remember') == 1) {
-				document.getElementById("load_cover").remove()
+				document.getElementById("load_cover").remove();
 			} else {
-				document.getElementById("load_first").style.display = "block"
+				document.getElementById("load_first").style.display = "block";
 			}
-		},500)
-		var x = new XMLHttpRequest()
+		},500);
+		var x = new XMLHttpRequest();
 		x.onreadystatechange = function() { 
 			if (x.readyState == 4 && x.status == 200) {
-				var d = JSON.parse(x.responseText)
-				document.getElementById("version").innerHTML = `<i>Wttg Assistant Version 1.4.0.${d[0].sha.slice(0,7)}</i>`
+				var d = JSON.parse(x.responseText);
+				document.getElementById("version").innerHTML = `<i>Wttg Assistant Version 1.4.0.${d[0].sha.slice(0,7)}</i>`;
 			}
-		}
-		x.open("GET","https://api.github.com/repos/fiercethundr/wttg2-assistant/commits?per_page=1",true)
-		x.send()
+		};
+		x.open("GET","https://api.github.com/repos/fiercethundr/wttg2-assistant/commits?per_page=1",true);
+		x.send();
 	} catch(e) {
-		document.getElementById("load_error").innerText = "[Startup Error] " + e
+		document.getElementById("load_error").innerText = "[Startup Error] " + e;
 	}
 }
 
 function load_toggle() {
-	data.load.remember ^= 1
-	document.getElementById("load_remember").innerText = (data.load.remember) ? "☑":"☐"
+	data.load.remember ^= 1;
+	document.getElementById("load_remember").innerText = (data.load.remember) ? "☑":"☐";
 }
 
 function load_accept() {
-	localStorage.setItem('remember',data.load.remember)
-	document.getElementById("load_cover").remove()
+	localStorage.setItem('remember',data.load.remember);
+	document.getElementById("load_cover").remove();
 }
 
 function reset() {//Reset all run data in the assistant
@@ -889,28 +888,28 @@ function reset() {//Reset all run data in the assistant
 		"note":{...data.note,...{
 			"keys":full_array(9,"????????????")}}
 		}
-	}
+	};
 }
 
 function click() {//Plays the click sound
-	data.general.click.currentTime = 0
-	data.general.click.play()
+	data.general.click.currentTime = 0;
+	data.general.click.play();
 }
 
 function beep() {//Plays the beep sound
-	data.general.beep.currentTime = 0
-	data.general.beep.play()
+	data.general.beep.currentTime = 0;
+	data.general.beep.play();
 }
 
 function ding() {//Plays the ding sound
-	data.general.ding.currentTime = 0
-	data.general.ding.play()
+	data.general.ding.currentTime = 0;
+	data.general.ding.play();
 }
 
 //==================Test Functions
 function sitecycle() {//Temporary dev function (Cycle through clickpoint guides)
-	sitepreview(window.temp)
-	window.temp++
+	wiki_previewupdate(window.temp);
+	window.temp++;
 }
 
-window.temp = 100
+window.temp = 100;
