@@ -89,18 +89,14 @@
 			<div class="wiki_data" data-simplebar>
 				<table id="wiki_list">
 					<tr></tr>
-					<tr><td style="text-align:center;"><h1>Welcome</h1>Please copy the site contents from a wiki into the box above to begin!</td></tr>
-					<tr><td><br>[ <i class="icon-mouse-pointer"></i> ] View Click Points</td></tr>
+					<tr><td><h2>Welcome to the Wiki block</h2></p>Here you can view and use tools regarding the websites contained within the wikis you find throughout the game. This includes informaion such as website times and what parts of a site the player may be required to click to find a hidden key. This section also includes note taking buttons which can be used to keep track of your progress.</p></p>To get started you can import your websites by copying the website list from a Deep Wiki inside the game into the box above. (If this does not work, you can also manually import using the edit button above.)</p></td></tr>
+					<tr><td>[ <i class="icon-mouse-pointer"></i> ] View Click Points</td></tr>
 					<tr><td>[ <i class="icon-search"></i> ] Searched Manually</td></tr>
 					<tr><td>[ <i class="icon-search-plus"></i> ] Searched With Key Cue</td></tr>
 					<tr><td>[ <i class="icon-key"></i> ] Key Found Here</td></tr>
 					<tr><td>[ <i class="icon-link"></i> ] Wiki Link Found Here</td></tr>
-					<tr><td><br>&gt; Use the arrows above to cycle imported wikis</td></tr>
-					<tr><td>&gt; Keys entered into the integrated notepad are saved automatically</td></tr>
-					<tr><td>&gt; Save site passwords into the wifi block</td></tr>
-					<tr><td>&gt; If you need help getting started you can visit the info block</td></tr>
-					<tr><td class="secondary">&gt; Refreshing the page will erase all data</td></tr>
-					<tr><td onclick="wiki_demo()"><br>&gt; Click here for a demo of the wiki block!</td></tr>
+					<tr><td><br><span onclick="wiki_demo()">&gt; Click here for a demo of the wiki block!</span></td></tr>
+					<tr><td class="secondary"><br>&gt; Refreshing the page will erase all data</td></tr>
 				</table>
 			</div>
 		</div>
@@ -130,7 +126,7 @@
 					<div id="wifi_intro">
 						<h2 style="margin:90px 0 0 0">Welcome to the wifi block</h2>
 						<p>
-							Here you can view data collected about the wifi networks available in the game. This includes information such as trace times, injection information, and locations. In addition, there is a scripted timer you can use to keep track of when the cops will be done tracking you.
+							Here you can view data collected about the wifi networks available in the game. This includes information such as trace times, injection information, and locations. In addition, there is a scripted timer you can use to keep track of when the cops will be done tracking you. Lastly, you can use this section to assign passwords to networks you have managed to crack open.
 						</p>
 					</div>
 					<div id="wifi_content" style="display:none">
@@ -191,7 +187,7 @@
 					<div style="display:block;">
 						<h2 style="margin:90px 0 0 0">Welcome to the info block</h2>
 						<p>
-							Here you can view custom guides for the majority of the game that have been written specifically for this assistant. These guides have been reviewed many times to attempt to weed out as many inaccuracies as possible. In addition you can find information about how to provide feedback, a variety of other information about the assistant, and smaller tools that did not warrant their own section.
+							Here you can view custom guides that cover most enemies, mechanics, quirks, bugs, and exploits present within the game. These guides have been reviewed and updated many times to attempt to weed out inaccuracies and to improve the available information. In addition you can find some smaller tools along with credits, information about the assistant itself, and how you can provide feedback.
 						</p>
 					</div>
 					<div title="About" icon="icon-info-circle">
@@ -655,10 +651,8 @@
 								<tbody>
 									<tr><td>Primary Color</td><td><input oninput="setcolor(0,this.value)" type="range" min="0" max="360" value="120" id="setting_colorprimary"></td></tr>
 									<tr><td>Secondary Color</td><td><input oninput="setcolor(1,this.value)" type="range" min="0" max="360" value="0" id="setting_colorsecondary"></td></tr>
-									<!--
-									<tr><td colspan="2">The buttons below create popups users can open for the purpose of streaming the wifi timer or the content of the notepad. These features are unfinished and may not work as expected.</td></tr>
+									<tr><td colspan="2"><hr color="inherit">The buttons below create popups users can open for the purpose of streaming the wifi timer or the content of the notepad. These features are unfinished and may not work as expected.</td></tr>
 									<tr><td><button onclick="popwifi()" style="width:100%">Open Timer Mimic</button></td><td><button onclick="popnotes()" style="width:100%">Open Notes Mimic</button></td></tr>
-									-->
 								</tbody>
 							</table>
 					</div>
