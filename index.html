@@ -651,20 +651,8 @@
 								<tbody>
 									<tr><td>Primary Color</td><td><input oninput="setcolor(0,this.value)" type="range" min="0" max="360" value="120" id="setting_colorprimary"></td></tr>
 									<tr><td>Secondary Color</td><td><input oninput="setcolor(1,this.value)" type="range" min="0" max="360" value="0" id="setting_colorsecondary"></td></tr>
-									<tr><td colspan="2"><hr color="inherit">The buttons below create popups users can open for the purpose of streaming the wifi timer or the content of the notepad. These features are unfinished and may not work as expected.</td></tr>
-									<tr><td><button onclick="popwifi()" style="width:100%">Open Timer Mimic</button></td><td><button onclick="popnotes()" style="width:100%">Open Notes Mimic</button></td></tr>
 								</tbody>
 							</table>
-					</div>
-					<div title="Updates" icon="icon-plus-circle">
-						<h1>Updates</h1>
-							<p>The updates listed here are currently in development, future additions, or unfinished features that are partially implemented</p>
-							<ul>
-								<li><b>Streamer Popouts</b> For streamers who use the assistant, popout windows will be created so that streamers can easily capture and share there notes or wifi timer to their viewers.</li>
-								<li><b>Hacking Trainer (Discontinued)</b> The in-game hacking practice is not very comprehensive, so this feature will be a recreation of the hacks so that players can practice hacks at any level and without the risk of killing a run.</li>
-								<li><b>Wiki Block Manual Mode (Complete)</b> The wiki block method of importing websites is not perfect and in some cases may be impractical or problematic. To fix this, there will be a menu where users can manually add and delete pages.</li>
-								<li><b>Wifi Block Cooldowns (Complete)</b> The wifi block is not perfect and does not account for user error related to reconnecting to networks too quickly. For those who need it, there is be a toggle that enables an advanced mode that accounts for variance that comes from disconnecting and reconnecting such as connection penalties and cooldowns.</li>
-							</ul>
 					</div>
 					<div title="Feedback" icon="icon-question-circle">
 						<h1>Feedback</h1>
@@ -693,10 +681,6 @@
 		<div id="preview_wrapper" class="preview_wrapper" style="display:none;">
 			<iframe id="preview" class="preview_frame" onload="wiki_previewload()"></iframe>
 		</div>
-
-		<!-- Clickpoints Test Button
-		<button onclick="sitecycle()" style="opacity:0.05">Clickpoints Cycle (Temporary dev button)</button>
-		-->
 		
 		<!-- Loading Overlay -->
 		<div id="load_cover" class="load_cover">

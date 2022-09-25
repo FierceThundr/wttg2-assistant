@@ -1,0 +1,1 @@
+The code present in this folder includes features and ideas removed or cancelled because they had major issues or would take too much effort to properly implement or create.

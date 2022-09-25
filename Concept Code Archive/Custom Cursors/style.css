@@ -1,0 +1,27 @@
+:root {
+/*
+--cursor-default:url("data:image/x-win-bitmap;base64,AAACAAEAICACAAAAAAAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAkAAAMJAAACkgAAAlIAAAIkAAACB8AAAgBAAAIAgAACAQAAAgIAAAIEAAACCAAAAhAAAAIgAAACQAAAAoAAAAMAAAACAAAAA//////////////////////////////////////////////////////////////////////5////8P///PD///xh///8If///AP///wAP//8AD///AB///wA///8Af///AP///wH///8D////B////w////8f////P////3////8=");
+--cursor-pointer:"";
+--cursor-text:"";
+*/
+}
+
+/* Cursor formatting */
+
+/*
+===================================================================================
+This is just a fun experimental feature that I currently do not intend to implement
+===================================================================================
+
+* {
+cursor:var(--cursor-default), auto;
+}
+
+p,p *,h1,h2,h3,li,td,input[type=text],textarea {
+cursor:text;
+}
+
+a {
+cursor:pointer;
+}
+*/

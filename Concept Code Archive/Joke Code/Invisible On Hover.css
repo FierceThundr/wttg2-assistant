@@ -1,0 +1,11 @@
+/*
+*:hover {
+visibility:hidden;
+}
+
+div:hover,
+body:hover,
+html:hover {
+visibility:visible;
+}
+*/
