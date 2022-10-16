@@ -1,0 +1,39 @@
+[Guide Updates]
+
+============[Police]
+
+The police are the easiest threat in the game to avoid. To avoid them you must switch wifi networks before you exceed their respective tracking timers. Though if you forget to switch, the game only has a certain chance to summon the swat team to break down your door depending on the network you stayed on. (If they are summoned, they will wait until you approach the front door or the stairwell door of floor eight before causing a game over.) Despite death not being garunteed, you should avoid relying on that chance. Another note to keep in mind is that networks that you disconnect from have a five minute timer before the police tracking timer on that network is reset. Connecting before this cooldown is complete will cause the police to resume their search from where they left off before you disconnected.
+
+The task of avoiding the cops can be made easier by purchasing skybreak from the ZeroDay Market and cracking higher security networks. Not only will they give you more time to breath, they often load websites faster.
+
+The Police Scanner is an optional device that can be purchased to be alerted when the police are close to tracing you. When turned on, the police scanner will occasionally intercept and output random police communications. Certain phrases indicate that they are close to tracing you. Aside from this device, the police do not have any sound cues. (Device cues can be found below)
+
+(Quirks)
+- If you exceed the tracking timer of a network while you are currently on the computer, the game has a 30% chance to trigger a blackout in addition to the police at the door
+- If the game attempts to spawn the police when another enemy is active, the tracking timer for the network that was exceeded is reset to half of the full tracking time
+
+(Notes)
+- Remember to switch wifi often, but not too often
+
+============[Lucas]
+
+(Quirks)
+- If the player owns the Police Scanner item and leaves in on when the Hitman is searching the apartment, they will search for an additional amount of time
+
+============[Hacking]
+
+When presented with ZoneWall, you may either fail this to get a secondary hack or succeed to instantly block the hack. While instantly blocking hacks sounds better, if you buy backdoors you can get DosCoin by failing ZoneWall and beating the secondary hack. The difficulty of hacks gradually increases as the game goes on, but you can affect the difficulty by the amount of levels succeeded during ZoneWall. Keep in mind, failing hacks can result in losing your in-game notes and a randomly selected amount of DosCoin. In addition, failing can cause you to get a virus which can hinder you from beating the game by causing random shutdowns and the loss of DosCoin.
+
+============[Hacking]
+
+(WEP)
+
+Wep networks are the weakest security network you can crack in the game. They will give you slightly improved times over most free networks available. To hack a WEP network you must first type 'scan' to see the currently available wifi networks. Then after choosing the network you wish to crack, type the command 'probe <The BSSID of the network you want to hack> 1 1000'. Skybreak will then find a vulnerable port on your chosen wifi. You can then crack the wifi by typing the command 'crack <The BSSID of the network> <The channel of the network> <The wifi networks open port>' which will provide you with the networks password upon completion.
+
+(WPA & WPA2)
+
+Hacking a wpa or wpa2 network starts similarly to wep networks. First type in 'scan' to see your available networks, then proceed to type 'inject <The BSSID of the network you want to hack> <The channel of the network> <The amount of packets to inject>'. This will proceed to inject the specified number of packets into the target network. Keep in mind that sending too many packets in a certain amount of time will result in a network being knocked offline for some amount of time. To avoid this, try to extend the amount of injections over an extended period of time. (The exact injection rates are included in the wifi section of this site) After performing enough packet injections to your target network, and you can complete the cracking of the wpa or wpa2 network by typing 'crack <The BSSID of the network you want to hack> <The channel of the network>' which will provide you with the network password upon completion.
+
+============[Hacking]
+
+The game has two different difficulties with important differences that you should know when playing.
