@@ -333,7 +333,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 		wiki_updatekeys();
 	}
 
-	var s = Object.keys(data.wiki.sites[data.wiki.current]).sort();
+	var s = Object.keys(data.wiki.sites[data.wiki.current]).map(function(v){return v.toLowerCase()}).sort(function(a,b){return a.localeCompare(b,undefined,{sensitivity:'base'});});
 	var t = document.getElementById("wiki_list");
 	wiki_erase();
 	if (s.length == 0) {
