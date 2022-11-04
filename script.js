@@ -333,7 +333,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 		wiki_updatekeys();
 	}
 
-	var s = Object.keys(data.wiki.sites[data.wiki.current]).map(function(v){return v.toLowerCase()}).sort(function(a,b){return a.localeCompare(b,undefined,{sensitivity:'base'});});
+	var s = Object.keys(data.wiki.sites[data.wiki.current]).sort(function(a,b){return a.localeCompare(b,undefined,{sensitivity:'base'});});
 	var t = document.getElementById("wiki_list");
 	wiki_erase();
 	if (s.length == 0) {
@@ -385,7 +385,7 @@ function wiki_editor() {//Replaces currently displayed data with website editor
 	r.forEach(function(n){if (o[n] == undefined) {o[n] = 0;};o[n] += 2;});
 	w.forEach(function(n){if (o[n] == undefined) {o[n] = 0;};o[n] += 1;});
 	data.wiki.template = o;
-	var l = Object.keys(o).sort();
+	var l = Object.keys(o).sort(function(a,b){return a.localeCompare(b,undefined,{sensitivity:'base'});});
 	l.forEach(function(n){
 		var a = t.insertRow(-1);
 		var b = a.insertCell(0);
