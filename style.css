@@ -1,0 +1,344 @@
+
+/*  
+		The Welcome To The Game II Assistant is built to help players of WTTG2
+		Copyright (C) 2021 Fierce Thunder
+
+		This program is free software: you can redistribute it and/or modify
+		it under the terms of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of the License, or
+		(at your option) any later version.
+
+		This program is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+		GNU General Public License for more details.
+
+		You should have received a copy of the GNU General Public License
+		along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
+
+/*  background pattern by SVGBackgrounds.com  */
+
+:root {
+--global-background-color:#000;
+--global-background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.05'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* General formatting */
+
+html {
+overflow:hidden;
+}
+
+body {
+background-color:var(--global-background-color);
+background-image:var(--global-background-image);
+font-family:helvetica, arial, sans-serif;
+padding:2em;
+text-align:center;
+position:absolute;
+margin:0;
+left:0px;
+top:0px;
+box-sizing:border-box;
+width:100%;
+height:100%;
+border:solid 1px currentColor;
+overflow-y:hidden;
+}
+
+:focus {
+outline:none;
+}
+
+table {
+margin:0;
+table-layout:fixed;
+width:100%;
+}
+
+button {
+background-color:rgba(0,0,0,0);
+border:1px outset gray;
+color:inherit;
+padding:0;
+}
+
+textarea {
+background-color:rgba(0,0,0,0);
+color:inherit;
+resize:none;
+}
+
+a {
+color:inherit;
+}
+
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+display:inline;
+}
+
+.version {
+font-size:9px;
+margin:0;
+position:absolute;
+text-align:left;
+}
+
+.select-all {
+-webkit-user-select: all;
+user-select: all;
+}
+
+.noscroll {
+overflow:hidden;
+}
+
+.italic {
+font-style:italic;
+}
+
+.monospaced {
+font-family:Consolas,monaco,monospace;
+}
+
+/* General block formatting */
+
+.block_main {
+overflow: visible;
+background-color:rgba(0,0,0,0.4);
+border-bottom:1px solid;
+display:inline-block;
+height:620px;
+margin:10px;
+padding:20px;
+position:relative;
+text-align:center;
+vertical-align:middle;
+width:530px;
+}
+
+.block_list {
+border-bottom:1px solid;
+border-top:1px solid;
+display:inline-block;
+height:545px;
+left:18px;
+margin:0;
+overflow:hidden;
+padding:0;
+position:absolute;
+top:70px;
+width:170px;
+}
+
+.block_list .fa {
+width:15px;
+}
+
+.block_list button {
+font-size:13px;
+height:25px;
+padding:0 0 0 5px;
+text-align:left;
+width:100%;
+}
+
+.block_data {
+border-bottom:1px solid;
+border-top:1px solid;
+display:inline-block;
+height:545px;
+margin:0;
+overflow:hidden;
+padding:0;
+position:absolute;
+right:18px;
+top:70px;
+width:355px;
+}
+
+/* Wiki formatting */
+
+.wiki_headerwrapper {
+margin:13px auto 0 auto;
+width:368px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-direction:column;
+gap:5px;
+}
+
+.wiki_headerwrapper > div {
+display:inline-flex;
+width:100%;
+box-sizing:border-box;
+align-items:center;
+justify-content:space-between;
+}
+
+.wiki_data td:nth-child(3) {
+text-align:right;
+}
+
+.wiki_data {
+border-bottom:1px solid;
+border-top:1px solid;
+bottom:20px;
+height:490px;
+left:50%;
+margin:5px 0 0;
+overflow:hidden;
+padding:0 10px 0 10px;
+position:absolute;
+transform:translate(-50%,0);
+width:530px;
+}
+
+.wiki_data td {
+padding:0;
+text-align:left;
+width:33%;
+}
+
+/* Wifi formatting */
+
+.wifi_timer {
+bottom:13px;
+height:20px;
+left:50%;
+overflow:auto;
+padding:0;
+position:absolute;
+transform:translate(-50%,0);
+width:537px;
+}
+
+/* Notes formatting */
+
+.note_input {
+bottom:95px;
+font-size:15px;
+height:460px;
+left:50%;
+margin:20px 0 0;
+position:absolute;
+transform:translate(-50%,0);
+width:500px;
+}
+
+.note_keydata {
+bottom:20px;
+font-family:Consolas,monaco,monospace;
+left:50%;
+margin:10px 0 0;
+overflow-wrap:break-word;
+position:absolute;
+transform:translate(-50%,0);
+width:100%;
+}
+
+/* Info formatting */
+
+.info_data {
+padding-bottom:100px;
+padding-right:10px;
+}
+
+.info_data button {
+padding:5px;
+}
+
+.info_data > div {
+display:none;
+}
+
+/* 404 formatting */
+
+.error {
+background-color:rgba(0,0,0,0.4);
+border:1px solid;
+height:130px;
+margin:10px;
+padding:20px;
+text-align:center;
+vertical-align:middle;
+width:400px;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+.error button {
+padding:5px;
+}
+
+/* Loading screen formatting */
+
+.load_cover {
+color:hsl(120,100%,50%);
+background-color:var(--global-background-color);
+background-image:var(--global-background-image);
+bottom:0;
+height:100%;
+left:0;
+overflow:hidden;
+position:fixed;
+width:100%;
+box-sizing:border-box;
+border:solid 1px currentColor;
+text-align:left;
+padding:2em;
+transition:opacity 3s;
+pointer-events:none;
+z-index:9999;
+}
+
+.load_cover pre {
+user-select: none;
+}
+
+/* Message formatting */
+
+.message_wrapper {
+	background-color:rgba(2,2,2,0.3);
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:10px;
+  box-sizing:border-box;
+}
+
+.message_container {
+	text-align:left;
+  background-color:rgba(2,2,2,1);
+  border:solid lime 1px;
+  box-sizing:border-box;
+  margin:0 auto;
+  max-width:700px;
+  width:100%;
+  height:100%;
+  overflow:auto;
+  padding:10px;
+}
+
+.message_contents {
+	display:flex;
+	gap:10px;
+	flex-direction:column;
+}
+
+.message_contents * {
+	margin:0;
+}
+
+.message_contents hr {
+	border-color:lime;
+}

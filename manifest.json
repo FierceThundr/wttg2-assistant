@@ -1,0 +1,22 @@
+{
+	"short_name":"Assistant",
+	"name": "Welcome To The Game II Assistant",
+	"description": "Formerly an assistant tool for the game Welcome To The Game II",
+	"icons": [
+		{
+			"src": "Assets/icon-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "Assets/icon-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"start_url":"/",
+	"key":"6 - 3f60629f81fc",
+	"background_color": "#111111",
+	"display": "standalone",
+	"theme_color": "#111111"
+}

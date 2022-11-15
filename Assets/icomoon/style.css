@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?nb1hu1');
+  src:  url('fonts/icomoon.eot?nb1hu1#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?nb1hu1') format('truetype'),
+    url('fonts/icomoon.woff?nb1hu1') format('woff'),
+    url('fonts/icomoon.svg?nb1hu1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Coped From Font Awesome */
+  font-size: 1.33333333em;
+  vertical-align: -15%;
+	
+  /* Fixed Width */
+  display: inline-block;
+  width: 0.9em;
+  text-align: center;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-2x {
+  font-size: 2em;
+}
+
+.icon-check:before {
+  content: "\f00c";
+}
+.icon-times:before {
+  content: "\f00d";
+}
+.icon-crosshairs:before {
+  content: "\f05b";
+}
+.icon-arrow-left:before {
+  content: "\f060";
+}
+.icon-arrow-right:before {
+  content: "\f061";
+}
+.icon-user-secret:before {
+  content: "\f21b";
+}
+.icon-search:before {
+  content: "\f002";
+}
+.icon-search-plus:before {
+  content: "\f00e";
+}
+.icon-cog:before {
+  content: "\f013";
+}
+.icon-gear:before {
+  content: "\f013";
+}
+.icon-plus-circle:before {
+  content: "\f055";
+}
+.icon-question-circle:before {
+  content: "\f059";
+}
+.icon-info-circle:before {
+  content: "\f05a";
+}
+.icon-key:before {
+  content: "\f084";
+}
+.icon-square-o:before {
+  content: "\f096";
+}
+.icon-github:before {
+  content: "\f09b";
+}
+.icon-chain:before {
+  content: "\f0c1";
+}
+.icon-link:before {
+  content: "\f0c1";
+}
+.icon-square:before {
+  content: "\f0c8";
+}
+.icon-circle:before {
+  content: "\f111";
+}
+.icon-minus-square:before {
+  content: "\f146";
+}
+.icon-check-square:before {
+  content: "\f14a";
+}
+.icon-twitch:before {
+  content: "\f1e8";
+}
+.icon-mouse-pointer:before {
+  content: "\f245";
+}
