@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--
+		The Welcome To The Game II Assistant is built to help players of WTTG2
+		Copyright (C) 2021 Fierce Thunder
+
+		This program is free software: you can redistribute it and/or modify
+		it under the terms of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of the License, or
+		(at your option) any later version.
+
+		This program is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+		GNU General Public License for more details.
+
+		You should have received a copy of the GNU General Public License
+		along with this program.  If not, see <https://www.gnu.org/licenses/>.  -->
+<html lang="en">
+	<head>
+		<title>WTTG2 Assistant</title>
+		<meta charset="utf-8">
+		<meta name="theme-color" content="#111111">
+		<meta name="description" content="Formerly an interactive assistant for Welcome To The Game 2">
+		<meta name="author" content="FierceThundr_">
+		<meta property="og:title" content="WTTG2 Assistant">
+		<meta property="og:url" content="https://fiercethundr.github.io/wttg2-assistant/">
+		<meta property="og:description" content="Formerly an interactive assistant for Welcome To The Game 2">
+		<meta property="og:determiner" content="the"/>
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://fiercethundr.github.io/wttg2-assistant/Assets/icon-bar.png">
+		<meta property="twitter:domain" content="fiercethundr.github.io">
+		<meta property="twitter:url" content="https://fiercethundr.github.io/wttg2-assistant/">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="WTTG2 Assistant">
+		<meta name="twitter:description" content="Formerly an interactive assistant for Welcome To The Game 2">
+		<meta name="twitter:image" content="https://fiercethundr.github.io/wttg2-assistant/Assets/icon-512.png">
+		<meta name="google-site-verification" content="sgfLOiZOYFPwBpLrIg6OglFJVART4esNUbs50GvWEMQ">
+		<link rel="manifest" href="manifest.json">
+		<link rel="stylesheet" href="Assets/simplebar-5.3.6/simplebar.css">
+		<link rel="stylesheet" href="Assets/icomoon/style.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="apple-touch-icon" href="Assets/icon-192.png">
+		<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+		<script src="Assets/simplebar-5.3.6/simplebar.min.js"></script>
+		<script>
+			window.onload = function(){
+				setTimeout(function(){
+					document.getElementById("load_cover").style.opacity = 0;
+				},500);
+				var x = new XMLHttpRequest();
+				x.onreadystatechange = function() { 
+					if (x.readyState == 4 && x.status == 200) {
+						var d = JSON.parse(x.responseText);
+						document.getElementById("version").innerHTML = `<i>Wttg Assistant Version 1.4.0.${d[0].sha.slice(0,7)}</i>`;
+					}
+				};
+				x.open("GET","https://api.github.com/repos/fiercethundr/wttg2-assistant/commits?per_page=1",true);
+				x.send();
+			}
+		</script>
+		<style>
+			html, body,
+			.block_list {
+				overflow:hidden;
+			}
+		
+			.load_cover {
+				transition:opacity 3s;
+				pointer-events:none;
+				z-index:9999;
+			}
+		
+			.message_wrapper {
+				background-color:rgba(2,2,2,0.3);
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				margin:0;
+				padding:10px;
+				box-sizing:border-box;
+			}
+
+			.message_container {
+				text-align:left;
+				background-color:rgba(2,2,2,1);
+				border:solid lime 1px;
+				box-sizing:border-box;
+				margin:0 auto;
+				max-width:700px;
+				width:100%;
+				height:100%;
+				overflow:auto;
+				padding:10px;
+			}
+
+			.message_contents {
+				display:flex;
+				gap:10px;
+				flex-direction:column;
+			}
+
+			.message_contents * {
+				margin:0;
+			}
+
+			.message_contents hr {
+				border-color:lime;
+			}
+			
+			.message_preface {
+				display:flex;
+				gap:10px;
+				flex-direction:column;
+				border:1px solid;
+				padding:10px;
+			}
+		</style>
+		<style id="dom_color">body {color:hsl(120,100%,50%)} .simplebar-scrollbar::before {background-color:hsl(120,100%,50%)} .child {color:hsl(120,100%,30%)} .secondary {color:hsl(0,100%,50%)} .disabled {color:hsl(0,100%,20%)}
+		</style>
+	</head>
+	<body>
+		<p id="version" class="version"><i>Wttg Assistant Version 1.4.0</i></p>
+
+		<!-- Wiki Data Block -->
+		<div class="block_main">
+			<p class="version"><i>Wiki Block Version 1.2.9</i></p>
+			<div class="wiki_headerwrapper">
+				<div>
+					<button style="width:38px;height:38px;"><i class="icon-arrow-left icon-2x"></i></button>
+					<h1 id="wiki_title" style="display:inline-block;margin:0;">Wiki I</h1>
+					<button style="width:38px;height:38px;"><i class="icon-arrow-right icon-2x"></i></button>
+				</div>
+				<div>
+					<textarea id="wiki_data" placeholder="Copy and paste site list here to import..." style="font-size:13px;width:320px;overflow:hidden;" rows="1"></textarea>
+					<button class="monospaced" style="width:38px;height:21px;">Edit</button>
+				</div>
+			</div>
+			<table style="margin: 5px 0 0 0;bottom:515px;left:50%;position:absolute;transform:translate(-50%,0);">
+				<caption id="wiki_keys"><b>Keys remaining: 2</b></caption>
+				<tr><th>Site Name</th><th>Availability</th><th>Markers</th></tr>
+			</table>
+			<div class="wiki_data">
+				<table id="wiki_list">
+					<tr></tr>
+					<tr><td><h2>Welcome to the Wiki block</h2></p>Here you can view and use tools regarding the websites contained within the wikis you find throughout the game. This includes informaion such as website times and what parts of a site the player may be required to click to find a hidden key. This section also includes note taking buttons which can be used to keep track of your progress.</p></td></tr>
+					<tr><td>[ <i class="icon-mouse-pointer"></i> ] View Click Points</td></tr>
+					<tr><td>[ <i class="icon-search"></i> ] Searched Manually</td></tr>
+					<tr><td>[ <i class="icon-search-plus"></i> ] Searched With Key Cue</td></tr>
+					<tr><td>[ <i class="icon-key"></i> ] Key Found Here</td></tr>
+					<tr><td>[ <i class="icon-link"></i> ] Wiki Link Found Here</td></tr>
+					<tr><td><p>To get started you can import your websites by copying the website list from a Deep Wiki inside the game into the box above. (If this does not work, you can also manually import using the edit button above.)</p></td></tr>
+					<tr><td><span>&gt; Click here for a demo of the wiki block!</span></td></tr>
+					<tr><td class="secondary"><br>&gt; Refreshing the page will erase all data</td></tr>
+				</table>
+			</div>
+		</div>
+
+		<!-- Notepad Block -->
+		<div class="block_main">
+			<p class="version"><i>Notepad Block Version 1.1.4</i></p>
+			<h1 style="margin: 10px 0 0 0">Note</h1>
+			<p style="margin: 0 0 0 0"><i>Pasted keys will be compiled automatically!</i></p>
+			<textarea class="note_input" id="note_input"></textarea>
+			<p id="note_keyoutput" class="note_keydata"><b>Key Data</b><br>
+				????????????????????????????????????????????????<br>
+				????????????????????????????????????????????????
+			</p>
+		</div>
+
+		<!-- Wifi Block -->
+		<div class="block_main">
+			<p class="version"><i>Wifi Block Version 1.0.6</i></p>
+			<h1 style="margin: 10px 0 0 0">Wifi</h1><br>
+			<div class="block_list">
+				<div id="wifi_list">
+					<button><i class="icon-square-o"></i> TP-LINK_8907_5G</button>
+					<button><i class="icon-square-o"></i> TC8717T10</button>
+					<button><i class="icon-square-o"></i> DDW35363</button>
+					<button><i class="icon-square-o"></i> FreeWifi7899</button>
+					<button><i class="icon-square-o"></i> doody</button>
+					<button><i class="icon-square-o"></i> FreeWifiNoVirus</button>
+					<button><i class="icon-square"></i> SSWIFI</button>
+					<button><i class="icon-square"></i> D59709</button>
+					<button><i class="icon-square"></i> PWF1382445</button>
+					<button><i class="icon-square"></i> Chanyia</button>
+					<button><i class="icon-square"></i> Flter</button>
+					<button><i class="icon-square"></i> SuddenLink990</button>
+					<button><i class="icon-square"></i> WIFIAF1A5D</button>
+					<button><i class="icon-square"></i> tedata</button>
+					<button><i class="icon-square"></i> mycci7471</button>
+					<button><i class="icon-square"></i> DA3CHICKZ</button>
+					<button><i class="icon-square"></i> UAPPY-FI</button>
+					<button><i class="icon-square"></i> Khaled</button>
+					<button><i class="icon-square"></i> NetflxnChillByMyself</button>
+					<button><i class="icon-square"></i> DevShareTWO</button>
+					<button><i class="icon-square"></i> WIRELESSNET2</button>
+					<button><i class="icon-square"></i> FBI Survellance Van</button>
+					<button><i class="icon-square"></i> Ataua</button>
+					<button><i class="icon-square"></i> swsecure</button>
+					<button><i class="icon-square"></i> ali</button>
+				</div>
+			</div>
+			<div class="block_data" style="text-align:left;">
+				<div id="wifi_data" class="wifi_data">
+					<div id="wifi_intro">
+						<h2 style="margin:90px 0 0 0">Welcome to the wifi block</h2>
+						<p>
+							Here you can view data collected about the wifi networks available in the game. This includes information such as trace times, injection information, and locations. In addition, there is a scripted timer you can use to keep track of when the cops will be done tracking you.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="wifi_timer">
+				<p id="wifi_timer" style="margin:0;font-family:Consolas,monaco,monospace;overflow:visible;">[###########################00:00###########################]</p>
+			</div>
+		</div>
+
+		<!-- Tenant Block -->
+		<div class="block_main">
+			<p class="version"><i>Tenant Block Version 1.0.2</i></p>
+			<h1 style="margin: 10px 0 0 0">Tenant</h1><br>
+			<div class="block_list" style="height:567px">
+				<div id="tenant_list">
+					<button><i class="icon-square-o"></i> Addyson Pearson</button>
+					<button><i class="icon-square-o"></i> Alden Chambers</button>
+					<button><i class="icon-square-o"></i> Alfred Crosby</button>
+					<button><i class="icon-square"></i> Alice Shaw</button>
+					<button><i class="icon-square-o"></i> Alonso Frost</button>
+					<button><i class="icon-square"></i> Ashlynn Rangel</button>
+					<button><i class="icon-square"></i> Ayana Armstrong</button>
+					<button><i class="icon-square-o"></i> Brayden Kelly</button>
+					<button><i class="icon-square-o"></i> Brendan Davenport</button>
+					<button><i class="icon-square-o"></i> Brenden Fox</button>
+					<button><i class="icon-square-o"></i> Brennan Mcgee</button>
+					<button><i class="icon-square"></i> Bria Lozano</button>
+					<button><i class="icon-square"></i> Carissa Whitehead</button>
+					<button><i class="icon-square-o"></i> Carlos Moon</button>
+					<button><i class="icon-square"></i> Clare Holloway</button>
+					<button><i class="icon-square-o"></i> Cristian Ross</button>
+					<button><i class="icon-square-o"></i> Dale Jackson</button>
+					<button><i class="icon-square-o"></i> Damon Sullivan</button>
+					<button><i class="icon-square"></i> Dana Steele</button>
+					<button><i class="icon-square-o"></i> Darren Alexander</button>
+					<button><i class="icon-square-o"></i> Dawson Blevins</button>
+					<button><i class="icon-square-o"></i> Deacon Woodward</button>
+					<button><i class="icon-square"></i> Delilah Walters</button>
+					<button><i class="icon-square"></i> Diya Marquez</button>
+					<button><i class="icon-square"></i> Drake Clay</button>
+					<button><i class="icon-square"></i> Emma Everett</button>
+				</div>
+			</div>
+			<div class="block_data" style="text-align:left;height:567px">
+				<div id="tenant_data">
+					<h2 style="margin:90px 0 0 0">Welcome to the tenant block</h2>
+					<p>
+						Here you can view a database of tenants located throughout the Welcome to the Game II building. In addition, you can view various pieces of information including if they are viable candidates for the doll maker quest.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Info Block -->
+		<div class="block_main">
+			<p class="version"><i>Info Block Version 1.3.3</i></p>
+			<h1 style="margin: 10px 0 0 0">Info</h1><br>
+			<div class="block_list" style="height:567px">
+				<div id="info_list">
+					<button><i class="icon-info-circle"></i> About</button>
+					<button><i class="icon-circle"></i> Tutorial</button>
+					<button><i class="icon-circle"></i> The Game</button>
+					<button><i class="icon-circle"></i> The Computer</button>
+					<button><i class="icon-circle"></i> The Building</button>
+					<button><i class="icon-circle"></i> Searching</button>
+					<button><i class="icon-circle"></i> Events</button>
+					<button><i class="icon-circle"></i> The Markets</button>
+					<button><i class="icon-circle"></i> The Police</button>
+					<button><i class="icon-circle"></i> The Hitman</button>
+					<button><i class="icon-circle"></i> The Noir</button>
+					<button><i class="icon-circle"></i> The Breather</button>
+					<button><i class="icon-circle"></i> The Doll Maker</button>
+					<button><i class="icon-circle"></i> Hacking</button>
+					<button><i class="icon-circle"></i> Cracking</button>
+					<button><i class="icon-circle"></i> Exploits &amp; Bugs</button>
+					<button><i class="icon-circle"></i> Miscellaneous</button>
+					<button><i class="icon-crosshairs"></i> Hitman Simulator</button>
+					<button><i class="icon-user-secret"></i> Hacking Trainer</button>
+					<button><i class="icon-cog"></i> Settings</button>
+					<button><i class="icon-plus-circle"></i> Updates</button>
+					<button><i class="icon-question-circle"></i> Feedback</button>
+				</div>
+			</div>
+			<div class="block_data" style="text-align:left;height:567px">
+				<div id="info_data" class="info_data">
+					<div style="display:block;">
+						<h2 style="margin:90px 0 0 0">Welcome to the info block</h2>
+						<p>
+							Here you can view custom guides for the majority of the game that have been written specifically for this assistant. These guides have been reviewed many times to attempt to weed out as many inaccuracies as possible. In addition you can find information about how to provide feedback, a variety of other information about the assistant, and smaller tools that did not warrant their own section.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Tips Banner -->
+		<div>
+			<p style="margin: 5px 0 0 0;font-family: Consolas,monaco,monospace;" id="tips">[Tip] Farewell To The Game</p>
+		</div>
+		
+		<!-- Message Overlay -->
+		<div class="message_wrapper">
+			<div class="message_container" data-simplebar>
+				<div class="message_contents">
+					<div class="message_preface">
+						<h2>Preface</h2>
+						<p>The following is a statement previously posted in the place of the WTTG2 Assistant during the time period from 11/15/22 to 01/24/23. During this time, I disabled the Assistant because I no longer wanted to support Adam and saw the Assistant as support for his game and, by extension, him. I have since undone this decision due to the fact that I still actively help those playing WTTG2, which makes disabling the Assistant a moot decision. Despite this, I will be leaving my statement public with the hope that it allows people who read it to make a more informed decision about whether they want to support Adam going forward.</p>
+					</div>
+					<h2>Farewell to the Game</h2>
+					<p>I apologize to those who have gotten used to using this tool, but the primary copy of the WTTG2 Assistant will be disabled until further notice. If you wish to understand why this is the case, please continue reading. If you simply wish for insight into the game, you have unfortunately missed your chance here. However, I ask that you take the time to read this as well. For those who don't exactly want to read this long explanation, I no longer wish to support Adam which is why I have also disabled this resource.</p>
+					<hr>
+					<p>Welcome to the Game II is a survival horror game developed by Adam Flatau and released in 2018. The game had ideas and mechanics I enjoyed which eventually led me to create various projects for the game such as the assistant site that used to be publicly available here in addition to work related to a modding project called Welcome to the Game II+. During this time I looked up to Adam and his games. (Even if I tended to watch others playing the game rather than play them myself most of the time.)</p>
+					<p>However, I eventually became aware of things that made me question Adam's integrity. During the time that Welcome to the Game 2 was his main project, there was an incident that involved a streamer playing the game who decided to criticize Adam. At the time, the game had a feature that allowed Adam control over various mechanics in the game remotely. After the streamer made his criticisms Adam began to abuse this feature heavily. Over the course of several hours, he tampered with their game rendering it borderline impossible to play until the end of the stream.</p>
+					<p>Moving forward, Masks of Deception was announced and began development. This was another game with an interesting concept that a lot of people were interested in seeing, myself included. Because of this, I applied and was accepted into the game's private beta. During the beta, I held the same opinion I hold today... "I think the idea is good, but the mechanics need to be improved and more effort needs to be put into the player experience." However, regardless of my opinion of the game, it did not end up as successful as originally hoped due to various issues. Unfortunately, the same goes for my opinion on Adam around the release of MoD. During the private beta, Adam expressed that he was pissed off at a popular streamer who had played his games in the past for not playing Masks of Deception. On another occasion, Adam and others also made several comments in the beta test channels against the developers of Phasmophobia for using store assets and making "tens of millions upon millions of dollars".</p>
+					<p>Another interesting trend was the polls Adam conducted during the time that MoD was his main focus. The first poll prompted members of his discord to vote on whether they enjoyed the experience of playing WTTG2 more than MoD. In the poll, he threatened to ban anyone voters who had not played both games. He later pinged several discord members who voted demanding to see pictures of their steam libraries to prove they played both games. By the time the poll was settling down with WTTG2 as the most voted option, Adam chimed in with another message and said "Odd, I don't think half the people here voting for WTTG even have MoD" effectively ignoring the result of the vote. A similar event happened in a later poll on Twitter where he asked if players would check out an upcoming patch that included major updates to the game. In the end, 42% of voters stated they didn't intend on trying the update. Adam responded to this by stating "...the 42% who voted nope just want WTTG content" instead of considering other possibilities.</p>
+					<p>As the activity around the game began to settle, Adam stepped back and decided to place MoD on the back burner in a discord announcement where he stated he was disappointed with the game's launch. He announced plans for a new edition of the WTTG story and said he would continue supporting and updating MoD while people were still playing the game. At the time I took this as a sign that the improvements MoD needed would likely never come and that the game would never see the concept's full potential. This unfortunately falls in line with Scrutinized which suffered a similar fate.</p>
+					<p>At some point, I was looking back at the game and decided to look at the more critical reviews the game was receiving. There was a variety of negative steam reviews that reported different issues including poor interactions with Adam, questionable balancing of mechanics, and matchmaking issues. One of the reviews I ended up reading discussed negative interactions with Adam regarding potentially removing or limiting friend lobbies. Out of curiosity, I decided to search for them on the discord to see if any messages from the user still existed. I ended up finding some messages left on the discord that were similar to what was discussed in the review and I made a comment saying as much. Unfortunately, after some time Adam discovered my comment and decided to ban me from the discord which I discovered much later. The discord was later deleted sometime after my ban.</p>
+					<p>The last issue I will briefly mention here is regarding how Adam handles fan mods. Specifically one called Welcome to the Game: Versus. The mod was in development for only a very short time before it was brought to their attention that Adam had made a lawsuit threat in a random twitch chat when the mod was brought up. Not only is this unprofessional behavior, but this also contradicts their previous statements that they were fine with mods as long as they were not sold. Threatening to take down mods as he did here is well within his rights, but shows how he is willing to neglect and actively tear down some of the most active members in his community. WTTG:V was ultimately canceled which called the eventual fate of WTTG2+ into question as well despite it being a more established project.</p>
+					<p>I would like to make it clear what I believe before the end of this. I no longer wish to support Adam and I don't think anybody else should either. I do not want to support someone who actively dismisses their community and their past games by leaving them behind. I do not want to support someone who immediately threatens fan projects with lawsuits instead of taking a moment to send a polite message. I do not want to support someone with such a fragile ego that they think that harassing a streamer for hours after one offhand comment is okay to do.</p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Loading Overlay -->		
+		<div id="load_cover" class="load_cover"></div>
+	</body>
+</html>
