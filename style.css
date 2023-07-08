@@ -416,7 +416,7 @@ padding:2em;
 }
 
 .load_cover pre > span {
-	display:none;
+display:none;
 }
 
 .load_cover pre {
