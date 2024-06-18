@@ -1,5 +1,5 @@
 
-/*  
+/*
 		The Welcome To The Game II Assistant is built to help players of WTTG2
 		Copyright (C) 2021 Fierce Thunder
 
@@ -25,9 +25,9 @@
 
 /* Color formatting */
 
-.simplebar-scrollbar::before {background-color:hsl(var(--primary-color),100%,50%)} 
-.child {color:hsl(var(--primary-color),100%,30%)} 
-.secondary {color:hsl(var(--secondary-color),100%,50%)} 
+.simplebar-scrollbar::before {background-color:hsl(var(--primary-color),100%,50%)}
+.child {color:hsl(var(--primary-color),100%,30%)}
+.secondary {color:hsl(var(--secondary-color),100%,50%)}
 .disabled {color:hsl(var(--secondary-color),100%,20%)}
 
 /* General formatting */
@@ -415,10 +415,16 @@ text-align:left;
 padding:2em;
 }
 
-.load_cover pre > span {
-display:none;
+.load_cover > * {
+margin:0;
+user-select:none;
+font-family:monospace;
 }
 
-.load_cover pre {
-user-select: none;
+.load_cover a {
+text-decoration:none;
+}
+
+#load_welcome, #load_message, #load_message > *:not(:first-child) {
+display:none;
 }

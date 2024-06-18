@@ -1,5 +1,5 @@
 
-/*  
+/*
 		The Welcome To The Game II Assistant is built to help players of WTTG2
 		Copyright (C) 2021 Fierce Thunder
 
@@ -280,7 +280,8 @@ var data = {
 //"test":{ This data is now obsolete but may become necessary in the future
 //	"value":"HAQC2IBVMJTGGOBQGNTDKODFGIQOFIEA"},
 	"load":{
-		"remember":0},
+		"index":0,
+		"state":0},
 	"popup":{
 		"wifi":{"active":0,"reference":undefined},
 		"notes":{"active":0,"reference":undefined}}
@@ -343,7 +344,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 			wiki_appendsite(t,n);
 		});
 	}
-	
+
 	function wiki_appendsite(t,n) {//Take a website name and display the associated data
 		var a,b,c,d,e,f,g,h,i;
 		e = wikidata[n];
@@ -376,7 +377,7 @@ function wiki_update(m) {//Updates the currently displayed data, also handles cu
 function wiki_editor() {//Replaces currently displayed data with website editor
 	if (data.wiki.editor == 1) {wiki_update();return;}
 	data.wiki.editor = 1;
-	
+
 	var t = document.getElementById("wiki_list");
 	var r = Object.keys(wikidata);
 	var w = Object.keys(data.wiki.sites[data.wiki.current]);
@@ -791,7 +792,7 @@ function setup() {//Prepares website lists and appearance
 			button.id = `wifi_listbutton${index}`;
 			button.addEventListener("click",function(){wifi_update(index)});
 		});
-		//Generate tenant block buttons 
+		//Generate tenant block buttons
 		tenantdata.forEach(function (data,index) {
 			var button = document.createElement("button");
 			document.getElementById("tenant_list").appendChild(button);
@@ -816,17 +817,11 @@ function setup() {//Prepares website lists and appearance
 		document.getElementById("setting_colorsecondary").value = localStorage.getItem('color1');
 		document.getElementById("dom_color").innerHTML = `:root {--primary-color:${localStorage.getItem('color0')};--secondary-color:${localStorage.getItem('color1')}}`;
 		//Prepare and display website load messages
-		document.getElementById("load_message").style.display = "block";
-		setTimeout(function(){
-			if (localStorage.getItem('remember') == 1) {
-				document.getElementById("load_cover").remove();
-			} else {
-				document.getElementById("load_first").style.display = "block";
-			}
-		},500);
+		document.getElementById("load_welcome").style.display = "block";
+		setTimeout(()=>{load_handle(2)},500);
 		//Query the current github commit and add it to site version
 		var x = new XMLHttpRequest();
-		x.onreadystatechange = function() { 
+		x.onreadystatechange = function() {
 			if (x.readyState == 4 && x.status == 200) {
 				var d = JSON.parse(x.responseText);
 				document.getElementById("version").innerHTML = `<i>Wttg Assistant Version 1.4.0.${d[0].sha.slice(0,7)}</i>`;
@@ -839,14 +834,28 @@ function setup() {//Prepares website lists and appearance
 	}
 }
 
-function load_toggle() {
-	data.load.remember ^= 1;
-	document.getElementById("load_remember").innerText = (data.load.remember) ? "☑":"☐";
-}
-
-function load_accept() {
-	localStorage.setItem('remember',data.load.remember);
-	document.getElementById("load_cover").remove();
+function load_handle(a,i) {
+	var popups = ["remember","statement"], type = popups[i];
+	switch (a) {
+		case 0:
+			document.getElementById("toggle_" + type).innerText = (data.load.state ^= 1) ? "☑":"☐";
+			break;
+		case 1:
+			localStorage.setItem(type, data.load.state);
+			data.load.state = 0;
+		case 2:
+			document.getElementById("load_message").style.display = "block";
+			popups.forEach((v,i)=>{
+				if (data.load.index <= i && (+localStorage.getItem(v) || a == 1)) {
+					a = 0;
+					data.load.index++;
+					document.getElementById("load_" + v)?.remove();
+				};
+				if (data.load.index >= popups.length) {
+					document.getElementById("load_cover").remove();
+				};
+			});
+	};
 }
 
 function reset() {//Reset all run data in the assistant
