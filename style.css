@@ -218,14 +218,18 @@ padding:2px;
 
 /* Clickpoints preview formatting */
 
-.preview_wrapper{
-background-color:rgba(255,255,255,1);
+.preview_wrapper {
+background-color:rgba(0,0,0,1);
 height:100%;
 left:0;
 position:fixed;
 top:0;
 width:100%;
 z-index:4;
+transition:opacity 0.1s ease;
+display:block;
+pointer-events:none;
+opacity:0;
 }
 
 .preview_frame {

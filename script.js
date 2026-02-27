@@ -453,13 +453,16 @@ window.addEventListener("message",(event)=>{ //Close the clickpoints popup when 
 
 function wiki_previewupdate(i) {//Updates and displays the key clickpoints popup
 	click();
+	var preview_wrapper = document.getElementById("preview_wrapper");
 	if (i == -1) {
-		document.getElementById("preview_wrapper").style.display = "none";
+		preview_wrapper.style["pointer-events"] = "none";
+		preview_wrapper.style["opacity"] = 0;
 		document.body.classList.remove("noscroll");
 		return;
 	}
 	document.getElementById("preview").src = 'Clickpoint Guides/' + i + '.html';
-	document.getElementById("preview_wrapper").style.display = "block";
+	preview_wrapper.style["pointer-events"] = "auto";
+	preview_wrapper.style["opacity"] = 1;
 	document.body.classList.add("noscroll");
 }
 
