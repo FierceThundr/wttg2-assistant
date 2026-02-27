@@ -1,0 +1,1 @@
+window.addEventListener("load",()=>window.addEventListener("click",window.parent.postMessage("close","*")));

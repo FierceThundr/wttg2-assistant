@@ -445,12 +445,9 @@ function wiki_updatekeys() {//Updates the remaining keys count
 	document.getElementById("wiki_keys").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>';
 }
 
-function wiki_previewload() {//Create a click event listener when the clickpoints popup finished loading
-	try {
-		document.getElementById("preview").contentWindow.addEventListener('click', function(e) {wiki_previewupdate(-1);});
-	} catch (e) {
+window.addEventListener("message", (event) => { //Close the clickpoints popup when a close event is received
+	if (event.data == "close") {
 		wiki_previewupdate(-1);
-		console.log("[Clickpoint Guide Failure] " + e);
 	}
 }
 
