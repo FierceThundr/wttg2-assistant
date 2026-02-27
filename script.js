@@ -445,11 +445,11 @@ function wiki_updatekeys() {//Updates the remaining keys count
 	document.getElementById("wiki_keys").innerHTML = '<b>Keys remaining: ' + Math.max((data.wiki.total[data.wiki.current] - data.wiki.keys[data.wiki.current]),0) + '</b>';
 }
 
-window.addEventListener("message", (event) => { //Close the clickpoints popup when a close event is received
+window.addEventListener("message",(event)=>{ //Close the clickpoints popup when a close event is received
 	if (event.data == "close") {
 		wiki_previewupdate(-1);
 	}
-}
+})
 
 function wiki_previewupdate(i) {//Updates and displays the key clickpoints popup
 	click();
